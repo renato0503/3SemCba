@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1351b4">
+<title>CRAS Online — o CRAS no bolso do cidadão</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g4.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g4-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CRAS Online · balcão de atendimento digital: azul institucional, carimbo de protocolo,
+   passos numerados e o selo de canal oficial sempre à vista (confiança é requisito, não enfeite). ===== */
+:root{--azul:#1351b4;--azul2:#0c326f;--azul3:#e8f0fc;--amarelo:#ffcd07;--verde:#168821;--verm:#c0392b;--txt:#101828;--mudo:#5b6472;--linha:#dfe4ee;--fundo:#f5f8fd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--fundo);color:var(--txt);min-height:100dvh;padding-bottom:calc(76px + env(safe-area-inset-bottom));font-size:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+.selo-gov{background:var(--azul2);color:#cfe0ff;font-size:11.5px;padding:calc(6px + env(safe-area-inset-top)) 14px 6px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.selo-gov b{color:#fff}
+header.cab{background:var(--azul);color:#fff;padding:12px 14px 14px;display:flex;gap:10px;align-items:center}
+header.cab img{width:42px;height:42px;border-radius:10px;background:#fff}
+header.cab h1{font-size:19px;line-height:1.05}
+header.cab small{display:block;font-size:12.5px;opacity:.9;font-weight:400}
+header.cab .ouvir{margin-left:auto;width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:transparent;color:#fff;font-size:18px;cursor:pointer}
+main{max-width:640px;margin:0 auto;padding:14px}
+.tela{display:none}.tela.on{display:block;animation:sobe .25s}
+@keyframes sobe{from{opacity:0;transform:translateY(6px)}}
+h2{font-size:22px;margin:2px 0 6px;color:var(--azul2)}
+h3{font-size:17px;margin-bottom:8px}
+.sub{color:var(--mudo);font-size:14.5px;margin-bottom:12px}
+.aviso-oficial{display:flex;gap:10px;align-items:center;background:#e6f6ea;border:1.5px solid var(--verde);border-radius:10px;padding:10px 12px;font-size:13.5px;color:#0b5220;margin-bottom:12px}
+.aviso-oficial b{color:var(--verde)}
+.servico{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:#fff;border:1.5px solid var(--linha);border-left:6px solid var(--azul);border-radius:12px;padding:14px;margin-bottom:10px;cursor:pointer}
+.servico:hover{border-color:var(--azul)}
+.servico .ic{width:46px;height:46px;border-radius:12px;background:var(--azul3);display:grid;place-items:center;font-size:24px}
+.servico b{display:block;font-size:16px}.servico small{color:var(--mudo)}
+.servico .seta{color:var(--azul);font-size:22px}
+.passos{display:flex;gap:4px;margin:4px 0 14px;flex-wrap:wrap}
+.passos span{font-size:12px;font-weight:700;color:var(--mudo);background:#fff;border:1.5px solid var(--linha);border-radius:999px;padding:5px 10px}
+.passos span.atual{background:var(--azul);border-color:var(--azul);color:#fff}
+.passos span.feito{background:#e6f6ea;border-color:var(--verde);color:#0b5220}
+.campo{margin:12px 0}
+.campo label{display:block;font-size:13.5px;font-weight:600;margin-bottom:5px}
+.in{width:100%;min-height:48px;border:1.5px solid var(--linha);border-radius:10px;padding:8px 12px;background:#fff;font-size:16px}
+.doc{display:flex;gap:12px;align-items:center;background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:12px;margin-bottom:8px}
+.doc .est{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:20px;background:#f3f4f6;flex-shrink:0}
+.doc.ok .est{background:#e6f6ea;color:var(--verde)}
+.doc .quem{flex:1;min-width:0}.doc .quem b{display:block;font-size:15px}.doc .quem small{color:var(--mudo);font-size:12.5px;word-break:break-all}
+.doc .acoes{display:flex;flex-direction:column;gap:4px}
+.btn{min-height:48px;border:none;border-radius:10px;background:var(--azul);color:#fff;font-weight:700;padding:0 16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.sec{background:#fff;color:var(--azul2);border:1.5px solid var(--azul)}
+.btn.peq{min-height:38px;font-size:13.5px;padding:0 10px}
+.btn.perigo{background:#fff;color:var(--verm);border:1.5px solid var(--verm)}
+.fila{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.fila>*{flex:1 1 auto}
+.protocolo{background:linear-gradient(135deg,var(--azul2),var(--azul));color:#fff;border-radius:14px;padding:16px;position:relative;overflow:hidden;margin-bottom:12px}
+.protocolo::after{content:"OFICIAL";position:absolute;right:-14px;top:16px;transform:rotate(12deg);border:2px solid rgba(255,255,255,.4);color:rgba(255,255,255,.6);font-weight:800;letter-spacing:.2em;font-size:12px;padding:4px 26px}
+.protocolo small{font-size:11.5px;letter-spacing:.14em;opacity:.85}
+.protocolo .cod{font-family:"Roboto Mono",monospace;font-size:26px;font-weight:700;margin:6px 0 8px;letter-spacing:.04em}
+.protocolo .lin{font-size:13.5px;opacity:.95}
+.linha-tempo{list-style:none;margin:8px 0}
+.linha-tempo li{display:flex;gap:12px;padding:8px 0}
+.linha-tempo .pt{width:26px;height:26px;border-radius:50%;background:#e5e7eb;color:var(--mudo);display:grid;place-items:center;font-size:13px;font-weight:700;flex-shrink:0}
+.linha-tempo li.ok .pt{background:var(--verde);color:#fff}
+.linha-tempo li.atual .pt{background:var(--azul);color:#fff;box-shadow:0 0 0 4px var(--azul3)}
+.linha-tempo b{display:block;font-size:15px}.linha-tempo small{color:var(--mudo)}
+.cartao{background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:14px;margin-bottom:12px}
+.faq{border-bottom:1px solid var(--linha);padding:4px 0}
+.faq summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;font-size:15px;gap:8px}
+.faq p{padding:0 0 12px 22px;color:var(--mudo);font-size:14.5px}
+.faixa-final{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--linha);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+.faixa-final a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:700;color:var(--mudo);text-decoration:none;padding:8px 0;min-height:60px}
+.faixa-final a span{font-size:21px}
+.faixa-final a[aria-current=page]{color:var(--azul);box-shadow:inset 0 3px 0 var(--azul)}
+#brinde{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--azul2);color:#fff;padding:11px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw;text-align:center;font-size:14.5px}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--amarelo);outline-offset:2px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="selo-gov"><span>🔒 <b>Canal oficial</b> · o CRAS nunca pede senha nem pagamento</span><span id="gov-id">acesso não identificado</span></div>
+<header class="cab"><img src="../assets/logos/g4.svg" alt="">
+  <div><h1>CRAS Online</h1><small>documentos, agendamento e acompanhamento</small></div>
+  <button class="ouvir" id="ouvir" aria-label="Ouvir esta tela" title="Ouvir esta tela">🔊</button></header>
+<main>
+  <section class="tela" id="t-servicos">
+    <h2>O que você precisa resolver?</h2>
+    <p class="sub">Comece o pedido pelo celular. Você só vai ao CRAS se realmente precisar.</p>
+    <div class="aviso-oficial">✅ <span>Este é um <b>canal oficial</b>. Seus documentos são usados só para o seu atendimento e ficam protegidos pela LGPD.</span></div>
+    <div id="lista-servicos"></div>
+    <div class="cartao"><h3>Não sabe o que escolher?</h3><p class="sub" style="margin:0 0 10px">Fale com uma pessoa de verdade — sem robô.</p>
+      <a class="btn sec" id="zap-ajuda" target="_blank" rel="noopener">💬 Falar no WhatsApp do CRAS</a></div>
+  </section>
+
+  <section class="tela" id="t-pedido"></section>
+
+  <section class="tela" id="t-protocolo">
+    <h2>Consultar protocolo</h2>
+    <p class="sub">Digite o código do pedido para ver em que etapa ele está.</p>
+    <div class="campo"><label for="busca-prot">Código do pedido</label><input class="in" id="busca-prot" placeholder="Ex.: G4-2026-0001" style="font-family:'Roboto Mono',monospace"></div>
+    <div class="fila"><button class="btn" id="consultar">Consultar</button></div>
+    <div id="res-prot"></div>
+    <h3 style="margin-top:20px">Meus pedidos</h3>
+    <div id="meus-pedidos"></div>
+  </section>
+
+  <section class="tela" id="t-duvidas">
+    <h2>Dúvidas frequentes</h2>
+    <p class="sub">Se a sua dúvida não estiver aqui, é só chamar no WhatsApp.</p>
+    <div class="cartao" id="faq"></div>
+    <div class="cartao"><h3>Falar com o CRAS</h3>
+      <a class="btn" id="zap-duvida" target="_blank" rel="noopener">💬 Abrir WhatsApp oficial</a>
+      <div class="fila"><a class="btn sec" href="tel:08006411411">📞 0800 641 1411</a></div>
+      <p class="sub" style="margin:10px 0 0">Atendimento de segunda a sexta, das 8h às 17h. Unidade de exemplo: CRAS do seu bairro.</p>
+    </div>
+    <div class="cartao"><h3>Seus dados</h3>
+      <div class="fila" style="margin-top:0"><button class="btn sec peq" id="exportar">Exportar</button><button class="btn sec peq" id="importar" data-teste="pular">Importar</button><button class="btn perigo peq" id="zerar">Apagar tudo</button></div>
+      <p class="sub" style="margin:10px 0 0;font-size:12.5px">CRAS Online · Grupo 4 · AdmCBA · UNIFACC-MT</p></div>
+  </section>
+</main>
+<nav class="faixa-final" aria-label="Seções">
+  <a href="#/servicos"><span>🗂️</span>Serviços</a>
+  <a href="#/pedido"><span>📝</span>Novo pedido</a>
+  <a href="#/protocolo"><span>🔎</span>Protocolo</a>
+  <a href="#/duvidas"><span>❓</span>Dúvidas</a>
+</nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção do CRAS Online: uma máquina de passos declarativa. O assistente é
+   descrito por um array PASSOS (título + campos), e um único renderizador monta
+   cada tela a partir dessa descrição. O estado rascunho é um objeto plano que os
+   campos atualizam por chave; "Avançar" só valida o passo atual. Ao concluir, o
+   pedido vira um registro com protocolo, documentos e uma linha do tempo de
+   status. Os anexos guardam um selo de legibilidade (tipo + tamanho) — o MVP não
+   envia o arquivo para lugar nenhum, para não expor dado sensível.
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2400); };
+const R = s => String(s ?? '').replace(/[<>&"]/g, '');
+
+const ZAP = '5585999999999';
+const SERVICOS = {
+  beneficio: { n: 'Benefício eventual', ic: '🤝', presencial: true, prazo: 'até 5 dias úteis',
+    desc: 'Ajuda temporária em situação de vulnerabilidade: natalidade, funeral ou calamidade.',
+    docs: ['Documento com foto', 'CPF', 'Comprovante de residência', 'Comprovante de renda (se tiver)'] },
+  cadunico: { n: 'Cadastro Único', ic: '🏠', presencial: true, prazo: 'até 10 dias',
+    desc: 'Inscrição no CadÚnico, porta de entrada dos programas sociais.',
+    docs: ['CPF ou título do responsável familiar', 'Documento de cada morador', 'Comprovante de residência', 'Comprovante de renda (se tiver)'] },
+  orientacao: { n: 'Orientação social (PAIF)', ic: '💬', presencial: false, prazo: 'até 3 dias',
+    desc: 'Conversa de acompanhamento com a equipe social, sem burocracia.',
+    docs: ['Documento com foto', 'CPF'] },
+  bpc: { n: 'BPC — orientação', ic: '♿', presencial: true, prazo: 'até 7 dias',
+    desc: 'Orientação sobre o Benefício de Prestação Continuada para idosos e pessoas com deficiência.',
+    docs: ['Documento com foto', 'CPF', 'Laudo médico (se tiver)'] },
+  violencia: { n: 'Orientação em violência doméstica', ic: '🛡️', presencial: true, prazo: 'imediato',
+    desc: 'Acolhimento e encaminhamento seguro à rede de proteção. Sigilo garantido.',
+    docs: ['Documento com foto (se tiver)'] },
+};
+const PASSOS = [
+  { id: 'servico', t: 'Escolha o serviço' },
+  { id: 'dados', t: 'Seus dados' },
+  { id: 'docs', t: 'Documentos' },
+  { id: 'agenda', t: 'Agendamento' },
+  { id: 'pronto', t: 'Pronto' },
+];
+const ESTADOS = [['recebido', 'Recebido pelo CRAS'], ['analise', 'Em análise pela equipe'], ['pendente', 'Aguardando documento'], ['agendado', 'Atendimento agendado'], ['concluido', 'Concluído']];
+const FAQ = [
+  ['Preciso ir ao CRAS para começar?', 'Não. Você pode enviar os documentos e agendar por aqui. A ida ao CRAS acontece só quando o serviço exigir sua presença — e você chega sabendo o que levar.'],
+  ['É seguro mandar documento pelo celular?', 'Sim, desde que seja por um canal oficial como este. O CRAS nunca pede senha, código do cartão nem pagamento. Se alguém pedir, é golpe.'],
+  ['E se faltar um documento?', 'O pedido fica com status “aguardando documento” e você é avisado. Nada se perde: é só anexar o que faltou e o pedido volta a andar.'],
+  ['Quanto tempo demora?', 'Cada serviço tem um prazo estimado, mostrado na hora que você escolhe. Casos de violência e risco são atendidos com prioridade.'],
+  ['Meus dados ficam guardados por quanto tempo?', 'Só pelo tempo necessário ao atendimento. Você pode apagar seus dados a qualquer momento na aba Dúvidas.'],
+  ['Não consigo usar o celular. E agora?', 'Você pode ir ao CRAS ou pedir ajuda pelo WhatsApp oficial. Este app é uma facilidade, não uma obrigação.'],
+];
+
+/* ---------- estado ---------- */
+const CH = 'crasonline:v1';
+const semente = () => ({ gov: null, pedidos: [], rascunho: { servico: null, docs: {} }, protocolo: null });
+let S; try { S = JSON.parse(localStorage.getItem(CH)); } catch (e) {} if (!S) S = semente();
+const salvar = () => localStorage.setItem(CH, JSON.stringify(S)); salvar();
+const agora = () => new Date().toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+const novoCodigo = () => { const n = S.pedidos.length + 1; return 'G4-' + new Date().getFullYear() + '-' + String(n).padStart(4, '0'); };
+const acharPedido = cod => S.pedidos.find(p => p.cod === String(cod || '').trim().toUpperCase());
+
+/* ---------- assistente ---------- */
+let passo = 0;
+function servicoAtual() { return SERVICOS[S.rascunho.servico]; }
+function telaPedido() {
+  const p = PASSOS[passo];
+  $('#t-pedido').innerHTML = `<div class="passos">${PASSOS.map((x, i) => `<span class="${i === passo ? 'atual' : i < passo ? 'feito' : ''}">${i + 1}. ${x.t}</span>`).join('')}</div>
+    <h2>${p.t}</h2>${renderPasso(p.id)}
+    <div class="fila">
+      ${passo > 0 && passo < 4 ? '<button class="btn sec" id="voltar">‹ Voltar</button>' : ''}
+      ${passo < 3 ? `<button class="btn" id="avancar">Continuar ›</button>` : passo === 3 ? `<button class="btn" id="concluir">Enviar pedido</button>` : '<a class="btn" href="#/servicos">Fazer outro pedido</a>'}
+    </div>`;
+}
+function renderPasso(id) {
+  if (id === 'servico') return `<p class="sub">Toque no serviço que você precisa.</p>` + Object.entries(SERVICOS).map(([k, s]) =>
+    `<button class="servico" data-serv="${k}" style="border-left-color:${S.rascunho.servico === k ? 'var(--verde)' : 'var(--azul)'}">
+      <span class="ic">${s.ic}</span><span><b>${esc(s.n)}</b><small>${esc(s.desc)} · prazo ${s.prazo}</small></span>
+      <span class="seta">${S.rascunho.servico === k ? '✓' : '›'}</span></button>`).join('');
+  if (id === 'dados') return `<div class="campo"><label for="d-nome">Nome completo</label><input class="in" id="d-nome" value="${esc(S.rascunho.nome || '')}" placeholder="Como no documento"></div>
+    <div class="campo"><label for="d-cpf">CPF</label><input class="in" id="d-cpf" inputmode="numeric" value="${esc(S.rascunho.cpf || '')}" placeholder="000.000.000-00"></div>
+    <div class="campo"><label for="d-fone">WhatsApp (com DDD)</label><input class="in" id="d-fone" inputmode="tel" value="${esc(S.rascunho.fone || '')}" placeholder="(65) 9 9999-9999"></div>
+    <button class="btn sec peq" id="gov-br">${S.gov ? '✓ Conectado ao gov.br' : '🔐 Entrar com gov.br (opcional)'}</button>
+    <p class="sub" style="margin-top:8px">O gov.br confirma que é você. Se preferir, pode seguir sem ele — o atendimento não é negado por isso.</p>`;
+  if (id === 'docs') { const s = servicoAtual(); if (!s) return '<p class="sub">Volte e escolha um serviço.</p>';
+    return `<p class="sub">Anexe uma foto de cada documento. Pode continuar e enviar o que falta depois.</p>` + s.docs.map((d, i) => {
+      const anexo = S.rascunho.docs[i];
+      return `<div class="doc ${anexo ? 'ok' : ''}"><span class="est">${anexo ? '✓' : '📄'}</span>
+        <span class="quem"><b>${esc(d)}</b><small>${anexo ? esc(anexo.nome) + ' · ' + anexo.tam : 'nenhum arquivo anexado'}</small></span>
+        <span class="acoes"><label class="btn sec peq" style="margin:0">${anexo ? 'Trocar' : 'Anexar'}<input type="file" accept="image/*,.pdf" data-anexo="${i}" hidden></label>${anexo ? `<button class="btn perigo peq" data-rem-anexo="${i}">Remover</button>` : ''}</span></div>`; }).join(''); }
+  if (id === 'agenda') { const s = servicoAtual(); if (!s) return '<p class="sub">Volte e escolha um serviço.</p>';
+    if (!s.presencial) return `<div class="aviso-oficial" style="background:var(--azul3);border-color:var(--azul);color:var(--azul2)">💬 <span>Este serviço costuma ser resolvido <b>sem ir ao CRAS</b>. A equipe entra em contato pelo WhatsApp.</span></div>
+      <div class="cartao"><b>Próximo passo</b><p class="sub" style="margin:6px 0 0">Ao enviar, seu pedido entra na fila de análise. Você recebe a resposta no WhatsApp informado.</p></div>`;
+    const dias = proximosDias(3);
+    return `<p class="sub">Escolha um dia e um horário. Se preferir, marque “sem preferência” e a equipe encaixa você.</p>
+      <div id="dias" class="fila">${dias.map(d => `<button class="btn ${S.rascunho.dia === d.iso ? '' : 'sec'} peq" data-dia="${d.iso}">${d.rot}</button>`).join('')}<button class="btn ${S.rascunho.dia === 'qualquer' ? '' : 'sec'} peq" data-dia="qualquer">Sem preferência</button></div>
+      <div id="horas" class="fila">${['08:00', '09:30', '11:00', '14:00', '15:30'].map(h => `<button class="btn ${S.rascunho.hora === h ? '' : 'sec'} peq" data-hora="${h}">${h}</button>`).join('')}</div>
+      <div class="cartao" style="margin-top:12px"><h3>O que levar no dia</h3><ul style="margin:6px 0 0 18px;color:var(--mudo);font-size:14.5px;line-height:1.7">${s.docs.map(d => `<li>${esc(d)}</li>`).join('')}<li>Este app aberto no protocolo</li></ul></div>`; }
+  if (id === 'pronto') { const p = acharPedido(S.protocolo) || (S.pedidos[0]); return p ? cartaoProtocolo(p, true) : '<p class="sub">Nenhum pedido encontrado.</p>'; }
+  return '';
+}
+function proximosDias(n) { const out = [], d = new Date(); while (out.length < n) { d.setDate(d.getDate() + 1); if (d.getDay() % 6) out.push({ iso: d.toISOString().slice(0, 10), rot: d.toLocaleDateString('pt-BR', { weekday: 'short', day: '2-digit', month: '2-digit' }) }); } return out; }
+function cartaoProtocolo(p, grande) {
+  const etapa = ESTADOS.findIndex(e => e[0] === p.status);
+  return `<div class="protocolo"><small>PROTOCOLO DO PEDIDO</small><div class="cod">${esc(p.cod)}</div>
+    <div class="lin">${esc(SERVICOS[p.servico].n)}</div><div class="lin">Aberto em ${esc(p.aberto)}</div></div>
+    ${grande ? '<p class="sub">Guarde este código. É por ele que você acompanha o pedido.</p>' : ''}
+    <ol class="linha-tempo">${ESTADOS.map(([k, rot], i) => { const ativo = i <= etapa && !(p.status === 'pendente' && i > 0); if (k === 'pendente' && p.status !== 'pendente') return ''; if (k === 'agendado' && !p.agenda && p.status !== 'agendado') return '';
+      return `<li class="${i < etapa ? 'ok' : i === etapa ? 'atual' : ''}"><span class="pt">${i < etapa ? '✓' : i + 1}</span><span><b>${esc(rot)}</b><small>${i === etapa ? 'etapa atual' : ''}${k === 'agendado' && p.agenda ? (p.agenda === 'qualquer' ? 'sem preferência' : new Date(p.agenda + 'T12:00').toLocaleDateString('pt-BR')) + (p.hora ? ' às ' + p.hora : '') : ''}</small></span></li>`; }).join('')}</ol>
+    ${p.falta && p.status === 'pendente' ? `<div class="cartao"><b>Falta anexar:</b><ul style="margin:6px 0 0 18px;color:var(--mudo);font-size:14.5px">${p.falta.map(f => `<li>${esc(f)}</li>`).join('')}</ul><div class="fila"><button class="btn sec peq" data-anexar="${p.cod}">Anexar agora</button></div></div>` : ''}
+    <div class="fila"><a class="btn sec" target="_blank" rel="noopener" href="https://wa.me/${ZAP}?text=${encodeURIComponent('Meu protocolo CRAS: ' + p.cod)}">💬 Enviar protocolo no WhatsApp</a></div>`;
+}
+
+/* ---------- telas ---------- */
+function telaServicos() {
+  $('#lista-servicos').innerHTML = Object.entries(SERVICOS).map(([k, s]) => `<button class="servico" data-iniciar="${k}">
+    <span class="ic">${s.ic}</span><span><b>${esc(s.n)}</b><small>${esc(s.desc)}</small></span><span class="seta">›</span></button>`).join('');
+  $('#gov-id').textContent = S.gov ? 'conectado: ' + esc(S.gov) : 'acesso não identificado';
+}
+function telaProtocolo() {
+  const p = acharPedido(S.protocolo);
+  $('#res-prot').innerHTML = p ? cartaoProtocolo(p) : '';
+  $('#meus-pedidos').innerHTML = S.pedidos.length ? S.pedidos.map(x => `<button class="servico" data-ver="${x.cod}" style="border-left-color:${x.status === 'concluido' ? 'var(--verde)' : x.status === 'pendente' ? 'var(--amarelo)' : 'var(--azul)'}">
+      <span class="ic">${SERVICOS[x.servico].ic}</span><span><b>${esc(SERVICOS[x.servico].n)}</b><small>${esc(x.cod)} · ${esc(ESTADOS.find(e => e[0] === x.status)[1])}</small></span><span class="seta">›</span></button>`).join('') : '<p class="sub">Você ainda não fez nenhum pedido.</p>';
+}
+function telaDuvidas() { $('#faq').innerHTML = FAQ.map(([q, a]) => `<details class="faq"><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join(''); }
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,a'); if (!b) return;
+  if (b.dataset.iniciar) { S.rascunho = { servico: b.dataset.iniciar, docs: {}, nome: S.rascunho.nome, cpf: S.rascunho.cpf, fone: S.rascunho.fone }; passo = 1; salvar(); location.hash = '#/pedido'; return; }
+  if (b.dataset.serv) { S.rascunho.servico = b.dataset.serv; S.rascunho.docs = {}; salvar(); telaPedido(); return; }
+  if (b.id === 'gov-br') { S.gov = S.rascunho.nome || 'cidadão(a)'; salvar(); brinde('Conexão gov.br simulada neste protótipo.'); telaPedido(); return; }
+  if (b.id === 'voltar') { passo = Math.max(0, passo - 1); telaPedido(); return; }
+  if (b.id === 'avancar') { if (validar(passo)) { passo++; telaPedido(); } return; }
+  if (b.id === 'concluir') { concluir(); return; }
+  if (b.dataset.dia) { S.rascunho.dia = b.dataset.dia; salvar(); telaPedido(); return; }
+  if (b.dataset.hora) { S.rascunho.hora = b.dataset.hora; salvar(); telaPedido(); return; }
+  if (b.dataset.remAnexo) { delete S.rascunho.docs[b.dataset.remAnexo]; salvar(); telaPedido(); return; }
+  if (b.dataset.anexar) { const p = acharPedido(b.dataset.anexar); if (p) { p.falta = []; p.status = 'analise'; p.eventos = [...(p.eventos || []), { q: agora(), t: 'Documentos complementares anexados' }]; salvar(); S.protocolo = p.cod; telaProtocolo(); brinde('Documentos anexados. Pedido voltou para análise.'); } return; }
+  if (b.id === 'consultar') { const cod = $('#busca-prot').value; const p = acharPedido(cod); if (!p) return brinde('Protocolo não encontrado. Confira o código.'); S.protocolo = p.cod; salvar(); telaProtocolo(); return; }
+  if (b.dataset.ver) { S.protocolo = b.dataset.ver; salvar(); telaProtocolo(); scrollTo(0, 0); return; }
+  if (b.id === 'zerar') { if (confirm('Apagar todos os pedidos e dados deste aparelho?')) { S = semente(); salvar(); passo = 0; rota(); brinde('Dados apagados.'); } return; }
+  if (b.id === 'exportar') { Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'crasonline', dados: S })], { type: 'application/json' })), download: 'cras-online.json' }).click(); return; }
+  if (b.id === 'importar') { const i = Object.assign(document.createElement('input'), { type: 'file', accept: '.json' }); i.onchange = async () => { try { const j = JSON.parse(await i.files[0].text()); if (j.app !== 'crasonline') throw 0; S = j.dados; salvar(); rota(); } catch (x) { brinde('Arquivo inválido.'); } }; i.click(); return; }
+  if (b.id === 'ouvir') { ouvir(); return; }
+});
+document.addEventListener('input', e => { const k = { 'd-nome': 'nome', 'd-cpf': 'cpf', 'd-fone': 'fone' }[e.target.id]; if (k) { S.rascunho[k] = e.target.value; salvar(); } });
+document.addEventListener('change', e => { const i = e.target.dataset.anexo; if (i == null) return; const f = e.target.files[0]; if (!f) return;
+  S.rascunho.docs[i] = { nome: f.name, tam: (f.size / 1024).toFixed(0) + ' KB', tipo: f.type }; salvar(); telaPedido(); brinde('Documento anexado (só o selo fica no aparelho).'); });
+function validar(p) {
+  if (p === 1) { if (!S.rascunho.servico) { brinde('Escolha um serviço para continuar.'); return false; } return true; }
+  if (p === 2) { if (!S.rascunho.nome || !S.rascunho.nome.trim()) { brinde('Informe seu nome.'); return false; } if (!S.rascunho.fone || S.rascunho.fone.replace(/\D/g, '').length < 10) { brinde('Informe um WhatsApp com DDD.'); return false; } return true; }
+  if (p === 3) { const s = servicoAtual(), anexados = Object.keys(S.rascunho.docs).length; if (anexados === 0) { /* permite seguir e complementar depois */ return true; } return true; }
+  return true;
+}
+function concluir() {
+  const s = servicoAtual(); if (!s) { brinde('Escolha um serviço.'); return passo = 1, telaPedido(); }
+  const anexados = Object.keys(S.rascunho.docs).length, total = s.docs.length, falta = s.docs.filter((_, i) => !S.rascunho.docs[i]);
+  const status = falta.length ? 'pendente' : (s.presencial && S.rascunho.dia ? 'agendado' : 'analise');
+  const p = { cod: novoCodigo(), servico: S.rascunho.servico, nome: R(S.rascunho.nome), cpf: R(S.rascunho.cpf), fone: R(S.rascunho.fone),
+    aberto: agora(), status, agenda: S.rascunho.dia || null, hora: S.rascunho.hora || null, falta, anexos: anexados, total,
+    eventos: [{ q: agora(), t: 'Pedido recebido pelo canal oficial' }] };
+  S.pedidos.unshift(p); S.protocolo = p.cod; salvar(); passo = 4; telaPedido();
+  brinde(falta.length ? 'Pedido aberto. Faltam ' + falta.length + ' documento(s).' : 'Pedido enviado ao CRAS.');
+}
+function ouvir() {
+  if (!('speechSynthesis' in window)) return brinde('Seu navegador não tem leitura em voz alta.');
+  const ativo = $('.tela.on'); speechSynthesis.cancel();
+  const t = ativo ? ativo.innerText.slice(0, 600) : 'CRAS Online';
+  const u = new SpeechSynthesisUtterance(t); u.lang = 'pt-BR'; u.rate = .95; speechSynthesis.speak(u); brinde('Lendo a tela em voz alta.');
+}
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/servicos', '#/pedido', '#/protocolo', '#/duvidas'];
+const TELAS = { servicos: telaServicos, pedido: telaPedido, protocolo: telaProtocolo, duvidas: telaDuvidas };
+function rota() {
+  const n = (location.hash.match(/^#\/(\w+)/) || [])[1], nome = TELAS[n] ? n : 'servicos';
+  if (nome === 'pedido' && !S.rascunho.servico && passo === 0) passo = 0;
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + nome));
+  $$('.faixa-final a').forEach(a => a.getAttribute('href') === '#/' + nome ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  TELAS[nome](); scrollTo(0, 0);
+}
+addEventListener('hashchange', rota); rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

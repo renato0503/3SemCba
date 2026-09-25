@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1e1b4b">
+<title>Dados Públicos — Grupo 6 · AdmCBA</title>
+<meta name="description" content="Dados Públicos: traduz dados oficiais em linguagem clara, comparável e neutra para o cidadão decidir melhor. Grupo 6 · AdmCBA.">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g6.svg">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Landing do Dados Públicos · jornalismo de dados: papel claro, tinta naval, lima de gráfico e um comparador lado a lado */
+:root{--tinta:#1e1b4b;--tinta2:#312e81;--lima:#a3e635;--lima2:#65a30d;--txt:#161625;--mudo:#5b5f78;--linha:#e2e1ef;--fundo:#f7f7fb;--aviso:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--fundo);color:var(--txt);line-height:1.6;font-size:17px}
+a{color:var(--tinta2)}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+.faixa{background:var(--tinta);color:#c7d2fe;font-size:12.5px;padding:8px 0}
+.faixa .w{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.faixa b{color:var(--lima);font-family:"JetBrains Mono",monospace}
+.topo{padding:16px 0 4px;max-width:1060px;margin:0 auto}
+.topo .w{display:flex;align-items:center;gap:12px;padding:0}
+.topo img{width:42px;height:42px;border-radius:10px;background:var(--tinta)}.topo a{margin-left:auto;font-weight:600;font-size:14px;text-decoration:none}
+h1{font-family:Archivo;font-weight:900;font-size:clamp(40px,8vw,84px);line-height:.96;letter-spacing:-.03em;color:var(--tinta)}
+h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lima) 62%)}
+.heroi{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:22px 0 30px}
+.heroi>*{min-width:0}
+.lead{font-size:19px;color:var(--mudo);max-width:560px;margin:16px 0 18px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 20px;background:var(--tinta);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;margin:0 8px 8px 0}
+.btn.sec{background:#fff;color:var(--tinta);border:2px solid var(--linha)}
+.fone{width:280px;height:580px;justify-self:center;border:9px solid var(--tinta);border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 24px 50px -24px rgba(30,27,75,.7)}
+.fone iframe{width:375px;height:766px;border:0;transform:scale(.6933);transform-origin:0 0}
+h2{font-family:Archivo;font-weight:800;font-size:28px;color:var(--tinta);margin:46px 0 12px}
+.fluxo{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.etapa{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:16px;border-top:5px solid var(--lima2)}
+.etapa b{display:block;font-family:Archivo;font-size:17px}.etapa p{font-size:15.5px;color:var(--mudo)}
+.comp{background:#fff;border:1px solid var(--linha);border-radius:14px;padding:18px;margin-top:8px}
+.comp .top{display:flex;justify-content:space-between;font-family:"JetBrains Mono";font-weight:700;gap:8px}
+.comp .rot{font-weight:600;font-size:13.5px;color:var(--mudo);margin:10px 0 4px}
+.barra{height:9px;background:var(--linha);border-radius:999px;overflow:hidden;margin-top:5px}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,var(--lima),var(--lima2))}
+.aviso{display:flex;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;color:#78350f;border-radius:10px;padding:12px 14px;font-size:14px;margin-top:12px}
+.mats{background:#fff;border:1px solid var(--linha);border-radius:14px;margin:14px 0 34px;overflow:hidden}
+.mats a{display:flex;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--linha);text-decoration:none;color:var(--txt);min-height:46px;align-items:center}
+.mats a:last-child{border:none}.mats a:hover{background:var(--fundo)}.mats a small{color:var(--mudo)}.mats a b::after{content:" →";color:var(--tinta2)}
+.equipe{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}.equipe span{background:#fff;border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-weight:600}
+footer{background:var(--tinta);color:#c7d2fe;padding:22px 0;margin-top:34px;font-size:14px}
+@media(max-width:760px){.heroi{grid-template-columns:1fr}.mats a small{display:none}}
+</style>
+</head>
+<body>
+<div class="faixa"><div class="w"><span>📊 <b>DADOS FICTÍCIOS DE EXEMPLO</b> · nenhum partido é citado</span><span>extração: 2026-09-20</span></div></div>
+<div class="topo"><div class="w"><img src="../assets/logos/g6.svg" alt=""><b style="font-family:Archivo">Dados Públicos</b><a href="../index.html">Todos os projetos →</a></div></div>
+<div class="w">
+  <section class="heroi">
+    <div><h1>O dado é <em>público</em>. A leitura não era.</h1>
+      <p class="lead">Os dados oficiais existem, mas estão em portais técnicos e numa linguagem que exige especialista. Transformamos isso em ficha simples, resumo em linguagem clara e comparador — sempre com a fonte à vista.</p>
+      <a class="btn" href="app.html">Abrir o app</a><a class="btn sec" href="Slides-DadosPublicos.html">Slides de defesa</a></div>
+    <div class="fone"><iframe src="app.html" title="Dados Públicos em funcionamento" loading="lazy"></iframe></div>
+  </section>
+
+  <h2>Do bruto ao entendível</h2>
+  <div class="fluxo">
+    <div class="etapa"><b>1. Base oficial</b><p>Prestação de contas (TSE), atividade parlamentar e Portal da Transparência — nada é inventado.</p></div>
+    <div class="etapa"><b>2. Tradução</b><p>Cada indicador vira uma frase curta em português do dia a dia, sem adjetivo de valor.</p></div>
+    <div class="etapa"><b>3. Ficha em segundos</b><p>Resumo curto e visual: se não for entendido em segundos, não serve.</p></div>
+    <div class="etapa"><b>4. Comparador</b><p>Dois agentes, os mesmos indicadores, na mesma escala — e a fonte de cada número.</p></div>
+  </div>
+  <div class="comp"><b>Comparação em exemplo</b>
+    <div class="rot">Presença em votações</div><div class="top"><span>79%</span><span>71%</span></div>
+    <div class="barra"><i style="width:79%"></i></div><div class="barra"><i style="width:71%"></i></div>
+    <div class="rot">Projetos apresentados</div><div class="top"><span>33</span><span>41</span></div>
+    <div class="barra"><i style="width:80%"></i></div><div class="barra"><i style="width:100%"></i></div>
+  </div>
+  <div class="aviso">⚠️ <span>O protótipo usa dados fictícios. A regra é traduzir e comparar — <b>nunca opinar sobre mérito político</b> nem citar partidos.</span></div>
+
+  <h2>Materiais do grupo</h2>
+  <nav class="mats">
+    <a href="../assets/md-viewer.html?src=../Grupo6-DadosPublicos/README.md&voltar=./"><b>README do grupo</b><small>integrantes, hipótese e pitch</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo6-DadosPublicos/formulario-app.md&voltar=./"><b>Formulário de campo</b><small>20 perguntas · G6-&lt;nnn&gt;</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo6-DadosPublicos/ContextoApp.md&voltar=./"><b>Contexto do produto</b><small>personas, jornada, KPIs</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo6-DadosPublicos/Pesquisa-Dados.md&voltar=./"><b>Pesquisa e dados</b><small>dados oficiais e artigos</small></a>
+    <a href="Slides-DadosPublicos.pdf"><b>Slides em PDF</b><small>para baixar</small></a>
+    <a href="../index.html#materiais"><b>Materiais da turma</b><small>Partes 1, 2 e 3</small></a>
+  </nav>
+
+  <h2>Equipe</h2>
+  <div class="equipe"><span>Erilin</span><span>Emilly</span><span>Juarez</span><span>Flavia</span></div>
+  <p style="color:var(--mudo)">Orientação: Prof. Pantalião</p>
+</div>
+<footer><div class="w">Grupo 6 · Dados Públicos · Cerrado Tech · UNIFACC · Administração e Gestão Pública (CBA), 2026</div></footer>
+</body>
+</html>

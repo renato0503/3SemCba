@@ -1,0 +1,38 @@
+[
+  {
+    "titulo": "Recommendations for digital inclusion in the use of European digital public services",
+    "ano": 2025,
+    "autores": "Tamara Morte-Nadal; Miguel Ángel Esteban Navarro",
+    "periodico": "Humanities and Social Sciences Communications",
+    "tipo": "article",
+    "doi": "10.1057/s41599-025-04576-7",
+    "citacoes": 26,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1057/s41599-025-04576-7",
+    "areas": [
+      "E-Government and Public Services",
+      "Smart Cities and Technologies",
+      "Innovative Approaches in Technology and Social Development"
+    ],
+    "abstract": "This study examines digital public services within the European Union, focusing on digital inclusion and the barriers preventing widespread e-government adoption. A significant knowledge gap exists in understanding the interaction between citizens and digital public services, particularly for vulnerable groups, and in evaluating the impact of regional and sector-specific factors. The research employs a mixed-methods approach, including a systematic review based on PRISMA methodology, a document analysis of the digital and programs of the European Union and the Member States, 33 semi-structured expert interviews, and a survey targeting Spanish intermediate leaders, to explore digital divides ...",
+    "openalex_id": "https://openalex.org/W4408067630"
+  },
+  {
+    "titulo": "Living in media and the era of regulation: Policy and Internet during a pandemic",
+    "ano": 2021,
+    "autores": "Milica Stilinovic; Jonathon Hutchinson",
+    "periodico": "Policy & Internet",
+    "tipo": "article",
+    "doi": "10.1002/poi3.271",
+    "citacoes": 5,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/poi3.271",
+    "areas": [
+      "Media Influence and Politics",
+      "Misinformation and Its Impacts",
+      "Social Media and Politics"
+    ],
+    "abstract": "We write this editorial from our homes as the greater Sydney region of Australia experiences an extended lockdown due to the increasing risks of the Delta variant of the SARS-CoV-2—coronavirus or Covid-19—on our relatively isolated population. While we are hopeful that, by the time of publishing, the immediate impacts of Covid-19 are significantly reduced, we are confident that several elements, notably within the digital space, will remain. In this strange and new circumstance, where our nonessential businesses have been shut and social gathering has been curtailed, Australians experienced the further intertwining of digital technologies with our lifeworld. According to the Australian Commu...",
+    "openalex_id": "https://openalex.org/W3202003281"
+  }
+]

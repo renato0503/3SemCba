@@ -1,0 +1,73 @@
+[
+  {
+    "titulo": "Special issue: Digital platforms for development",
+    "ano": 2021,
+    "autores": "Brian Nicholson; Petter Nielsen; Johan Ivar Sæbø",
+    "periodico": "Information Systems Journal",
+    "tipo": "article",
+    "doi": "10.1111/isj.12364",
+    "citacoes": 34,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/isj.12364",
+    "areas": [
+      "Digital Platforms and Economics",
+      "FinTech, Crowdfunding, Digital Finance",
+      "Sharing Economy and Platforms"
+    ],
+    "abstract": "Digital platforms are the hot topic in research and practice today and are now an area of multidisciplinary research in its own right, involving economics, accounting, entrepreneurship, management and beyond. It is also a core subject in Information Systems (IS), research comprising tracks in all major IS conferences and the topic of multiple special issues (e.g., Constantinides et al., 2018) with another currently ongoing in this journal focussing on \"Digital Platforms and Ecosystems\". The now mainstream research on digital platforms reflects the significance of the platform economy. Cusumano et al. (2020) points out that the top-ranked companies by market capitalization are Apple, Microsof...",
+    "openalex_id": "https://openalex.org/W3195863551"
+  },
+  {
+    "titulo": "Privacy, personal data protection, and freedom of expression under quarantine? The Peruvian experience",
+    "ano": 2021,
+    "autores": "Andrés Calderón; Susana Gonzáles; Alejandra Ruíz",
+    "periodico": "International Data Privacy Law",
+    "tipo": "article",
+    "doi": "10.1093/idpl/ipab003",
+    "citacoes": 4,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1093/idpl/ipab003",
+    "areas": [
+      "COVID-19 Digital Contact Tracing",
+      "Legal and Policy Issues"
+    ],
+    "abstract": "In this article, the authors make a quantitative and qualitative study of all the Executive regulations issued during the State of Emergency in Peru, that may have impacted the fundamental rights of privacy, personal data protection, and freedom of expression. Peru represents an emblematic case study. It adopted one of the earliest, lengthiest and most severe lockdowns in the world, together with numerous regulations that restricted their citizens' civil liberties. Unlike other jurisdictions, the implemented measures in Peru did not focus solely on more controversial and technological activities such as mass surveillance, face recognition, and contact tracing mobile applications. Rather, mas...",
+    "openalex_id": "https://openalex.org/W3128337825"
+  },
+  {
+    "titulo": "Intermediating data rights exercises: the role of legal mandates",
+    "ano": 2022,
+    "autores": "Αλεξάνδρα Γιαννοπούλου; Jef Ausloos; Sylvie Delacroix; Heleen Janssen",
+    "periodico": "International Data Privacy Law",
+    "tipo": "article",
+    "doi": "10.1093/idpl/ipac017",
+    "citacoes": 11,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/idpl/article-pdf/12/4/316/47703261/ipac017.pdf",
+    "areas": [
+      "Privacy, Security, and Data Protection",
+      "European Criminal Justice and Data Protection",
+      "Government, Law, and Information Management"
+    ],
+    "abstract": "Data subject rights constitute critical tools for empowerment in the digitized society. There is a growing trend of relying on third parties to facilitate or coordinate the collective exercises of data rights, on behalf of one or more data subjects. This contribution refers to these parties as ‘Data Rights Intermediaries’ (DRIs), ie where an ‘intermediating’ party facilitates or enables the collective exercise of data rights. The exercise of data rights by these DRIs on behalf of the data subjects can only be effectuated with the help of mandates. Data rights mandates are not expressly framed in the GDPR their delineation can be ambiguous. It is important to highlight that data rights are ma...",
+    "openalex_id": "https://openalex.org/W4306643603"
+  },
+  {
+    "titulo": "Blockchain-based solution for addressing refugee management in the Global South: transparent and accessible resource sharing in humanitarian organizations",
+    "ano": 2025,
+    "autores": "Desale T. Abraha",
+    "periodico": "Frontiers in Human Dynamics",
+    "tipo": "article",
+    "doi": "10.3389/fhumd.2024.1391163",
+    "citacoes": 13,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.3389/fhumd.2024.1391163",
+    "areas": [
+      "Migration, Health and Trauma",
+      "Migration, Refugees, and Integration",
+      "Sex work and related issues"
+    ],
+    "abstract": "NGOs can foster a more inclusive and effective civil society in the Global South by collaborating and amplifying marginalized voices. Nongovernmental organizations (NGOs) must prioritize establishing robust relationships with local communities and advocating for their needs to achieve a favorable outcome. As Sandri (2017) stated in his article, \"Humanitarian aid to refugees in the Jungle refugee camp of Calais necessitates a diverse array of resources,\" including housing, food, healthcare, and education. This justifies the responsibility for humanitarian assistance. A later study estimates that around 117.2 million people will be displaced worldwide by 2024, mainly in countries at risk from ...",
+    "openalex_id": "https://openalex.org/W4407930802"
+  }
+]

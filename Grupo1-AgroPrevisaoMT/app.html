@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#f5efe0">
+<title>AgroPrevisãoMT — o agro cresce, a cidade sente</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g1.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g1-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== AgroPrevisãoMT · boletim de campo: palha, verde-soja, terra e dourado de colheita; mapa em hexágonos ===== */
+:root{--palha:#f5efe0;--palha2:#ebe2cc;--soja:#3f6212;--soja2:#365314;--terra:#92400e;--ouro:#ca8a04;--txt:#292524;--mudo:#78716c;--linha:#d6ccb4;--baixo:#a3c76d;--medio:#eab308;--alto:#ea580c;--critico:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Barlow,system-ui,sans-serif;background:var(--palha);color:var(--txt);min-height:100dvh;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit;color:inherit}
+.cond{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.04em}
+header{display:flex;align-items:center;gap:10px;padding:calc(10px + env(safe-area-inset-top)) 14px 10px;border-bottom:3px solid var(--soja);background:var(--palha)}
+header img{width:36px;height:36px;border-radius:8px}
+header h1{font-family:"Barlow Condensed";font-weight:800;font-size:23px;line-height:1;color:var(--soja2)}
+header small{display:block;font-size:12px;color:var(--mudo)}
+.off{margin-left:auto;font-size:11.5px;font-weight:700;padding:4px 8px;border-radius:4px;background:var(--palha2)}
+main{max-width:620px;margin:0 auto;padding:12px 14px}
+.tela{display:none}.tela.on{display:block}
+h2{font-family:"Barlow Condensed";font-weight:800;font-size:26px;text-transform:uppercase;color:var(--soja2);line-height:1.05;margin:4px 0 8px}
+.dims{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.dims button{flex:0 0 auto;min-height:40px;padding:0 12px;border:2px solid var(--soja);background:transparent;border-radius:4px;font-family:"Barlow Condensed";font-weight:700;font-size:16px;text-transform:uppercase;cursor:pointer}
+.dims button[aria-pressed=true]{background:var(--soja);color:#fff}
+svg.hex{width:100%;display:block}
+svg.hex .h{cursor:pointer;stroke:var(--palha);stroke-width:3;transition:fill .4s}
+svg.hex .h:hover,svg.hex .h:focus{stroke:var(--txt)}
+svg.hex text{pointer-events:none;font-family:"Barlow Condensed";font-weight:700}
+.escala{display:flex;gap:4px;margin:6px 0;font-size:12px}.escala span{flex:1;text-align:center;padding:3px;color:#fff;border-radius:3px;font-weight:700}
+.bloco{background:#fffdf6;border:1px solid var(--linha);border-left:5px solid var(--soja);padding:12px 14px;margin:10px 0}
+.kpi{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.kpi div{background:#fffdf6;border:1px solid var(--linha);padding:10px}
+.kpi b{display:block;font-family:"Barlow Condensed";font-size:30px;line-height:1}.kpi span{font-size:12.5px;color:var(--mudo)}
+.medidor{display:grid;grid-template-columns:110px 1fr 44px;gap:8px;align-items:center;margin:8px 0;font-size:14px}
+.medidor .tr{height:14px;background:var(--palha2);border-radius:2px;overflow:hidden}.medidor .tr i{display:block;height:100%;transition:width .5s}
+.selo{display:inline-flex;gap:6px;align-items:center;font-size:12px;font-weight:700;padding:3px 8px;border:1.5px solid;border-radius:3px}
+.selo.real{color:var(--soja);border-color:var(--soja)}.selo.ilustr{color:var(--terra);border-color:var(--terra)}
+.alerta{display:flex;gap:10px;padding:10px 12px;margin:8px 0;background:#fffdf6;border:1px solid var(--linha);border-left:5px solid var(--alto)}
+.alerta.critico{border-left-color:var(--critico)}
+.alerta b{font-family:"Barlow Condensed";font-size:18px;text-transform:uppercase}
+.campo{margin:12px 0}.campo label{display:flex;justify-content:space-between;font-weight:700;font-size:14px}.campo output{color:var(--terra);font-family:"Barlow Condensed";font-size:20px}
+input[type=range]{width:100%;accent-color:var(--soja);height:30px}
+.btn{min-height:46px;border:none;border-radius:4px;background:var(--soja);color:#fff;font-family:"Barlow Condensed";font-weight:700;font-size:17px;text-transform:uppercase;padding:0 16px;cursor:pointer}
+.btn.sec{background:transparent;color:var(--soja2);border:2px solid var(--soja)}.btn.peq{min-height:38px;font-size:15px;padding:0 10px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.fila>*{flex:1 1 auto}
+.voto{display:flex;gap:4px}.voto button{flex:1;min-height:44px;border:2px solid var(--linha);background:#fffdf6;border-radius:4px;font-weight:700;cursor:pointer}
+.voto button[aria-pressed=true]{background:var(--terra);border-color:var(--terra);color:#fff}
+.fonte{padding:10px 0;border-bottom:1px dashed var(--linha);font-size:14.5px}
+.tag{font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--palha2)}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:var(--soja2);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#d9f99d;text-decoration:none;font-family:"Barlow Condensed";font-weight:700;font-size:14px;text-transform:uppercase;padding:8px 0;min-height:58px;opacity:.75}
+nav.baixo a span{font-size:19px}
+nav.baixo a[aria-current=page]{opacity:1;color:#fff;box-shadow:inset 0 3px 0 var(--ouro)}
+#brinde{position:fixed;left:50%;top:14px;transform:translateX(-50%);background:var(--soja2);color:#fff;padding:10px 16px;border-radius:4px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
+</style>
+</head>
+<body>
+<header><img src="../assets/logos/g1.svg" alt=""><div><h1>AgroPrevisãoMT</h1><small>o agro cresce · a cidade sente</small></div><span class="off" id="rede">● online</span></header>
+<main>
+  <section class="tela" id="t-mapa">
+    <h2 id="mapa-tit">Pressão em Mato Grosso</h2>
+    <div class="dims" id="dims" role="group" aria-label="Dimensão"></div>
+    <svg class="hex" id="hex" viewBox="0 0 410 290" role="group" aria-label="Mapa em hexágonos das regiões do agro"></svg>
+    <div class="escala"><span style="background:var(--baixo)">baixa</span><span style="background:var(--medio)">moderada</span><span style="background:var(--alto)">alta</span><span style="background:var(--critico)">crítica</span></div>
+    <div class="bloco" id="resumo"></div>
+    <p style="font-size:12.5px;color:var(--mudo)"><span class="selo ilustr">ÍNDICE ILUSTRATIVO</span> Os índices de pressão são exemplos para o protótipo; o crescimento populacional marcado como <span class="selo real">DADO REAL</span> vem do Censo 2022.</p>
+  </section>
+
+  <section class="tela" id="t-regiao"></section>
+
+  <section class="tela" id="t-cenario">
+    <h2>E se a safra crescer?</h2>
+    <p>Mova os controles e veja como a pressão sobre a cidade mudaria. Modelo simples de sensibilidade, para conversar — não é previsão oficial.</p>
+    <div class="campo"><label for="c-safra">Crescimento da safra <output id="o-safra"></output></label><input type="range" id="c-safra" min="-20" max="40" step="5"></div>
+    <div class="campo"><label for="c-emp">Novas agroindústrias na região <output id="o-emp"></output></label><input type="range" id="c-emp" min="0" max="5"></div>
+    <label class="fonte" style="display:flex;gap:10px;align-items:center;border:none;cursor:pointer"><input type="checkbox" id="c-br" style="width:22px;height:22px;accent-color:var(--soja)"> Duplicação da BR-163 concluída (menos pressão em transporte no eixo norte)</label>
+    <div class="bloco" id="cen-res"></div>
+    <div class="fila"><button class="btn sec" id="cen-zerar">Voltar ao cenário atual</button></div>
+  </section>
+
+  <section class="tela" id="t-alertas">
+    <h2>Alertas de curto prazo</h2>
+    <p style="font-size:14px;color:var(--mudo)">Gerados quando uma dimensão passa de 70 no cenário escolhido. Fique de olho nas cidades que você acompanha.</p>
+    <div id="alertas"></div>
+    <h2 style="margin-top:18px">Fontes e confiança</h2>
+    <div id="fontes"></div>
+    <div class="fila"><button class="btn sec peq" id="exportar">Exportar minhas avaliações</button><button class="btn sec peq" id="zerar">Apagar dados</button></div>
+    <p style="font-size:12px;color:var(--mudo);margin-top:10px">AgroPrevisãoMT · Grupo 1 · AdmCBA · UNIFACC</p>
+  </section>
+</main>
+<nav class="baixo" aria-label="Seções"><a href="#/mapa"><span>⬢</span>Mapa</a><a href="#/regiao/sinop"><span>📍</span>Região</a><a href="#/cenario"><span>🎚️</span>Cenário</a><a href="#/alertas"><span>🔔</span>Alertas</a></nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção do AgroPrevisãoMT: store com assinaturas (pub/sub) e seletores
+   memorizados. O estado guarda só as entradas (cenário, dimensão, região,
+   avaliações); índices, alertas e textos são derivados por seletores puros que
+   só recalculam quando as entradas mudam. As telas assinam o store.
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2200); };
+
+const DIMS = { emprego: ['Emprego', '👷'], moradia: ['Moradia', '🏠'], transporte: ['Transporte', '🚚'], servicos: ['Serviços públicos', '🏥'] };
+// q,r = posição no mapa de hexágonos (aprox. geográfica); p = pressão-base ilustrativa; e = sensibilidade à safra; cres = dado real (Censo 2022 via Sedec)
+const REG = [
+  { id: 'sapezal', n: 'Sapezal', q: 0, r: 1, p: { emprego: 62, moradia: 58, transporte: 55, servicos: 50 }, e: 1.1 },
+  { id: 'cnp', n: 'C. Novo do Parecis', q: 1, r: 1, p: { emprego: 58, moradia: 55, transporte: 60, servicos: 52 }, e: 1.0 },
+  { id: 'sinop', n: 'Sinop', q: 3, r: 0, p: { emprego: 66, moradia: 74, transporte: 68, servicos: 64 }, e: 1.2, cres: '+73,3%' },
+  { id: 'lucas', n: 'Lucas do Rio Verde', q: 2, r: 1, p: { emprego: 70, moradia: 72, transporte: 62, servicos: 61 }, e: 1.25, cres: '+83,9%' },
+  { id: 'sorriso', n: 'Sorriso', q: 3, r: 1, p: { emprego: 68, moradia: 70, transporte: 64, servicos: 60 }, e: 1.2 },
+  { id: 'querencia', n: 'Querência', q: 5, r: 1, p: { emprego: 60, moradia: 66, transporte: 58, servicos: 69 }, e: 1.3, cres: '+105%' },
+  { id: 'mutum', n: 'Nova Mutum', q: 2, r: 2, p: { emprego: 64, moradia: 65, transporte: 57, servicos: 58 }, e: 1.15, cres: '+75,9%' },
+  { id: 'tangara', n: 'Tangará da Serra', q: 1, r: 2, p: { emprego: 48, moradia: 50, transporte: 46, servicos: 52 }, e: .8 },
+  { id: 'aguaboa', n: 'Água Boa', q: 5, r: 2, p: { emprego: 50, moradia: 48, transporte: 52, servicos: 55 }, e: .9 },
+  { id: 'cuiaba', n: 'Cuiabá', q: 2, r: 3, p: { emprego: 45, moradia: 62, transporte: 66, servicos: 60 }, e: .5 },
+  { id: 'primavera', n: 'Primavera do Leste', q: 4, r: 3, p: { emprego: 60, moradia: 57, transporte: 55, servicos: 54 }, e: 1.05 },
+  { id: 'rondon', n: 'Rondonópolis', q: 3, r: 4, p: { emprego: 58, moradia: 60, transporte: 72, servicos: 58 }, e: 1.0 },
+];
+const EIXO_BR163 = ['sinop', 'lucas', 'sorriso', 'mutum', 'cuiaba', 'rondon'];
+const EXPLICA = {
+  emprego: ['Oferta de vagas equilibrada com a mão de obra local.', 'Mais vagas que trabalhadores em algumas funções; atenção à qualificação.', 'Falta de mão de obra: empresas disputam trabalhadores e trazem gente de fora.', 'Escassez forte de mão de obra; migração acelerada e rotatividade alta.'],
+  moradia: ['Aluguel e oferta de casas acompanham a população.', 'Aluguel subindo mais que a renda; novos loteamentos em estudo.', 'Falta moradia para quem chega; aluguel pesa e surgem ocupações.', 'Déficit habitacional agudo: trabalhadores de serviços essenciais não conseguem morar na cidade.'],
+  transporte: ['Rodovias e transporte urbano dão conta do fluxo.', 'Filas de caminhões nos picos de safra.', 'Rodovias saturadas na colheita; mais acidentes e atrasos no escoamento.', 'Gargalo logístico: congestionamento permanente e custo de frete em alta.'],
+  servicos: ['Escolas e saúde com vagas suficientes.', 'Unidades de saúde e escolas começando a lotar.', 'Falta vaga em creche e escola; espera maior na saúde.', 'Serviços públicos colapsando diante do crescimento populacional.'],
+};
+
+/* ---------- store ---------- */
+const CH = 'agroprevisao:v2';
+const inicial = () => ({ dim: 'moradia', regiao: 'sinop', safra: 0, emp: 0, br: false, seguidas: ['sinop', 'lucas'], votos: {} });
+function criarStore(estado) {
+  const ouvintes = new Set();
+  return { get: () => estado, set(patch) { estado = { ...estado, ...(typeof patch === 'function' ? patch(estado) : patch) }; localStorage.setItem(CH, JSON.stringify(estado)); ouvintes.forEach(f => f(estado)); }, assinar: f => (ouvintes.add(f), () => ouvintes.delete(f)) };
+}
+let salvo; try { salvo = JSON.parse(localStorage.getItem(CH)); } catch (e) {}
+const store = criarStore({ ...inicial(), ...(salvo || {}) }); localStorage.setItem(CH, JSON.stringify(store.get()));
+const memo = (f, chaves) => { let ult, res; return s => { const k = chaves(s).join('|'); if (k !== ult) { ult = k; res = f(s); } return res; }; };
+
+/* ---------- seletores ---------- */
+const indices = memo(s => Object.fromEntries(REG.map(r => [r.id, Object.fromEntries(Object.keys(DIMS).map(d => {
+  let v = r.p[d] + s.safra * r.e * (d === 'emprego' ? .9 : d === 'moradia' ? .8 : d === 'transporte' ? .7 : .6) + s.emp * (d === 'emprego' ? 4 : 2.5);
+  if (s.br && d === 'transporte' && EIXO_BR163.includes(r.id)) v -= 12;
+  return [d, Math.max(0, Math.min(100, Math.round(v)))];
+}))])), s => [s.safra, s.emp, s.br]);
+const alertas = memo(s => { const I = indices(s); return REG.flatMap(r => Object.keys(DIMS).filter(d => I[r.id][d] > 70).map(d => ({ r, d, v: I[r.id][d] }))).sort((a, b) => b.v - a.v); }, s => [s.safra, s.emp, s.br]);
+const nivel = v => v < 45 ? 0 : v < 60 ? 1 : v <= 75 ? 2 : 3;
+const HEX = ['#a3c76d', '#eab308', '#ea580c', '#b91c1c'];
+const COR = ['var(--baixo)', 'var(--medio)', 'var(--alto)', 'var(--critico)'], NOME = ['baixa', 'moderada', 'alta', 'crítica'];
+
+/* ---------- telas ---------- */
+function telaMapa(s) {
+  const I = indices(s);
+  $('#dims').innerHTML = Object.entries(DIMS).map(([k, [n, e]]) => `<button data-dim="${k}" aria-pressed="${s.dim === k}">${e} ${n}</button>`).join('');
+  $('#mapa-tit').textContent = `Pressão em ${DIMS[s.dim][0].toLowerCase()}`;
+  const R = 34, W = Math.sqrt(3) * R, pos = r => [30 + W / 2 + r.q * W + (r.r % 2) * W / 2, 40 + r.r * R * 1.5];
+  const hexp = (cx, cy) => Array.from({ length: 6 }, (_, i) => { const a = Math.PI / 180 * (60 * i - 30); return `${cx + R * .96 * Math.cos(a)},${cy + R * .96 * Math.sin(a)}`; }).join(' ');
+  $('#hex').innerHTML = REG.map(r => { const [x, y] = pos(r), v = I[r.id][s.dim], nv = nivel(v);
+    return `<polygon class="h" points="${hexp(x, y)}" fill="${HEX[nv]}" data-reg="${r.id}" tabindex="0" role="button" aria-label="${r.n}: pressão ${NOME[nv]} (${v})"/>
+    <text x="${x}" y="${y - 2}" text-anchor="middle" font-size="9.5" fill="${nv >= 2 ? '#fff' : '#292524'}">${r.n.split(' ').map(p => p.length > 9 ? p.slice(0, 8) + '.' : p).slice(0, 2).join(' ')}</text>
+    <text x="${x}" y="${y + 13}" text-anchor="middle" font-size="15" fill="${nv >= 2 ? '#fff' : '#292524'}">${v}</text>`; }).join('');
+  const top = [...REG].sort((a, b) => I[b.id][s.dim] - I[a.id][s.dim]).slice(0, 3);
+  $('#resumo').innerHTML = `<b class="cond">Maior pressão agora</b><br>${top.map(r => `${r.n} <b>${I[r.id][s.dim]}</b>`).join(' · ')}<br><span style="font-size:14px;color:var(--mudo)">${EXPLICA[s.dim][nivel(I[top[0].id][s.dim])]}</span>`;
+}
+function telaRegiao(s) {
+  const r = REG.find(x => x.id === s.regiao) || REG[0], I = indices(s)[r.id], seg = s.seguidas.includes(r.id), votos = s.votos[r.id] || {};
+  $('#t-regiao').innerHTML = `<h2>📍 ${r.n}</h2>
+    <div class="kpi"><div><b>${r.cres || '—'}</b><span>crescimento da população 2010–2022 ${r.cres ? '<span class="selo real">DADO REAL</span>' : ''}</span></div><div><b>${Math.max(...Object.values(I))}</b><span>maior índice de pressão <span class="selo ilustr">ILUSTRATIVO</span></span></div></div>
+    ${Object.entries(DIMS).map(([d, [n, e]]) => `<div class="medidor"><span>${e} ${n}</span><span class="tr"><i style="width:${I[d]}%;background:${COR[nivel(I[d])]}"></i></span><b>${I[d]}</b></div>`).join('')}
+    ${Object.entries(DIMS).map(([d, [n]]) => `<div class="bloco"><b class="cond">${n} · ${NOME[nivel(I[d])]}</b><p style="font-size:14.5px">${EXPLICA[d][nivel(I[d])]}</p></div>`).join('')}
+    <div class="bloco" style="border-left-color:var(--terra)"><b class="cond">Você sente essa pressão em ${r.n}?</b><p style="font-size:13px;color:var(--mudo)">1 = nada · 5 = muito. Sua resposta fica no aparelho e ajuda a validar o índice.</p>
+      ${Object.entries(DIMS).map(([d, [n]]) => `<p style="font-size:14px;margin-top:8px">${n}</p><div class="voto">${[1, 2, 3, 4, 5].map(v => `<button data-voto="${d}" data-v="${v}" aria-pressed="${votos[d] === v}">${v}</button>`).join('')}</div>`).join('')}</div>
+    <div class="fila"><button class="btn ${seg ? 'sec' : ''}" id="seguir">${seg ? '✓ Acompanhando' : '+ Acompanhar alertas desta cidade'}</button></div>
+    <label class="fonte" for="trocar" style="display:block;border:none">Ver outra região</label><select id="trocar" style="width:100%;min-height:44px;border:2px solid var(--linha);background:#fffdf6;padding:6px">${REG.map(x => `<option value="${x.id}" ${x.id === r.id ? 'selected' : ''}>${x.n}</option>`).join('')}</select>`;
+}
+function telaCenario(s) {
+  $('#c-safra').value = s.safra; $('#o-safra').textContent = (s.safra > 0 ? '+' : '') + s.safra + '%'; $('#c-emp').value = s.emp; $('#o-emp').textContent = s.emp; $('#c-br').checked = s.br;
+  const base = indices(inicial()), I = indices(s), difs = REG.map(r => [r, Object.keys(DIMS).reduce((a, d) => a + I[r.id][d] - base[r.id][d], 0) / 4]).sort((a, b) => b[1] - a[1]);
+  $('#cen-res').innerHTML = `<b class="cond">${alertas(s).length} alertas neste cenário</b><br>` + difs.slice(0, 4).map(([r, d]) => `${r.n}: ${d >= 0 ? '+' : ''}${d.toFixed(1).replace('.', ',')} pontos em média`).join('<br>');
+}
+function telaAlertas(s) {
+  const A = alertas(s), seg = A.filter(a => s.seguidas.includes(a.r.id)), outros = A.filter(a => !s.seguidas.includes(a.r.id));
+  const card = a => `<div class="alerta ${a.v > 80 ? 'critico' : ''}"><span style="font-size:24px">${DIMS[a.d][1]}</span><div><b>${a.r.n} · ${DIMS[a.d][0]} ${a.v}</b><p style="font-size:14px">${EXPLICA[a.d][nivel(a.v)]}</p></div></div>`;
+  $('#alertas').innerHTML = (seg.length ? '<p class="cond" style="font-weight:700">Cidades que você acompanha</p>' + seg.map(card).join('') : '<p style="font-size:14px">Nenhum alerta nas cidades que você acompanha.</p>') + (outros.length ? '<p class="cond" style="font-weight:700;margin-top:10px">Outras regiões</p>' + outros.slice(0, 6).map(card).join('') : '');
+  $('#fontes').innerHTML = [['DADO REAL', 'Crescimento populacional 2010–2022 (Querência +105%, Lucas do Rio Verde +83,9%, Nova Mutum +75,9%, Sinop +73,3%)', 'IBGE, Censo 2022 · Observatório/Sedec-MT'],
+    ['DADO REAL', 'Agronegócio = 56,2% do PIB de Mato Grosso', 'Observatório/Sedec-MT, 2023'], ['DADO REAL', 'Déficit de mais de 100 mil moradias em MT', 'Fundação João Pinheiro (via ALMT)'],
+    ['ILUSTRATIVO', 'Índices de pressão 0–100 e sensibilidade à safra', 'Protótipo do grupo — a calibrar com Caged, Imea, Censo e dados municipais']]
+    .map(([t, d, f]) => `<div class="fonte"><span class="selo ${t === 'DADO REAL' ? 'real' : 'ilustr'}">${t}</span><p>${d}</p><small style="color:var(--mudo)">Fonte: ${f}</small></div>`).join('');
+}
+function desenhar(s) { const n = atual(); ({ mapa: telaMapa, regiao: telaRegiao, cenario: telaCenario, alertas: telaAlertas })[n](s); }
+store.assinar(desenhar);
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,[data-reg]'); if (!b) return;
+  if (b.dataset.dim) store.set({ dim: b.dataset.dim });
+  else if (b.dataset.reg) location.hash = '#/regiao/' + b.dataset.reg;
+  else if (b.dataset.voto) store.set(s => ({ votos: { ...s.votos, [s.regiao]: { ...(s.votos[s.regiao] || {}), [b.dataset.voto]: +b.dataset.v } } }));
+  else if (b.id === 'seguir') { const s = store.get(), seg = s.seguidas.includes(s.regiao); store.set({ seguidas: seg ? s.seguidas.filter(x => x !== s.regiao) : [...s.seguidas, s.regiao] }); brinde(seg ? 'Deixou de acompanhar.' : 'Você receberá os alertas desta cidade.'); }
+  else if (b.id === 'cen-zerar') store.set({ safra: 0, emp: 0, br: false });
+  else if (b.id === 'exportar') Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'agroprevisao', dados: store.get() })], { type: 'application/json' })), download: 'agroprevisao.json' }).click();
+  else if (b.id === 'zerar') { if (confirm('Apagar avaliações e cidades acompanhadas?')) { store.set(inicial()); brinde('Dados apagados.'); } }
+});
+document.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target.dataset && e.target.dataset.reg) { e.preventDefault(); location.hash = '#/regiao/' + e.target.dataset.reg; } });
+document.addEventListener('input', e => { if (e.target.id === 'c-safra') store.set({ safra: +e.target.value }); if (e.target.id === 'c-emp') store.set({ emp: +e.target.value }); });
+document.addEventListener('change', e => { if (e.target.id === 'c-br') store.set({ br: e.target.checked }); if (e.target.id === 'trocar') location.hash = '#/regiao/' + e.target.value; });
+const rede = () => { $('#rede').textContent = navigator.onLine ? '● online' : '○ offline · dados salvos'; }; addEventListener('online', rede); addEventListener('offline', rede); rede();
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/mapa', '#/regiao/sinop', '#/cenario', '#/alertas'];
+const atual = () => { const n = (location.hash.match(/^#\/(\w+)/) || [])[1]; return ['mapa', 'regiao', 'cenario', 'alertas'].includes(n) ? n : 'mapa'; };
+function rota() {
+  const n = atual(), m = location.hash.match(/^#\/regiao\/(\w+)/);
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + n));
+  $$('nav.baixo a').forEach(a => a.getAttribute('href').split('/')[1] === n ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  if (m && REG.some(r => r.id === m[1]) && store.get().regiao !== m[1]) store.set({ regiao: m[1] }); else desenhar(store.get());
+  scrollTo(0, 0);
+}
+addEventListener('hashchange', rota); rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

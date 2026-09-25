@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0b0f19">
+<title>Fila Cidadã — leve o documento certo, na hora certa</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g2.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g2-192.png">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ===== Fila Cidadã · painel de senhas: fundo escuro, dígitos de LED âmbar, cartões como "guichês" ===== */
+:root{--fundo:#0b0f19;--painel:#111827;--painel2:#1f2937;--led:#f59e0b;--led2:#fcd34d;--txt:#e5e7eb;--mudo:#9ca3af;--baixa:#22c55e;--media:#f59e0b;--alta:#ef4444;--linha:#374151}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--fundo);color:var(--txt);min-height:100dvh;padding-bottom:calc(74px + env(safe-area-inset-bottom))}
+button,input,select{font:inherit;color:inherit}
+.led{font-family:DotGothic16,monospace;color:var(--led);text-shadow:0 0 6px rgba(245,158,11,.55)}
+.placa{background:#000;border-bottom:2px solid var(--linha);padding:calc(10px + env(safe-area-inset-top)) 14px 10px;display:flex;align-items:center;gap:10px}
+.placa img{width:36px;height:36px;border-radius:8px}
+.placa .led{font-size:22px;letter-spacing:.06em}
+.relogio{margin-left:auto;font-family:DotGothic16;font-size:20px;color:var(--led2)}
+.letreiro{background:#000;overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--linha);padding:4px 0}
+.letreiro span{display:inline-block;padding-left:100%;animation:corre 26s linear infinite;font-family:DotGothic16;color:var(--led);font-size:14px}
+@keyframes corre{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.letreiro span{animation:none;padding-left:10px}}
+main{max-width:600px;margin:0 auto;padding:12px 14px}
+.tela{display:none}.tela.on{display:block}
+h2{font-family:DotGothic16;font-weight:400;font-size:24px;color:var(--led2);margin:4px 0 10px;letter-spacing:.04em}
+.busca{width:100%;min-height:50px;border-radius:12px;border:2px solid var(--linha);background:var(--painel);padding:0 14px;font-size:16px;margin-bottom:12px}
+.guiche{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--painel);border:1px solid var(--linha);border-radius:14px;padding:12px;margin-bottom:10px;cursor:pointer;text-align:left;width:100%}
+.guiche .ic{width:48px;height:48px;border-radius:12px;background:var(--painel2);display:grid;place-items:center;font-size:24px}
+.guiche b{display:block;font-size:16px}.guiche small{color:var(--mudo)}
+.sinal{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.sinal .led{font-size:22px;line-height:1}
+.nivel{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;padding:2px 8px;border-radius:999px}
+.nivel.baixa{background:rgba(34,197,94,.15);color:var(--baixa)}.nivel.media{background:rgba(245,158,11,.15);color:var(--media)}.nivel.alta{background:rgba(239,68,68,.15);color:var(--alta)}.nivel.fechado{background:var(--painel2);color:var(--mudo)}
+.visor{background:#000;border:2px solid var(--linha);border-radius:14px;padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:center;margin:10px 0}
+.visor div small{display:block;color:var(--mudo);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.visor .led{font-size:34px}
+.card{background:var(--painel);border:1px solid var(--linha);border-radius:14px;padding:14px;margin-bottom:12px}
+.card h3{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--mudo);margin-bottom:8px}
+.doc{display:flex;gap:10px;align-items:center;min-height:46px;border-bottom:1px dashed var(--linha);cursor:pointer}
+.doc:last-child{border:none}
+.doc input{width:22px;height:22px;accent-color:var(--led)}
+.doc.ok span{color:var(--mudo);text-decoration:line-through}
+svg.horas{width:100%;display:block}
+.btn{min-height:48px;border:none;border-radius:12px;background:var(--led);color:#111;font-weight:800;padding:0 14px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;gap:6px}
+.btn.sec{background:transparent;color:var(--txt);border:2px solid var(--linha)}.btn.peq{min-height:40px;font-size:14px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.fila>*{flex:1 1 auto}
+.relatar{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.relatar button{min-height:46px;border-radius:10px;border:2px solid var(--linha);background:var(--painel2);font-weight:800;cursor:pointer}
+.aviso{font-size:12.5px;color:var(--mudo);margin:8px 0}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:#000;border-top:2px solid var(--linha);display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--mudo);text-decoration:none;padding:8px 0;min-height:58px}
+nav.baixo a span{font-size:20px}
+nav.baixo a[aria-current=page]{color:var(--led)}
+#brinde{position:fixed;left:50%;top:12px;transform:translateX(-50%);background:#000;border:2px solid var(--led);color:var(--led);font-family:DotGothic16;padding:10px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--led2);outline-offset:2px}
+</style>
+</head>
+<body>
+<header class="placa"><img src="../assets/logos/g2.svg" alt=""><span class="led">FILA CIDADÃ</span><span class="relogio" id="relogio">--:--</span></header>
+<div class="letreiro" aria-hidden="true"><span id="letreiro">LEVE O DOCUMENTO CERTO · VÁ NO MELHOR HORÁRIO · FILAS E TEMPOS SIMULADOS NESTE PROTÓTIPO</span></div>
+<main>
+  <section class="tela" id="t-servicos">
+    <h2>O QUE VOCÊ PRECISA?</h2>
+    <input class="busca" id="busca" type="search" placeholder="Ex.: RG, CNH, CadÚnico…" aria-label="Buscar serviço">
+    <div id="lista"></div>
+    <p class="aviso">Filas e tempos são simulados a partir de um padrão típico por horário. Na versão real viriam dos órgãos e dos relatos de quem está lá.</p>
+  </section>
+  <section class="tela" id="t-servico"></section>
+  <section class="tela" id="t-salvos">
+    <h2>MINHAS LISTAS</h2>
+    <div id="salvos"></div>
+    <div class="card"><h3>Dados</h3><div class="fila" style="margin-top:0"><button class="btn sec peq" id="exportar">Exportar</button><button class="btn sec peq" id="zerar">Apagar tudo</button></div>
+      <p class="aviso">Fila Cidadã · Grupo 2 · AdmCBA · UNIFACC</p></div>
+  </section>
+</main>
+<nav class="baixo" aria-label="Seções"><a href="#/servicos"><span>🎫</span>Serviços</a><a href="#/servico/rg"><span>📋</span>Checklist</a><a href="#/salvos"><span>⭐</span>Minhas listas</a></nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção da Fila Cidadã: estimador de fila. Cada unidade tem uma curva de
+   chegada por hora (pessoas/h) e uma capacidade de atendimento (guichês × ritmo).
+   A fila acumulada hora a hora dá o tempo estimado de espera; relatos do usuário
+   ("está vazio/cheio agora") ajustam a estimativa da hora corrente.
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2200); };
+
+// perfis de chegada (pessoas por hora, das 7h às 17h) — exemplos
+const PERFIS = { manha: [60, 95, 110, 90, 70, 45, 55, 60, 50, 35, 20], almoco: [30, 45, 55, 60, 75, 90, 70, 50, 40, 30, 15], plano: [40, 50, 55, 55, 50, 45, 45, 45, 40, 35, 25] };
+const UNID = {
+  gtcentro: { n: 'Ganha Tempo — Cuiabá', tipo: 'central de atendimento', perfil: 'manha', cap: 85, abre: 7, fecha: 17 },
+  detran: { n: 'Detran-MT — atendimento', tipo: 'trânsito', perfil: 'manha', cap: 80, abre: 7, fecha: 17 },
+  politec: { n: 'Politec — Identificação', tipo: 'documento de identidade', perfil: 'manha', cap: 80, abre: 7, fecha: 13 },
+  cras: { n: 'CRAS do seu bairro', tipo: 'assistência social', perfil: 'plano', cap: 48, abre: 8, fecha: 17 },
+  sine: { n: 'Sine — Cuiabá', tipo: 'trabalho e emprego', perfil: 'almoco', cap: 65, abre: 7, fecha: 17 },
+  ubs: { n: 'UBS do seu bairro', tipo: 'saúde', perfil: 'manha', cap: 82, abre: 7, fecha: 17 },
+};
+const SERV = {
+  rg: { n: 'Carteira de Identidade (CIN)', ic: '🪪', un: ['gtcentro', 'politec'], link: ['Agendar no canal oficial', 'https://www.politec.mt.gov.br'], docs: ['Certidão de nascimento ou casamento (original)', 'CPF (se já tiver)', 'Comprovante de residência', 'Documento antigo, se for 2ª via'], dica: 'A nova Carteira de Identidade usa o CPF como número único.' },
+  cnh: { n: 'CNH — renovação', ic: '🚗', un: ['detran', 'gtcentro'], link: ['Serviços do Detran-MT', 'https://www.detran.mt.gov.br'], docs: ['CNH atual', 'Documento de identidade com foto', 'Comprovante de residência', 'Guia de pagamento da taxa'], dica: 'O exame médico costuma ser agendado à parte.' },
+  cpf: { n: 'CPF — regularização', ic: '🔢', un: ['gtcentro'], link: ['Receita Federal (gov.br)', 'https://www.gov.br/receitafederal'], docs: ['Documento de identidade com foto', 'Título de eleitor (se tiver)'], dica: 'Muitas situações do CPF se resolvem pela internet, sem fila.' },
+  cadunico: { n: 'Cadastro Único', ic: '🏠', un: ['cras'], link: ['Cadastro Único (gov.br)', 'https://www.gov.br/mds/pt-br/acoes-e-programas/cadastro-unico'], docs: ['CPF ou título de eleitor do responsável', 'Documento de todos os moradores', 'Comprovante de residência', 'Comprovante de renda, se tiver'], dica: 'O responsável familiar deve ter 16 anos ou mais, de preferência mulher.' },
+  seguro: { n: 'Seguro-desemprego', ic: '💼', un: ['sine', 'gtcentro'], link: ['Carteira de Trabalho Digital', 'https://www.gov.br/trabalho-e-emprego'], docs: ['Documento de identidade', 'CPF', 'Termo de rescisão (TRCT)', 'Carteira de Trabalho (digital)'], dica: 'O pedido também pode ser feito pelo app Carteira de Trabalho Digital.' },
+  sus: { n: 'Cartão SUS', ic: '🩺', un: ['ubs'], link: ['Meu SUS Digital', 'https://www.gov.br/saude'], docs: ['Documento de identidade', 'CPF', 'Comprovante de residência'], dica: 'Com CPF, o cadastro no SUS costuma ser feito na hora.' },
+};
+
+/* ---------- estado ---------- */
+const CH = 'filacidada:v1';
+const semente = () => ({ marcados: {}, salvos: ['rg'], relatos: {} });
+let S; try { S = JSON.parse(localStorage.getItem(CH)); } catch (e) {} if (!S) S = semente();
+const salvar = () => localStorage.setItem(CH, JSON.stringify(S)); salvar();
+
+/* ---------- estimador ---------- */
+function curva(uid) { // espera estimada (min) para quem chega em cada hora
+  const u = UNID[uid], chegadas = PERFIS[u.perfil]; let fila = 0; const esp = [];
+  for (let i = 0; i < chegadas.length; i++) { const h = 7 + i;
+    if (h < u.abre || h >= u.fecha) { esp.push(null); fila = 0; continue; }
+    fila = Math.max(0, fila + chegadas[i] - u.cap); esp.push(Math.round(8 + fila / u.cap * 60 + chegadas[i] / u.cap * 12)); }
+  return esp;
+}
+function agora(uid) {
+  const d = new Date(), h = d.getHours() + d.getMinutes() / 60, u = UNID[uid], dia = d.getDay();
+  if (dia === 0 || dia === 6 || h < u.abre || h >= u.fecha) return { fechado: true };
+  let min = curva(uid)[Math.floor(h) - 7] ?? 15;
+  const r = S.relatos[uid]; if (r && Date.now() - r.q < 45 * 6e4) min = Math.round(min * .4 + { baixa: 10, media: 35, alta: 80 }[r.v] * .6);
+  return { min, nivel: min < 25 ? 'baixa' : min < 55 ? 'media' : 'alta', relato: r && Date.now() - r.q < 45 * 6e4 };
+}
+const faixa = m => m < 15 ? 'até 15 min' : m < 30 ? '15–30 min' : m < 60 ? '30–60 min' : m < 90 ? '1h–1h30' : 'mais de 1h30';
+const NIV = { baixa: 'fila baixa', media: 'fila média', alta: 'fila alta' };
+const melhor = uid => { const c = curva(uid); let b = -1; c.forEach((v, i) => { if (v != null && (b < 0 || v < c[b])) b = i; }); return b < 0 ? null : 7 + b; };
+
+/* ---------- telas ---------- */
+function telaServicos() {
+  const q = ($('#busca').value || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  $('#lista').innerHTML = Object.entries(SERV).filter(([k, s]) => !q || (s.n + ' ' + k).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().includes(q)).map(([k, s]) => {
+    const a = agora(s.un[0]);
+    return `<button class="guiche" data-serv="${k}"><span class="ic">${s.ic}</span><span><b>${esc(s.n)}</b><small>${s.docs.length} documentos · ${esc(UNID[s.un[0]].n)}</small></span>
+      <span class="sinal">${a.fechado ? '<span class="nivel fechado">fechado</span>' : `<span class="led">${a.min}′</span><span class="nivel ${a.nivel}">${NIV[a.nivel]}</span>`}</span></button>`; }).join('') || '<p class="aviso">Nenhum serviço encontrado.</p>';
+}
+function telaServico(k) {
+  const s = SERV[k] || SERV.rg; k = SERV[k] ? k : 'rg'; const m = S.marcados[k] || {}, ok = s.docs.filter((_, i) => m[i]).length;
+  $('#t-servico').innerHTML = `<h2>${s.ic} ${esc(s.n.toUpperCase())}</h2>
+    <div class="card"><h3>Checklist · ${ok}/${s.docs.length}</h3>${s.docs.map((d, i) => `<label class="doc ${m[i] ? 'ok' : ''}"><input type="checkbox" data-doc="${k}" data-i="${i}" ${m[i] ? 'checked' : ''}><span>${esc(d)}</span></label>`).join('')}
+      <p class="aviso">💡 ${esc(s.dica)}</p>
+      <div class="fila"><a class="btn sec peq" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent('Checklist ' + s.n + ':\n' + s.docs.map(d => '☐ ' + d).join('\n') + '\n(via Fila Cidadã)')}">Enviar no WhatsApp</a>
+      <button class="btn sec peq" data-salvar="${k}">${S.salvos.includes(k) ? '★ Salvo' : '☆ Salvar lista'}</button></div></div>
+    ${s.un.map(uid => { const u = UNID[uid], a = agora(uid), c = curva(uid), b = melhor(uid), max = Math.max(...c.filter(v => v != null));
+      return `<div class="card"><h3>Onde ir · ${esc(u.tipo)}</h3><b style="font-size:17px">${esc(u.n)}</b><p class="aviso">Aberto das ${u.abre}h às ${u.fecha}h (dias úteis) · horários de exemplo</p>
+      <div class="visor"><div><small>agora</small><span class="led">${a.fechado ? 'FECH.' : a.min + '′'}</span>${a.fechado ? '' : `<span class="nivel ${a.nivel}" style="margin-top:4px;display:inline-block">${NIV[a.nivel]}</span>`}</div><div><small>melhor horário</small><span class="led">${b != null ? b + 'h' : '—'}</span><small>${b != null ? faixa(c[b - 7]) : ''}</small></div></div>
+      ${a.fechado ? '' : `<p style="font-size:14px">Tempo estimado de espera: <b>${faixa(a.min)}</b>${a.relato ? ' · ajustado por relato recente' : ''}</p>`}
+      <svg class="horas" viewBox="0 0 330 110" aria-label="Espera estimada por horário">${c.map((v, i) => { const x = 8 + i * 29.5, hh = v == null ? 0 : v / max * 78, cor = v == null ? '#374151' : v < 25 ? '#22c55e' : v < 55 ? '#f59e0b' : '#ef4444';
+        return `<rect x="${x}" y="${88 - hh}" width="22" height="${Math.max(2, hh)}" rx="3" fill="${cor}" opacity="${7 + i === new Date().getHours() ? 1 : .6}"/><text x="${x + 11}" y="104" text-anchor="middle" font-size="10" fill="#9ca3af" font-family="Manrope">${7 + i}h</text>`; }).join('')}</svg>
+      <p class="aviso" style="margin-top:10px">Você está lá agora? Conte como está a fila:</p>
+      <div class="relatar"><button data-relato="${uid}" data-v="baixa">🟢 Vazia</button><button data-relato="${uid}" data-v="media">🟡 Média</button><button data-relato="${uid}" data-v="alta">🔴 Cheia</button></div>
+      <div class="fila"><a class="btn peq" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(u.n + ' Cuiabá MT')}">📍 Como chegar</a><a class="btn sec peq" target="_blank" rel="noopener" href="${s.link[1]}">${esc(s.link[0])} ↗</a></div></div>`; }).join('')}`;
+}
+function telaSalvos() {
+  $('#salvos').innerHTML = S.salvos.map(k => { const s = SERV[k], m = S.marcados[k] || {}, ok = s.docs.filter((_, i) => m[i]).length;
+    return `<button class="guiche" data-serv="${k}"><span class="ic">${s.ic}</span><span><b>${esc(s.n)}</b><small>${ok}/${s.docs.length} documentos separados</small></span><span class="led">${ok === s.docs.length ? 'OK' : Math.round(ok / s.docs.length * 100) + '%'}</span></button>`; }).join('') || '<p class="aviso">Salve um checklist para ele aparecer aqui.</p>';
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.serv) location.hash = '#/servico/' + b.dataset.serv;
+  else if (b.dataset.salvar) { const k = b.dataset.salvar; S.salvos = S.salvos.includes(k) ? S.salvos.filter(x => x !== k) : [...S.salvos, k]; salvar(); telaServico(k); }
+  else if (b.dataset.relato) { S.relatos[b.dataset.relato] = { v: b.dataset.v, q: Date.now() }; salvar(); rota(true); brinde('OBRIGADO! RELATO REGISTRADO'); }
+  else if (b.id === 'exportar') Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'filacidada', dados: S })], { type: 'application/json' })), download: 'fila-cidada.json' }).click();
+  else if (b.id === 'zerar') { if (confirm('Apagar listas e relatos?')) { S = semente(); salvar(); rota(); } }
+});
+document.addEventListener('change', e => { const k = e.target.dataset.doc; if (!k) return; S.marcados[k] = S.marcados[k] || {}; S.marcados[k][e.target.dataset.i] = e.target.checked; salvar(); telaServico(k); });
+$('#busca').addEventListener('input', telaServicos);
+const tic = () => { const d = new Date(); $('#relogio').textContent = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); }; tic(); setInterval(tic, 15000);
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/servicos', '#/servico/rg', '#/servico/cadunico', '#/salvos'];
+function rota(manter) {
+  const m = location.hash.match(/^#\/(\w+)(?:\/(\w+))?/) || [, 'servicos'], n = ['servicos', 'servico', 'salvos'].includes(m[1]) ? m[1] : 'servicos';
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + n));
+  $$('nav.baixo a').forEach(a => a.getAttribute('href').split('/')[1] === n ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  ({ servicos: telaServicos, servico: () => telaServico(m[2]), salvos: telaSalvos })[n]();
+  if (manter !== true) scrollTo(0, 0);
+}
+addEventListener('hashchange', () => rota()); rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

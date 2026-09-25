@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f766e">
+<title>CuideBem — cuidado começa sem exposição</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g5.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g5-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CuideBem · acolhimento: verde-água, cantos macios, muito respiro. Sensível por natureza:
+   nada de vermelho de alerta, nada de contagem, nada que pareça julgamento. O 188 fica sempre à mão. ===== */
+:root{--verde:#0f766e;--verde2:#115e59;--menta:#5eead4;--menta-clara:#ccfbf1;--txt:#14312e;--mudo:#5c7671;--linha:#d6ece7;--fundo:#f1fbf8;--card:#ffffff;--sol:#fde68a;--urgente:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Nunito Sans",system-ui,sans-serif;background:var(--fundo);color:var(--txt);min-height:100dvh;padding-bottom:calc(80px + env(safe-area-inset-bottom));line-height:1.55;font-size:16.5px}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600}
+h1{font-size:26px}h2{font-size:23px;margin:2px 0 6px}
+.sos{background:var(--menta-clara);color:var(--verde2);padding:calc(8px + env(safe-area-inset-top)) 16px 8px;display:flex;gap:10px;align-items:center;font-size:13.5px}
+.sos a{color:var(--urgente);font-weight:800;text-decoration:none;border-bottom:2px solid var(--sol)}
+header.como{display:flex;align-items:center;gap:10px;padding:14px 16px 4px;max-width:600px;margin:0 auto}
+header.como img{width:38px;height:38px;border-radius:50%}
+header.como small{display:block;color:var(--mudo);font-size:12.5px}
+main{max-width:600px;margin:0 auto;padding:10px 16px}
+.tela{display:none}.tela.on{display:block;animation:chega .35s ease-out}
+@keyframes chega{from{opacity:0;transform:translateY(8px)}}
+p.sub{color:var(--mudo);margin-bottom:12px}
+.cartao{background:var(--card);border-radius:22px;padding:18px;margin-bottom:14px;box-shadow:0 4px 18px -12px rgba(15,118,110,.35)}
+.cartao h3{font-size:17px;margin-bottom:8px}
+.botao{min-height:52px;border:none;border-radius:999px;background:var(--verde);color:#fff;font-weight:700;padding:0 22px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:16px}
+.botao.sec{background:#fff;color:var(--verde2);border:2px solid var(--menta)}
+.botao.peq{min-height:42px;font-size:14px;padding:0 14px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.fila>*{flex:1 1 auto}
+.btn-grande{width:100%;margin-top:6px}
+.opcao{display:block;width:100%;text-align:left;background:#fff;border:2px solid var(--linha);border-radius:16px;padding:13px 16px;margin-bottom:8px;cursor:pointer;font-size:16px;min-height:52px}
+.opcao:hover{border-color:var(--menta)}
+.opcao[aria-pressed=true]{border-color:var(--verde);background:var(--menta-clara)}
+.escala{display:flex;gap:6px}
+.escala button{flex:1;min-height:52px;border-radius:14px;border:2px solid var(--linha);background:#fff;cursor:pointer;font-weight:700}
+.escala button[aria-pressed=true]{border-color:var(--verde);background:var(--menta-clara)}
+.humor{display:flex;justify-content:space-between;gap:6px}
+.humor button{flex:1;aspect-ratio:1;max-width:58px;border-radius:50%;border:2px solid transparent;background:var(--fundo);font-size:26px;cursor:pointer}
+.humor button[aria-pressed=true]{border-color:var(--verde);background:var(--menta-clara);transform:scale(1.08)}
+.barra{height:12px;background:var(--menta-clara);border-radius:999px;overflow:hidden;margin:8px 0}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,var(--menta),var(--verde));transition:width .5s}
+.nivel{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.nivel.leve{background:#dcfce7;color:#166534}.nivel.moderado{background:#fef9c3;color:#854d0e}.nivel.atencao{background:#ffedd5;color:#9a3412}
+.bolha{width:170px;height:170px;margin:14px auto;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--menta),var(--verde));display:grid;place-items:center;color:#fff;font-family:Fraunces;font-size:19px;text-align:center;transform:scale(.7);transition:transform 4s ease-in-out;box-shadow:0 0 0 18px rgba(94,234,212,.18)}
+.passo{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--linha)}.passo:last-child{border:none}
+.passo .n{width:30px;height:30px;border-radius:50%;background:var(--verde);color:#fff;display:grid;place-items:center;font-weight:700;flex-shrink:0}
+.contato{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--linha);text-decoration:none;color:inherit}
+.contato:last-child{border:none}.contato .num{font-family:Fraunces;font-size:26px;color:var(--verde2);min-width:66px;text-align:center}
+.anon{display:inline-flex;align-items:center;gap:8px;background:var(--menta-clara);color:var(--verde2);border-radius:999px;padding:6px 14px;font-size:13.5px;font-weight:700}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--linha);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;color:var(--mudo);text-decoration:none;padding:9px 0;min-height:60px}
+nav.baixo a span{font-size:20px}
+nav.baixo a[aria-current=page]{color:var(--verde)}
+#brinde{position:fixed;left:50%;bottom:92px;transform:translateX(-50%);background:var(--verde2);color:#fff;padding:11px 18px;border-radius:999px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw;text-align:center;font-size:14.5px}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--menta);outline-offset:3px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="sos">💚 Em crise? Fale agora com o <a href="tel:188">CVV 188</a> — gratuito, 24h. Emergência: <a href="tel:192">192</a>.</div>
+<header class="como"><img src="../assets/logos/g5.svg" alt=""><div><h1 style="font-size:20px">CuideBem</h1><small>cuidado começa sem exposição</small></div></header>
+<main>
+  <section class="tela" id="t-acolher">
+    <h2>Você não precisa contar seu nome para começar.</h2>
+    <p class="sub">Aqui o primeiro passo é seu, no seu tempo. Nada de cadastro para conversar. Nada de julgamento.</p>
+    <div class="cartao"><span class="anon">🔒 Você está anônimo(a)</span>
+      <p style="margin-top:10px">Só guardamos o que ajuda no seu cuidado, e só no seu aparelho. Se quiser se identificar depois, você escolhe — e a gente explica por quê.</p></div>
+    <div class="cartao"><h3>Para começar</h3>
+      <button class="botao btn-grande" id="ir-triagem">Começar uma triagem anônima</button>
+      <div class="fila"><a class="botao sec" id="ir-cuidar">🌤️ Acompanhar meu bem-estar</a><a class="botao sec" id="ir-ajuda">💚 Ver canais de ajuda</a></div>
+      <p class="sub" style="margin:12px 0 0;font-size:13px">A triagem é um roteiro de acolhimento, não um diagnóstico. Quem diagnostica é um profissional.</p>
+    </div>
+  </section>
+
+  <section class="tela" id="t-triagem"></section>
+
+  <section class="tela" id="t-resultado"></section>
+
+  <section class="tela" id="t-cuidar">
+    <h2>Como você está hoje?</h2>
+    <p class="sub">Um registro rápido, só para você enxergar seu próprio caminho. Progresso não é linha reta.</p>
+    <div class="cartao"><div class="humor" id="humor" role="group" aria-label="Como você está hoje"></div>
+      <textarea id="nota" class="opcao" style="min-height:74px;resize:vertical;margin-top:12px" placeholder="Quer anotar algo? (opcional, fica só no seu aparelho)"></textarea>
+      <button class="botao btn-grande" id="registrar">Registrar como estou</button></div>
+    <div class="cartao"><h3>Seu caminho</h3><svg id="graf" viewBox="0 0 300 110" style="width:100%" aria-label="Humor dos últimos dias"></svg><div id="resumo-humor" class="sub" style="margin:0"></div></div>
+    <div class="cartao"><h3>Respirar ajuda antes de decidir</h3>
+      <div class="bolha" id="bolha" aria-live="polite">Pronto?</div>
+      <div class="fila" style="margin-top:0"><button class="botao sec peq" id="resp">Começar respiração guiada</button></div></div>
+    <div class="cartao"><h3>Meus encaminhamentos</h3><div id="encs"></div>
+      <p class="sub" style="font-size:12.5px;margin:10px 0 0">Neste protótipo nada é enviado a nenhum serviço — o encaminhamento é um roteiro para você levar com você.</p></div>
+  </section>
+
+  <section class="tela" id="t-ajuda">
+    <h2>Ajuda que existe de verdade</h2>
+    <p class="sub">O CuideBem não substitui o cuidado. Ele encurta o caminho até ele.</p>
+    <div class="cartao">
+      <a class="contato" href="tel:188"><span class="num">188</span><span><b>CVV — Valorização da Vida</b><br><small class="sub">Apoio emocional gratuito, 24h, por telefone e chat (cvv.org.br).</small></span></a>
+      <a class="contato" href="tel:192"><span class="num">192</span><span><b>SAMU</b><br><small class="sub">Emergência médica, inclusive em risco imediato à vida.</small></span></a>
+      <div class="contato"><span class="num">🏥</span><span><b>CAPS — Centro de Atenção Psicossocial</b><br><small class="sub">Cuidado público em saúde mental pelo SUS, sem precisar de encaminhamento prévio.</small></span></div>
+      <div class="contato"><span class="num">🩺</span><span><b>UBS do seu bairro</b><br><small class="sub">Porta de entrada do SUS; pode marcar consulta e encaminhar ao CAPS.</small></span></div>
+      <div class="contato"><span class="num">📞</span><span><b>Disque 100</b><br><small class="sub">Direitos humanos — para situações de violência e vulnerabilidade.</small></span></div>
+    </div>
+    <div class="cartao"><h3>Privacidade e controle</h3>
+      <p class="sub" style="margin:0 0 10px">Anonimato é o padrão. Você decide se quer se identificar, e pode apagar tudo a qualquer momento.</p>
+      <div class="fila" style="margin-top:0"><button class="botao sec peq" id="exportar">Exportar</button><button class="botao sec peq" id="importar" data-teste="pular">Importar</button><button class="botao sec peq" id="apagar">Apagar tudo</button></div>
+      <p class="sub" style="margin:10px 0 0;font-size:12.5px">CuideBem · Grupo 5 · AdmCBA · UNIFACC-MT · protótipo acadêmico — não é serviço de saúde.</p></div>
+  </section>
+</main>
+<nav class="baixo" aria-label="Seções">
+  <a href="#/acolher"><span>🌱</span>Acolher</a>
+  <a href="#/triagem"><span>📝</span>Triagem</a>
+  <a href="#/resultado"><span>💡</span>Orientação</a>
+  <a href="#/cuidar"><span>☀️</span>Cuidar</a>
+  <a href="#/ajuda"><span>💚</span>Ajuda</a>
+</nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção do CuideBem: motor de triagem por pontuação com porta de saída de
+   crise. As perguntas são dados (texto + opções com peso), e o mesmo laço monta a
+   tela. Se a pergunta de segurança é respondida com risco, o fluxo NÃO continua
+   para o resultado: abre-se o acolhimento de crise com o 188 em primeiro plano —
+   segurança vence engajamento. Fora isso, a soma define o nível e a orientação.
+   Tudo é anônimo e local; um código aleatório identifica a sessão, nunca a pessoa.
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2600); };
+
+const PERGUNTAS = [
+  { k: 'humor', t: 'Nas últimas duas semanas, com que frequência você se sentiu para baixo, desanimado(a) ou sem esperança?', ops: ['Nunca', 'Alguns dias', 'Mais da metade dos dias', 'Quase todos os dias'] },
+  { k: 'ansiedade', t: 'E a preocupação ou a ansiedade: com que frequência atrapalharam o seu dia?', ops: ['Nunca', 'Alguns dias', 'Mais da metade dos dias', 'Quase todos os dias'] },
+  { k: 'energia', t: 'Você tem se sentido sem energia ou sem vontade para as coisas do dia a dia?', ops: ['Nunca', 'Alguns dias', 'Mais da metade dos dias', 'Quase todos os dias'] },
+  { k: 'sozinho', t: 'Você tem se sentido sozinho(a) ou sem com quem contar?', ops: ['Nunca', 'Alguns dias', 'Mais da metade dos dias', 'Quase todos os dias'] },
+  { k: 'seguranca', t: 'Em algum momento você teve pensamentos de se machucar ou de que seria melhor não estar aqui?', ops: ['Não', 'Já tive, mas não agora', 'Tenho tido com frequência', 'Sim, estou pensando nisso agora'], seg: true },
+];
+const HUMOR = ['😞', '😕', '😐', '🙂', '😊'];
+const NIVEIS = {
+  leve: { rot: 'Sofrimento leve', cls: 'leve', txt: 'O que você sente é real e merece atenção, mas talvez não precise de um grande passo agora. Cuidar do sono, do corpo e do descanso já ajuda — e conversar com alguém de confiança também.' },
+  moderado: { rot: 'Sofrimento moderado', cls: 'moderado', txt: 'O que você sente já pesa o suficiente para valer uma conversa com um profissional. Uma escuta por voz ou vídeo é um bom começo, sem sair de casa.' },
+  atencao: { rot: 'Pede atenção logo', cls: 'atencao', txt: 'Você não precisa segurar isso sozinho(a). O melhor caminho agora é um atendimento profissional — e o CuideBem te ajuda a chegar lá com prioridade.' },
+};
+
+/* ---------- estado (anônimo) ---------- */
+const CH = 'cuidebem:v1';
+const novoCodigo = () => 'CB-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+const semente = () => ({ anon: novoCodigo(), respostas: null, nivel: null, seguranca: 'ok', registros: [], encs: [], respiros: 0 });
+let S; try { S = JSON.parse(localStorage.getItem(CH)); } catch (e) {} if (!S || !S.anon) S = semente();
+const salvar = () => localStorage.setItem(CH, JSON.stringify(S)); salvar();
+
+/* ---------- triagem ---------- */
+let atual = 0, respostas = {};
+function telaTriagem() {
+  if (atual >= PERGUNTAS.length) atual = 0;
+  const q = PERGUNTAS[atual];
+  const marcada = respostas[q.k];
+  $('#t-triagem').innerHTML = `<div class="barra"><i style="width:${atual / PERGUNTAS.length * 100}%"></i></div>
+    <p class="sub">Pergunta ${atual + 1} de ${PERGUNTAS.length} · anônima</p>
+    <h2 style="font-size:21px">${esc(q.t)}</h2>
+    <div style="margin-top:14px">${q.ops.map((o, i) => `<button class="opcao" data-resp="${i}" aria-pressed="${marcada === i}">${esc(o)}</button>`).join('')}</div>
+    <div class="fila">${atual > 0 ? '<button class="botao sec" id="tri-voltar">‹ Voltar</button>' : ''}</div>
+    ${q.seg ? '<p class="sub" style="margin-top:12px;font-size:13px">Sua resposta aqui é séria e confidencial. Ninguém além de você lê este aparelho.</p>' : ''}`;
+}
+function responder(i) {
+  respostas[PERGUNTAS[atual].k] = i;
+  const seg = PERGUNTAS[atual].seg;
+  if (seg && i >= 2) { S.seguranca = i === 3 ? 'agora' : 'frequente'; salvar(); fecharTriagem(true); return; }
+  if (seg && i === 1) S.seguranca = 'passado';
+  if (atual + 1 < PERGUNTAS.length) { atual++; telaTriagem(); }
+  else fecharTriagem(false);
+}
+function fecharTriagem(crise) {
+  if (crise) { S.respostas = { ...respostas }; S.nivel = 'atencao'; salvar(); atual = PERGUNTAS.length; location.hash = '#/resultado'; return; }
+  const soma = ['humor', 'ansiedade', 'energia', 'sozinho'].reduce((a, k) => a + (respostas[k] || 0), 0);
+  S.respostas = { ...respostas }; S.nivel = soma <= 3 ? 'leve' : soma <= 7 ? 'moderado' : 'atencao'; salvar();
+  atual = PERGUNTAS.length; location.hash = '#/resultado';
+}
+function telaResultado() {
+  const el = $('#t-resultado');
+  if (S.seguranca === 'agora' || S.nivel === 'atencao' && S.seguranca === 'frequente') return el.innerHTML = criseCard();
+  if (!S.nivel) return el.innerHTML = '<h2>Sua orientação aparece aqui</h2><p class="sub">Comece pela triagem anônima — leva menos de um minuto.</p><button class="botao btn-grande" id="comecar">Fazer a triagem</button>';
+  const n = NIVEIS[S.nivel];
+  el.innerHTML = `<h2>Obrigado por confiar.</h2>
+    <div class="cartao"><span class="nivel ${n.cls}">${n.rot}</span><p style="margin-top:12px">${n.txt}</p>
+      <p class="sub" style="margin:10px 0 0;font-size:13px">Isto não é diagnóstico. É um convite para o próximo passo.</p></div>
+    <div class="cartao"><h3>Seu caminho sugerido</h3>
+      ${proximos(S.nivel).map((p, i) => `<div class="passo"><span class="n">${i + 1}</span><span>${p}</span></div>`).join('')}
+      <button class="botao btn-grande" id="ir-matching">Quero dar o próximo passo</button>
+      <div class="fila"><button class="botao sec peq" id="refazer">Refazer a triagem</button></div></div>
+    ${S.seguranca === 'passado' ? '<div class="cartao"><h3>Um cuidado a mais com você</h3><p class="sub" style="margin:0">Você disse que já teve pensamentos de se machucar. Isso merece atenção de verdade. Fale com o <a href="tel:188">CVV 188</a> a qualquer hora — é gratuito e sigiloso.</p></div>' : ''}`;
+}
+function proximos(nivel) {
+  if (nivel === 'leve') return ['Manter uma rotina de sono e movimento', 'Registrar como você está, dia a dia', 'Conversar com alguém de confiança', 'Se piorar, procurar uma escuta profissional'];
+  if (nivel === 'moderado') return ['Agendar uma escuta por voz ou vídeo', 'Anotar com o que você quer começar a conversa', 'Manter o registro de bem-estar', 'Guardar o 188 para momentos difíceis'];
+  return ['Procurar atendimento profissional com prioridade', 'Ir ao CAPS ou à UBS mais próxima', 'Levar seus registros para a conversa', 'Ligar 188 se a crise apertar antes'];
+}
+function criseCard() {
+  return `<div class="cartao" style="border:2px solid var(--urgente)"><h2 style="font-size:21px;color:var(--urgente)">Você não está sozinho(a). Vamos com calma.</h2>
+    <p>O que você sente agora é sério e importa. O primeiro passo é falar com alguém treinado, agora, sem julgamento.</p>
+    <div class="fila"><a class="botao" href="tel:188" style="background:var(--urgente)">📞 Ligar para o CVV 188 (24h, grátis)</a><a class="botao sec" href="tel:192">🚑 Emergência 192</a></div>
+    <div class="fila"><a class="botao sec" href="https://cvv.org.br" target="_blank" rel="noopener">💬 Conversar por chat no cvv.org.br</a></div></div>
+    <div class="cartao"><h3>Enquanto isso</h3><div class="passo"><span class="n">1</span><span>Se puder, não fique sozinho(a): chame alguém de confiança para ficar perto.</span></div>
+      <div class="passo"><span class="n">2</span><span>Afastar-se de objetos que possam te machucar, se isso for possível agora.</span></div>
+      <div class="passo"><span class="n">3</span><span>Respire com a gente na aba <b>Cuidar</b> enquanto a ligação não completa.</span></div></div>
+    <p class="sub">Você pode procurar o CAPS ou a UBS a qualquer momento — não precisa de encaminhamento.</p>`;
+}
+
+/* ---------- encaminhamento ---------- */
+function telaCuidar() {
+  $('#humor').innerHTML = HUMOR.map((e, i) => `<button data-humor="${i + 1}" aria-pressed="${(S.ultimo || 0) === i + 1}" aria-label="Nível ${i + 1} de 5">${e}</button>`).join('');
+  const r = S.registros.slice(-14), X = i => 14 + 274 * i / Math.max(1, r.length - 1), Y = h => 96 - (h - 1) * 20;
+  $('#graf').innerHTML = [1, 3, 5].map(h => `<line x1="14" x2="298" y1="${Y(h)}" y2="${Y(h)}" stroke="#d6ece7"/><text x="0" y="${Y(h) + 5}" font-size="11" fill="#5c7671">${HUMOR[h - 1]}</text>`).join('')
+    + (r.length > 1 ? `<polyline points="${r.map((x, i) => X(i) + ',' + Y(x.h)).join(' ')}" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round"/>` : '')
+    + r.map((x, i) => `<circle cx="${X(i)}" cy="${Y(x.h)}" r="4" fill="#0f766e"/>`).join('');
+  $('#resumo-humor').textContent = r.length ? `${r.length} registro(s) nos últimos dias. Levar isso para uma conversa ajuda muito.` : 'Nenhum registro ainda. Comece hoje, do jeito que você está.';
+  $('#encs').innerHTML = S.encs.length ? S.encs.map(e => `<div class="passo"><span class="n">🔖</span><span><b>${esc(e.cod)}</b> · ${esc(e.modal)}<br><small class="sub">${esc(e.quando)} · ${esc(e.turno)}</small></span></div>`).join('') : '<p class="sub" style="margin:0">Você ainda não gerou um encaminhamento.</p>';
+}
+function gerarEncaminhamento() {
+  const modal = (window.__modal || 'Escuta por voz ou vídeo');
+  const enc = { cod: 'CB-' + new Date().getFullYear() + '-' + String(S.encs.length + 1).padStart(3, '0'), modal, quando: 'a combinar', turno: (window.__turno || 'flexível'), nivel: S.nivel, criado: new Date().toISOString() };
+  S.encs.unshift(enc); salvar(); location.hash = '#/cuidar';
+  brinde('Encaminhamento criado. Leve o código ' + enc.cod + '.');
+}
+function telaResultadoMatching() {
+  $('#t-resultado').innerHTML = `<h2>Como você prefere ser ouvido(a)?</h2>
+    <p class="sub">Escolha o que for mais confortável. Nada é enviado sem você querer.</p>
+    <button class="opcao" data-modal="Escuta por voz ou vídeo" aria-pressed="${window.__modal === 'Escuta por voz ou vídeo'}">🎧 Escuta por voz ou vídeo</button>
+    <button class="opcao" data-modal="Atendimento presencial no CAPS/UBS" aria-pressed="${window.__modal === 'Atendimento presencial no CAPS/UBS'}">🏥 Presencial no CAPS ou UBS</button>
+    <button class="opcao" data-modal="Só quero informações por agora" aria-pressed="${window.__modal === 'Só quero informações por agora'}">📖 Só informações por enquanto</button>
+    <div class="fila">${['manhã', 'tarde', 'noite', 'flexível'].map(t => `<button class="botao ${window.__turno === t ? '' : 'sec'} peq" data-turno="${t}">${t}</button>`).join('')}</div>
+    <button class="botao btn-grande" id="criar-enc">Gerar meu encaminhamento</button>`;
+}
+
+/* ---------- eventos ---------- */
+let respTimer = null, fase = 0;
+function passoResp() { const f = [['Inspire', 1], ['Segure', 1], ['Solte', .65], ['Segure', .65]][fase % 4]; $('#bolha').textContent = f[0]; $('#bolha').style.transform = `scale(${f[1]})`; if (fase % 4 === 3) { S.respiros++; salvar(); } fase++; }
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,a'); if (!b) return;
+  if (b.id === 'ir-triagem' || b.id === 'comecar' || b.id === 'refazer') { atual = 0; respostas = {}; S.seguranca = 'ok'; S.nivel = null; S.respostas = null; salvar(); location.hash = '#/triagem'; return; }
+  if (b.id === 'ir-cuidar') return void (location.hash = '#/cuidar');
+  if (b.id === 'ir-ajuda') return void (location.hash = '#/ajuda');
+  if (b.dataset.resp != null) return void responder(+b.dataset.resp);
+  if (b.id === 'tri-voltar') { atual = Math.max(0, atual - 1); telaTriagem(); return; }
+  if (b.id === 'ir-matching') return void telaResultadoMatching();
+  if (b.dataset.modal) { window.__modal = b.dataset.modal; return void telaResultadoMatching(); }
+  if (b.dataset.turno) { window.__turno = b.dataset.turno; return void telaResultadoMatching(); }
+  if (b.id === 'criar-enc') return void gerarEncaminhamento();
+  if (b.dataset.humor) { S.ultimo = +b.dataset.humor; salvar(); telaCuidar(); return; }
+  if (b.id === 'registrar') { if (!S.ultimo) return brinde('Escolha como você está hoje.'); S.registros.push({ h: S.ultimo, q: new Date().toISOString(), nota: $('#nota').value.trim() }); $('#nota').value = ''; S.ultimo = null; salvar(); telaCuidar(); brinde('Registrado. Obrigado por olhar para si.'); return; }
+  if (b.id === 'resp') { if (respTimer) { clearInterval(respTimer); respTimer = null; $('#bolha').textContent = 'Pronto?'; $('#bolha').style.transform = 'scale(.7)'; return brinde('Respiração pausada.'); } fase = 0; passoResp(); respTimer = setInterval(passoResp, 4000); brinde('Siga o ritmo da bolha.'); return; }
+  if (b.id === 'exportar') { Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'cuidebem', dados: S })], { type: 'application/json' })), download: 'cuidebem-anonimo.json' }).click(); return; }
+  if (b.id === 'importar') { const i = Object.assign(document.createElement('input'), { type: 'file', accept: '.json' }); i.onchange = async () => { try { const j = JSON.parse(await i.files[0].text()); if (j.app !== 'cuidebem') throw 0; S = j.dados; salvar(); rota(); } catch (x) { brinde('Arquivo inválido.'); } }; i.click(); return; }
+  if (b.id === 'apagar') { if (confirm('Apagar tudo? Você recomeça anônimo(a), do zero.')) { S = semente(); salvar(); atual = 0; respostas = {}; location.hash = '#/acolher'; rota(); brinde('Tudo apagado. Você está anônimo(a) de novo.'); } return; }
+});
+addEventListener('hashchange', () => { if (location.hash !== '#/triagem' && respTimer) { clearInterval(respTimer); respTimer = null; } rota(); });
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/acolher', '#/triagem', '#/resultado', '#/cuidar', '#/ajuda'];
+function rota() {
+  const n = (location.hash.match(/^#\/(\w+)/) || [])[1], nome = ['acolher', 'triagem', 'resultado', 'cuidar', 'ajuda'].includes(n) ? n : 'acolher';
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + nome));
+  $$('nav.baixo a').forEach(a => a.getAttribute('href') === '#/' + nome ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  ({ acolher: () => {}, triagem: telaTriagem, resultado: telaResultado, cuidar: telaCuidar, ajuda: () => {} })[nome]();
+  if (nome !== 'cuidar' && respTimer) { clearInterval(respTimer); respTimer = null; }
+  scrollTo(0, 0);
+}
+rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

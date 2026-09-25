@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1351b4">
+<title>CRAS Online — Grupo 4 · AdmCBA</title>
+<meta name="description" content="CRAS Online: enviar documentos, agendar atendimento e acompanhar o pedido pelo celular, com segurança e apoio humano. Grupo 4 · AdmCBA.">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g4.svg">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Landing do CRAS Online · portal de serviço público: azul institucional, passos numerados e o selo de canal oficial */
+:root{--azul:#1351b4;--azul2:#0c326f;--azul3:#e8f0fc;--amarelo:#ffcd07;--verde:#168821;--txt:#101828;--mudo:#5b6472;--linha:#dfe4ee;--fundo:#f5f8fd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--fundo);color:var(--txt);line-height:1.6;font-size:17px}
+a{color:var(--azul)}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+.gov{background:var(--azul2);color:#cfe0ff;font-size:12.5px;padding:7px 0}
+.gov .w{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.gov b{color:#fff}
+.barra{background:var(--azul);color:#fff;padding:12px 0}
+.barra .w{display:flex;align-items:center;gap:12px}
+.barra img{width:44px;height:44px;border-radius:10px;background:#fff}.barra a{margin-left:auto;color:#fff;font-weight:600;font-size:14px;text-decoration:none}
+.heroi{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:34px 0}
+.heroi>*{min-width:0}
+.selo{display:inline-flex;align-items:center;gap:8px;background:#e6f6ea;border:1.5px solid var(--verde);color:#0b5220;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:600}
+h1{font-size:clamp(32px,6vw,56px);line-height:1.05;color:var(--azul2);margin:10px 0 12px;font-weight:800}
+.lead{font-size:19px;max-width:560px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 20px;background:var(--azul);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;margin:0 8px 8px 0}
+.btn.sec{background:#fff;color:var(--azul2);border:2px solid var(--azul)}
+.fone{width:280px;height:580px;justify-self:center;border:10px solid var(--azul2);border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 24px 50px -24px rgba(12,50,111,.7)}
+.fone iframe{width:375px;height:766px;border:0;transform:scale(.6933);transform-origin:0 0}
+h2{font-size:27px;color:var(--azul2);margin:46px 0 12px;font-weight:800}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.passo{background:#fff;border:1.5px solid var(--linha);border-left:6px solid var(--azul);border-radius:12px;padding:16px}
+.passo b{display:block;font-size:17px;color:var(--azul2)}.passo p{font-size:15.5px;color:var(--mudo)}
+.passos{counter-reset:p}.passo::before{counter-increment:p;content:"Passo " counter(p);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--azul)}
+.mats{background:#fff;border:1.5px solid var(--linha);border-radius:12px;margin:14px 0 34px;overflow:hidden}
+.mats a{display:flex;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--linha);text-decoration:none;color:var(--txt);min-height:46px;align-items:center}
+.mats a:last-child{border:none}.mats a:hover{background:var(--azul3)}.mats a small{color:var(--mudo)}.mats a b::after{content:" →";color:var(--azul)}
+.aviso{display:flex;gap:10px;background:#e6f6ea;border:1.5px solid var(--verde);color:#0b5220;border-radius:10px;padding:12px 14px;font-size:14.5px;margin-top:10px}
+.equipe{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}.equipe span{background:var(--azul3);color:var(--azul2);border-radius:999px;padding:6px 14px;font-weight:600}
+footer{background:var(--azul2);color:#cfe0ff;padding:22px 0;margin-top:34px;font-size:14px}
+@media(max-width:760px){.heroi{grid-template-columns:1fr}.mats a small{display:none}}
+</style>
+</head>
+<body>
+<div class="gov"><div class="w"><span>🏛️ <b>Canal oficial</b> · o CRAS nunca pede senha nem pagamento</span><span>Proposta acadêmica</span></div></div>
+<div class="barra"><div class="w"><img src="../assets/logos/g4.svg" alt=""><b>CRAS Online</b><a href="../index.html">Todos os projetos →</a></div></div>
+<div class="w">
+  <section class="heroi">
+    <div><span class="selo">✅ Resolver o CRAS sem sair de casa, quando for possível</span>
+      <h1>O CRAS no bolso do cidadão.</h1>
+      <p class="lead">Enviar documentos, agendar atendimento e acompanhar o pedido pelo celular — com login gov.br, selo verificado e apoio humano quando o cidadão quiser. O presencial deixa de ser o começo e passa a ser a exceção.</p>
+      <a class="btn" href="app.html">Abrir o app</a><a class="btn sec" href="Slides-CRAS-Online.html">Slides de defesa</a></div>
+    <div class="fone"><iframe src="app.html" title="CRAS Online em funcionamento" loading="lazy"></iframe></div>
+  </section>
+
+  <h2>O caminho crítico, funcionando</h2>
+  <div class="passos">
+    <div class="passo"><b>Escolha o serviço</b><p>Benefício eventual, CadÚnico, orientação social, BPC e mais — cada um com prazo e lista de documentos.</p></div>
+    <div class="passo"><b>Envie os documentos</b><p>Foto de cada documento, com indicação do que falta. Nada trava: dá para complementar depois.</p></div>
+    <div class="passo"><b>Agende se precisar</b><p>Escolha dia e horário quando a presença for necessária. O resto se resolve pelo celular.</p></div>
+    <div class="passo"><b>Acompanhe por código</b><p>Um protocolo e uma linha do tempo mostram em que etapa o pedido está, até concluir.</p></div>
+  </div>
+  <div class="aviso">🔒 <span>Documentos de assistência social são dados sensíveis: o app guarda o mínimo, pelo tempo necessário, sob a LGPD. O CRAS nunca pede senha nem pagamento.</span></div>
+
+  <h2>Materiais do grupo</h2>
+  <nav class="mats">
+    <a href="../assets/md-viewer.html?src=../Grupo4-CRAS-Online/README.md&voltar=./"><b>README do grupo</b><small>integrantes, hipótese e pitch</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo4-CRAS-Online/formulario-app.md&voltar=./"><b>Formulário de campo</b><small>20 perguntas · G4-&lt;nnn&gt;</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo4-CRAS-Online/ContextoApp.md&voltar=./"><b>Contexto do produto</b><small>personas, jornada, KPIs, LGPD</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo4-CRAS-Online/Pesquisa-Dados.md&voltar=./"><b>Pesquisa e dados</b><small>dados oficiais e artigos</small></a>
+    <a href="Slides-CRAS-Online.pdf"><b>Slides em PDF</b><small>para baixar</small></a>
+    <a href="../index.html#materiais"><b>Materiais da turma</b><small>Partes 1, 2 e 3</small></a>
+  </nav>
+
+  <h2>Equipe</h2>
+  <div class="equipe"><span>Anna</span><span>Maria Eduarda</span><span>Marcelly</span><span>Kaique</span></div>
+  <p style="color:var(--mudo)">Orientação: Prof. Renato</p>
+</div>
+<footer><div class="w">Grupo 4 · CRAS Online · Cerrado Tech · UNIFACC · Administração e Gestão Pública (CBA), 2026</div></footer>
+</body>
+</html>

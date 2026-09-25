@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preparação para Visita Técnica no Shopping | Customer Discovery</title>
+    <link rel="stylesheet" href="../assets/reveal/reset.css">
+    <link rel="stylesheet" href="../assets/reveal/reveal.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; }
+
+        .reveal .slides section { text-align: left; padding: 0 40px; }
+        .reveal .slides { text-align: left; }
+
+        .reveal .slides section.dark { color: #fff; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+        .reveal .slides section.cover { background: #ffffff; }
+        .reveal .slides section.cover,
+        .reveal .slides section.dark {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .reveal h1 { font-size: 32px; color: #1a1a2e; margin-bottom: 12px; font-weight: 700; line-height: 1.2; text-transform: none; }
+        .reveal h2 { font-size: 24px; color: #e94560; margin-bottom: 10px; text-transform: none; }
+        .reveal h3 { font-size: 18px; color: #2d3748; margin-bottom: 8px; text-transform: none; }
+        .reveal .dark h1, .reveal .dark h2 { color: #fff; }
+        .reveal .dark h3 { color: #e94560; }
+
+        .reveal .subtitle { font-size: 14px; color: #666; padding-top: 10px; border-top: 1px solid #E2E8F0; margin-top: 20px; }
+        .reveal .dark .subtitle { color: #A0AEC0; border-top-color: rgba(255,255,255,0.2); }
+
+        .reveal .content { display: flex; flex-direction: column; justify-content: flex-start; padding: 10px 0; }
+        .reveal .content ul { list-style: none; font-size: 20px; line-height: 1.6; }
+        .reveal .content ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+        .reveal .content ul li::before { content: ""; position: absolute; left: 0; top: 12px; width: 6px; height: 6px; background: #e94560; border-radius: 50%; }
+
+        .reveal .highlight-box { background: #FDF2F4; border-left: 4px solid #e94560; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+        .reveal .dark .highlight-box { background: rgba(233,69,96,0.15); border-left-color: #e94560; }
+
+        .reveal .success-box { background: #F0FDF4; border-left: 4px solid #38A169; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+        .reveal .warning-box { background: #FFFBEB; border-left: 4px solid #DD6B20; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+
+        .reveal table { width: 100%; border-collapse: collapse; font-size: 16px; margin: 10px 0; }
+        .reveal th { background: #1a1a2e; color: #fff; padding: 8px; text-align: left; font-weight: 600; }
+        .reveal td { padding: 6px 8px; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+        .reveal tr:nth-child(even) { background: #F7FAFC; }
+
+        .reveal .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+        .reveal .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; align-items: start; }
+
+        .reveal .card { background: #F7FAFC; border-radius: 8px; padding: 12px; border: 1px solid #E2E8F0; }
+        .reveal .card h3 { color: #1a1a2e; font-size: 19px; margin-bottom: 6px; }
+        .reveal .card p { font-size: 17px; color: #4A5568; line-height: 1.45; }
+
+        .reveal .quote { font-size: 20px; font-style: italic; color: #2D3748; border-left: 4px solid #e94560; padding: 15px 20px; margin: 10px 0; background: #FDF2F4; border-radius: 0 8px 8px 0; line-height: 1.5; }
+        .reveal .dark .quote { background: rgba(233,69,96,0.15); color: #F1F5F9; }
+
+        .reveal .badge { display: inline-block; background: #e94560; color: #fff; padding: 5px 12px; border-radius: 15px; font-size: 15px; margin: 3px; }
+        .reveal .badge.green { background: #38A169; }
+        .reveal .badge.orange { background: #DD6B20; }
+        .reveal .badge.blue { background: #3182CE; }
+        .reveal .badge.purple { background: #805AD5; }
+
+        .reveal .objective-list { counter-reset: objective; list-style: none; }
+        .reveal .objective-list li { counter-increment: objective; padding: 6px 0; padding-left: 35px; position: relative; font-size: 18px; }
+        .reveal .objective-list li::before { content: counter(objective); position: absolute; left: 0; top: 6px; width: 24px; height: 24px; background: #e94560; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; }
+
+        .reveal .step-list { counter-reset: step; list-style: none; }
+        .reveal .step-list li { counter-increment: step; padding: 8px 0; padding-left: 40px; position: relative; font-size: 18px; }
+        .reveal .step-list li::before { content: counter(step); position: absolute; left: 0; top: 6px; width: 28px; height: 28px; background: #e94560; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; }
+
+        .reveal .contact-row { display: flex; gap: 30px; justify-content: center; margin-top: 15px; }
+        .reveal .contact-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #666; }
+
+        .reveal .activity-box { background: #F0FDF4; border: 2px solid #38A169; padding: 15px 20px; margin: 15px 0; border-radius: 8px; }
+        .reveal .activity-box h3 { color: #38A169; margin-bottom: 8px; }
+
+        .reveal .prompt-box { background: #1a1a2e; color: #e9e9e9; padding: 15px 20px; border-radius: 8px; font-family: 'Consolas', monospace; font-size: 15px; line-height: 1.6; margin: 10px 0; }
+
+        .reveal .cred-list { list-style: none; font-size: 15px; line-height: 1.8; }
+        .reveal .cred-list li { padding: 4px 0; }
+
+        .reveal .compare-box { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        .reveal .compare-box > div { padding: 15px; border-radius: 8px; }
+        .reveal .compare-box .bad { border-left: 4px solid #e94560; background: #FDF2F4; }
+        .reveal .compare-box .good { border-left: 4px solid #38A169; background: #F0FDF4; }
+
+        .reveal .checklist { list-style: none; font-size: 19px; line-height: 1.9; }
+        .reveal .checklist li { padding: 4px 0; padding-left: 34px; position: relative; }
+        .reveal .checklist li::before { content: ""; position: absolute; left: 0; top: 8px; width: 20px; height: 20px; border: 2px solid #e94560; border-radius: 5px; }
+        .reveal .group-chip { display: inline-block; background: #1a1a2e; color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; letter-spacing: .04em; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- SLIDE 1: CAPA -->
+<section class="cover">
+    <svg width="120" height="120" viewBox="0 0 120 120" style="margin-bottom: 30px;">
+        <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#e94560"/>
+                <stop offset="100%" style="stop-color:#1a1a2e"/>
+            </linearGradient>
+        </defs>
+        <circle cx="60" cy="60" r="55" fill="url(#g1)" opacity="0.2"/>
+        <circle cx="60" cy="60" r="40" fill="url(#g1)" opacity="0.4"/>
+        <path d="M30 50 L45 50 M30 60 L60 60 M30 70 L52 70" stroke="#1a1a2e" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="78" cy="62" r="12" fill="none" stroke="#e94560" stroke-width="4"/>
+        <path d="M87 71 L97 81" stroke="#e94560" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <h1 style="font-size: 44px; color: #1a1a2e; margin-bottom: 15px;">PREPARAÇÃO PARA VISITA TÉCNICA NO SHOPPING</h1>
+    <h2 style="font-size: 26px; color: #e94560; margin-bottom: 40px;">Customer Discovery na Prática — Como validar sua ideia com pessoas reais</h2>
+    <div style="background: #FDF2F4; padding: 25px 40px; border-radius: 12px; margin: 20px 0; border: 1px solid #e94560;">
+        <div style="font-size: 24px; color: #1a1a2e; font-weight: 600;">Mão na Massa: da ideia ao formulário pronto</div>
+        <div style="font-size: 16px; color: #e94560; margin-top: 5px;">21 de Setembro de 2026 · Turma de Tecnologia e Inovação</div>
+    </div>
+    <div style="margin-top: 50px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 20px;">
+            <img src="Renato.jpg" alt="Prof. Renato Rosa" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #e94560;">
+            <div style="text-align: left;">
+                <div style="font-size: 20px; color: #2D3748;">Prof. Renato Rosa</div>
+                <div style="font-size: 14px; color: #666; margin-top: 4px;">Cerrado Tech · Unifacc</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SLIDE 2: A REGRA DE OURO -->
+<section>
+    <h1>A Regra de Ouro</h1>
+    <div class="highlight-box" style="font-size: 19px;">
+        Vocês vão a campo <strong>validar ideias com pessoas reais</strong>. Isso exige <strong>preparação</strong>. Ninguém vai criar formulário na hora. Vocês saem daqui hoje com <strong>tudo pronto</strong>.
+    </div>
+    <h3 style="color: #1a1a2e; margin-top: 15px;">O que cada grupo deve entregar ao final da aula de hoje:</h3>
+    <div class="content">
+        <ol class="objective-list">
+            <li><strong>Roteiro da visita</strong> — onde, quem e como abordar.</li>
+            <li><strong>Objetivos claros</strong> — o que querem descobrir.</li>
+            <li><strong>Divisão de tarefas</strong> da equipe.</li>
+            <li><strong>Hipóteses</strong> — o que acham que vão ouvir.</li>
+            <li><strong>Formulário Google Forms pronto</strong> (ou impresso).</li>
+        </ol>
+    </div>
+    <div class="warning-box" style="margin-top: 15px;">
+        <strong>Sem formulário, sem visita.</strong> O formulário é o instrumento de trabalho de vocês. Testem no celular antes de sair.
+    </div>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 3: GRUPO 1 -->
+<section>
+    <span class="group-chip">GRUPO 1</span>
+    <h1>AgroPrevisãoMT <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Heitor</span></h1>
+    <div>
+        <span class="badge">Bruna</span>
+        <span class="badge">Keila</span>
+        <span class="badge">Yanni</span>
+        <span class="badge">Célia</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> validar se as pessoas entendem a relação entre o <strong>crescimento do agro</strong> e o <strong>impacto nas cidades</strong> (empregos, moradia, transporte).
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> praça de alimentação e corredores próximos a lojas populares.<br>
+            <strong>Abordagem:</strong> "Pesquisa rápida de 2 minutos sobre o crescimento das cidades da região".<br>
+            <strong>Meta:</strong> <span class="badge green">15–20 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p>Focar em <strong>impacto urbano</strong> e no <strong>interesse em previsão</strong> desses cenários.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Bruna e Keila</td><td>Abordagem das pessoas</td></tr>
+        <tr><td>Yanni</td><td>Registros / mídia</td></tr>
+        <tr><td>Célia</td><td>Anotações qualitativas</td></tr>
+    </table>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 4: GRUPO 2 -->
+<section>
+    <span class="group-chip">GRUPO 2</span>
+    <h1>Fila Cidadã <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Renato</span></h1>
+    <div>
+        <span class="badge">Amanda</span>
+        <span class="badge">Stefanny Rosa</span>
+        <span class="badge">Stefany</span>
+        <span class="badge">Kemylly</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> descobrir os <strong>órgãos públicos mais problemáticos</strong> e validar se a <strong>falta de informação sobre documentos</strong> e o <strong>tempo de fila</strong> são as maiores dores.
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> entrada principal, lotéricas e caixas eletrônicos.<br>
+            <strong>Abordagem:</strong> "Já passou raiva em fila de órgão público?".<br>
+            <strong>Meta:</strong> <span class="badge green">20 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p>Órgão <strong>mais frequentado</strong>, <strong>tempo de espera</strong> e <strong>viagens perdidas</strong> por falta de documento.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Amanda</td><td>Formulário + controle de tempo</td></tr>
+        <tr><td>Stefanny Rosa</td><td>Abordagem</td></tr>
+        <tr><td>Stefany</td><td>Vídeos</td></tr>
+        <tr><td>Kemylly</td><td>Tabulação</td></tr>
+    </table>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 5: GRUPO 3 -->
+<section>
+    <span class="group-chip">GRUPO 3</span>
+    <h1>Ocupações Irregulares <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Heitor</span></h1>
+    <div>
+        <span class="badge">Robson</span>
+        <span class="badge">Isabela</span>
+        <span class="badge">Reinaldo</span>
+        <span class="badge">Emanoeli</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> medir o <strong>conhecimento da população</strong> sobre ocupações irregulares e entender se veem como <strong>"invasão"</strong> ou como <strong>"falta de moradia"</strong>.
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> corredores, praça de alimentação e <strong>funcionários do shopping</strong>.<br>
+            <strong>Abordagem:</strong> "Pesquisa rápida sobre moradia na nossa cidade".<br>
+            <strong>Meta:</strong> <span class="badge green">15 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p>Conhecimento sobre <strong>ocupações</strong>, <strong>percepção de causa</strong> e <strong>ação da prefeitura</strong>.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Robson e Isabela</td><td>Abordagem</td></tr>
+        <tr><td>Reinaldo</td><td>Fotos / reações</td></tr>
+        <tr><td>Emanoeli</td><td>Respostas abertas</td></tr>
+    </table>
+    <div class="warning-box" style="margin-top: 10px; font-size: 15px;">
+        <strong>Tema sensível:</strong> abordem com respeito e neutralidade. Nunca induzam a resposta.
+    </div>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 6: GRUPO 4 -->
+<section>
+    <span class="group-chip">GRUPO 4</span>
+    <h1>CRAS Online <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Renato</span></h1>
+    <div>
+        <span class="badge">Anna</span>
+        <span class="badge">Maria Eduarda</span>
+        <span class="badge">Marcelly</span>
+        <span class="badge">Kaique</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> descobrir se as pessoas <strong>conhecem o CRAS</strong>, validar a <strong>dor do atendimento presencial</strong> e testar a <strong>confiança em um app do governo</strong>.
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> praça de alimentação e áreas de descanso.<br>
+            <strong>Abordagem:</strong> "Você conhece o CRAS? 5 perguntinhas rápidas".<br>
+            <strong>Meta:</strong> <span class="badge green">15–20 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p><strong>Tempo de atendimento</strong> atual e <strong>nível de confiança</strong> para enviar documentos sensíveis via celular.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Anna e Maria Eduarda</td><td>Abordagem / explicação</td></tr>
+        <tr><td>Marcelly</td><td>Registros</td></tr>
+        <tr><td>Kaique</td><td>Vídeos / planilha</td></tr>
+    </table>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 7: GRUPO 5 -->
+<section>
+    <span class="group-chip">GRUPO 5</span>
+    <h1>CuideBem <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Pantalião</span></h1>
+    <div>
+        <span class="badge">Maria Clara</span>
+        <span class="badge">Kaua</span>
+        <span class="badge">Marilene</span>
+        <span class="badge">Cristiane</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> medir o <strong>interesse em suporte psicológico gratuito via app</strong> e validar se a chancela <strong>"gov.br"</strong> gera <strong>confiança ou desconfiança</strong>.
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> cafés, livrarias e praça de alimentação.<br>
+            <strong>Abordagem:</strong> enfatizar que é <strong>anônima</strong> e focar em <strong>saúde mental</strong>.<br>
+            <strong>Meta:</strong> <span class="badge green">15–20 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p><strong>Motivos para não buscar ajuda</strong> (custo / vergonha) e <strong>aceitação do modelo online</strong> vinculado ao governo.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Maria Clara e Kaua</td><td>Abordagem</td></tr>
+        <tr><td>Marilene</td><td>Reações</td></tr>
+        <tr><td>Cristiane</td><td>Frases marcantes</td></tr>
+    </table>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 8: GRUPO 6 -->
+<section>
+    <span class="group-chip">GRUPO 6</span>
+    <h1>Dados Públicos <span style="font-size: 18px; color: #666; font-weight: 400;">· Prof. Pantalião</span></h1>
+    <div>
+        <span class="badge">Erilin</span>
+        <span class="badge">Emilly</span>
+        <span class="badge">Juarez</span>
+        <span class="badge">Flavia</span>
+    </div>
+    <div class="highlight-box" style="font-size: 16px;">
+        <strong>Objetivo:</strong> validar se os cidadãos teriam interesse em uma <strong>plataforma que simplifica dados públicos</strong>, ajudando a decidir sobre <strong>candidatos e agentes de cargos políticos</strong>.
+    </div>
+    <div class="two-col" style="margin-top: 10px;">
+        <div class="card">
+            <h3>Roteiro no Shopping</h3>
+            <p><strong>Onde:</strong> praça de alimentação, corredores e entrada principal.<br>
+            <strong>Abordagem:</strong> "Pesquisa rápida: você consegue entender o que os políticos fazem com o seu dinheiro?"<br>
+            <strong>Meta:</strong> <span class="badge green">15–20 respostas</span></p>
+        </div>
+        <div class="card">
+            <h3>Perguntas Essenciais</h3>
+            <p>Se a pessoa <strong>busca informação</strong> sobre candidatos, onde busca, e se uma <strong>linguagem simples</strong> mudaria o voto ou a decisão.</p>
+        </div>
+    </div>
+    <table style="margin-top: 12px;">
+        <tr><th>Integrante</th><th>Função no campo</th></tr>
+        <tr><td>Erilin e Emilly</td><td>Abordagem</td></tr>
+        <tr><td>Juarez</td><td>Registros / respostas abertas</td></tr>
+        <tr><td>Flavia</td><td>Tabulação / frases marcantes</td></tr>
+    </table>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 9: CHECKLIST FINAL -->
+<section style="background: linear-gradient(135deg, #FDF2F4 0%, #FFFFFF 100%);">
+    <h1>Checklist Final da Aula</h1>
+    <h2>Antes de sair hoje, garanta:</h2>
+    <div class="content" style="margin-top: 10px;">
+        <div class="two-col">
+            <ul class="checklist">
+                <li>Google Forms <strong>criado e testado no celular</strong>.</li>
+                <li>Roteiro de abordagem <strong>ensaiado</strong> (o pitch de 15 segundos).</li>
+                <li>Tarefas <strong>divididas</strong>.</li>
+            </ul>
+            <ul class="checklist">
+                <li>Hipóteses <strong>registradas</strong>.</li>
+                <li>Celular <strong>carregado</strong> para o dia da visita.</li>
+                <li><strong>Ponto de encontro</strong> combinado.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="highlight-box" style="margin-top: 10px; font-size: 16px;">
+        <strong>Meta coletiva:</strong> voltar com <strong>+100 respostas somadas</strong> entre os 6 grupos e <strong>0 formulários em branco</strong>.
+    </div>
+    <div class="subtitle">Customer Discovery na Prática · Visita Técnica ao Shopping · Prof. Renato Rosa</div>
+</section>
+
+<!-- SLIDE 10: DICA DE OURO -->
+<section class="cover">
+    <div class="quote" style="font-size: 30px; text-align: center; border-left: none; background: transparent; padding: 20px 40px; font-style: normal;">
+        "Vocês não vão ao shopping para provar que a ideia é boa.<br>Vocês vão para descobrir a <span style="color: #e94560; font-weight: 700;">VERDADE</span>."
+    </div>
+    <div class="highlight-box" style="font-size: 18px; max-width: 640px;">
+        Se a pessoa disser que <strong>não usaria</strong>, isso é um <strong>dado valioso</strong>. Anotem os <strong>'nãos'</strong>. Boa pesquisa!
+    </div>
+    <div style="margin-top: 40px;">
+        <div style="display: flex; align-items: center; justify-content: center; gap: 20px;">
+            <img src="Renato.jpg" alt="Prof. Renato Rosa" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 3px solid #e94560;">
+            <div style="text-align: left;">
+                <div style="font-size: 18px; color: #2D3748;">Prof. Renato Rosa</div>
+                <div style="font-size: 14px; color: #666;">Cerrado Tech · Unifacc</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+</div>
+
+<script src="../assets/reveal/reveal.js"></script>
+<script>
+    Reveal.initialize({
+        width: 1280,
+        height: 720,
+        margin: 0.03,
+        controls: true,
+        progress: true,
+        history: true,
+        slideNumber: 'c/t',
+        hash: true,
+        center: true,
+        transition: 'slide'
+    });
+</script>
+
+</body>
+</html>

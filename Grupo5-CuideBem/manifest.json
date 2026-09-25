@@ -1,0 +1,25 @@
+{
+  "name": "CuideBem",
+  "short_name": "CuideBem",
+  "description": "Porta de entrada anônima para apoio psicológico gratuito, com triagem e caminho até o CAPS.",
+  "lang": "pt-BR",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f0fbf8",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "../assets/logos/g5-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logos/g5-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

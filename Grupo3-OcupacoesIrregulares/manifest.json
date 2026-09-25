@@ -1,0 +1,25 @@
+{
+  "name": "Ocupações Irregulares",
+  "short_name": "Ocupações",
+  "description": "Levantamento com dados reais das ocupações, das famílias e da infraestrutura para orientar a política pública.",
+  "lang": "pt-BR",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3f1ee",
+  "theme_color": "#9a3412",
+  "icons": [
+    {
+      "src": "../assets/logos/g3-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logos/g3-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

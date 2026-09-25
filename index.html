@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Discovery · AdmCBA — FACC/Unifacc</title>
+<meta name="description" content="6 ideias, 6 MVPs funcionais — pesquisa de campo Customer Discovery da turma AdmCBA (Administração e Gestão Pública), FACC/Unifacc Cuiabá.">
+<meta name="theme-color" content="#0b1220">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="assets/logos/projeto.svg">
+<link rel="apple-touch-icon" href="assets/logos/projeto-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1220;--bg-soft:#0f1830;--surface:#fff;--surface-2:#f4f6fb;--ink:#0f172a;--ink-soft:#5b6478;--line:#e7e9f2;
+  --brand:#34d399;--brand-2:#fbbf24;--radius:20px;--shadow:0 10px 30px -12px rgba(15,23,42,.18);--shadow-h:0 18px 40px -14px rgba(15,23,42,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--surface-2);color:var(--ink);min-height:100dvh;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(11,18,32,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav .wrap{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff}
+.nav-mark{width:36px;height:36px;flex-shrink:0}
+.nav-title{font-size:14px;font-weight:700;line-height:1.15}
+.nav-title small{display:block;font-size:11px;font-weight:500;color:#9aa5c3;font-family:'Inter',sans-serif}
+.nav-links{margin-left:auto;display:flex;gap:18px;font-size:13px;font-weight:600}
+.nav-links a{text-decoration:none;color:#c7cee8;transition:color .15s}.nav-links a:hover{color:#fff}
+@media(max-width:680px){.nav-links{display:none}}
+.hero{position:relative;color:#eef2f8;background:radial-gradient(900px 420px at 12% -10%,rgba(52,211,153,.32),transparent 60%),radial-gradient(900px 480px at 92% 0%,rgba(251,191,36,.22),transparent 55%),var(--bg);padding:56px 0 46px}
+.hero h1{font-size:clamp(32px,6.4vw,60px);line-height:1.03;letter-spacing:-.02em;font-weight:700}
+.hero h1 span{color:var(--brand)}
+.hero .lead{margin-top:16px;max-width:640px;font-size:17.5px;color:#c7cee8;line-height:1.65}
+.hero .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.hero .tags span{font-size:12.5px;font-weight:600;color:#d1e7dd;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:6px 14px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:28px;max-width:660px}
+.stats div{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px}
+.stats b{display:block;font-family:'Space Grotesk';font-size:26px;color:var(--brand)}
+.stats small{color:#9aa5c3;font-size:12.5px}
+.logos{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;padding:26px 20px;background:var(--bg-soft);border-bottom:1px solid rgba(255,255,255,.06)}
+.logos img{width:52px;height:52px;border-radius:12px;background:#fff;padding:6px;box-shadow:0 6px 16px -8px rgba(0,0,0,.6)}
+.block{padding:54px 0}
+.block-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:26px;flex-wrap:wrap}
+.block-head h2{font-size:clamp(22px,3.4vw,30px);display:flex;align-items:center;gap:10px}
+.block-head h2 svg{width:24px;height:24px;color:var(--brand);flex-shrink:0}
+.block-head p{color:var(--ink-soft);font-size:15px;margin-top:6px;max-width:560px}
+.mvp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.mvp-card{display:flex;flex-direction:column;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s;border-top:5px solid var(--c,var(--brand))}
+.mvp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+.mvp-top{display:flex;align-items:center;gap:12px}
+.mvp-logo{width:46px;height:46px;border-radius:12px;background:#fff;border:1px solid var(--line);padding:4px;flex-shrink:0}
+.mvp-name{font-family:'Space Grotesk';font-weight:700;font-size:18px}
+.mvp-group{font-size:12.5px;color:var(--ink-soft)}
+.mvp-desc{margin-top:12px;color:var(--ink-soft);font-size:14.5px;line-height:1.6;flex:1}
+.mvp-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.status-chip{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:#166534;background:#dcfce7;border-radius:999px;padding:4px 10px}
+.status-chip svg{width:12px;height:12px}
+.open-cta{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--brand-2)}
+.open-cta svg{width:15px;height:15px}
+.util-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.util-card{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);transition:transform .15s}
+.util-card:hover{transform:translateY(-3px)}
+.util-icon{width:42px;height:42px;border-radius:12px;background:#ecfdf5;color:#0f766e;display:grid;place-items:center;margin-bottom:12px}
+.util-icon svg{width:22px;height:22px}
+.util-card b{font-family:'Space Grotesk';font-size:16px}
+.util-card small{display:block;color:var(--ink-soft);font-size:13px;margin-top:4px}
+.defesa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.defesa-card{display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--c,var(--brand));border-radius:14px;padding:14px 16px;box-shadow:var(--shadow);transition:transform .15s}
+.defesa-card:hover{transform:translateY(-3px)}
+.defesa-logo{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);padding:3px;background:#fff}
+.defesa-card b{display:block;font-family:'Space Grotesk';font-size:15.5px}
+.defesa-card span{font-size:12.5px;color:var(--ink-soft)}
+footer{background:var(--bg);color:#9aa5c3;padding:40px 0;margin-top:20px}
+footer .mark{display:flex;align-items:center;gap:10px;color:#eef2f8;font-family:'Space Grotesk';font-weight:700;margin-bottom:12px}
+footer .mark img{width:30px;height:30px}
+footer p{font-size:14px;line-height:1.7;max-width:640px}
+footer .links{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:13.5px;font-weight:600}
+footer .links a{color:var(--brand);text-decoration:none}
+footer .links a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <img class="nav-mark" src="assets/logos/projeto.svg" alt="">
+    <div class="nav-title">Customer Discovery<small>AdmCBA · Administração e Gestão Pública · FACC/Cuiabá</small></div>
+    <nav class="nav-links">
+      <a href="#mvps">MVPs</a><a href="#materiais">Materiais</a><a href="#defesa">Defesa</a><a href="https://github.com/renato0503/3SemCba" target="_blank" rel="noopener">Repositório</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="topo">
+    <div class="wrap">
+      <h1>Seis ideias, seis <span>projetos funcionais</span>.</h1>
+      <p class="lead">Pesquisa de campo <b>Customer Discovery</b> da turma AdmCBA: alunos foram a campo ouvir pessoas reais sobre seis ideias de app e serviço público — e cada grupo transformou o que ouviu em um MVP que funciona no navegador.</p>
+      <div class="tags"><span>Administração e Gestão Pública</span><span>FACC · Cuiabá</span><span>Customer Discovery</span><span>20 perguntas por grupo</span><span>Projetos PWA</span></div>
+      <div class="stats">
+        <div><b>6</b><small>grupos</small></div>
+        <div><b>6</b><small>MVPs funcionais</small></div>
+        <div><b>20</b><small>perguntas por grupo</small></div>
+        <div><b>3</b><small>partes da atividade</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="logos" aria-hidden="true">
+    <img src="assets/logos/g1.svg" alt=""><img src="assets/logos/g2.svg" alt=""><img src="assets/logos/g3.svg" alt="">
+    <img src="assets/logos/g4.svg" alt=""><img src="assets/logos/g5.svg" alt=""><img src="assets/logos/g6.svg" alt="">
+  </div>
+
+  <section class="block" id="mvps">
+    <div class="wrap">
+      <div class="block-head"><div><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h5"/></svg>Os MVPs</h2>
+        <p>Cada grupo criou um app completo, com design e arquitetura próprios. Teste no navegador ou instale como PWA no celular.</p></div></div>
+      <div class="mvp-grid">
+        <a href="Grupo1-AgroPrevisaoMT/" class="mvp-card" style="--c:#3f6212">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g1.svg" alt=""><div><div class="mvp-name">AgroPrevisãoMT</div><div class="mvp-group">Grupo 1</div></div></div>
+          <div class="mvp-desc">Antecipa como o crescimento do agro pressiona emprego, moradia, transporte e serviços nas cidades de MT.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="Grupo2-FilaCidada/" class="mvp-card" style="--c:#f59e0b">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g2.svg" alt=""><div><div class="mvp-name">Fila Cidadã</div><div class="mvp-group">Grupo 2</div></div></div>
+          <div class="mvp-desc">Diz quais documentos levar, como está a fila, quanto tempo esperar e onde ir.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="Grupo3-OcupacoesIrregulares/" class="mvp-card" style="--c:#9a3412">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g3.svg" alt=""><div><div class="mvp-name">Ocupações Irregulares</div><div class="mvp-group">Grupo 3</div></div></div>
+          <div class="mvp-desc">Levantamento com dados reais das ocupações e da infraestrutura para orientar a política pública.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="Grupo4-CRAS-Online/" class="mvp-card" style="--c:#1d4ed8">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g4.svg" alt=""><div><div class="mvp-name">CRAS Online</div><div class="mvp-group">Grupo 4</div></div></div>
+          <div class="mvp-desc">Envia documentos, agenda e acompanha pedidos do CRAS sem precisar ir até o local.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="Grupo5-CuideBem/" class="mvp-card" style="--c:#0f766e">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g5.svg" alt=""><div><div class="mvp-name">CuideBem</div><div class="mvp-group">Grupo 5</div></div></div>
+          <div class="mvp-desc">Porta de entrada anônima para apoio psicológico gratuito, com encaminhamento ao CAPS.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+        <a href="Grupo6-DadosPublicos/" class="mvp-card" style="--c:#1e1b4b">
+          <div class="mvp-top"><img class="mvp-logo" src="assets/logos/g6.svg" alt=""><div><div class="mvp-name">Dados Públicos</div><div class="mvp-group">Grupo 6</div></div></div>
+          <div class="mvp-desc">Traduz dados públicos sobre agentes políticos para o cidadão decidir melhor — com fonte e sem opinião.</div>
+          <div class="mvp-foot"><span class="status-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Funcional</span><span class="open-cta">Ver projeto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="materiais" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="block-head"><div><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v14"/></svg>Materiais da atividade</h2>
+        <p>As três partes do Customer Discovery: preparação, validação dos formulários e ida ao shopping — em slides e cadernos.</p></div></div>
+      <div class="util-grid">
+        <a href="Parte%201/Slides-Shopping.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><b>Slides — Parte 1</b><small>Preparação para a visita técnica</small></a>
+        <a href="Parte%202/Slides-Shopping-Parte2.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><b>Slides — Parte 2</b><small>Validação dos questionários</small></a>
+        <a href="Parte%203/Slides-Shopping-Parte3.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><b>Slides — Parte 3</b><small>Ida ao shopping + sprints</small></a>
+        <a href="Parte%201/caderno-shopping.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><b>Caderno — Parte 1</b><small>Customer Discovery completo</small></a>
+        <a href="Parte%202/caderno-shopping-parte2.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><b>Caderno — Parte 2</b><small>Formulários e o app de coleta</small></a>
+        <a href="Parte%203/caderno-shopping-parte3.html" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div><b>Caderno — Parte 3</b><small>Coleta e log de sprints</small></a>
+        <a href="assets/md-viewer.html?src=_pesquisa/INDICE-PESQUISA.md&voltar=./" class="util-card"><div class="util-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-4"/><path d="M15 3h6v6M10 14L21 3"/></svg></div><b>Índice de pesquisa</b><small>Papers e dados oficiais</small></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="defesa">
+    <div class="wrap">
+      <div class="block-head"><div><h2><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>Apresentações de defesa</h2>
+        <p>Slides por grupo: dor com dados, panorama de mídia, referencial científico e a solução proposta.</p></div></div>
+      <div class="defesa-grid">
+        <a href="Grupo1-AgroPrevisaoMT/Slides-AgroPrevisaoMT.html" class="defesa-card" style="--c:#3f6212"><img class="defesa-logo" src="assets/logos/g1.svg" alt=""><div><b>AgroPrevisãoMT</b><span>Grupo 1</span></div></a>
+        <a href="Grupo2-FilaCidada/Slides-FilaCidada.html" class="defesa-card" style="--c:#f59e0b"><img class="defesa-logo" src="assets/logos/g2.svg" alt=""><div><b>Fila Cidadã</b><span>Grupo 2</span></div></a>
+        <a href="Grupo3-OcupacoesIrregulares/Slides-OcupacoesIrregulares.html" class="defesa-card" style="--c:#9a3412"><img class="defesa-logo" src="assets/logos/g3.svg" alt=""><div><b>Ocupações Irregulares</b><span>Grupo 3</span></div></a>
+        <a href="Grupo4-CRAS-Online/Slides-CRAS-Online.html" class="defesa-card" style="--c:#1d4ed8"><img class="defesa-logo" src="assets/logos/g4.svg" alt=""><div><b>CRAS Online</b><span>Grupo 4</span></div></a>
+        <a href="Grupo5-CuideBem/Slides-CuideBem.html" class="defesa-card" style="--c:#0f766e"><img class="defesa-logo" src="assets/logos/g5.svg" alt=""><div><b>CuideBem</b><span>Grupo 5</span></div></a>
+        <a href="Grupo6-DadosPublicos/Slides-DadosPublicos.html" class="defesa-card" style="--c:#1e1b4b"><img class="defesa-logo" src="assets/logos/g6.svg" alt=""><div><b>Dados Públicos</b><span>Grupo 6</span></div></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mark"><img src="assets/logos/projeto.svg" alt="">Cerrado Tech · Unifacc</div>
+    <p>Turma AdmCBA · Administração e Gestão Pública · FACC/Unifacc — Cuiabá, 2026.<br>
+    Os MVPs são funcionais e rodam 100% no navegador: nenhum backend, dados de exemplo rotulados e exportação local.</p>
+    <div class="links">
+      <a href="https://github.com/renato0503/3SemCba" target="_blank" rel="noopener">Repositório 3SemCba</a>
+      <a href="#mvps">Voltar aos MVPs</a>
+      <a href="#materiais">Materiais</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+</script>
+</body>
+</html>

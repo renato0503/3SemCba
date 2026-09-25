@@ -1,0 +1,37 @@
+[
+  {
+    "titulo": "Land and livelihood in the age of COVID‐19: Implications for indigenous food producers in Ecuador",
+    "ano": 2021,
+    "autores": "Matthew McBurney; Luis Alberto Tuaza Castro; Carlos Ayol; Craig Johnson",
+    "periodico": "Journal of Agrarian Change",
+    "tipo": "article",
+    "doi": "10.1111/joac.12417",
+    "citacoes": 24,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joac.12417",
+    "areas": [
+      "Agriculture, Land Use, Rural Development",
+      "COVID-19 Pandemic Impacts"
+    ],
+    "abstract": "Like many Latin American countries, Ecuador responded to COVID-19 by restricting trade and travel, a decision that disrupted the prevailing model of regional trade integration. Among some analysts, observations have been made that the lockdown represents a new opportunity to revitalize rural livelihoods and smallholder agriculture. This paper evaluates these claims by exploring the impact of COVID-19 on household food security and smallholder food production in Chimborazo, a highland province that is known for extremely high rates of poverty and the highest concentration of Kichwa-speaking Indigenous people in Ecuador. Drawing upon original empirical research, it makes the case that the pros...",
+    "openalex_id": "https://openalex.org/W3133907513"
+  },
+  {
+    "titulo": "Smallholder poultry production in the context of increasing global food prices: roles in poverty reduction and food security",
+    "ano": 2023,
+    "autores": "Mulugeta Y. Birhanu; Richard Osei-Amponsah; F.Y. Obese; Tadelle Dessie",
+    "periodico": "Animal Frontiers",
+    "tipo": "article",
+    "doi": "10.1093/af/vfac069",
+    "citacoes": 84,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/af/article-pdf/13/1/17/49301470/vfac069.pdf",
+    "areas": [
+      "Livestock and Poultry Management",
+      "Agricultural Innovations and Practices",
+      "Agricultural Systems and Practices"
+    ],
+    "abstract": "A global increase in food prices severely affects the real incomes and food and nutritional security of resource-poor rural and peri-urban households in the developing world. During a surge in food prices, smallholder poultry production plays a significant role in poverty reduction by improving resource-poor households’ income and enhancing household food security through nutrient-rich animal source foods (ASFs) consumption. Improving its production and productivity heightens resource-poor households’ resilience to the price shock. Transforming existing low-input low-output smallholder poultry production systems demands technological advances in genetics, feed supply, health services, housin...",
+    "openalex_id": "https://openalex.org/W4321602565"
+  }
+]

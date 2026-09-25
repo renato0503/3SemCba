@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#1e1b4b">
+<title>Dados Públicos — a ficha que se lê em segundos</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g6.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g6-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ===== Dados Públicos · jornalismo de dados: papel clichê, tinta naval e lima de gráfico.
+   Nada de partido, nada de adjetivo: cada número vem com fonte, data e uma frase que traduz. ===== */
+:root{--tinta:#1e1b4b;--tinta2:#312e81;--lima:#a3e635;--lima2:#65a30d;--txt:#161625;--mudo:#5b5f78;--linha:#e2e1ef;--fundo:#f7f7fb;--card:#fff;--aviso:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--fundo);color:var(--txt);min-height:100dvh;padding-bottom:calc(76px + env(safe-area-inset-bottom));font-size:16px}
+button,input,select{font:inherit;color:inherit}
+.faixa{background:var(--tinta);color:#c7d2fe;font-size:11.5px;padding:calc(7px + env(safe-area-inset-top)) 14px 7px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.faixa b{color:var(--lima);font-family:"JetBrains Mono",monospace}
+header.cab{padding:14px 16px 6px;max-width:680px;margin:0 auto}
+header.cab h1{font-family:Archivo;font-weight:900;font-size:29px;line-height:1;letter-spacing:-.02em;color:var(--tinta)}
+header.cab h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--lima) 62%)}
+header.cab small{display:block;color:var(--mudo);font-size:13px;margin-top:4px}
+main{max-width:680px;margin:0 auto;padding:12px 16px}
+.tela{display:none}.tela.on{display:block;animation:entra .25s}
+@keyframes entra{from{opacity:0;transform:translateY(6px)}}
+h2{font-family:Archivo;font-weight:800;font-size:23px;margin:4px 0 8px;color:var(--tinta)}
+p.sub{color:var(--mudo);font-size:14.5px;margin-bottom:12px}
+.busca{width:100%;min-height:50px;border:2px solid var(--linha);border-radius:12px;background:#fff;padding:0 14px;font-size:16px;margin-bottom:12px}
+.cand{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;width:100%;text-align:left;background:#fff;border:2px solid var(--linha);border-radius:12px;padding:12px;margin-bottom:10px;cursor:pointer}
+.cand:hover{border-color:var(--tinta2)}
+.cand .av{width:46px;height:46px;border-radius:50%;background:var(--tinta);color:var(--lima);display:grid;place-items:center;font-family:Archivo;font-weight:900;font-size:18px}
+.cand b{display:block;font-size:16px}.cand small{color:var(--mudo);font-size:12.5px}
+.cand .abrir{color:var(--tinta2);font-weight:700;font-size:13px}
+.cartao{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:16px;margin-bottom:12px}
+.cartao h3{font-family:Archivo;font-weight:800;font-size:17px;margin-bottom:8px}
+.aviso-dados{display:flex;gap:10px;background:#fffbeb;border:1.5px solid #fcd34d;border-radius:10px;padding:10px 12px;font-size:13px;color:#78350f;margin-bottom:12px}
+.aviso-dados b{color:var(--aviso)}
+.indic{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--linha)}
+.indic:last-child{border:none}
+.indic .rot{color:var(--mudo);font-size:14px}
+.indic .val{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:16px;white-space:nowrap}
+.fonte{font-size:12px;color:var(--mudo);margin-top:6px}
+.barra{height:9px;background:var(--linha);border-radius:999px;overflow:hidden;margin-top:6px}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,var(--lima),var(--lima2))}
+.resumo{background:var(--tinta);color:#eef2ff;border-radius:14px;padding:16px;margin-bottom:12px}
+.resumo h3{color:#fff;font-family:Archivo;margin-bottom:8px}
+.resumo p{font-size:15px;line-height:1.6}.resumo b{color:var(--lima)}
+.comparar{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.comparar select{width:100%;min-height:46px;border:2px solid var(--linha);border-radius:10px;background:#fff;padding:0 8px;font-size:14.5px}
+.comp-linha{padding:10px 0;border-bottom:1px solid var(--linha)}
+.comp-linha .top{display:flex;justify-content:space-between;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:15px;gap:8px}
+.comp-linha .rot{color:var(--mudo);font-family:Inter;font-weight:600;font-size:13.5px;margin-bottom:4px}
+.comp-linha .frases{font-size:13px;color:var(--mudo);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.vencedor{color:var(--lima2);font-weight:700}
+.btn{min-height:48px;border:none;border-radius:10px;background:var(--tinta);color:#fff;font-weight:700;padding:0 16px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.btn.sec{background:#fff;color:var(--tinta);border:2px solid var(--linha)}.btn.peq{min-height:40px;font-size:13.5px;padding:0 12px}
+.fila{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.fila>*{flex:1 1 auto}
+.metodo li{margin:6px 0 6px 18px;color:var(--mudo);font-size:14.5px}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--linha);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:700;color:var(--mudo);text-decoration:none;padding:9px 0;min-height:60px}
+nav.baixo a span{font-size:20px}
+nav.baixo a[aria-current=page]{color:var(--tinta)}
+#brinde{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);background:var(--tinta);color:#fff;padding:11px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw;text-align:center;font-size:14px}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="faixa"><span>📊 <b>DADOS FICTÍCIOS DE EXEMPLO</b> · nenhum partido é citado</span><span id="extraido">extração: —</span></div>
+<header class="cab"><h1>Dados <em>Públicos</em></h1><small>a ficha que se lê em segundos — sem julgamento, com fonte</small></header>
+<main>
+  <section class="tela" id="t-buscar">
+    <h2>Quem você quer entender?</h2>
+    <p class="sub">Busque pelo nome. Mostramos o dado oficial traduzido em linguagem clara.</p>
+    <div class="aviso-dados">⚠️ <span>Este protótipo usa <b>dados fictícios</b> para demonstrar a leitura. Nada aqui se refere a pessoas reais. Não emitimos opinião nem comparamos mérito político.</span></div>
+    <input class="busca" id="busca" type="search" placeholder="Buscar por nome ou cargo…" aria-label="Buscar agente">
+    <div id="lista"></div>
+  </section>
+
+  <section class="tela" id="t-ficha"></section>
+
+  <section class="tela" id="t-comparar">
+    <h2>Lado a lado</h2>
+    <p class="sub">Escolha dois agentes. Os mesmos indicadores, na mesma ordem, para todo mundo.</p>
+    <div class="aviso-dados">⚠️ <span>Comparar <b>dados</b> não é julgar pessoas. Leia cada número com o seu contexto e confira sempre a fonte oficial.</span></div>
+    <div class="comparar">
+      <select id="sel-a" aria-label="Primeiro agente"></select>
+      <select id="sel-b" aria-label="Segundo agente"></select>
+    </div>
+    <div id="comp"></div>
+    <div class="fila"><button class="btn sec" id="copiar-comp">Copiar comparação</button><button class="btn sec" id="baixar-comp">Baixar .txt</button></div>
+  </section>
+
+  <section class="tela" id="t-metodo">
+    <h2>Como lemos os dados</h2>
+    <div class="cartao metodo"><h3>De onde vêm</h3>
+      <ul><li>Prestação de contas de campanha — TSE</li><li>Atividade parlamentar e votações — Câmara/Senado e assembleias</li><li>Execução de emendas e gastos — Portal da Transparência</li></ul>
+      <p class="fonte">Neste protótipo, a base é local e fictícia. Na versão real, cada número teria link para a origem e data de extração.</p></div>
+    <div class="cartao metodo"><h3>Como traduzimos</h3>
+      <ul><li>Cada indicador vira uma frase curta em português do dia a dia.</li><li>Nunca usamos adjetivo de valor (“bom”, “ruim”, “melhor”).</li><li>Não citamos partido nem posição política.</li></ul></div>
+    <div class="cartao metodo"><h3>Nossos limites</h3>
+      <ul><li>Dado público tem contexto: um número isolado pode enganar.</li><li>Ausência de dado também é informação — e a mostramos.</li><li>A decisão é sempre sua.</li></ul></div>
+    <div class="cartao"><h3>Seus dados</h3><div class="fila" style="margin-top:0"><button class="btn sec peq" id="exportar">Exportar leituras</button><button class="btn sec peq" id="zerar">Apagar</button></div>
+      <p class="fonte" style="margin-top:10px">Dados Públicos · Grupo 6 · AdmCBA · UNIFACC-MT</p></div>
+  </section>
+</main>
+<nav class="baixo" aria-label="Seções">
+  <a href="#/buscar"><span>🔎</span>Buscar</a>
+  <a href="#/ficha"><span>📄</span>Ficha</a>
+  <a href="#/comparar"><span>⚖️</span>Comparar</a>
+  <a href="#/metodo"><span>📐</span>Método</a>
+</nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção do Dados Públicos: base normalizada + motor de tradução. Os
+   indicadores são um esquema (rótulo, unidade, direção e uma função que vira
+   frase). A ficha, o resumo e o comparador são gerados a partir do MESMO esquema,
+   o que garante critérios iguais para todos — neutralidade como regra de código,
+   não como promessa. A base é local e fictícia; cada item guarda fonte e data.
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2400); };
+const R$ = v => 'R$ ' + (+v || 0).toLocaleString('pt-BR', { maximumFractionDigits: 0 });
+const R$k = v => v >= 1e6 ? 'R$ ' + (v / 1e6).toFixed(2).replace('.', ',') + ' mi' : R$(v);
+
+/* ---------- esquema de indicadores (fonte única de verdade) ---------- */
+const IND = [
+  { k: 'presenca', r: 'Presença em votações', un: '%', dir: 1, fala: v => `Participou de ${v} de cada 100 votações nominais.` },
+  { k: 'projetos', r: 'Projetos apresentados', un: '', dir: 1, fala: v => `Apresentou ${v} projetos no período.` },
+  { k: 'aprovados', r: 'Projetos aprovados', un: '', dir: 1, fala: v => `Teve ${v} projeto(s) aprovado(s).` },
+  { k: 'emendas', r: 'Emendas destinadas', un: 'R$', dir: 0, fala: v => `Indicou ${R$k(v)} em emendas.` },
+  { k: 'gabinete', r: 'Verba de gabinete usada no ano', un: 'R$', dir: 0, fala: v => `Usou ${R$k(v)} da verba de gabinete.` },
+  { k: 'campanha', r: 'Despesas de campanha declaradas', un: 'R$', dir: 0, fala: v => `Declarou ${R$k(v)} de despesas de campanha.` },
+  { k: 'mandatos', r: 'Mandatos no cargo', un: '', dir: 0, fala: v => `Está no ${v}º mandato.` },
+];
+const NOMES = ['Exemplo Almeida', 'Exemplo Barreto', 'Exemplo Cardoso', 'Exemplo Dias', 'Exemplo Esteves'];
+const DADOS = [
+  { id: 'c1', nome: NOMES[0], cargo: 'Deputado(a) estadual — exemplo', uf: 'MT', fonte: 'TSE · Assembleia · Transparência (exemplo)', extraido: '2026-09-20', ind: { presenca: 87, projetos: 23, aprovados: 4, emendas: 1250000, gabinete: 410000, campanha: 320000, mandatos: 2 } },
+  { id: 'c2', nome: NOMES[1], cargo: 'Deputado(a) federal — exemplo', uf: 'MT', fonte: 'TSE · Câmara · Transparência (exemplo)', extraido: '2026-09-18', ind: { presenca: 71, projetos: 41, aprovados: 9, emendas: 3400000, gabinete: 520000, campanha: 890000, mandatos: 3 } },
+  { id: 'c3', nome: NOMES[2], cargo: 'Vereador(a) — exemplo', uf: 'Cuiabá/MT', fonte: 'TSE · Câmara Municipal (exemplo)', extraido: '2026-09-15', ind: { presenca: 94, projetos: 15, aprovados: 2, emendas: 210000, gabinete: 180000, campanha: 95000, mandatos: 1 } },
+  { id: 'c4', nome: NOMES[3], cargo: 'Deputado(a) estadual — exemplo', uf: 'MT', fonte: 'TSE · Assembleia (exemplo)', extraido: '2026-09-12', ind: { presenca: 63, projetos: 8, aprovados: 1, emendas: 640000, gabinete: 305000, campanha: 210000, mandatos: 1 } },
+  { id: 'c5', nome: NOMES[4], cargo: 'Senador(a) — exemplo', uf: 'MT', fonte: 'TSE · Senado · Transparência (exemplo)', extraido: '2026-09-10', ind: { presenca: 79, projetos: 33, aprovados: 6, emendas: 5600000, gabinete: 610000, campanha: 1450000, mandatos: 2 } },
+];
+const val = (d, k) => d.ind[k];
+const fmt = (k, v) => IND.find(i => i.k === k).un === 'R$' ? R$k(v) : v + (IND.find(i => i.k === k).un || '');
+
+/* ---------- estado ---------- */
+const CH = 'dadospublicos:v1';
+const semente = () => ({ visto: [], a: 'c1', b: 'c2' });
+let S; try { S = JSON.parse(localStorage.getItem(CH)) } catch (e) {} if (!S) S = semente();
+const salvar = () => localStorage.setItem(CH, JSON.stringify(S)); salvar();
+
+/* ---------- telas ---------- */
+function telaBuscar() {
+  const q = ($('#busca').value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const lista = DADOS.filter(d => !q || (d.nome + ' ' + d.cargo).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().includes(q));
+  $('#lista').innerHTML = lista.map(d => `<button class="cand" data-ficha="${d.id}"><span class="av">${esc(d.nome.split(' ')[1][0])}</span>
+    <span><b>${esc(d.nome)}</b><small>${esc(d.cargo)} · ${esc(d.uf)}</small></span><span class="abrir">ver ficha ›</span></button>`).join('') || '<p class="sub">Ninguém encontrado. Confira o nome digitado.</p>';
+  $('#extraido').textContent = 'extração: ' + (DADOS[0].extraido);
+}
+function resumoDe(d) {
+  return [
+    `Compareceu a <b>${d.ind.presenca}%</b> das votações nominais do período.`,
+    `Apresentou <b>${d.ind.projetos}</b> projetos; <b>${d.ind.aprovados}</b> foram aprovados.`,
+    `Indicou <b>${R$k(d.ind.emendas)}</b> em emendas e usou <b>${R$k(d.ind.gabinete)}</b> da verba de gabinete no ano.`,
+    `Declarou <b>${R$k(d.ind.campanha)}</b> em despesas de campanha e está no <b>${d.ind.mandatos}º</b> mandato.`,
+  ].join(' ');
+}
+function telaFicha() {
+  const d = DADOS.find(x => x.id === S.visto) || DADOS[0];
+  $('#t-ficha').innerHTML = `<h2>${esc(d.nome)}</h2><p class="sub">${esc(d.cargo)} · ${esc(d.uf)}</p>
+    <div class="resumo"><h3>Em poucas palavras</h3><p>${resumoDe(d)}</p></div>
+    <div class="cartao"><h3>Indicadores</h3>
+      ${IND.map(i => `<div class="indic"><span class="rot">${i.r}</span><span class="val">${fmt(i.k, val(d, i.k))}</span></div>`).join('')}
+      <p class="fonte">Fonte: ${esc(d.fonte)} · extraído em ${esc(d.extraido)}. Dados fictícios de exemplo.</p></div>
+    <div class="cartao"><h3>O que cada frase quer dizer</h3>
+      ${IND.map(i => `<div class="passo" style="padding:7px 0"><p style="font-size:14.5px"><b>${i.r}:</b> ${i.fala(val(d, i.k))}</p></div>`).join('')}</div>
+    <div class="fila"><button class="btn sec" data-comparar-com="${d.id}">Comparar com outro</button><a class="btn" href="#/comparar">Ir ao comparador</a></div>`;
+}
+function telaComparar() {
+  const opts = id => DADOS.map(d => `<option value="${d.id}" ${d.id === id ? 'selected' : ''}>${esc(d.nome)}</option>`).join('');
+  $('#sel-a').innerHTML = opts(S.a); $('#sel-b').innerHTML = opts(S.b);
+  const A = DADOS.find(d => d.id === S.a), B = DADOS.find(d => d.id === S.b);
+  if (!A || !B) return;
+  $('#comp').innerHTML = `<div class="cartao"><h3>${esc(A.nome)} <span style="color:var(--mudo);font-size:13px">vs.</span> ${esc(B.nome)}</h3>
+    ${IND.map(i => { const va = val(A, i.k), vb = val(B, i.k), max = Math.max(va, vb) || 1;
+      return `<div class="comp-linha"><div class="rot">${i.r}</div>
+        <div class="top"><span>${fmt(i.k, va)}</span><span>${fmt(i.k, vb)}</span></div>
+        <div class="barra"><i style="width:${va / max * 100}%"></i></div><div class="barra"><i style="width:${vb / max * 100}%"></i></div>
+        <div class="frases"><span>${i.fala(va)}</span><span>${i.fala(vb)}</span></div></div>`; }).join('')}
+    <p class="fonte">As barras mostram os valores na mesma escala. Maior nem sempre significa melhor — o critério é seu. Dados fictícios de exemplo; fontes reais possíveis: TSE, casas legislativas e Portal da Transparência.</p></div>`;
+}
+function textoComparacao() {
+  const A = DADOS.find(d => d.id === S.a), B = DADOS.find(d => d.id === S.b);
+  return `COMPARAÇÃO DE DADOS PÚBLICOS (exemplo)\n${A.nome} vs. ${B.nome}\n\n` +
+    IND.map(i => `${i.r}:\n  ${A.nome}: ${fmt(i.k, val(A, i.k))} — ${i.fala(val(A, i.k))}\n  ${B.nome}: ${fmt(i.k, val(B, i.k))} — ${i.fala(val(B, i.k))}`).join('\n') +
+    `\n\nDados fictícios de exemplo. Fontes reais possíveis: TSE, Câmara/Senado, Portal da Transparência.`;
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('button,a'); if (!b) return;
+  if (b.dataset.ficha) { S.visto = b.dataset.ficha; salvar(); location.hash = '#/ficha'; return; }
+  if (b.dataset.compararCom) { S.a = b.dataset.compararCom; if (S.b === S.a) S.b = DADOS.find(d => d.id !== S.a).id; salvar(); location.hash = '#/comparar'; return; }
+  if (b.id === 'copiar-comp') { const t = textoComparacao(); navigator.clipboard ? navigator.clipboard.writeText(t).then(() => brinde('Comparação copiada.'), () => brinde('Selecione e copie manualmente.')) : brinde('Selecione e copie manualmente.'); return; }
+  if (b.id === 'baixar-comp') { Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([textoComparacao()], { type: 'text/plain' })), download: 'comparacao-dados-publicos.txt' }).click(); return; }
+  if (b.id === 'exportar') { Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([JSON.stringify({ app: 'dadospublicos', dados: S })], { type: 'application/json' })), download: 'dados-publicos.json' }).click(); return; }
+  if (b.id === 'zerar') { if (confirm('Limpar o que você abriu neste protótipo?')) { S = semente(); salvar(); rota(); brinde('Leituras limpas.'); } return; }
+});
+$('#busca').addEventListener('input', telaBuscar);
+document.addEventListener('change', e => { if (e.target.id === 'sel-a') { S.a = e.target.value; if (S.a === S.b) S.b = DADOS.find(d => d.id !== S.a).id; salvar(); telaComparar(); } if (e.target.id === 'sel-b') { S.b = e.target.value; if (S.b === S.a) S.a = DADOS.find(d => d.id !== S.b).id; salvar(); telaComparar(); } });
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/buscar', '#/ficha', '#/comparar', '#/metodo'];
+const TELAS = { buscar: telaBuscar, ficha: telaFicha, comparar: telaComparar, metodo: () => {} };
+function rota() {
+  const n = (location.hash.match(/^#\/(\w+)/) || [])[1], nome = TELAS[n] ? n : 'buscar';
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + nome));
+  $$('nav.baixo a').forEach(a => a.getAttribute('href') === '#/' + nome ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  TELAS[nome](); scrollTo(0, 0);
+}
+addEventListener('hashchange', rota); rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

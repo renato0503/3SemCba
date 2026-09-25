@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#9a3412">
+<title>Ocupações Irregulares — do achismo ao dado</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g3.svg">
+<link rel="apple-touch-icon" href="../assets/logos/g3-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;800&family=IBM+Plex+Sans+Condensed:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Ocupações Irregulares · caderno de levantamento urbano: concreto, terracota, faixa de obra; tabela em primeiro plano ===== */
+:root{--concreto:#f3f1ee;--concreto2:#e7e3dd;--terra:#9a3412;--terra2:#7c2d12;--obra:#fbbf24;--txt:#1f2937;--mudo:#6b7280;--linha:#d6d1c8;--ok:#15803d;--ruim:#b91c1c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"IBM Plex Sans Condensed",system-ui,sans-serif;background:var(--concreto);color:var(--txt);min-height:100dvh;padding-bottom:calc(72px + env(safe-area-inset-bottom));font-size:16px}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{font-family:"Roboto Slab",serif}
+.faixa{height:8px;background:repeating-linear-gradient(-45deg,var(--obra) 0 12px,var(--txt) 12px 24px)}
+header{background:var(--terra);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 14px 12px;display:flex;align-items:center;gap:10px}
+header img{width:36px;height:36px;border-radius:8px}
+header h1{font-size:19px;font-weight:800;line-height:1.05}header small{display:block;font-family:"IBM Plex Sans Condensed";font-size:12.5px;opacity:.85}
+main{max-width:760px;margin:0 auto;padding:12px}
+.tela{display:none}.tela.on{display:block}
+h2{font-size:22px;color:var(--terra2);margin:4px 0 8px}
+.ferr{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.btn{min-height:44px;border:none;border-radius:6px;background:var(--terra);color:#fff;font-weight:700;padding:0 12px;cursor:pointer}
+.btn.sec{background:#fff;color:var(--terra2);border:1.5px solid var(--terra)}.btn.peq{min-height:38px;font-size:14px;padding:0 9px}
+.tabela{overflow-x:auto;background:#fff;border:1px solid var(--linha);border-radius:6px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14.5px}
+th{position:sticky;top:0;background:var(--concreto2);text-align:left;padding:8px 6px;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;cursor:pointer;white-space:nowrap;border-bottom:2px solid var(--terra)}
+th[aria-sort]::after{content:" ▲";color:var(--terra)}th[aria-sort=descending]::after{content:" ▼"}
+td{border-bottom:1px solid var(--linha);padding:4px 6px;vertical-align:middle}
+td:first-child{position:sticky;left:0;background:#fff;z-index:1;min-width:150px}
+td input[type=text],td input[type=number]{width:100%;min-height:38px;border:1px solid transparent;background:transparent;padding:4px;border-radius:4px}
+td input:focus{border-color:var(--terra);background:#fffbeb;outline:none}
+td input[type=number]{width:70px}
+td input[type=checkbox]{width:22px;height:22px;accent-color:var(--terra)}
+.idx{display:inline-block;min-width:44px;text-align:center;font-weight:700;padding:3px 6px;border-radius:4px;color:#fff}
+.legenda{font-size:12.5px;color:var(--mudo);margin:8px 0}
+.croqui{width:100%;display:block;background:#fff;border:1px solid var(--linha);border-radius:6px;touch-action:manipulation;cursor:crosshair}
+.card{background:#fff;border:1px solid var(--linha);border-radius:6px;padding:14px;margin-bottom:12px}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:12px}
+.kpis div{background:#fff;border:1px solid var(--linha);border-top:4px solid var(--terra);padding:10px}
+.kpis b{display:block;font-family:"Roboto Slab";font-size:28px;color:var(--terra2)}.kpis span{font-size:13px;color:var(--mudo)}
+.barra{display:grid;grid-template-columns:110px 1fr 46px;gap:8px;align-items:center;margin:6px 0;font-size:14px}
+.barra .t{height:16px;background:var(--concreto2);border-radius:3px;overflow:hidden}.barra .t i{display:block;height:100%}
+.real{font-size:13.5px;padding:8px 0;border-bottom:1px dashed var(--linha)}.real b{color:var(--terra2)}
+textarea{width:100%;min-height:340px;border:1px solid var(--linha);border-radius:6px;padding:12px;background:#fff;font-size:15px;line-height:1.5}
+select.in{min-height:44px;border:1.5px solid var(--linha);border-radius:6px;padding:0 8px;background:#fff;width:100%}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:var(--txt);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#d1d5db;text-decoration:none;font-size:12.5px;font-weight:700;padding:8px 0;min-height:56px}
+nav.baixo a span{font-size:19px}
+nav.baixo a[aria-current=page]{color:var(--obra);box-shadow:inset 0 3px 0 var(--obra)}
+#brinde{position:fixed;left:50%;top:12px;transform:translateX(-50%);background:var(--txt);color:#fff;padding:10px 16px;border-radius:6px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw}
+#brinde.on{opacity:1}
+:focus-visible{outline:3px solid var(--obra);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="faixa"></div>
+<header><img src="../assets/logos/g3.svg" alt=""><div><h1>Ocupações Irregulares</h1><small>levantamento local · do achismo ao dado</small></div></header>
+<main>
+  <section class="tela" id="t-planilha">
+    <h2>Levantamento</h2>
+    <div class="ferr"><button class="btn" id="add">+ Ocupação</button><button class="btn sec peq" id="csv-exp">Exportar CSV</button><button class="btn sec peq" id="csv-imp" data-teste="pular">Importar CSV</button><button class="btn sec peq" id="zerar">Recomeçar</button></div>
+    <div class="tabela"><table id="tab"><thead></thead><tbody></tbody></table></div>
+    <p class="legenda">Toque no cabeçalho para ordenar. Edite direto na célula. <b>Índice</b> de precariedade (0–100) = infraestrutura ausente + área de risco. Linhas de exemplo são <b>fictícias</b>.</p>
+  </section>
+
+  <section class="tela" id="t-croqui">
+    <h2>Croqui de localização</h2>
+    <label class="legenda" for="sel-oc">Escolha a ocupação e toque no croqui para marcar onde fica</label>
+    <select class="in" id="sel-oc"></select>
+    <canvas class="croqui" id="croqui" width="720" height="560" aria-label="Croqui esquemático da cidade com as ocupações marcadas"></canvas>
+    <p class="legenda">Croqui esquemático (sem mapa real) para não expor a localização exata das famílias. Círculo maior = mais famílias; cor = precariedade.</p>
+  </section>
+
+  <section class="tela" id="t-painel">
+    <h2>Painel</h2>
+    <div class="kpis"><div><b id="k-oc">0</b><span>ocupações levantadas</span></div><div><b id="k-fam">0</b><span>famílias</span></div><div><b id="k-prec">0</b><span>em situação precária (índice ≥ 60)</span></div><div><b id="k-risco">0</b><span>em área de risco</span></div></div>
+    <div class="card"><h3 style="font-size:16px">Infraestrutura ausente (% das ocupações)</h3><div id="infra"></div></div>
+    <div class="card"><h3 style="font-size:16px">O que o poder público faz hoje</h3><div id="acao"></div></div>
+    <div class="card"><h3 style="font-size:16px">Para comparar — dados reais</h3>
+      <div class="real"><b>12.348</b> favelas e comunidades urbanas em 656 municípios, com <b>16,4 milhões</b> de pessoas (8,1% da população) · IBGE, Censo 2022</div>
+      <div class="real"><b>21,7%</b> dos moradores de favelas vivem em trechos sem pavimentação, contra 8,2% fora delas · IBGE, Censo 2022</div>
+      <div class="real"><b>19,2%</b> dos moradores de favelas não têm via de acesso a veículos · IBGE, Censo 2022</div>
+      <div class="real"><b>6,2 milhões</b> de domicílios no déficit habitacional em 2022 · Fundação João Pinheiro</div></div>
+  </section>
+
+  <section class="tela" id="t-proposta">
+    <h2>Proposta ao gestor</h2>
+    <p class="legenda">Rascunho gerado a partir do levantamento. Edite à vontade antes de enviar.</p>
+    <textarea id="proposta" aria-label="Texto da proposta"></textarea>
+    <div class="ferr" style="margin-top:8px"><button class="btn" id="regerar">Gerar de novo</button><button class="btn sec peq" id="copiar">Copiar</button><button class="btn sec peq" id="baixar">Baixar .txt</button></div>
+    <p class="legenda">Ocupações Irregulares · Grupo 3 · AdmCBA · UNIFACC</p>
+  </section>
+</main>
+<nav class="baixo" aria-label="Seções"><a href="#/planilha"><span>▦</span>Planilha</a><a href="#/croqui"><span>✎</span>Croqui</a><a href="#/painel"><span>▥</span>Painel</a><a href="#/proposta"><span>✉</span>Proposta</a></nav>
+<div id="brinde" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================================
+   Construção do Ocupações Irregulares: mini motor de planilha. Um esquema de
+   colunas define tipo, rótulo e fórmula; a tabela é gerada a partir dele, cada
+   célula edita o registro na hora, colunas calculadas (índice) são recomputadas,
+   e o mesmo esquema serializa/deserializa CSV (com aspas e ponto e vírgula).
+   ============================================================================ */
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let tb; const brinde = m => { const e = $('#brinde'); e.textContent = m; e.classList.add('on'); clearTimeout(tb); tb = setTimeout(() => e.classList.remove('on'), 2200); };
+
+const INFRA = [['agua', 'Água'], ['luz', 'Luz'], ['esgoto', 'Esgoto'], ['coleta', 'Coleta de lixo'], ['pav', 'Pavimento'], ['onibus', 'Ônibus perto']];
+const ACOES = ['Sem ação', 'Cadastro social', 'Negociação', 'Reurb iniciada', 'Remoção prevista'];
+const indice = r => Math.min(100, Math.round(INFRA.filter(([k]) => !r[k]).length / INFRA.length * 80 + (r.risco ? 20 : 0)));
+const COLS = [
+  { k: 'nome', r: 'Ocupação', t: 'texto' }, { k: 'bairro', r: 'Bairro/região', t: 'texto' }, { k: 'familias', r: 'Famílias', t: 'num' }, { k: 'anos', r: 'Anos', t: 'num' },
+  ...INFRA.map(([k, r]) => ({ k, r, t: 'bool' })), { k: 'risco', r: 'Área de risco', t: 'bool' },
+  { k: 'acao', r: 'Ação pública', t: 'lista', ops: ACOES }, { k: 'indice', r: 'Índice', t: 'calc', f: indice },
+];
+const CH = 'ocupacoes:v1';
+const semente = () => ({ ordem: { k: 'indice', dir: -1 }, sel: 'o1', linhas: [
+  { id: 'o1', nome: 'Loteamento invadido (exemplo do grupo)', bairro: 'Região Norte', familias: 120, anos: 2, agua: false, luz: true, esgoto: false, coleta: false, pav: false, onibus: true, risco: false, acao: 'Sem ação', x: .3, y: .25 },
+  { id: 'o2', nome: 'Comunidade Beira-Córrego', bairro: 'Região Leste', familias: 45, anos: 9, agua: true, luz: true, esgoto: false, coleta: true, pav: false, onibus: false, risco: true, acao: 'Cadastro social', x: .72, y: .4 },
+  { id: 'o3', nome: 'Vila Nova Esperança', bairro: 'Região Oeste', familias: 210, anos: 15, agua: true, luz: true, esgoto: true, coleta: true, pav: false, onibus: true, risco: false, acao: 'Reurb iniciada', x: .18, y: .62 },
+  { id: 'o4', nome: 'Área da antiga cerâmica', bairro: 'Região Sul', familias: 30, anos: 4, agua: false, luz: false, esgoto: false, coleta: false, pav: false, onibus: false, risco: true, acao: 'Negociação', x: .55, y: .8 },
+  { id: 'o5', nome: 'Assentamento Jardim do Sol', bairro: 'Região Norte', familias: 85, anos: 6, agua: true, luz: true, esgoto: false, coleta: true, pav: true, onibus: true, risco: false, acao: 'Sem ação', x: .45, y: .15 },
+] });
+let S; try { S = JSON.parse(localStorage.getItem(CH)); } catch (e) {} if (!S) S = semente();
+const salvar = () => localStorage.setItem(CH, JSON.stringify(S)); salvar();
+const corIdx = v => v >= 60 ? '#b91c1c' : v >= 35 ? '#d97706' : '#15803d';
+const valor = (r, c) => c.t === 'calc' ? c.f(r) : r[c.k];
+
+/* ---------- planilha ---------- */
+function ordenadas() { const { k, dir } = S.ordem, c = COLS.find(x => x.k === k); return [...S.linhas].sort((a, b) => { const va = valor(a, c), vb = valor(b, c); return (typeof va === 'string' ? va.localeCompare(vb) : (va - vb)) * dir; }); }
+function telaPlanilha() {
+  $('#tab thead').innerHTML = '<tr>' + COLS.map(c => `<th data-ord="${c.k}" ${S.ordem.k === c.k ? `aria-sort="${S.ordem.dir > 0 ? 'ascending' : 'descending'}"` : ''} scope="col">${c.r}</th>`).join('') + '<th></th></tr>';
+  $('#tab tbody').innerHTML = ordenadas().map(r => '<tr>' + COLS.map(c => {
+    const v = valor(r, c), rot = `aria-label="${c.r} de ${esc(r.nome)}"`;
+    if (c.t === 'texto') return `<td><input type="text" data-id="${r.id}" data-k="${c.k}" value="${esc(v)}" ${rot}></td>`;
+    if (c.t === 'num') return `<td><input type="number" min="0" data-id="${r.id}" data-k="${c.k}" value="${v}" ${rot}></td>`;
+    if (c.t === 'bool') return `<td style="text-align:center"><input type="checkbox" data-id="${r.id}" data-k="${c.k}" ${v ? 'checked' : ''} ${rot}></td>`;
+    if (c.t === 'lista') return `<td><select data-id="${r.id}" data-k="${c.k}" ${rot} style="min-height:38px;border:1px solid var(--linha);border-radius:4px;background:#fff">${c.ops.map(o => `<option ${o === v ? 'selected' : ''}>${o}</option>`).join('')}</select></td>`;
+    return `<td><span class="idx" style="background:${corIdx(v)}">${v}</span></td>`;
+  }).join('') + `<td><button class="btn sec peq" data-rem="${r.id}" aria-label="Remover ${esc(r.nome)}">✕</button></td></tr>`).join('');
+}
+function editar(el) { const r = S.linhas.find(x => x.id === el.dataset.id), c = COLS.find(x => x.k === el.dataset.k);
+  r[c.k] = c.t === 'num' ? Math.max(0, +el.value || 0) : c.t === 'bool' ? el.checked : el.value; salvar();
+  const td = el.closest('tr').querySelector('.idx'); if (td) { const v = indice(r); td.textContent = v; td.style.background = corIdx(v); } }
+
+/* ---------- CSV ---------- */
+function paraCSV() { const cab = COLS.map(c => c.r).concat(['x', 'y']); const q = v => { const s = String(v ?? ''); return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  return '﻿' + [cab.map(q).join(';')].concat(S.linhas.map(r => COLS.map(c => { const v = valor(r, c); return q(c.t === 'bool' ? (v ? 'sim' : 'não') : v); }).concat([r.x ?? '', r.y ?? '']).join(';'))).join('\n'); }
+function lerCSV(txt) {
+  const linhas = []; let campo = '', linha = [], aspas = false; txt = txt.replace(/^﻿/, '');
+  for (let i = 0; i < txt.length; i++) { const ch = txt[i];
+    if (aspas) { if (ch === '"' && txt[i + 1] === '"') { campo += '"'; i++; } else if (ch === '"') aspas = false; else campo += ch; }
+    else if (ch === '"') aspas = true; else if (ch === ';' || ch === ',') { linha.push(campo); campo = ''; } else if (ch === '\n' || ch === '\r') { if (ch === '\r' && txt[i + 1] === '\n') i++; linha.push(campo); linhas.push(linha); linha = []; campo = ''; } else campo += ch; }
+  if (campo || linha.length) { linha.push(campo); linhas.push(linha); }
+  const cab = linhas.shift().map(s => s.trim().toLowerCase());
+  return linhas.filter(l => l.some(Boolean)).map((l, n) => { const r = { id: 'i' + Date.now() + n };
+    COLS.forEach(c => { if (c.t === 'calc') return; const j = cab.indexOf(c.r.toLowerCase()), v = (l[j] ?? '').trim();
+      r[c.k] = c.t === 'num' ? +v || 0 : c.t === 'bool' ? /^(sim|s|1|true|x)$/i.test(v) : c.t === 'lista' ? (ACOES.includes(v) ? v : 'Sem ação') : v; });
+    const jx = cab.indexOf('x'), jy = cab.indexOf('y'); if (jx >= 0 && l[jx]) { r.x = +l[jx]; r.y = +l[jy]; } return r; });
+}
+
+/* ---------- croqui ---------- */
+const cv = $('#croqui'), cx = cv.getContext('2d');
+function telaCroqui() {
+  $('#sel-oc').innerHTML = S.linhas.map(r => `<option value="${r.id}" ${r.id === S.sel ? 'selected' : ''}>${esc(r.nome)}</option>`).join('');
+  const W = cv.width, H = cv.height; cx.fillStyle = '#faf9f7'; cx.fillRect(0, 0, W, H);
+  cx.strokeStyle = '#e7e3dd'; cx.lineWidth = 10; for (let i = 1; i < 6; i++) { cx.beginPath(); cx.moveTo(i * W / 6, 0); cx.lineTo(i * W / 6 + 40, H); cx.stroke(); cx.beginPath(); cx.moveTo(0, i * H / 5); cx.lineTo(W, i * H / 5 - 30); cx.stroke(); }
+  cx.strokeStyle = '#93c5fd'; cx.lineWidth = 16; cx.beginPath(); cx.moveTo(0, H * .45); cx.bezierCurveTo(W * .3, H * .3, W * .6, H * .7, W, H * .52); cx.stroke();
+  cx.fillStyle = '#9ca3af'; cx.font = '600 18px "IBM Plex Sans Condensed"'; [['NORTE', .45, .06], ['SUL', .5, .97], ['LESTE', .9, .3], ['OESTE', .06, .75], ['CENTRO', .47, .5]].forEach(([t, x, y]) => cx.fillText(t, x * W, y * H));
+  S.linhas.filter(r => r.x != null).forEach(r => { const rad = 10 + Math.sqrt(r.familias) * 2, x = r.x * W, y = r.y * H;
+    cx.globalAlpha = .75; cx.fillStyle = corIdx(indice(r)); cx.beginPath(); cx.arc(x, y, rad, 0, 7); cx.fill(); cx.globalAlpha = 1;
+    if (r.id === S.sel) { cx.strokeStyle = '#1f2937'; cx.lineWidth = 4; cx.beginPath(); cx.arc(x, y, rad + 5, 0, 7); cx.stroke(); }
+    cx.fillStyle = '#1f2937'; cx.font = '700 17px "IBM Plex Sans Condensed"'; cx.fillText(r.nome.slice(0, 26), x + rad + 6, y + 5); });
+}
+cv.addEventListener('click', e => { const b = cv.getBoundingClientRect(), r = S.linhas.find(x => x.id === S.sel); if (!r) return; r.x = +((e.clientX - b.left) / b.width).toFixed(3); r.y = +((e.clientY - b.top) / b.height).toFixed(3); salvar(); telaCroqui(); brinde('Posição marcada.'); });
+
+/* ---------- painel e proposta ---------- */
+function telaPainel() {
+  const L = S.linhas, fam = L.reduce((a, r) => a + r.familias, 0);
+  $('#k-oc').textContent = L.length; $('#k-fam').textContent = fam.toLocaleString('pt-BR'); $('#k-prec').textContent = L.filter(r => indice(r) >= 60).length; $('#k-risco').textContent = L.filter(r => r.risco).length;
+  $('#infra').innerHTML = INFRA.map(([k, n]) => { const p = L.length ? Math.round(L.filter(r => !r[k]).length / L.length * 100) : 0; return `<div class="barra"><span>${n}</span><span class="t"><i style="width:${p}%;background:${corIdx(p)}"></i></span><b>${p}%</b></div>`; }).join('');
+  $('#acao').innerHTML = ACOES.map(a => { const n = L.filter(r => r.acao === a), f = n.reduce((x, r) => x + r.familias, 0); return `<div class="barra"><span>${a}</span><span class="t"><i style="width:${fam ? f / fam * 100 : 0}%;background:var(--terra)"></i></span><b>${n.length}</b></div>`; }).join('');
+}
+function gerar() {
+  const L = [...S.linhas].sort((a, b) => indice(b) - indice(a)), fam = L.reduce((a, r) => a + r.familias, 0), prec = L.filter(r => indice(r) >= 60), sem = L.filter(r => r.acao === 'Sem ação');
+  const falta = INFRA.map(([k, n]) => [n, L.filter(r => !r[k]).length]).sort((a, b) => b[1] - a[1]).filter(x => x[1]);
+  return `À Secretaria Municipal de Habitação e Regularização Fundiária,
+
+Assunto: levantamento de ocupações irregulares e proposta de ação
+
+1. O que levantamos
+Identificamos ${L.length} ocupações, somando ${fam.toLocaleString('pt-BR')} famílias. ${prec.length} estão em situação precária (índice de precariedade igual ou acima de 60) e ${L.filter(r => r.risco).length} ficam em área de risco.
+As carências mais frequentes são: ${falta.slice(0, 3).map(([n, q]) => `${n.toLowerCase()} (${q} de ${L.length})`).join('; ') || 'nenhuma registrada'}.
+
+2. Prioridades
+${L.slice(0, 3).map((r, i) => `${i + 1}) ${r.nome} (${r.bairro}) — ${r.familias} famílias, índice ${indice(r)}, situação atual: ${r.acao.toLowerCase()}.`).join('\n')}
+
+3. O que propomos
+a) Cadastro social das famílias (CadÚnico) nas ${sem.length} ocupações que hoje estão sem nenhuma ação.
+b) Abertura de processo de Regularização Fundiária Urbana de interesse social (Reurb-S, Lei nº 13.465/2017) onde a permanência for viável.
+c) Obras emergenciais de infraestrutura básica, começando por ${falta[0] ? falta[0][0].toLowerCase() : 'saneamento'}.
+d) Para áreas de risco, plano de reassentamento negociado com a comunidade, sem remoção forçada.
+e) Devolutiva pública do levantamento às comunidades.
+
+4. Contexto
+Segundo o Censo 2022 do IBGE, o Brasil tem 12.348 favelas e comunidades urbanas, com 16,4 milhões de moradores (8,1% da população). O problema local faz parte de uma demanda nacional que exige dado, cadastro e política contínua.
+
+Atenciosamente,
+Grupo 3 — Ocupações Irregulares (UNIFACC)
+
+(Levantamento de exemplo gerado no protótipo; substituir pelos dados de campo.)`;
+}
+
+/* ---------- eventos ---------- */
+document.addEventListener('input', e => { if (e.target.dataset.id && e.target.type !== 'checkbox' && e.target.tagName !== 'SELECT') editar(e.target); });
+document.addEventListener('change', e => { if (e.target.dataset.id) { editar(e.target); if (e.target.tagName === 'SELECT' || e.target.type === 'checkbox') telaPlanilha(); } if (e.target.id === 'sel-oc') { S.sel = e.target.value; salvar(); telaCroqui(); } });
+document.addEventListener('click', e => {
+  const th = e.target.closest('th[data-ord]'); if (th) { const k = th.dataset.ord; S.ordem = { k, dir: S.ordem.k === k ? -S.ordem.dir : 1 }; salvar(); return telaPlanilha(); }
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.id === 'add') { const id = 'o' + Date.now(); S.linhas.push({ id, nome: 'Nova ocupação', bairro: '', familias: 0, anos: 0, agua: false, luz: false, esgoto: false, coleta: false, pav: false, onibus: false, risco: false, acao: 'Sem ação' }); S.sel = id; salvar(); telaPlanilha(); brinde('Linha adicionada. Edite os campos.'); }
+  else if (b.dataset.rem) { if (confirm('Remover esta ocupação?')) { S.linhas = S.linhas.filter(r => r.id !== b.dataset.rem); salvar(); telaPlanilha(); } }
+  else if (b.id === 'csv-exp') { Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([paraCSV()], { type: 'text/csv' })), download: 'levantamento-ocupacoes.csv' }).click(); brinde('CSV baixado (abre no Excel).'); }
+  else if (b.id === 'csv-imp') { const i = Object.assign(document.createElement('input'), { type: 'file', accept: '.csv,text/csv' }); i.onchange = async () => { try { const n = lerCSV(await i.files[0].text()); if (!n.length) throw 0; S.linhas = S.linhas.concat(n); salvar(); telaPlanilha(); brinde(n.length + ' linhas importadas.'); } catch (x) { brinde('CSV inválido.'); } }; i.click(); }
+  else if (b.id === 'zerar') { if (confirm('Voltar aos dados de exemplo?')) { S = semente(); salvar(); telaPlanilha(); } }
+  else if (b.id === 'regerar') { S.proposta = gerar(); salvar(); $('#proposta').value = S.proposta; }
+  else if (b.id === 'copiar') { navigator.clipboard ? navigator.clipboard.writeText($('#proposta').value).then(() => brinde('Copiado.'), () => brinde('Selecione e copie manualmente.')) : brinde('Selecione e copie manualmente.'); }
+  else if (b.id === 'baixar') Object.assign(document.createElement('a'), { href: URL.createObjectURL(new Blob([$('#proposta').value], { type: 'text/plain' })), download: 'proposta-ocupacoes.txt' }).click();
+});
+$('#proposta').addEventListener('input', e => { S.proposta = e.target.value; salvar(); });
+
+/* ---------- rotas ---------- */
+window.__rotas = ['#/planilha', '#/croqui', '#/painel', '#/proposta'];
+const TELAS = { planilha: telaPlanilha, croqui: telaCroqui, painel: telaPainel, proposta: () => { $('#proposta').value = S.proposta || gerar(); } };
+function rota() {
+  const n = (location.hash.match(/^#\/(\w+)/) || [])[1], nome = TELAS[n] ? n : 'planilha';
+  $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + nome));
+  $$('nav.baixo a').forEach(a => a.getAttribute('href') === '#/' + nome ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  TELAS[nome](); scrollTo(0, 0);
+}
+addEventListener('hashchange', rota); rota();
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>

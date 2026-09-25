@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno de Campo · Customer Discovery na Prática</title>
+<meta name="description" content="Material de preparação para a visita técnica ao shopping — roteiros, hipóteses, formulários modelo, pitch de abordagem e tabulação por grupo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+
+<style>
+:root{
+  --paper:#f4f5f2; --surface:#ffffff; --raised:#fbfbf9;
+  --ink:#191d21; --ink-soft:#565d64; --ink-faint:#8b9299;
+  --line:#d9dcd6; --line-strong:#c3c7c0;
+  --accent:#6b21a8; --accent-soft:#f3e8ff; --accent-ink:#6b21a8;
+  --verde:#1a6a41; --verde-soft:#e4f2e9;
+  --ambar:#9c6a12; --ambar-soft:#f6edda;
+  --vermelho:#ad332e; --vermelho-soft:#f7e6e4;
+  --code-bg:#1a2230; --code-ink:#e9edf2; --code-comment:#8fa3bd; --code-accent:#c084fc; --code-str:#e0a878;
+  --shadow:0 1px 2px rgba(20,25,30,.06),0 8px 24px -12px rgba(20,25,30,.14);
+}
+:root:not([data-theme="light"]){
+  @media (prefers-color-scheme:dark){
+    --paper:#111419; --surface:#191d24; --raised:#1f242c;
+    --ink:#e7e9eb; --ink-soft:#a1a9b1; --ink-faint:#727a83;
+    --line:#2b313a; --line-strong:#3a424d;
+    --accent:#c084fc; --accent-soft:#182534; --accent-ink:#d8b4fe;
+    --verde:#4dbd83; --verde-soft:#15271e;
+    --ambar:#d6a542; --ambar-soft:#2a2213;
+    --vermelho:#e2695f; --vermelho-soft:#2c1917;
+    --code-bg:#0c1119; --code-ink:#e9edf2; --code-comment:#7f92ab;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111419; --surface:#191d24; --raised:#1f242c;
+  --ink:#e7e9eb; --ink-soft:#a1a9b1; --ink-faint:#727a83;
+  --line:#2b313a; --line-strong:#3a424d;
+  --accent:#c084fc; --accent-soft:#182534; --accent-ink:#d8b4fe;
+  --verde:#4dbd83; --verde-soft:#15271e;
+  --ambar:#d6a542; --ambar-soft:#2a2213;
+  --vermelho:#e2695f; --vermelho-soft:#2c1917;
+  --code-bg:#0c1119; --code-ink:#e9edf2; --code-comment:#7f92ab;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:1.055rem; line-height:1.62; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+.col{max-width:47rem}
+
+h1,h2,h3,h4,.lbl,nav,th,.f,.tag,.pill,.num,.step b{font-family:"Archivo","Segoe UI",system-ui,sans-serif}
+h2,h3,h4{text-wrap:balance;line-height:1.2}
+.lbl{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
+
+header.top{border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--paper))}
+header.top .wrap{padding-top:2.6rem;padding-bottom:2.2rem}
+.kicker{display:flex;gap:.6rem;align-items:center;color:var(--accent-ink);font-weight:600;
+  font-family:"Archivo",sans-serif;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase}
+.kicker::before{content:"";width:26px;height:2px;background:var(--accent);display:block}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:700;margin:.5rem 0 .4rem;letter-spacing:-.015em}
+header.top p.sub{margin:.2rem 0 0;color:var(--ink-soft);max-width:44rem;font-size:1.12rem}
+.meta{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1.4rem;font-family:"Archivo",sans-serif;
+  font-size:.82rem;color:var(--ink-soft)}
+.meta span{display:inline-flex;align-items:center;gap:.4rem}
+.meta b{color:var(--ink);font-weight:600}
+
+.shell{display:grid;grid-template-columns:1fr;gap:0}
+@media(min-width:1000px){
+  .shell{grid-template-columns:250px 1fr;gap:3.2rem;align-items:start}
+  nav.toc{position:sticky;top:0;max-height:100vh;overflow-y:auto;padding:2.4rem 0;font-size:.83rem}
+}
+nav.toc{font-family:"Archivo",sans-serif}
+nav.toc ol{list-style:none;margin:0;padding:0}
+nav.toc a{display:block;color:var(--ink-soft);text-decoration:none;padding:.32rem 0;border-left:2px solid var(--line);
+  padding-left:.8rem;transition:color .15s,border-color .15s}
+nav.toc a:hover{color:var(--accent-ink);border-color:var(--accent)}
+nav.toc .grp{margin-top:.9rem;color:var(--ink-faint);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;padding-left:.8rem}
+main{padding:2.2rem 0 5rem;min-width:0}
+
+section{padding:2.4rem 0;border-top:1px solid var(--line)}
+section:first-child{border-top:none}
+.secnum{font-family:"Archivo",sans-serif;font-weight:700;color:var(--accent);font-size:.9rem;letter-spacing:.05em}
+h2{font-size:clamp(1.45rem,3.4vw,2rem);font-weight:700;margin:.3rem 0 .8rem;letter-spacing:-.01em}
+h3{font-size:1.2rem;font-weight:600;margin:2rem 0 .5rem}
+h4{font-size:1.02rem;margin:1.4rem 0 .3rem}
+p{margin:.7rem 0}
+a{color:var(--accent-ink)}
+strong{font-weight:600}
+em{color:var(--ink-soft)}
+
+.f{font-family:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;background:var(--code-bg);color:var(--code-ink);
+  border-radius:8px;padding:.85rem 1rem;margin:.8rem 0;font-size:.84rem;line-height:1.7;overflow-x:auto;position:relative;
+  border:1px solid rgba(255,255,255,.06)}
+.f::before{content:"MODELO";position:absolute;top:0;right:0;font-size:.62rem;font-weight:700;letter-spacing:.1em;
+  color:var(--code-comment);background:rgba(255,255,255,.05);padding:.15rem .5rem;border-radius:0 7px 0 7px}
+.f .c{color:var(--code-comment)} .f .k{color:var(--code-accent)} .f .s{color:var(--code-str)} .f b{color:#fff}
+code{font-family:"JetBrains Mono",monospace;font-size:.85em;background:var(--accent-soft);color:var(--accent-ink);
+  padding:.08em .4em;border-radius:4px}
+
+.ficha{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.3rem 1.4rem;margin:1.1rem 0;
+  box-shadow:var(--shadow);border-left:3px solid var(--accent)}
+.ficha.g{border-left-color:var(--verde)} .ficha.a{border-left-color:var(--ambar)} .ficha.r{border-left-color:var(--vermelho)}
+.ficha h4{font-size:1.06rem;margin:0 0 .3rem}
+.ficha p{margin:.5rem 0}
+.ficha .who{font-family:"Archivo",sans-serif;font-size:.8rem;color:var(--ink-soft);margin-top:-.1rem}
+
+.callout{border-radius:8px;padding:.7rem .9rem;margin:.75rem 0;font-size:.95rem;font-family:"Source Serif 4",serif}
+.callout .lbl{display:block;margin-bottom:.15rem}
+.callout.err{background:var(--vermelho-soft);border:1px solid color-mix(in srgb,var(--vermelho) 30%,transparent)}
+.callout.err .lbl{color:var(--vermelho)}
+.callout.tip{background:var(--verde-soft);border:1px solid color-mix(in srgb,var(--verde) 30%,transparent)}
+.callout.tip .lbl{color:var(--verde)}
+.callout.note{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 26%,transparent)}
+.callout.note .lbl{color:var(--accent-ink)}
+
+.tbl{overflow-x:auto;margin:1rem 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-family:"Archivo",sans-serif;font-size:.85rem}
+th,td{text-align:left;padding:.55rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--raised);font-weight:600;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+tr:last-child td{border-bottom:none}
+td code{font-size:.9em}
+.num{font-variant-numeric:tabular-nums;text-align:right}
+
+ol.step{list-style:none;counter-reset:st;margin:1rem 0;padding:0}
+ol.step>li{counter-increment:st;position:relative;padding:.2rem 0 1rem 3rem;border-left:2px solid var(--line);margin-left:1rem}
+ol.step>li::before{content:counter(st);position:absolute;left:-1rem;top:0;width:2rem;height:2rem;border-radius:50%;
+  background:var(--accent);color:#fff;font-family:"Archivo",sans-serif;font-weight:700;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center}
+ol.step>li:last-child{border-left-color:transparent}
+ol.step>li .t{font-family:"Archivo",sans-serif;font-weight:600;display:block;margin-bottom:.15rem}
+ol.step>li p{margin:.3rem 0}
+
+.semaforo{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.chip{font-family:"Archivo",sans-serif;font-size:.8rem;font-weight:600;padding:.35rem .7rem;border-radius:999px;
+  display:inline-flex;align-items:center;gap:.45rem}
+.chip::before{content:"";width:9px;height:9px;border-radius:50%}
+.chip.v{background:var(--verde-soft);color:var(--verde)} .chip.v::before{background:var(--verde)}
+.chip.a{background:var(--ambar-soft);color:var(--ambar)} .chip.a::before{background:var(--ambar)}
+.chip.r{background:var(--vermelho-soft);color:var(--vermelho)} .chip.r::before{background:var(--vermelho)}
+
+.ex{background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:1.2rem 1.4rem;margin:1.3rem 0}
+.ex .tag{display:inline-block;font-family:"Archivo",sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent-ink);background:var(--accent-soft);padding:.2rem .55rem;border-radius:5px;margin-bottom:.5rem}
+.ex h4{font-family:"Archivo",sans-serif;margin:.1rem 0 .4rem;font-size:1.08rem}
+details{margin-top:.7rem;border-top:1px dashed var(--line-strong);padding-top:.6rem}
+summary{cursor:pointer;font-family:"Archivo",sans-serif;font-size:.83rem;font-weight:600;color:var(--accent-ink);
+  list-style:none;display:flex;align-items:center;gap:.4rem}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";transition:transform .15s}
+details[open] summary::before{transform:rotate(90deg)}
+details .body{margin-top:.6rem}
+
+.q{margin:1.3rem 0;padding-left:1rem;border-left:3px solid var(--line-strong)}
+.q p.stem{font-weight:600;margin:.2rem 0 .5rem;font-family:"Archivo",sans-serif;font-size:.98rem}
+.q ol{margin:.3rem 0}
+.q li{margin:.2rem 0}
+
+.pill{display:inline-block;font-family:"Archivo",sans-serif;font-size:.72rem;font-weight:600;padding:.15rem .5rem;
+  border-radius:5px;background:var(--accent-soft);color:var(--accent-ink);letter-spacing:.04em}
+kbd{font-family:"Archivo",sans-serif;font-size:.78rem;font-weight:600;background:var(--surface);border:1px solid var(--line-strong);
+  border-bottom-width:2px;border-radius:5px;padding:.1rem .4rem;color:var(--ink)}
+.path{font-family:"JetBrains Mono",monospace;font-size:.82em;color:var(--ink-soft)}
+
+.compare{display:grid;gap:1rem;margin:1.1rem 0}
+@media(min-width:620px){.compare{grid-template-columns:1fr 1fr}}
+.compare>div{border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;background:var(--surface)}
+.compare .bad{border-left:3px solid var(--vermelho)}
+.compare .good{border-left:3px solid var(--verde)}
+.compare h5{font-family:"Archivo",sans-serif;margin:0 0 .4rem;font-size:.9rem}
+.compare .bad h5{color:var(--vermelho)} .compare .good h5{color:var(--verde)}
+
+.themebtn{position:fixed;bottom:1rem;right:1rem;z-index:20;font-family:"Archivo",sans-serif;font-size:.78rem;
+  background:var(--surface);color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:999px;
+  padding:.4rem .8rem;cursor:pointer;box-shadow:var(--shadow)}
+.pdfbtn{position:fixed;bottom:3.1rem;right:1rem;z-index:20;font-family:"Archivo",sans-serif;font-size:.78rem;
+  background:var(--surface);color:var(--ink-soft);border:1px solid var(--line-strong);border-radius:999px;
+  padding:.4rem .8rem;cursor:pointer;box-shadow:var(--shadow)}
+.themebtn:hover,.pdfbtn:hover{color:var(--accent-ink)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+
+.lead{font-size:1.12rem;color:var(--ink-soft)}
+ul.clean{margin:.6rem 0;padding-left:1.1rem}
+ul.clean li{margin:.3rem 0}
+ul.check{list-style:none;margin:.6rem 0;padding:0}
+ul.check li{position:relative;padding:.28rem 0 .28rem 1.9rem;margin:.1rem 0}
+ul.check li::before{content:"";position:absolute;left:0;top:.5rem;width:1.05rem;height:1.05rem;border:2px solid var(--accent);border-radius:5px}
+hr.soft{border:none;border-top:1px solid var(--line);margin:1.6rem 0}
+.foot{color:var(--ink-faint);font-size:.85rem;font-family:"Archivo",sans-serif;border-top:1px solid var(--line);
+  padding:2rem 0 3rem;margin-top:2rem}
+
+@media print{
+  :root,:root[data-theme="dark"],:root[data-theme="light"],:root:not([data-theme="light"]){
+    --paper:#fff; --surface:#fff; --raised:#f4f5f2;
+    --ink:#16191d; --ink-soft:#3f464c; --ink-faint:#697079;
+    --line:#c9ccc6; --line-strong:#b1b5ae;
+    --accent:#6b21a8; --accent-soft:#f3e8ff; --accent-ink:#581c87;
+    --verde:#1a6a41; --verde-soft:#eaf4ee;
+    --ambar:#875c10; --ambar-soft:#f6efdd;
+    --vermelho:#9f2c27; --vermelho-soft:#f8e9e7;
+    --code-bg:#f0f1ee; --code-ink:#1a2230; --code-comment:#5b6a53;
+    --code-accent:#581c87; --code-str:#8a4b1f; --shadow:none;
+  }
+  html,body{background:#fff}
+  body{font-size:10pt;line-height:1.5;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .themebtn,.pdfbtn{display:none!important}
+  .wrap{max-width:none;padding:0}
+  .shell{display:block} nav.toc{display:none} main{padding:0;max-width:none}
+  header.top{border:none;background:#fff} header.top .wrap{padding:0 0 10pt} header.top .sub{font-size:11pt}
+  h1{font-size:21pt} h2{font-size:14pt;break-after:avoid} h3{font-size:11.5pt;break-after:avoid}
+  section{padding:12pt 0;break-inside:auto} section:first-child{padding-top:0}
+  .ficha,.callout,.q,.semaforo,.f,table,.compare>div,ol.step>li,.ex h4,.ex .tag{break-inside:avoid}
+  .ex .tag{break-after:avoid}
+  .ficha,.ex{box-shadow:none}
+  .f{border:1px solid var(--line-strong)} .f::before{display:none} .f b{color:#000}
+  details>summary{list-style:none;font-weight:700;color:var(--accent-ink)}
+  details>summary::before{content:"» "}
+  a{color:var(--accent-ink);text-decoration:none}
+  .foot{break-before:avoid;padding-bottom:0}
+}
+</style>
+
+<button class="pdfbtn" id="pp" aria-label="Salvar em PDF">⤓ salvar PDF</button>
+<button class="themebtn" id="tt" aria-label="Alternar tema">◐ tema</button>
+
+<header class="top">
+  <div class="wrap">
+    <div class="kicker">Tecnologia e Inovação · Customer Discovery</div>
+    <h1>Caderno de Campo — Visita Técnica no Shopping</h1>
+    <p class="sub">Tudo que cada grupo precisa levar pronto: objetivo, hipóteses, roteiro de abordagem, pitch de 15 segundos, formulário modelo e plano de tabulação.</p>
+    <div class="meta">
+      <span><b>Professor</b> Renato Rosa</span>
+      <span><b>Data da aula</b> 21 de Setembro de 2026</span>
+      <span><b>Entregável</b> Formulário pronto + roteiro ensaiado</span>
+      <span><b>Grupos</b> 6</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap shell">
+  <nav class="toc" aria-label="Índice">
+    <ol>
+      <li><a href="#intro">00 · O que é Customer Discovery</a></li>
+      <li><a href="#regra">01 · A Regra de Ouro e os 5 entregáveis</a></li>
+      <li><a href="#perguntas">02 · Do problema à pergunta</a></li>
+      <li class="grp">Roteiros por grupo</li>
+      <li><a href="#g1">03 · Grupo 1 — AgroPrevisãoMT</a></li>
+      <li><a href="#g2">04 · Grupo 2 — Fila Cidadã</a></li>
+      <li><a href="#g3">05 · Grupo 3 — Ocupações Irregulares</a></li>
+      <li><a href="#g4">06 · Grupo 4 — CRAS Online</a></li>
+      <li><a href="#g5">07 · Grupo 5 — CuideBem</a></li>
+      <li><a href="#g6">08 · Grupo 6 — Dados Públicos</a></li>
+      <li class="grp">Mãos à obra</li>
+      <li><a href="#pitch">09 · O pitch de 15 segundos</a></li>
+      <li><a href="#forms">10 · Montando o Google Forms</a></li>
+      <li><a href="#modelos">11 · Formulários modelo (prontos)</a></li>
+      <li><a href="#papeis">12 · Divisão de tarefas e papéis</a></li>
+      <li><a href="#protocolo">13 · Protocolo de coleta (prévia da Parte 2)</a></li>
+      <li><a href="#etica">14 · Ética, consentimento e LGPD</a></li>
+      <li><a href="#tab">15 · Tabulação e análise</a></li>
+      <li class="grp">Fechamento</li>
+      <li><a href="#checklist">16 · Checklist final</a></li>
+      <li><a href="#ouro">17 · Dica de ouro</a></li>
+      <li><a href="#quiz">18 · Quiz</a></li>
+      <li><a href="#cola">19 · Folha de cola</a></li>
+    </ol>
+  </nav>
+
+  <main class="col">
+
+  <!-- 00 -->
+  <section id="intro">
+    <div class="secnum">00</div>
+    <h2>O que é Customer Discovery</h2>
+    <p class="lead"><strong>Customer Discovery</strong> é sair do computador e conversar com pessoas reais para descobrir se o problema que você imagina realmente existe — antes de construir qualquer solução.</p>
+
+    <div class="callout note"><span class="lbl">Definição do dia</span>
+      Você não vai ao shopping <strong>vender</strong> a sua ideia. Você vai <strong>coletar evidências</strong> sobre o comportamento, a dor e as prioridades das pessoas.</div>
+
+    <div class="compare">
+      <div class="bad"><h5>✗ Não é…</h5>
+        <ul class="clean">
+          <li>Convencer alguém de que sua ideia é boa</li>
+          <li>Fazer propaganda do seu projeto</li>
+          <li>Perguntar "você usaria isso?"</li>
+          <li>Anotar só o que confirma o que você pensa</li>
+        </ul>
+      </div>
+      <div class="good"><h5>✓ É…</h5>
+        <ul class="clean">
+          <li>Entender a rotina e a dor real da pessoa</li>
+          <li>Ouvir mais do que falar</li>
+          <li>Perguntar o que a pessoa <em>já fez</em> sobre o problema</li>
+          <li>Registrar também as respostas que contrariam a hipótese</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Toda pesquisa de campo responde a 3 perguntas:</p>
+    <div class="tbl"><table>
+      <tr><th>Pergunta</th><th>O que você quer saber</th></tr>
+      <tr><td><strong>Existe o problema?</strong></td><td>As pessoas vivem isso no dia a dia?</td></tr>
+      <tr><td><strong>Qual a intensidade?</strong></td><td>É uma dor pequena, média ou que atrapalha a vida?</td></tr>
+      <tr><td><strong>Como resolvem hoje?</strong></td><td>Já existe alternativa? Por que ela não basta?</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 01 -->
+  <section id="regra">
+    <div class="secnum">01</div>
+    <h2>A Regra de Ouro e os 5 entregáveis</h2>
+
+    <div class="callout err"><span class="lbl">Regra de Ouro</span>
+      Vocês vão a campo <strong>validar ideias com pessoas reais</strong>. Isso exige <strong>preparação</strong>. Ninguém vai criar formulário na hora. Vocês saem daqui hoje com <strong>tudo pronto</strong>.</div>
+
+    <h3>O que cada grupo deve entregar ao final da aula</h3>
+    <div class="tbl"><table>
+      <tr><th>#</th><th>Entregável</th><th>Como saber que está pronto</th></tr>
+      <tr><td>1</td><td><strong>Roteiro da visita</strong></td><td>Está escrito onde, quem e como abordar</td></tr>
+      <tr><td>2</td><td><strong>Objetivos claros</strong></td><td>O grupo sabe dizer em 1 frase o que quer descobrir</td></tr>
+      <tr><td>3</td><td><strong>Divisão de tarefas</strong></td><td>Cada integrante tem um papel definido</td></tr>
+      <tr><td>4</td><td><strong>Hipóteses</strong></td><td>Está escrito o que o grupo acha que vai ouvir</td></tr>
+      <tr><td>5</td><td><strong>Formulário pronto</strong></td><td>Google Forms criado e <strong>testado no celular</strong> (ou impresso)</td></tr>
+    </table></div>
+
+    <div class="callout tip"><span class="lbl">Critério de aprovação</span>
+      Se o formulário não abre no celular e não gera planilha automaticamente, ele <strong>não está pronto</strong>.</div>
+  </section>
+
+  <!-- 02 -->
+  <section id="perguntas">
+    <div class="secnum">02</div>
+    <h2>Do problema à pergunta</h2>
+    <p class="lead">Pergunta ruim = dado ruim. Antes de montar o formulário, transforme cada hipótese em perguntas que <strong>não induzem</strong> a resposta.</p>
+
+    <h3>As 3 regras de uma boa pergunta</h3>
+    <ol class="step">
+      <li><span class="t">Pergunte sobre o passado, não sobre o futuro</span>
+        <p>"Você usaria um app assim?" gera resposta educada. "Como você resolveu isso da última vez?" gera dado real.</p></li>
+      <li><span class="t">Não embarque o valor na pergunta</span>
+        <p>"Você concorda que o agro prejudica as cidades?" obriga a pessoa a concordar. Pergunte o impacto e deixe ela escolher.</p></li>
+      <li><span class="t">Uma pergunta, uma ideia</span>
+        <p>"Você acha a fila longa e os documentos confusos?" mistura duas dores. Separe.</p></li>
+    </ol>
+
+    <div class="compare">
+      <div class="bad"><h5>✗ Pergunta que induz</h5>
+        <ul class="clean">
+          <li>"Você não acha que as filas são um absurdo?"</li>
+          <li>"Você usaria um app do governo que resolve tudo?"</li>
+          <li>"Você concorda que ocupação é falta de moradia?"</li>
+        </ul>
+      </div>
+      <div class="good"><h5>✓ Pergunta neutra</h5>
+        <ul class="clean">
+          <li>"Qual foi seu tempo de espera na última vez?"</li>
+          <li>"Você já tentou resolver isso pelo celular? O que aconteceu?"</li>
+          <li>"Na sua visão, qual a principal causa das ocupações?"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout note"><span class="lbl">Tipos de pergunta</span>
+      <strong>Múltipla escolha</strong> → tabula fácil. <strong>Escala 0–5 / 0–10</strong> → mede intensidade. <strong>Dissertativa curta</strong> → traz a frase que virará insight. Use os três tipos em todo formulário.</div>
+  </section>
+
+  <!-- 03 G1 -->
+  <section id="g1">
+    <div class="secnum">03</div>
+    <h2>Grupo 1 — AgroPrevisãoMT <span class="pill">Prof. Heitor</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Bruna · Keila · Yanni · Célia</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Validar se as pessoas <strong>entendem a relação entre o crescimento do agro e o impacto nas cidades</strong> (empregos, moradia, transporte).</p>
+    </div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Praça de alimentação e corredores próximos a lojas populares</td></tr>
+      <tr><td>Quem abordar</td><td>Adultos e idosos em pausa (comendo, sentados)</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Pesquisa rápida de 2 minutos sobre o crescimento das cidades da região"</td></tr>
+      <tr><td>Meta</td><td><strong>15–20 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p>Focar em <strong>impacto urbano</strong> (emprego, moradia, transporte) e no <strong>interesse em previsão</strong> desses cenários.</p>
+    <h3>Hipótese</h3>
+    <p>As pessoas sentem o agro crescer, mas <strong>não conectam esse crescimento às mudanças na cidade</strong> (moradia e transporte), e veriam valor em previsões.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Bruna e Keila</td><td>Abordagem das pessoas</td></tr>
+      <tr><td>Yanni</td><td>Registros / mídia</td></tr>
+      <tr><td>Célia</td><td>Anotações qualitativas</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 04 G2 -->
+  <section id="g2">
+    <div class="secnum">04</div>
+    <h2>Grupo 2 — Fila Cidadã <span class="pill">Prof. Renato</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Amanda · Stefanny Rosa · Stefany · Kemylly</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Descobrir os <strong>órgãos públicos mais problemáticos</strong> e validar se a <strong>falta de informação sobre documentos</strong> e o <strong>tempo de fila</strong> são as maiores dores.</p>
+    </div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Entrada principal, lotéricas e caixas eletrônicos</td></tr>
+      <tr><td>Quem abordar</td><td>Pessoas na fila do caixa / lotérica (público que já enfrenta filas)</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Já passou raiva em fila de órgão público? 2 minutinhos de pesquisa."</td></tr>
+      <tr><td>Meta</td><td><strong>20 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p>Órgão <strong>mais frequentado</strong>, <strong>tempo de espera</strong> e <strong>viagens perdidas</strong> por falta de documento.</p>
+    <h3>Hipótese</h3>
+    <p>A maior dor é o <strong>tempo de fila</strong>; muitos já <strong>perderam uma viagem</strong> por não saber quais documentos levar.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Amanda</td><td>Formulário + controle de tempo</td></tr>
+      <tr><td>Stefanny Rosa</td><td>Abordagem</td></tr>
+      <tr><td>Stefany</td><td>Vídeos</td></tr>
+      <tr><td>Kemylly</td><td>Tabulação</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 05 G3 -->
+  <section id="g3">
+    <div class="secnum">05</div>
+    <h2>Grupo 3 — Ocupações Irregulares <span class="pill">Prof. Heitor</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Robson · Isabela · Reinaldo · Emanoeli</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Medir o <strong>conhecimento da população</strong> sobre ocupações irregulares e entender se veem como <strong>"invasão"</strong> ou como <strong>"falta de moradia"</strong>.</p>
+    </div>
+    <div class="callout err"><span class="lbl">Tema sensível</span>
+      Abordem com respeito e neutralidade. Nunca sugiram a resposta esperada, nunca peçam nome de quem ocupa e nunca gravem rosto sem autorização.</div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Corredores, praça de alimentação e <strong>funcionários do shopping</strong></td></tr>
+      <tr><td>Quem abordar</td><td>Pessoas em circulação + funcionários (lojas, praça de alimentação)</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Pesquisa rápida sobre moradia na nossa cidade"</td></tr>
+      <tr><td>Meta</td><td><strong>15 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p>Conhecimento sobre <strong>ocupações</strong>, <strong>percepção de causa</strong> e <strong>ação da prefeitura</strong>.</p>
+    <h3>Hipótese</h3>
+    <p>A maioria associa ocupação a <strong>"invasão"</strong> e responsabiliza quem ocupa, <strong>sem relacionar à falta de moradia</strong> ou à inação do poder público.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Robson e Isabela</td><td>Abordagem</td></tr>
+      <tr><td>Reinaldo</td><td>Fotos / reações</td></tr>
+      <tr><td>Emanoeli</td><td>Respostas abertas</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 06 G4 -->
+  <section id="g4">
+    <div class="secnum">06</div>
+    <h2>Grupo 4 — CRAS Online <span class="pill">Prof. Renato</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Anna · Maria Eduarda · Marcelly · Kaique</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Descobrir se as pessoas <strong>conhecem o CRAS</strong>, validar a <strong>dor do atendimento presencial</strong> e testar a <strong>confiança em um app do governo</strong>.</p>
+    </div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Praça de alimentação e áreas de descanso</td></tr>
+      <tr><td>Quem abordar</td><td>Adultos de todas as faixas; priorizar perfil que usa serviços públicos</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Você conhece o CRAS? 5 perguntinhas rápidas."</td></tr>
+      <tr><td>Meta</td><td><strong>15–20 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p><strong>Tempo de atendimento</strong> atual e <strong>nível de confiança</strong> para enviar documentos sensíveis via celular.</p>
+    <h3>Hipótese</h3>
+    <p>Poucos conhecem o CRAS e há <strong>desconfiança em enviar documentos por app</strong>, mesmo quando a dor do presencial é reconhecida.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Anna e Maria Eduarda</td><td>Abordagem / explicação</td></tr>
+      <tr><td>Marcelly</td><td>Registros</td></tr>
+      <tr><td>Kaique</td><td>Vídeos / planilha</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 07 G5 -->
+  <section id="g5">
+    <div class="secnum">07</div>
+    <h2>Grupo 5 — CuideBem <span class="pill">Prof. Pantalião</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Maria Clara · Kaua · Marilene · Cristiane</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Medir o <strong>interesse em suporte psicológico gratuito via app</strong> e validar se a chancela <strong>"gov.br"</strong> gera <strong>confiança ou desconfiança</strong>.</p>
+    </div>
+    <div class="callout note"><span class="lbl">Cuidado emocional</span>
+      Saúde mental é tema íntimo. Aborde com delicadeza, reforce o <strong>anonimato</strong> e não insista se a pessoa demonstrar desconforto.</div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Cafés, livrarias e praça de alimentação</td></tr>
+      <tr><td>Quem abordar</td><td>Jovens e adultos em ambiente tranquilo</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Pesquisa anônima sobre saúde mental e atendimento online. 2 minutos?"</td></tr>
+      <tr><td>Meta</td><td><strong>15–20 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p><strong>Motivos para não buscar ajuda</strong> (custo / vergonha) e <strong>aceitação do modelo online</strong> vinculado ao governo.</p>
+    <h3>Hipótese</h3>
+    <p>A <strong>vergonha pesa mais que o custo</strong> e o selo <strong>gov.br divide opiniões</strong>: uns confiam, outros duvidam da privacidade.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Maria Clara e Kaua</td><td>Abordagem</td></tr>
+      <tr><td>Marilene</td><td>Reações</td></tr>
+      <tr><td>Cristiane</td><td>Frases marcantes</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 08 G6 -->
+  <section id="g6">
+    <div class="secnum">08</div>
+    <h2>Grupo 6 — Dados Públicos <span class="pill">Prof. Pantalião</span></h2>
+    <div class="ficha">
+      <h4>Integrantes</h4>
+      <p class="who">Erilin · Emilly · Juarez · Flavia</p>
+    </div>
+    <div class="ficha g">
+      <h4>Objetivo</h4>
+      <p>Validar se os cidadãos teriam interesse em uma <strong>plataforma que simplifica dados públicos</strong>, ajudando a decidir sobre <strong>candidatos e agentes de cargos políticos</strong>.</p>
+    </div>
+    <div class="callout err"><span class="lbl">Tema político</span>
+      Nunca peça em quem a pessoa vota nem cite nomes de partidos. O foco é a <strong>dificuldade de entender os dados</strong>, não a preferência política.</div>
+    <h3>Roteiro de campo</h3>
+    <div class="tbl"><table>
+      <tr><th>Item</th><th>Definição do grupo</th></tr>
+      <tr><td>Onde</td><td>Praça de alimentação, corredores e entrada principal</td></tr>
+      <tr><td>Quem abordar</td><td>Público geral adulto em circulação</td></tr>
+      <tr><td>Pitch de abordagem</td><td>"Pesquisa rápida: você consegue entender o que os políticos fazem com o seu dinheiro?"</td></tr>
+      <tr><td>Meta</td><td><strong>15–20 respostas</strong></td></tr>
+    </table></div>
+    <h3>Perguntas essenciais</h3>
+    <p>Se a pessoa <strong>busca informação</strong> sobre candidatos, <strong>onde busca</strong>, e se uma <strong>linguagem simples</strong> mudaria a decisão dela.</p>
+    <h3>Hipótese</h3>
+    <p>As pessoas <strong>não acompanham</strong> e acham os dados públicos <strong>complicados demais</strong>, mas <strong>usariam</strong> uma versão traduzida em linguagem simples.</p>
+    <h3>Divisão de tarefas</h3>
+    <div class="tbl"><table>
+      <tr><th>Integrante</th><th>Função</th></tr>
+      <tr><td>Erilin e Emilly</td><td>Abordagem</td></tr>
+      <tr><td>Juarez</td><td>Registros / respostas abertas</td></tr>
+      <tr><td>Flavia</td><td>Tabulação / frases marcantes</td></tr>
+    </table></div>
+  </section>
+
+  <!-- 09 PITCH -->
+  <section id="pitch">
+    <div class="secnum">09</div>
+    <h2>O pitch de 15 segundos</h2>
+    <p class="lead">A abordagem decide 80% da pesquisa. Decore esta estrutura e ensaie em voz alta pelo menos <strong>3 vezes</strong> antes de sair.</p>
+
+    <ol class="step">
+      <li><span class="t">Identifique-se (3s)</span><p>"Oi! Somos alunos da Unifacc, de Tecnologia e Inovação."</p></li>
+      <li><span class="t">Diga o que é e o tempo (4s)</span><p>"Estamos fazendo uma pesquisa rápida de 2 minutos. É anônima."</p></li>
+      <li><span class="t">Dê o tema em forma de pergunta (5s)</span><p>"Podemos te fazer 5 perguntinhas sobre [tema do grupo]?"</p></li>
+      <li><span class="t">Peça o sim e já apresente o formulário (3s)</span><p>"Posso te enviar o link? Ou prefere responder no meu celular?"</p></li>
+    </ol>
+
+    <div class="compare">
+      <div class="bad"><h5>✗ Evite</h5>
+        <ul class="clean">
+          <li>Chegar falando da sua ideia</li>
+          <li>Frases longas e termos técnicos</li>
+          <li>Grupo inteiro em volta da pessoa</li>
+          <li>Insistir depois do "não, obrigado"</li>
+        </ul>
+      </div>
+      <div class="good"><h5>✓ Faça</h5>
+        <ul class="clean">
+          <li>Sorria e olhe nos olhos</li>
+          <li>Uma pessoa aborda, o resto observa</li>
+          <li>Ofereça responder no seu celular</li>
+          <li>Agradeça mesmo com "não"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout tip"><span class="lbl">Regra do momento certo</span>
+      Não aborde quem está comendo, no telefone ou com criança no colo. Prefira pessoas <strong>sentadas ociosas</strong> ou <strong>paradas esperando alguém</strong>.</div>
+  </section>
+
+  <!-- 10 FORMS -->
+  <section id="forms">
+    <div class="secnum">10</div>
+    <h2>Montando o Google Forms (passo a passo)</h2>
+    <p class="lead">Faça isso agora, durante a aula. O formulário é o instrumento de trabalho de vocês amanhã.</p>
+
+    <div class="ex">
+      <span class="tag">Passo 1</span>
+      <h4>Criar o formulário</h4>
+      <ol class="step">
+        <li><span class="t">Acesse forms.google.com</span><p>Com a conta Google do grupo (crie uma conta única para o grupo).</p></li>
+        <li><span class="t">Escolha "Em branco"</span><p>Você será levado ao editor.</p></li>
+        <li><span class="t">Dê um título e uma descrição</span><p>Exemplo: <code>Pesquisa — Fila Cidadã</code>. Na descrição, escreva "Pesquisa anônima de 2 minutos — Unifacc".</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Passo 2</span>
+      <h4>Adicionar as perguntas</h4>
+      <ol class="step">
+        <li><span class="t">Escolha o tipo de pergunta</span><p>Use <strong>Múltipla escolha</strong>, <strong>Caixas de seleção</strong>, <strong>Escala linear</strong> e <strong>Parágrafo</strong>.</p></li>
+        <li><span class="t">Marque as obrigatórias</span><p>Só o que for realmente essencial. Pergunta obrigatória demais espanta.</p></li>
+        <li><span class="t">Ative "Resposta curta" para nome/idade só se necessário</span><p>Prefira <strong>anônimo</strong>. Se precisar de perfil, pergunte faixa de idade, não nome.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Passo 3</span>
+      <h4>Configurar destino das respostas</h4>
+      <ol class="step">
+        <li><span class="t">Aba "Respostas" → ícone do Sheets</span><p>Isso cria uma <strong>planilha automática</strong> com todas as respostas.</p></li>
+        <li><span class="t">Ative "Coletar e-mail"? NÃO</span><p>Para pesquisa anônima em campo, deixe desativado.</p></li>
+      </ol>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Passo 4</span>
+      <h4>Testar e distribuir</h4>
+      <ol class="step">
+        <li><span class="t">Abra o link no celular</span><p>Responda você mesmo uma vez. Confira se todas as perguntas aparecem.</p></li>
+        <li><span class="t">Copie o link curto</span><p>Botão <strong>Enviar</strong> → ícone de link → <strong>Encurtar URL</strong>.</p></li>
+        <li><span class="t">Gere um QR Code</span><p>Cole o link em um gerador de QR Code e salve a imagem. Imprima e leve — é a forma mais rápida de a pessoa responder.</p></li>
+        <li><span class="t">Salve offline</span><p>Baixe o formulário em PDF (Ctrl+P → Salvar como PDF) como plano B caso o shopping tenha sinal ruim.</p></li>
+      </ol>
+    </div>
+
+    <div class="callout err"><span class="lbl">Plano B obrigatório</span>
+      Sinal de celular em shopping falha. Todo grupo precisa levar <strong>o formulário impresso + QR Code impresso</strong>. Sem isso, a coleta para.</div>
+  </section>
+
+  <!-- 11 MODELOS -->
+  <section id="modelos">
+    <div class="secnum">11</div>
+    <h2>Formulários modelo (prontos para copiar)</h2>
+    <p class="lead">Cada grupo pode usar estas perguntas como base. Ajustem a linguagem, mas <strong>mantenham o tipo de pergunta</strong> para facilitar a tabulação.</p>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 1 — AgroPrevisãoMT</span>
+      <h4>Pesquisa sobre o crescimento das cidades</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Você mora em cidade da região?
+( ) Sim   ( ) Não
+
+<span class="c">2. Escala linear 0–5</span>
+O quanto você percebe o crescimento do agronegócio na sua região?
+
+<span class="c">3. Múltipla escolha</span>
+Na sua opinião, esse crescimento traz mais benefícios ou problemas?
+( ) Mais benefícios ( ) Mais problemas ( ) Equilibrado ( ) Não sei
+
+<span class="c">4. Caixas de seleção</span>
+Quais impactos você já percebeu na cidade?
+[ ] Empregos  [ ] Moradia  [ ] Transporte  [ ] Custo de vida  [ ] Meio ambiente  [ ] Nenhum
+
+<span class="c">5. Múltipla escolha</span>
+Você usaria um sistema que mostra previsões do agro e o impacto nas cidades?
+( ) Sim ( ) Não ( ) Talvez
+
+<span class="c">6. Parágrafo</span>
+O que mais te preocupa no crescimento da sua cidade?
+      </div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 2 — Fila Cidadã</span>
+      <h4>Pesquisa sobre filas e documentos</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Qual órgão público você mais frequenta?
+( ) INSS ( ) Detran ( ) Poupatempo/Posto de atendimento ( ) Prefeitura ( ) Cartório ( ) Outro
+
+<span class="c">2. Múltipla escolha</span>
+Quanto tempo costuma esperar na fila?
+( ) Até 30 min ( ) 30 min a 1h ( ) 1h a 2h ( ) Mais de 2h
+
+<span class="c">3. Múltipla escolha</span>
+Já deixou de resolver algo por falta de um documento?
+( ) Sim, mais de uma vez ( ) Sim, uma vez ( ) Nunca
+
+<span class="c">4. Múltipla escolha</span>
+Você sabe ANTES de ir quais documentos precisa levar?
+( ) Sempre ( ) Às vezes ( ) Nunca
+
+<span class="c">5. Escala linear 0–10</span>
+Que nota você dá para o atendimento presencial?
+
+<span class="c">6. Parágrafo</span>
+Conte a sua pior experiência em fila de órgão público.
+      </div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 3 — Ocupações Irregulares</span>
+      <h4>Pesquisa sobre moradia na cidade</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Você já ouviu falar em "ocupação irregular" na sua cidade?
+( ) Sim ( ) Não
+
+<span class="c">2. Caixas de seleção</span>
+O que vem à sua cabeça quando ouve "ocupação irregular"?
+[ ] Invasão  [ ] Falta de moradia  [ ] Problema social  [ ] Algo ilegal  [ ] Não sei
+
+<span class="c">3. Múltipla escolha</span>
+Na sua visão, qual a principal causa?
+( ) Falta de moradia ( ) Falta de emprego/renda ( ) Especulação imobiliária ( ) Falta de fiscalização ( ) Não sei
+
+<span class="c">4. Múltipla escolha</span>
+Quem deveria resolver esse problema?
+( ) Prefeitura ( ) Estado ( ) Governo Federal ( ) Todos juntos ( ) Não sei
+
+<span class="c">5. Escala 0–5</span>
+Você concorda que a prefeitura está agindo sobre o problema?
+
+<span class="c">6. Parágrafo</span>
+O que você faria se não tivesse onde morar?
+      </div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 4 — CRAS Online</span>
+      <h4>Pesquisa sobre o CRAS e atendimento digital</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Você sabe o que é o CRAS?
+( ) Sim, já usei ( ) Já ouvi falar ( ) Nunca ouvi falar
+
+<span class="c">2. Múltipla escolha</span>
+Já precisou de algum serviço de assistência social?
+( ) Sim ( ) Não
+
+<span class="c">3. Escala linear 0–10</span>
+Como você avalia o atendimento presencial? (0 = ruim, 10 = ótimo)
+
+<span class="c">4. Escala 0–5</span>
+Você confiaria em enviar documentos pessoais por um app do governo?
+
+<span class="c">5. Caixas de seleção</span>
+O que te daria mais confiança?
+[ ] Login gov.br  [ ] Garantia de que os dados não são compartilhados  [ ] Atendimento humano disponível  [ ] Nada
+
+<span class="c">6. Parágrafo</span>
+O que te faria usar — ou NÃO usar — um app do CRAS?
+      </div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 5 — CuideBem</span>
+      <h4>Pesquisa sobre apoio psicológico online</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Você conhece algum atendimento psicológico gratuito pela internet?
+( ) Sim ( ) Não
+
+<span class="c">2. Caixas de seleção</span>
+Já deixou de buscar ajuda psicológica por algum motivo?
+[ ] Custo  [ ] Vergonha  [ ] Fila/demora  [ ] Falta de tempo  [ ] Não precisei
+
+<span class="c">3. Escala 0–5</span>
+Você confiaria em um app de saúde mental vinculado ao gov.br?
+
+<span class="c">4. Parágrafo</span>
+O que te deixaria tranquilo(a) para usar um app assim?
+
+<span class="c">5. Múltipla escolha</span>
+Você usaria se fosse:
+( ) Gratuito e anônimo ( ) Gratuito mas com cadastro ( ) Pago e anônimo ( ) Não usaria
+      </div>
+    </div>
+
+    <div class="ex">
+      <span class="tag">Modelo · Grupo 6 — Dados Públicos</span>
+      <h4>Pesquisa sobre transparência e voto informado</h4>
+      <div class="f">
+<span class="c">1. Múltipla escolha</span>
+Você acompanha o que os políticos eleitos fazem?
+( ) Sempre ( ) Às vezes ( ) Raramente ( ) Nunca
+
+<span class="c">2. Múltipla escolha</span>
+Já tentou procurar informação sobre um candidato ou político?
+( ) Sim ( ) Não
+
+<span class="c">3. Caixas de seleção</span>
+Onde você busca informação?
+[ ] Google  [ ] Redes sociais  [ ] Site da Câmara/Assembleia  [ ] Jornal/TV  [ ] Amigos e família  [ ] Não busco
+
+<span class="c">4. Múltipla escolha</span>
+Sobre o dinheiro público (gastos, verbas, emendas), você consegue entender?
+( ) Facilmente ( ) Mais ou menos ( ) Muito difícil ( ) Nem tento
+
+<span class="c">5. Múltipla escolha</span>
+Se existisse um app que traduz esses dados em linguagem simples, você usaria?
+( ) Sim ( ) Não ( ) Talvez
+
+<span class="c">6. Parágrafo</span>
+O que você mais gostaria de saber sobre um candidato antes de votar?
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 PAPEIS -->
+  <section id="papeis">
+    <div class="secnum">12</div>
+    <h2>Divisão de tarefas e papéis</h2>
+    <p class="lead">Em campo, ninguém faz tudo. Cada pessoa tem <strong>um papel fixo</strong> e o grupo roda como uma equipe.</p>
+
+    <div class="tbl"><table>
+      <tr><th>Papel</th><th>O que faz</th><th>Dica</th></tr>
+      <tr><td><strong>Abordador</strong></td><td>Faz o pitch e consegue o "sim"</td><td>O mais simpático e comunicativo do grupo</td></tr>
+      <tr><td><strong>Operador do formulário</strong></td><td>Preenche no celular enquanto a pessoa responde</td><td>Confira a resposta antes de agradecer</td></tr>
+      <tr><td><strong>Anotador</strong></td><td>Registra falas, reações e o que não cabe no formulário</td><td>Anote frases exatas entre aspas</td></tr>
+      <tr><td><strong>Mídia</strong></td><td>Fotos e vídeos da ação (com autorização)</td><td>Só grave quem autorizou</td></tr>
+      <tr><td><strong>Tabulação</strong></td><td>Confere a planilha e organiza os dados depois</td><td>Fechamento no mesmo dia, ainda quente</td></tr>
+    </table></div>
+
+    <div class="callout tip"><span class="lbl">Rodízio</span>
+      A cada 5 abordagens, troquem de papel. Cansa menos e todos aprendem todas as etapas.</div>
+  </section>
+
+  <!-- 13 PROTOCOLO (detalhado na Parte 2) -->
+  <section id="protocolo">
+    <div class="secnum">13</div>
+    <h2>Protocolo de coleta — prévia da Parte 2</h2>
+    <p class="lead">A coleta segue um <strong>protocolo único</strong> para os 6 grupos. O detalhamento completo — bloco de perfil, respostas marcadas pelo entrevistador e áudio com código de correlação — fica no <strong>Caderno da Parte 2</strong>.</p>
+
+    <div class="f">
+CAMADA 1 — PERFIL    → o entrevistador marca por observação
+CAMADA 2 — RESPOSTAS → pessoa fala livre, entrevistador marca
+CAMADA 3 — ÁUDIO     → outro aluno grava no WhatsApp, iniciando pelo CÓDIGO
+            ↓
+    CÓDIGO = G&lt;grupo&gt;-&lt;nº da resposta&gt;   (ex.: G2-014)
+            ↓
+    Cruza:  áudio (quali)  ×  formulário (quanti)
+    </div>
+
+    <div class="callout note"><span class="lbl">Parte 2</span>
+      Validar os questionários e montar o <strong>app de formulário</strong> são o conteúdo da Parte 2. Registre as tarefas no caderno da Parte 2.</div>
+  </section>
+
+  <!-- 14 ETICA -->
+  <section id="etica">
+    <div class="secnum">14</div>
+    <h2>Ética, consentimento e LGPD</h2>
+
+    <div class="callout note"><span class="lbl">Frase de consentimento (decore)</span>
+      "Estamos fazendo uma pesquisa anônima. Suas respostas não identificam você. Podemos continuar?"</div>
+
+    <div class="semaforo">
+      <span class="chip v">Respostas anônimas</span>
+      <span class="chip v">Avisar o tempo (2 min)</span>
+      <span class="chip v">Agradecer sempre</span>
+      <span class="chip r">Nome / CPF / endereço</span>
+      <span class="chip r">Foto sem autorização</span>
+      <span class="chip r">Insistir após o "não"</span>
+    </div>
+
+    <h3>Regras não negociáveis</h3>
+    <ul class="clean">
+      <li><strong>Sem dados pessoais:</strong> não peça nome, CPF, telefone ou endereço.</li>
+      <li><strong>Sem foto de rosto</strong> sem autorização verbal clara.</li>
+      <li><strong>Menores de idade:</strong> não aborde crianças e adolescentes desacompanhados.</li>
+      <li><strong>Não gravar áudio</strong> sem avisar e obter o "sim".</li>
+      <li><strong>Dado sensível</strong> (saúde, política, moradia): reforce o anonimato e nunca compartilhe individualmente.</li>
+    </ul>
+  </section>
+
+  <!-- 14 TABULACAO -->
+  <section id="tab">
+    <div class="secnum">15</div>
+    <h2>Tabulação e análise</h2>
+    <p class="lead">Pesquisa sem análise é só uma pilha de respostas. Fechem os dados <strong>no mesmo dia</strong> e preparem 3 achados.</p>
+
+    <div class="tbl"><table>
+      <tr><th>Etapa</th><th>O que fazer</th></tr>
+      <tr><td><strong>1. Consolidar</strong></td><td>Todas as respostas caem na planilha do Google automaticamente. Confira se não faltou ninguém.</td></tr>
+      <tr><td><strong>2. Contar</strong></td><td>Para múltipla escolha, olhe a % de cada opção. Use gráficos simples.</td></tr>
+      <tr><td><strong>3. Agrupar</strong></td><td>Nas respostas abertas, agrupe por temas (ex.: "preço", "medo", "demora").</td></tr>
+      <tr><td><strong>4. Destacar frases</strong></td><td>Separe 3 frases exatas que resumem a percepção das pessoas.</td></tr>
+      <tr><td><strong>5. Comparar hipótese</strong></td><td>O que ouvimos confirma ou derruba a hipótese do grupo?</td></tr>
+    </table></div>
+
+    <div class="callout tip"><span class="lbl">Os "nãos" são ouro</span>
+      Não esconda as respostas que contrariam a hipótese. Elas são o dado mais valioso da pesquisa — evitam que o grupo construa algo que ninguém quer.</div>
+
+    <h3>Como apresentar o resultado</h3>
+    <div class="f">
+RESULTADO — [Nome do Grupo]
+Meta de respostas: 15  ·  Obtidas: ___
+
+ACHADO 1: ______________________  (% ou nº)
+ACHADO 2: ______________________  (% ou nº)
+ACHADO 3: ______________________  (% ou nº)
+
+FRASE MARCANTE: "________________"
+
+HIPÓTESE: ( ) CONFIRMADA  ( ) PARCIAL  ( ) DERRUBADA
+    </div>
+  </section>
+
+  <!-- 15 CHECKLIST -->
+  <section id="checklist">
+    <div class="secnum">16</div>
+    <h2>Checklist final — antes de sair hoje</h2>
+    <ul class="check">
+      <li>Google Forms <strong>criado e testado no celular</strong>.</li>
+      <li>Link <strong>encurtado</strong> e <strong>QR Code impresso</strong>.</li>
+      <li>Roteiro de abordagem <strong>ensaiado</strong> (o pitch de 15 segundos).</li>
+      <li>Tarefas <strong>divididas</strong> e papéis definidos.</li>
+      <li>Hipóteses <strong>registradas</strong> por escrito.</li>
+      <li>Plano B <strong>impresso</strong> (formulário em papel) separado.</li>
+      <li>Celular <strong>carregado</strong> para o dia da visita (leve power bank).</li>
+      <li><strong>Ponto de encontro</strong> e horário combinados com o professor.</li>
+    </ul>
+
+    <div class="callout err"><span class="lbl">Lembrete</span>
+      Quem chega à visita sem formulário testado <strong>não participa da coleta</strong> — vai apoiar o grupo, mas perde a experiência principal.</div>
+  </section>
+
+  <!-- 16 DICA DE OURO -->
+  <section id="ouro">
+    <div class="secnum">17</div>
+    <h2>Dica de ouro</h2>
+    <div class="ficha a" style="text-align:center;">
+      <h4 style="font-size:1.35rem;line-height:1.4;">"Vocês não vão ao shopping para provar que a ideia é boa.<br>Vocês vão para descobrir a <span style="color:var(--accent-ink);font-weight:700;">VERDADE</span>."</h4>
+    </div>
+    <div class="callout note">
+      Se a pessoa disser que <strong>não usaria</strong>, isso é um <strong>dado valioso</strong>. Anotem os <strong>'nãos'</strong> com o mesmo cuidado que anotam os 'sins'. <strong>Boa pesquisa!</strong></div>
+  </section>
+
+  <!-- 17 QUIZ -->
+  <section id="quiz">
+    <div class="secnum">18</div>
+    <h2>Quiz de preparação</h2>
+
+    <div class="q"><p class="stem">1. O objetivo do Customer Discovery é:</p>
+      <ol type="a"><li>Vender o produto</li><li>Confirmar que a ideia é boa</li><li>Descobrir se o problema existe de verdade</li><li>Fazer propaganda</li></ol></div>
+
+    <div class="q"><p class="stem">2. Qual pergunta é melhor para uma pesquisa de campo?</p>
+      <ol type="a"><li>"Você usaria um app que resolve tudo?"</li><li>"Você não acha as filas um absurdo?"</li><li>"Como você resolveu isso da última vez?"</li><li>"Você concorda comigo?"</li></ol></div>
+
+    <div class="q"><p class="stem">3. O formulário deve ser testado:</p>
+      <ol type="a"><li>Só depois da visita</li><li>No celular, antes de sair</li><li>Nunca, dá certo sempre</li><li>Só no computador</li></ol></div>
+
+    <div class="q"><p class="stem">4. Resposta que contraria a hipótese do grupo deve ser:</p>
+      <ol type="a"><li>Descartada</li><li>Registrada como dado valioso</li><li>Corrigida</li><li>Ignorada</li></ol></div>
+
+    <div class="q"><p class="stem">5. Todo grupo deve levar como plano B:</p>
+      <ol type="a"><li>Nada, só o celular</li><li>Formulário impresso / QR Code</li><li>Uma apresentação</li><li>Um notebook</li></ol></div>
+
+    <div class="q"><p class="stem">6. Sobre dados pessoais, o correto é:</p>
+      <ol type="a"><li>Pedir nome e CPF sempre</li><li>Coletar o máximo de dados possível</li><li>Manter a pesquisa anônima</li><li>Compartilhar com todos</li></ol></div>
+
+    <details><summary>Gabarito</summary>
+    <div class="body">
+      <div class="tbl"><table>
+        <tr><th>#</th><th>Resp.</th></tr>
+        <tr><td>1</td><td>c — Descobrir se o problema existe</td></tr>
+        <tr><td>2</td><td>c — "Como você resolveu isso da última vez?"</td></tr>
+        <tr><td>3</td><td>b — No celular, antes de sair</td></tr>
+        <tr><td>4</td><td>b — Registrada como dado valioso</td></tr>
+        <tr><td>5</td><td>b — Formulário impresso / QR Code</td></tr>
+        <tr><td>6</td><td>c — Manter a pesquisa anônima</td></tr>
+      </table></div>
+    </div>
+    </details>
+  </section>
+
+  <!-- 18 COLA -->
+  <section id="cola">
+    <div class="secnum">19</div>
+    <h2>Folha de cola — referência rápida</h2>
+
+    <h3>Os 5 entregáveis</h3>
+    <div class="tbl"><table>
+      <tr><th>Entregável</th><th>Pergunta de controle</th></tr>
+      <tr><td>Roteiro</td><td>Onde, quem e como?</td></tr>
+      <tr><td>Objetivo</td><td>O que quero descobrir em 1 frase?</td></tr>
+      <tr><td>Divisão de tarefas</td><td>Cada um tem um papel?</td></tr>
+      <tr><td>Hipóteses</td><td>O que eu acho que vou ouvir?</td></tr>
+      <tr><td>Formulário</td><td>Está testado no celular?</td></tr>
+    </table></div>
+
+    <h3>Estrutura do pitch</h3>
+    <div class="tbl"><table>
+      <tr><th>Passo</th><th>Fala</th></tr>
+      <tr><td>1</td><td>"Somos alunos da Unifacc…"</td></tr>
+      <tr><td>2</td><td>"Pesquisa de 2 minutos, é anônima."</td></tr>
+      <tr><td>3</td><td>"5 perguntinhas sobre [tema]?"</td></tr>
+      <tr><td>4</td><td>"Respondo no meu celular ou te mando o link?"</td></tr>
+    </table></div>
+
+    <h3>Resumo por grupo</h3>
+    <div class="tbl"><table>
+      <tr><th>#</th><th>Grupo</th><th>Onde</th><th>Meta</th></tr>
+      <tr><td>1</td><td>AgroPrevisãoMT</td><td>Praça de alimentação / lojas populares</td><td>15–20</td></tr>
+      <tr><td>2</td><td>Fila Cidadã</td><td>Entrada / lotéricas / caixas</td><td>20</td></tr>
+      <tr><td>3</td><td>Ocupações Irregulares</td><td>Corredores / praça / funcionários</td><td>15</td></tr>
+      <tr><td>4</td><td>CRAS Online</td><td>Praça de alimentação / descanso</td><td>15–20</td></tr>
+      <tr><td>5</td><td>CuideBem</td><td>Cafés / livrarias / praça</td><td>15–20</td></tr>
+      <tr><td>6</td><td>Dados Públicos</td><td>Praça / corredores / entrada</td><td>15–20</td></tr>
+    </table></div>
+
+    <h3>Nunca esqueça</h3>
+    <div class="semaforo">
+      <span class="chip v">Pesquisa anônima</span>
+      <span class="chip v">Ouvir mais que falar</span>
+      <span class="chip v">Anotar os "nãos"</span>
+      <span class="chip r">Dados pessoais</span>
+      <span class="chip r">Foto sem consentimento</span>
+    </div>
+  </section>
+
+  <div class="foot">
+    Customer Discovery na Prática · Visita Técnica ao Shopping · 21 de Setembro de 2026 · Prof. Renato Rosa · Cerrado Tech · Unifacc
+  </div>
+
+  </main>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('tt'),r=document.documentElement;
+  function cur(){return r.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');}
+  try{var s=localStorage.getItem('cd-shopping-theme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+  b.addEventListener('click',function(){
+    var n=cur()==='dark'?'light':'dark';
+    r.setAttribute('data-theme',n);
+    try{localStorage.setItem('cd-shopping-theme',n);}catch(e){}
+  });
+  var p=document.getElementById('pp');
+  if(p) p.addEventListener('click',function(){window.print();});
+})();
+</script>
+</html>

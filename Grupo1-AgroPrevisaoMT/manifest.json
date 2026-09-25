@@ -1,0 +1,25 @@
+{
+  "name": "AgroPrevisãoMT",
+  "short_name": "AgroPrevisão",
+  "description": "Antecipa como o crescimento do agro pressiona emprego, moradia, transporte e serviços nas cidades de MT.",
+  "lang": "pt-BR",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f5efe0",
+  "theme_color": "#3f6212",
+  "icons": [
+    {
+      "src": "../assets/logos/g1-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logos/g1-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

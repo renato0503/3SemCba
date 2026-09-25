@@ -1,0 +1,451 @@
+[
+  {
+    "titulo": "Effects of Predictors of Citizens' Attitudes and Intention to Use Open Government Data and Government 2.0",
+    "ano": 2022,
+    "autores": "Ariel Antônio Conceição de Souza; Marcia Juliana d’Angelo; Raimundo Nonato Lima Filho",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2021.101663",
+    "citacoes": 51,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1016/j.giq.2021.101663",
+    "areas": [
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour",
+      "Social Media and Politics"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W4206348147"
+  },
+  {
+    "titulo": "Factors Influencing Citizens’ Intention to Use Open Government Data—A Case Study of Pakistan",
+    "ano": 2022,
+    "autores": "Muhammad Mahboob Khurshid; Nor Hidayati Zakaria; Muhammad Irfanullah Arfeen; Ammar Rashid et al.",
+    "periodico": "Big Data and Cognitive Computing",
+    "tipo": "article",
+    "doi": "10.3390/bdcc6010031",
+    "citacoes": 46,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2504-2289/6/1/31/pdf?version=1647585322",
+    "areas": [
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour",
+      "Internet Traffic Analysis and Secure E-voting"
+    ],
+    "abstract": "Open government data (OGD) has gained much attention worldwide; however, there is still an increasing demand for exploring research from the perspective of its adoption and diffusion. Policymakers expect that OGD will be used on a large scale by the public, which will result in a range of benefits, such as: faith and trust in governments, innovation and development, and participatory governance. However, not much is known about which factors influence the citizens’ intention to use OGD. Therefore, this research aims at empirically investigating the factors that influence citizens’ intention to use OGD in a developing country using information systems theory. Improved knowledge and understand...",
+    "openalex_id": "https://openalex.org/W4220673907"
+  },
+  {
+    "titulo": "Construction of the Evaluation Model of Open Government Data Platform: From the Perspective of Citizens’ Sustainable Use",
+    "ano": 2022,
+    "autores": "Wenli Zhang; Hongbo Jiang; Qigan Shao; Ting Shao",
+    "periodico": "Sustainability",
+    "tipo": "article",
+    "doi": "10.3390/su14031415",
+    "citacoes": 12,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2071-1050/14/3/1415/pdf?version=1643204852",
+    "areas": [
+      "E-Government and Public Services",
+      "Smart Cities and Technologies",
+      "Legal and Policy Issues"
+    ],
+    "abstract": "Under the background of big data, citizens can freely access and use open data to create value through the open government data platform (OGDP). The sustainable use of OGDP can meet the needs of citizens. The value created by citizens can also improve quality of life, which is of great significance to the sustainable development of society. From the citizens’ perspective, we constructed an evaluation model of citizens’ sustainable use of OGDP, including 12 indicators in four dimensions: Data, platform, outcome, and citizen. We have built the complete evaluation system with the DANP (Decision-Making Trial and Evaluation Laboratory-Based Analytic Network Process) method. It explores the main i...",
+    "openalex_id": "https://openalex.org/W4210729224"
+  },
+  {
+    "titulo": "Trends and challenges of e-government chatbots: Advances in exploring open government data and citizen participation content",
+    "ano": 2023,
+    "autores": "María E. Cortés-Cediel; Andrés Segura-Tinoco; Iván Cantador; Manuel Pedro Rodríguez Bolívar",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2023.101877",
+    "citacoes": 82,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1016/j.giq.2023.101877",
+    "areas": [
+      "Privacy, Security, and Data Protection",
+      "Mobile Crowdsensing and Crowdsourcing",
+      "AI in Service Interactions"
+    ],
+    "abstract": "In this paper, we propose a conceptual framework composed of a number of e-government, implementation and evaluation-oriented variables, with which we jointly analyze chatbots presented in the research literature and chatbots deployed as public services in Spain at national, regional and local levels. As a result of our holistic analysis, we identify and discuss current trends and challenges in the development and evaluation of chatbots in the public administration sector, such as focusing the use of the conversational agents on the search for government information, documents and services –leaving citizen consultation and collaboration aside–, and conducting preliminary evaluations of proto...",
+    "openalex_id": "https://openalex.org/W4388334656"
+  },
+  {
+    "titulo": "A Comprehensive Method for Improving the Quality of Open Government Data and Increasing Citizens’ Willingness to Use Data by Analyzing the Complex System of Citizens and Organizations",
+    "ano": 2022,
+    "autores": "Mohammad Hassan Moradi; Mojtaba Mazoochi; Mohammad Ahmadi",
+    "periodico": "Complexity",
+    "tipo": "article",
+    "doi": "10.1155/2022/5876035",
+    "citacoes": 9,
+    "acesso_aberto": true,
+    "url": "https://downloads.hindawi.com/journals/complexity/2022/5876035.pdf",
+    "areas": [
+      "E-Government and Public Services",
+      "Internet Traffic Analysis and Secure E-voting",
+      "Data Quality and Management"
+    ],
+    "abstract": "In recent years, the amount of data in the world is growing rapidly. Data growth also occurs in the government sector. All ministries and institutions at every level are data producers. These government‐owned data have a high potential if they can be used properly. Open government data can stimulate innovation and economic growth and enhance business models. In order to increase the willingness of citizens to use open government data and enjoy the benefits mentioned, the quality of open government data needs to be improved. The quality of open government data encompasses a variety of dimensions and criteria. Also, the importance of each dimension and criterion in increasing the quality of op...",
+    "openalex_id": "https://openalex.org/W4292560631"
+  },
+  {
+    "titulo": "Tailoring open government data portals for lay citizens: A gamification theory approach",
+    "ano": 2022,
+    "autores": "Anthony Simonofski; Anneke Zuiderwijk; Antoine Clarinval; Wafa Hammedi",
+    "periodico": "International Journal of Information Management",
+    "tipo": "article",
+    "doi": "10.1016/j.ijinfomgt.2022.102511",
+    "citacoes": 49,
+    "acesso_aberto": true,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0268401222000421/pdf",
+    "areas": [
+      "FinTech, Crowdfunding, Digital Finance",
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour"
+    ],
+    "abstract": "Government policies focused on Open Government Data (OGD) often aim to stimulate the provision of public, interoperable data towards any user, including lay citizens, through online portals. However, these OGD portals are mostly developed for expert users. This hinders the realization of critical values such as transparency, empowerment, and equality of access. Following a Design Science Research approach, this study aims to examine how gamification can help tailor OGD portals for lay citizens. As a pre-condition to this goal, we identify requirements toward OGD portals through twenty interviews with experts and lay citizens. Compared to expert users, lay citizens expect an OGD portal with a...",
+    "openalex_id": "https://openalex.org/W4221032108"
+  },
+  {
+    "titulo": "Engaging Citizens with Open Government Data: The Value of Dashboards Compared to Individual Visualizations",
+    "ano": 2022,
+    "autores": "Abiola Paterne Chokki; Anthony Simonofski; Benoît Frénay‬; Benoît Vanderose",
+    "periodico": "Digital Government Research and Practice",
+    "tipo": "article",
+    "doi": "10.1145/3558099",
+    "citacoes": 27,
+    "acesso_aberto": true,
+    "url": "https://dl.acm.org/doi/pdf/10.1145/3558099",
+    "areas": [
+      "E-Government and Public Services",
+      "Public Policy and Administration Research",
+      "Data Quality and Management"
+    ],
+    "abstract": "The use of individual visualizations for Open Government Data (OGD) has been shown not to be entirely efficient in engaging citizens. Dashboards constitute a promising solution, but how they should be designed and applied in an OGD context remains under-investigated. This article examines whether the use of well-designed dashboards can increase citizen engagement with OGD. To achieve this objective, a literature review on dashboard design principles is conducted. Then, the outputs of this literature review are used to compile a list of 16 dashboard design principles in the context of OGD. Next, we apply these design principles to build the Namur (Belgium) Budget Dashboard (NBDash) in order t...",
+    "openalex_id": "https://openalex.org/W4292595844"
+  },
+  {
+    "titulo": "Usability of the G7 Open Government Data Portals and Lessons Learned",
+    "ano": 2021,
+    "autores": "Ibrahim Mutambik; Abdullah Almuqrin; John Lee; Zuopeng Zhang et al.",
+    "periodico": "Sustainability",
+    "tipo": "article",
+    "doi": "10.3390/su132413740",
+    "citacoes": 39,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2071-1050/13/24/13740/pdf?version=1639392313",
+    "areas": [
+      "E-Government and Public Services",
+      "Smart Cities and Technologies",
+      "Technology Adoption and User Behaviour"
+    ],
+    "abstract": "Recent advances in technology have made truly open and accessible government significantly more realisable. One of the ways in which governments are using this technology is in the implementation of online portals that allow open (i.e., public and unrestricted) access to data and use of data. Such portals can be used by citizens and professionals to facilitate improved decision-making across a wide range of areas, from car-parking to promoting entrepreneurialism. However, the existence of portals per se is not enough. To maximise their potential, users must also feel that they are both accessible and usable. To gain insights into the current state of usability of OGD portals for professional...",
+    "openalex_id": "https://openalex.org/W4200351052"
+  },
+  {
+    "titulo": "Citizen Use of E-Government Services Websites",
+    "ano": 2021,
+    "autores": "Isaac Kofi Mensah; Chuanyong Luo; Emad Abu-Shanab",
+    "periodico": "International Journal of Electronic Government Research",
+    "tipo": "article",
+    "doi": "10.4018/ijegr.2021040102",
+    "citacoes": 28,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.4018/ijegr.2021040102",
+    "areas": [
+      "Technology Adoption and User Behaviour",
+      "E-Government and Public Services",
+      "Digital Marketing and Social Media"
+    ],
+    "abstract": "This study explored the factors influencing citizens' adoption of e-government services through the open government/data concept by proposing and validating an e-government adoption recommendation model (EGARM). The data was analyzed with Smart PLS-SEM. The results show that the intention to use e-government website is positively related to the intention of citizens to recommend the adoption of e-government services. Trust in government and the internet were significant predictors of the intention to use e-government services. While information quality was significant in determining the intention to use, it was however not significant in predicting the citizen's trust in government. Also, in...",
+    "openalex_id": "https://openalex.org/W3136417302"
+  },
+  {
+    "titulo": "Determinants of open government data usage: Integrating trust theory and social cognitive theory",
+    "ano": 2023,
+    "autores": "Mei Chen; Yuyan Cao; Yikai Liang",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2023.101857",
+    "citacoes": 59,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1016/j.giq.2023.101857",
+    "areas": [
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour",
+      "Privacy, Security, and Data Protection"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W4381614370"
+  },
+  {
+    "titulo": "Factors Influencing Public Trust in Open Government Data",
+    "ano": 2022,
+    "autores": "Abdullah Almuqrin; Ibrahim Mutambik; Abdulaziz Alomran; Jeffrey Gauthier et al.",
+    "periodico": "Sustainability",
+    "tipo": "article",
+    "doi": "10.3390/su14159765",
+    "citacoes": 35,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2071-1050/14/15/9765/pdf?version=1659956774",
+    "areas": [
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour",
+      "Privacy, Security, and Data Protection"
+    ],
+    "abstract": "Open government data (OGD) involves exposing government data to the public, guided by the values of clarity, accountability, honesty, and integrity. This study investigates the impact of the perceived quality of data, systems, and services on citizens’ trust in OGD, with the information systems success model as the theoretical framework. A questionnaire was delivered electronically to reach OGD users around the world. A total of 358 complete responses were obtained, representing 63.58% of all responses. Structural equation modeling was used to analyze the hypothesized relationships between constructs based on users’ responses. The findings confirm the impact of data, system, and service qual...",
+    "openalex_id": "https://openalex.org/W4296450821"
+  },
+  {
+    "titulo": "A multi-perspective knowledge-driven approach for analysis of the demand side of the Open Government Data portal",
+    "ano": 2021,
+    "autores": "Anastasija Nikiforova; Martin Lněnička",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2021.101622",
+    "citacoes": 55,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1016/j.giq.2021.101622",
+    "areas": [
+      "E-Government and Public Services",
+      "Internet Traffic Analysis and Secure E-voting",
+      "Data Quality and Management"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W3197381872"
+  },
+  {
+    "titulo": "‘Listening State?’ : exploring citizens’ perceptions of Open Government in Tokayev’s Kazakhstan",
+    "ano": 2023,
+    "autores": "Bakhytzhan Kurmanov; Urazgali Selteyev; Anuar Almaganbetov",
+    "periodico": "Central Asian Survey",
+    "tipo": "article",
+    "doi": "10.1080/02634937.2023.2268652",
+    "citacoes": 23,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1080/02634937.2023.2268652",
+    "areas": [
+      "E-Government and Public Services",
+      "Social Media and Politics",
+      "Public Policy and Administration Research"
+    ],
+    "abstract": "The Open Government reform has been actively adopted across various non-democratic regimes, including post-Soviet Central Asia. The reform is supposed to bolster responsiveness and transparency through the active use of information communication technologies, and numerous authoritarian countries have recently adopted and deepened the Open Government reform. In this work, we study whether Open Government reform contributes to responsiveness in autocracies using the case of Kazakhstan under Tokayev’s rule (2019–present). We investigate the concept of the ‘Listening State’ recently adopted in Kazakhstan through the analysis of novel primary data. The perceptions of ordinary citizens reveal that...",
+    "openalex_id": "https://openalex.org/W4388078759"
+  },
+  {
+    "titulo": "The efficiency of e-government portal management from a citizen perspective: evidences from Turkey",
+    "ano": 2021,
+    "autores": "Seda Yıldırım; Seda H. Bostancı",
+    "periodico": "World Journal of Science Technology and Sustainable Development",
+    "tipo": "article",
+    "doi": "10.1108/wjstsd-04-2021-0049",
+    "citacoes": 40,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1108/wjstsd-04-2021-0049",
+    "areas": [
+      "E-Government and Public Services",
+      "Internet Traffic Analysis and Secure E-voting",
+      "Social Media and Politics"
+    ],
+    "abstract": "Purpose This study aims to explore the key factors in achieving an efficient e-government portal management system from a citizen perspective. Accordingly, this study focuses on explaining how an e-government portal should manage its digital public services for citizens efficiently. Design/methodology/approach This study employs a qualitative research design. As a sample case, this study preferred to analyze the Turkish e-government portal. The data is based on available open access data and information from the Turkish e-government portal, which is called e-Government Gateway in practice. In addition, the data of TURKSTAT (Turkish Statistical Institute) were used to determine the general pr...",
+    "openalex_id": "https://openalex.org/W3172635542"
+  },
+  {
+    "titulo": "Public value creation through the use of open government data in Australian public sector: A quantitative study from employees' perspective",
+    "ano": 2024,
+    "autores": "Nuria Benmohamed; Jun Shen; Elena Vlahu‐Gjorgievska",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2024.101930",
+    "citacoes": 48,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1016/j.giq.2024.101930",
+    "areas": [
+      "E-Government and Public Services",
+      "FinTech, Crowdfunding, Digital Finance",
+      "Technology Adoption and User Behaviour"
+    ],
+    "abstract": "Public value creation is one of the most important opportunities of open government data (OGD) for different stakeholders including public sector agencies, private businesses, academia, citizens, and civic organizations. However, OGD has hardly any value on its own, yet the value is created by its use, hence supporting OGD portal use is a key point to delivering public value. Indeed, making an effective impact on OGD requires users to activate its value. Therefore, this study aims to propose a model to explore factors that hinder or facilitate public value creation using OGD from the public sector employee perspective. Using the DeLone and McLean (2003) model as a theoretical basis with the ...",
+    "openalex_id": "https://openalex.org/W4393338050"
+  },
+  {
+    "titulo": "Transparency of open data ecosystems in smart cities: Definition and assessment of the maturity of transparency in 22 smart cities",
+    "ano": 2022,
+    "autores": "Martin Lněnička; Anastasija Nikiforova; Mariusz Luterek; Otmane Azeroual et al.",
+    "periodico": "Sustainable Cities and Society",
+    "tipo": "article",
+    "doi": "10.1016/j.scs.2022.103906",
+    "citacoes": 88,
+    "acesso_aberto": true,
+    "url": "http://urn.fi/URN:NBN:fi:jyu-202302241899",
+    "areas": [
+      "Smart Cities and Technologies",
+      "E-Government and Public Services",
+      "Green IT and Sustainability"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W4224228268"
+  },
+  {
+    "titulo": "Exploring continuance usage intention toward open government data technologies: an integrated approach",
+    "ano": 2021,
+    "autores": "Mohammad Tariqul Islam; Md. Shamim Talukder; Abul Khayer; A.K.M. Najmul Islam",
+    "periodico": "VINE Journal of Information and Knowledge Management Systems",
+    "tipo": "article",
+    "doi": "10.1108/vjikms-10-2020-0195",
+    "citacoes": 35,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1108/vjikms-10-2020-0195",
+    "areas": [
+      "E-Government and Public Services",
+      "Technology Adoption and User Behaviour",
+      "Digital Marketing and Social Media"
+    ],
+    "abstract": "Purpose Open government data (OGD) is a comparatively new field in e-government and the factors influencing its continuance use by citizens have not been extensively explored. A better understanding of these factors can help the government to articulate strategies and policies that can advance the acceptance and use of OGD technologies. Thus, this paper aims to empirically determine the predictors influencing the continuance usage intention of OGD technologies. Design/methodology/approach Following an empirical investigation among 370 respondents in Bangladesh, a developing country, the paper applied path analysis using the structural equation modeling approach. The unified theory of accepta...",
+    "openalex_id": "https://openalex.org/W3179896381"
+  },
+  {
+    "titulo": "Whose open data is it anyway? An exploratory study of open government data relevance and implications for democratic inclusion",
+    "ano": 2022,
+    "autores": "Kayla Schwoerer",
+    "periodico": "Information Polity",
+    "tipo": "article",
+    "doi": "10.3233/ip-220008",
+    "citacoes": 22,
+    "acesso_aberto": true,
+    "url": "https://content.iospress.com:443/download/information-polity/ip220008?id=information-polity%2Fip220008",
+    "areas": [
+      "E-Government and Public Services",
+      "Internet Traffic Analysis and Secure E-voting",
+      "Social Media and Politics"
+    ],
+    "abstract": "Open government data (OGD) is believed to enhance democratic outcomes by empowering citizens with the information necessary to participate in meaningful ways. Nonetheless, questions remain about whether OGD is indeed empowering citizens to participate or if the data that governments publish is more reflective of the interests of non-citizen stakeholders. Using the metadata of 2607 publicly available datasets scraped from New York City’s open data portal, this exploratory study employs qualitative content analysis to identify what types of data are published and what the data say about OGD’s potential as a tool for advancing inclusion in democratic processes. The analysis focused particularly...",
+    "openalex_id": "https://openalex.org/W4306746341"
+  },
+  {
+    "titulo": "Factors influencing open government data post-adoption in the public sector: The perspective of data providers",
+    "ano": 2022,
+    "autores": "Mimi Nurakmal Mustapa; Suraya Hamid; Fariza Hanum Nasaruddin",
+    "periodico": "PLoS ONE",
+    "tipo": "article",
+    "doi": "10.1371/journal.pone.0276860",
+    "citacoes": 32,
+    "acesso_aberto": true,
+    "url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0276860&type=printable",
+    "areas": [
+      "E-Government and Public Services",
+      "FinTech, Crowdfunding, Digital Finance",
+      "Internet Traffic Analysis and Secure E-voting"
+    ],
+    "abstract": "Providing access to non-confidential government data to the public is one of the initiatives adopted by many governments today to embrace government transparency practices. The initiative of publishing non-confidential government data for the public to use and re-use without restrictions is known as Open Government Data (OGD). Nevertheless, after several years after its inception, the direction of OGD implementation remains uncertain. The extant literature on OGD adoption concentrates primarily on identifying factors influencing adoption decisions. Yet, studies on the underlying factors influencing OGD after the adoption phase are scarce. Based on these issues, this study investigated the po...",
+    "openalex_id": "https://openalex.org/W4307930424"
+  },
+  {
+    "titulo": "Open government data awareness: eliciting citizens’ requirements for application design",
+    "ano": 2022,
+    "autores": "Abiola Paterne Chokki; Anthony Simonofski; Benoît Frénay‬; Benoît Vanderose",
+    "periodico": "Transforming Government People Process and Policy",
+    "tipo": "article",
+    "doi": "10.1108/tg-04-2022-0057",
+    "citacoes": 10,
+    "acesso_aberto": true,
+    "url": "https://pure.unamur.be/ws/files/65246177/CitizenApps_TGPPP_Paper_Preprint.pdf",
+    "areas": [
+      "E-Government and Public Services",
+      "Privacy, Security, and Data Protection",
+      "Internet Traffic Analysis and Secure E-voting"
+    ],
+    "abstract": "Purpose Over the past decade, governments around the world have implemented open government data (OGD) policies to make their data publicly available, with collaboration and citizen engagement being one of the main goals. However, even though a lot of data is published, only a few citizens are aware of its existence and usefulness. The purpose of this paper is to identify the requirements for an application that raises awareness of Open Government Data (OGD) to citizens. Design/methodology/approach This study followed a design research science approach to collect citizens’ requirements for the design of such an application through interviews with 10 citizens and evaluated through user testin...",
+    "openalex_id": "https://openalex.org/W4292295848"
+  },
+  {
+    "titulo": "Citizen reactions to municipalities’ Instagram communication",
+    "ano": 2021,
+    "autores": "David Perea-Khalifi; Enrique Bonsón Ponte; Michaela Bednárová",
+    "periodico": "Government Information Quarterly",
+    "tipo": "article",
+    "doi": "10.1016/j.giq.2021.101579",
+    "citacoes": 40,
+    "acesso_aberto": true,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0740624X21000150/pdf",
+    "areas": [
+      "Social Media and Politics",
+      "E-Government and Public Services",
+      "Communication and COVID-19 Impact"
+    ],
+    "abstract": "In this paper, we explore how local governments are using Instagram as a communication tool to engage with their citizens, using data from the municipalities of Andalusia (Spain). We seek to identify the determinants of local government use of Instagram, the determinants of activity in this channel and the determinants of citizen reactions in order to understand the influence of media types (picture, video or album) used in municipality posts, and to understand content type (what the post is about). Instaloader, an open source intelligence (OSINT) tool for Instagram, was applied. It made it possible to automatically extract all posts of the analysed municipalities (14,742 posts). These were ...",
+    "openalex_id": "https://openalex.org/W3136549200"
+  },
+  {
+    "titulo": "Paths to open government data reuse: A three-dimensional framework of information need, data and government preparation",
+    "ano": 2023,
+    "autores": "Fang Wang; Zhaoqi Zhang; Xin Ma; Yichen Zhang et al.",
+    "periodico": "Information & Management",
+    "tipo": "article",
+    "doi": "10.1016/j.im.2023.103879",
+    "citacoes": 22,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1016/j.im.2023.103879",
+    "areas": [
+      "E-Government and Public Services",
+      "Data Quality and Management",
+      "Privacy, Security, and Data Protection"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W4387873152"
+  },
+  {
+    "titulo": "Graph Neural Networks and Open-Government Data to Forecast Traffic Flow",
+    "ano": 2023,
+    "autores": "Petros Brimos; Areti Karamanou; Evangelos Kalampokis; Konstantinos Tarabanis",
+    "periodico": "Information",
+    "tipo": "article",
+    "doi": "10.3390/info14040228",
+    "citacoes": 25,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2078-2489/14/4/228/pdf?version=1680868502",
+    "areas": [
+      "Traffic Prediction and Management Techniques",
+      "Transportation Planning and Optimization",
+      "Traffic control and management"
+    ],
+    "abstract": "Traffic forecasting has been an important area of research for several decades, with significant implications for urban traffic planning, management, and control. In recent years, deep-learning models, such as graph neural networks (GNN), have shown great promise in traffic forecasting due to their ability to capture complex spatio–temporal dependencies within traffic networks. Additionally, public authorities around the world have started providing real-time traffic data as open-government data (OGD). This large volume of dynamic and high-value data can open new avenues for creating innovative algorithms, services, and applications. In this paper, we investigate the use of traffic OGD with ...",
+    "openalex_id": "https://openalex.org/W4362733507"
+  },
+  {
+    "titulo": "Accountability in Government Use of AI : Citizen Concerns and Preferences",
+    "ano": 2025,
+    "autores": "Naikang Feng; Yanto Chandra",
+    "periodico": "Public Administration",
+    "tipo": "article",
+    "doi": "10.1111/padm.70030",
+    "citacoes": 15,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/padm.70030",
+    "areas": [
+      "Ethics and Social Impacts of AI",
+      "E-Government and Public Services",
+      "Artificial Intelligence in Healthcare and Education"
+    ],
+    "abstract": "ABSTRACT Government adoption of AI opens the “pandora's box” of accountability , a core aspect of public value. Despite the centrality of governmental AI accountability, citizens' concerns and preferences in holding governments accountable for AI usage remain poorly understood. To address these puzzles and advance knowledge on AI accountability in non‐Western democracies, we conducted a mixed‐method study using data collected from Chinese citizens. A story‐completion study ( N = 50) suggested concerns over AI's incompetence, inadequate human oversight, algorithmic opacity, and weak accountability enforcement leading to harmful outcomes. A discrete‐choice experiment ( N = 2080) that measured ...",
+    "openalex_id": "https://openalex.org/W4415689527"
+  },
+  {
+    "titulo": "Data openness for efficient e-governance in the age of big data",
+    "ano": 2021,
+    "autores": "Safae Sossi Alaoui; Yousef Farhaoui; Brahim Aksasse",
+    "periodico": "International Journal of Cloud Computing",
+    "tipo": "article",
+    "doi": "10.1504/ijcc.2021.120391",
+    "citacoes": 34,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1504/ijcc.2021.120391",
+    "areas": [
+      "Big Data and Business Intelligence",
+      "E-Government and Public Services"
+    ],
+    "abstract": "The data revolution in recent years has led governments around the world to realise the different benefits of communicating and opening data over their information and communication technologies (ICTs) in behalf of their citizens. Indeed, the need for data openness is vitally important for governments, research community and businesses, especially in the era of big data, which characterised by the increase in volume of structured and unstructured data, the speed at which data is generated and collected and the variety of data sources; this is known as the three Vs. Therefore, big data has changed the ways governments manage and support their policies towards their digital data and tend to ma...",
+    "openalex_id": "https://openalex.org/W4206149208"
+  }
+]

@@ -1,0 +1,303 @@
+[
+  {
+    "titulo": "The role of spatial planning in land change: An assessment of urban planning and nature conservation efficiency at the southeastern coast of Brazil",
+    "ano": 2021,
+    "autores": "Ana Beatriz Pierri-Daunt; Luis Inostroza; Anna M. Hersperger",
+    "periodico": "Land Use Policy",
+    "tipo": "article",
+    "doi": "10.1016/j.landusepol.2021.105771",
+    "citacoes": 37,
+    "acesso_aberto": true,
+    "url": "https://www.sciencedirect.com/science/article/pii/S0264837721004944/pdf",
+    "areas": [
+      "Land Use and Ecosystem Services",
+      "Economic and Environmental Valuation",
+      "Conservation, Biodiversity, and Resource Management"
+    ],
+    "abstract": "Urban expansion is expected to continue at a fast rate, precisely in peri-urban areas of developing countries surrounded by biodiversity hotspots. The need to assess and potentially restructure urban and environmental planning instruments becomes apparent in scenarios where urban expansion is difficult to manage. Indicators based on spatially explicit datasets have been suggested as effective tools to evaluate spatial planning outcomes because they can shed light on the efficiency of planning measures and the fulfilment of claimed goals. In this work, we evaluated the conformance of stated spatial planning goals and the outcomes in terms of urban compactness, basic services and housing provi...",
+    "openalex_id": "https://openalex.org/W3201942130"
+  },
+  {
+    "titulo": "Livestock provide more than food in smallholder production systems of developing countries",
+    "ano": 2021,
+    "autores": "Liveness Jessica Banda; Jonathan Tanganyika",
+    "periodico": "Animal Frontiers",
+    "tipo": "article",
+    "doi": "10.1093/af/vfab001",
+    "citacoes": 113,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/af/article-pdf/11/2/7/37943108/vfab001.pdf",
+    "areas": [
+      "Agriculture Sustainability and Environmental Impact",
+      "Rangeland Management and Livestock Ecology",
+      "Agricultural Systems and Practices"
+    ],
+    "abstract": "Livestock serve as a form of savings, which can easily be liquidated into cash and provide many other benefits both directly and indirectly. Livestock are key to poverty alleviation and are an important development tool where benefits derived vary with the gender of beneficiaries. Livestock provide numerous benefits, which are both tangible and intangible, but they are not adequately valued. There is a need for more research to quantify and value various aspects through which livestock benefit communities in the developing world for efficient resource allocation. Livestock play multiple and significant roles in the rural livelihoods of most developing countries where they provide both direct...",
+    "openalex_id": "https://openalex.org/W3160701462"
+  },
+  {
+    "titulo": "Monitoring urbanization and environmental impact in Kigali, Rwanda using Sentinel-2 MSI data and ecosystem service bundles",
+    "ano": 2022,
+    "autores": "Theodomir Mugiraneza; Sebastian Häfner; Jan Haas; Yifang Ban",
+    "periodico": "International Journal of Applied Earth Observation and Geoinformation",
+    "tipo": "article",
+    "doi": "10.1016/j.jag.2022.102775",
+    "citacoes": 26,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1016/j.jag.2022.102775",
+    "areas": [
+      "Land Use and Ecosystem Services",
+      "Urban Green Space and Health"
+    ],
+    "abstract": "Rapid urbanization in developing countries often results in uncontrolled urban growth. In order to support sustainable urban development, reliable and up-to-date information on urban land cover changes and their environmental impact is needed. In this study, we aim at evaluating the potential of Sentinel-2 (S-2) Multispectral Instrument (MSI) data for urban land cover change monitoring and for analyzing resulting impacts on Ecosystem Services (ES) provision in Kigali, Rwanda. Land cover classification into eight distinct urban classes (84% overall accuracies, 0.8 Kappa) was performed on data from 2016 and 2021 using a hybrid approach combining Random Forest with a U-Net-based impervious surf...",
+    "openalex_id": "https://openalex.org/W4293242907"
+  },
+  {
+    "titulo": "The 2023 Latin America report of the Lancet Countdown on health and climate change: the imperative for health-centred climate-resilient development",
+    "ano": 2024,
+    "autores": "Stella M. Hartinger; Yasna Palmeiro-Silva; Camila Llerena-Cayo; Luciana Blanco-Villafuerte et al.",
+    "periodico": "The Lancet Regional Health - Americas",
+    "tipo": "article",
+    "doi": "10.1016/j.lana.2024.100746",
+    "citacoes": 96,
+    "acesso_aberto": true,
+    "url": "http://www.thelancet.com/article/S2667193X24000735/pdf",
+    "areas": [
+      "Climate Change and Health Impacts",
+      "Global Public Health Policies and Epidemiology",
+      "Health, Environment, Cognitive Aging"
+    ],
+    "abstract": "In 2023, a series of climatological and political events unfolded, partly driving forward the global climate and health agenda while simultaneously exposing important disparities and vulnerabilities to climate-related events. On the policy front, a significant step forward was marked by the inaugural Health Day at COP28, acknowledging the profound impacts of climate change on health. However, the first-ever Global Stocktake showed an important gap between the current progress and the targets outlined in the Paris Agreement, underscoring the urgent need for further and decisive action. From a Latin American perspective, some questions arise: How do we achieve the change that is needed? How to...",
+    "openalex_id": "https://openalex.org/W4395026061"
+  },
+  {
+    "titulo": "Rethinking urban environments and health",
+    "ano": 2023,
+    "autores": "Cathryn Tonne",
+    "periodico": "Epidemiology",
+    "tipo": "article",
+    "doi": "10.1097/ede.0000000000001606",
+    "citacoes": 8,
+    "acesso_aberto": true,
+    "url": "http://repositori.upf.edu/bitstream/10230/58093/1/Tonne_epi_reth.pdf",
+    "areas": [
+      "Noise Effects and Management",
+      "Air Quality and Health Impacts",
+      "Climate Change and Health Impacts"
+    ],
+    "abstract": "All urban environments have characteristics that both promote and harm health.1 Multiple factors interacting to shape health in urban environments give rise to a continuously evolving balance between the so-called urban health advantage (i.e., the health benefits of economic opportunities, infrastructure, social support, and access to health care in urban areas) and the urban health penalty (i.e., the concentration of disadvantaged individuals and exposure to environmental hazards leading to worse health among urban compared to nonurban residents).1,2 Previous frameworks have been proposed for understanding the multiplicity of factors operating at different scales to shape health in urban co...",
+    "openalex_id": "https://openalex.org/W4378782406"
+  },
+  {
+    "titulo": "Surat’s sustainable future: analyzing compact urban development and population density trends",
+    "ano": 2024,
+    "autores": "Snehal Ritesh Chauhan; Ravin M. Tailor",
+    "periodico": "Proceedings of the Institution of Civil Engineers - Urban Design and Planning",
+    "tipo": "article",
+    "doi": "10.1680/jurdp.24.00005",
+    "citacoes": 5,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1680/jurdp.24.00005",
+    "areas": [
+      "Urban and Rural Development Challenges",
+      "Fiscal Policy and Economic Growth",
+      "Social and Economic Development in India"
+    ],
+    "abstract": "Rapid urbanization is a challenge for the cities of developing countries like India. The share of an urban area is rapidly increasing in dynamically growing cities. Due to this, the land use is altered, causing sprawl and unplanned development. The consumption of resources is greater, and the impact on the surroundings is negative. The compact city concept is always more efficient and cost effective compared to unplanned organic growth. The compact city optimizes available land resources with its maximum possible capacity in accordance with other available natural resources. The primary study objective is to assess the growth trend of Surat city using satellite images, geographic information...",
+    "openalex_id": "https://openalex.org/W4401568776"
+  },
+  {
+    "titulo": "The Roots of Redlining: Academic, Governmental, and Professional Networks in the Making of the New Deal Lending Regime",
+    "ano": 2021,
+    "autores": "LaDale Winling; Todd M. Michney",
+    "periodico": "Journal of American History",
+    "tipo": "article",
+    "doi": "10.1093/jahist/jaab066",
+    "citacoes": 87,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1093/jahist/jaab066",
+    "areas": [
+      "Housing, Finance, and Neoliberalism",
+      "Political Economy and Marxism",
+      "Economic Theory and Policy"
+    ],
+    "abstract": "Racial segregation and racial inequality fundamentally shaped U.S. cities in the twentieth century and are key to understanding the American social and political landscape. A particularly notorious tool for promoting segregation has been redlining—the targeted denial of home mortgages and other financial supports according to presumed risk. Institutionalized by the Home Owners' Loan Corporation (Holc) and adopted by the Federal Housing Administration (Fha), historical redlining defined the riskiness of investing in urban neighborhoods based on demographics, infrastructure, housing quality, neighborhood stability, and proximity to amenities or hazards such as manufacturing. Holc's assessment ...",
+    "openalex_id": "https://openalex.org/W3174120543"
+  },
+  {
+    "titulo": "Smallholder poultry production in the context of increasing global food prices: roles in poverty reduction and food security",
+    "ano": 2023,
+    "autores": "Mulugeta Y. Birhanu; Richard Osei-Amponsah; F.Y. Obese; Tadelle Dessie",
+    "periodico": "Animal Frontiers",
+    "tipo": "article",
+    "doi": "10.1093/af/vfac069",
+    "citacoes": 84,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/af/article-pdf/13/1/17/49301470/vfac069.pdf",
+    "areas": [
+      "Livestock and Poultry Management",
+      "Agricultural Innovations and Practices",
+      "Agricultural Systems and Practices"
+    ],
+    "abstract": "A global increase in food prices severely affects the real incomes and food and nutritional security of resource-poor rural and peri-urban households in the developing world. During a surge in food prices, smallholder poultry production plays a significant role in poverty reduction by improving resource-poor households’ income and enhancing household food security through nutrient-rich animal source foods (ASFs) consumption. Improving its production and productivity heightens resource-poor households’ resilience to the price shock. Transforming existing low-input low-output smallholder poultry production systems demands technological advances in genetics, feed supply, health services, housin...",
+    "openalex_id": "https://openalex.org/W4321602565"
+  },
+  {
+    "titulo": "In the Intersection of Climate Risk and Social Vulnerabilities: a Case of Poor Urbanites in Lusaka, Zambia",
+    "ano": 2022,
+    "autores": "Bridget Bwalya Umar; Moses N. Chisola; Garikai Membele; David Kafwamba et al.",
+    "periodico": "Urban Forum",
+    "tipo": "article",
+    "doi": "10.1007/s12132-022-09473-9",
+    "citacoes": 9,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1007/s12132-022-09473-9",
+    "areas": [
+      "Flood Risk Assessment and Management",
+      "Disaster Management and Resilience",
+      "Urban and Rural Development Challenges"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W4294763230"
+  },
+  {
+    "titulo": "New, Emerging, Re-Emerging Tropical Infectious and Non-Communicable Diseases Persistent to the Climate, Landscape, and Environmental Changes on the Grounds of the Urbanizations, Industrializations, and Globalisation",
+    "ano": 2021,
+    "autores": "M. Palaniyandi",
+    "periodico": "International Journal of Environment and Climate Change",
+    "tipo": "article",
+    "doi": "10.9734/ijecc/2021/v11i1130514",
+    "citacoes": 3,
+    "acesso_aberto": true,
+    "url": "https://journalijecc.com/index.php/IJECC/article/download/534/1069",
+    "areas": [
+      "COVID-19 epidemiological studies",
+      "Urban and Rural Development Challenges",
+      "COVID-19 impact on air quality"
+    ],
+    "abstract": "Historical records evidenced of urban landscape changes, and environmental transitions brought by the improper growths and urban development’s of the urbanisation and industrialization in the developing countries, especially in India, significantly chaotic urban sprawl and industrial growths, and the development of its allied activities for the recent decades, invites new, emerging, re-emerging, and triggers the tropical infectious diseases including vector borne diseases (VBD) as well non-communicable diseases. Urban sprawl has a multiplier effect of growth of unplanned a crowded housing, and industrialization has an impact on the urban landscape with commercial and market development, and ...",
+    "openalex_id": "https://openalex.org/W3212129732"
+  },
+  {
+    "titulo": "The post-Covid city",
+    "ano": 2022,
+    "autores": "Michael Batty; Judith Clifton; Peter Tyler; Li Wan",
+    "periodico": "Cambridge Journal of Regions Economy and Society",
+    "tipo": "article",
+    "doi": "10.1093/cjres/rsac041",
+    "citacoes": 18,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1093/cjres/rsac041",
+    "areas": [
+      "Employment and Welfare Studies",
+      "Global Health Care Issues",
+      "Public health and occupational medicine"
+    ],
+    "abstract": "The Covid pandemic has had a significant and immediate impact upon cities, and there has been a large body of literature dedicated to understanding the nature of these short-term changes. However, and arguably even more importantly, scholars are charged with trying to grasp the consequences for the city in the coming years as the pandemic is gradually and unevenly brought under control. In September 2021 the Cambridge Journal of Regions, Economy and Society held a conference that examined the impacts of the Covid Pandemic on cities and whether—and in what ways—cities will reconfigure economically, socially and spatially as countries emerge and rebuild from the pandemic. From this conference,...",
+    "openalex_id": "https://openalex.org/W4309183064"
+  },
+  {
+    "titulo": "Organisation for Economic Co-operation and Development (OECD)",
+    "ano": 2023,
+    "autores": "Injy Johnstone",
+    "periodico": "Yearbook of International Environmental Law",
+    "tipo": "article",
+    "doi": "10.1093/yiel/yvae026",
+    "citacoes": 17,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/yielaw/article-pdf/34/1/yvae026/60766751/yvae026.pdf",
+    "areas": [
+      "EU Law and Policy Analysis"
+    ],
+    "abstract": "The OECD was founded in 1961 as an international organisation to ‘build better policies for better lives.’ Its goals are to ‘foster prosperity, equality, opportunity and well-being for all.’ Given its broad remit, the OECD’s work spans various economic, social, and environmental issues. As of this year, the OECD has thirty-eight member countries: Austria, Australia, Belgium, Canada, Chile, Colombia, Costa Rica, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Israel, Italy, Japan, Korea, Latvia, Lithuania, Luxembourg, Mexico, the Netherlands, New Zealand, Norway, Poland, Portugal, Slovak Republic, Slovenia, Spain, Sweden, Switzerland, Turkey, the...",
+    "openalex_id": "https://openalex.org/W4404569347"
+  },
+  {
+    "titulo": "Clinical practice guidelines on the environment and mental well-being",
+    "ano": 2024,
+    "autores": "Snehil Gupta; Samrat Singh Bhandarı; Manaswi Gautam; Sandeep Grover",
+    "periodico": "Indian Journal of Psychiatry",
+    "tipo": "article",
+    "doi": "10.4103/indianjpsychiatry.indianjpsychiatry_792_23",
+    "citacoes": 4,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.4103/indianjpsychiatry.indianjpsychiatry_792_23",
+    "areas": [
+      "Urban Green Space and Health",
+      "Noise Effects and Management",
+      "Health, psychology, and well-being"
+    ],
+    "abstract": "INTRODUCTION Our environment, both natural and built, plays a crucial role in our health and well-being. The literature suggests that natural and built environments affect (either positively or negatively) the well-being, quality of life (QoL), and psychological health, such as depression, anxiety, stress tolerance, and sleep [Tables 1 and 2].[1-5] The effect is not limited to the general population, but persons with mental illnesses (PWMIs), such as anxiety, depression, schizophrenia, dementia, and autism, also benefit substantially from the favorable environment.[4,6,7] A good amount of literature has established the positive influence of the natural environment (green space, biodiversity,...",
+    "openalex_id": "https://openalex.org/W4391177304"
+  },
+  {
+    "titulo": "Behind schedule: The corporate effort to fulfill climate obligations",
+    "ano": 2023,
+    "autores": "Joseph E. Aldy; Patrick Bolton; Marcin Kacperczyk; Zachery Halem",
+    "periodico": "Journal of applied corporate finance",
+    "tipo": "article",
+    "doi": "10.1111/jacf.12560",
+    "citacoes": 26,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jacf.12560",
+    "areas": [
+      "Climate Change Policy and Economics"
+    ],
+    "abstract": "The 2015 Paris Agreement represented the first multilateral agreement to acknowledge and support efforts by so-called non-state actors, including corporations, to cut their greenhouse gas emissions. Moreover, the goals and structure of the Paris Agreement—focused on limiting warming to well below 2°C relative to pre-industrial levels and allowing for national governments to set voluntary emission goals—have informed the setting and adoption of voluntary corporate commitments. Some corporations have taken on \"Paris-aligned\" emission commitments, indicating that they would deliver emission reductions consistent with the temperature objective of the 2015 agreement. With the increasing adoption ...",
+    "openalex_id": "https://openalex.org/W4380370689"
+  },
+  {
+    "titulo": "Cohort Profile: The Haramaya Health and Demographic Surveillance System (Haramaya HDSS)",
+    "ano": 2021,
+    "autores": "Zerihun Girma Gudata; Merga Dheresa; Gezahegn Mengesha; Kedir Teji Roba et al.",
+    "periodico": "International Journal of Epidemiology",
+    "tipo": "article",
+    "doi": "10.1093/ije/dyab232",
+    "citacoes": 24,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/ije/article-pdf/51/2/e46/43620208/dyab232.pdf",
+    "areas": [
+      "Child Nutrition and Water Access",
+      "Global Maternal and Child Health",
+      "Global Health and Epidemiology"
+    ],
+    "abstract": "Haramaya Health and Demographic Surveillance System (HDSS) was established in 2018 in the Haramaya district of the East Hararghe Zone in the Region of Oromia, eastern Ethiopia. The cohort was established to be a comprehensive and sustainable data source for monitoring population health and demographic events in the Haramaya district. At baseline, the total number of households in the HDSS was 17 461. The total baseline population was 99 898 (51 259 male and 48 639 female), of whom 23.86% were women of reproductive age. All households in the study area are visited and data are updated every 6 months. In the first round of follow-up data collection, there were 17 898 households and a populatio...",
+    "openalex_id": "https://openalex.org/W3209378719"
+  },
+  {
+    "titulo": "Dewey, Implementation, and Creating a Democratic Civic University",
+    "ano": 2023,
+    "autores": "Ira Harkavy",
+    "periodico": "The Pluralist",
+    "tipo": "article",
+    "doi": "10.5406/19446489.18.1.06",
+    "citacoes": 7,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.5406/19446489.18.1.06",
+    "areas": [
+      "Critical Theory and Philosophy",
+      "Political theory and Gramsci",
+      "Diverse Education Studies and Reforms"
+    ],
+    "abstract": "democracy, as we all know, is seriously threatened throughout the world (Fisher). In the United States, the chasm-like inequities laid bare by COVID-19, the ongoing killing of black Americans, the violent insurrection at the Capitol, and the continuing attempt to subvert the electoral process are powerful indicators of a system under severe strain (Guardian Staff; Rubin). These developments are also a sign of deep and chronic problems, including the following: Increasing economic, political, social, educational, and health inequalitiesIncreasing racism, anti-Semitism, and xenophobiaIncreasing attacks on science, knowledge, and democracy itselfDeclining trust in nearly all major institutionsM...",
+    "openalex_id": "https://openalex.org/W4322755974"
+  },
+  {
+    "titulo": "A call for solutions for healthy aging through a systems‐based, equitable approach to obesity",
+    "ano": 2022,
+    "autores": "Emily A. Callahan; Dorothea K. Vafiadis; Kathleen Cameron; Fatima Cody Stanford et al.",
+    "periodico": "Journal of the American Geriatrics Society",
+    "tipo": "article",
+    "doi": "10.1111/jgs.17732",
+    "citacoes": 10,
+    "acesso_aberto": true,
+    "url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jgs.17732",
+    "areas": [
+      "Obesity and Health Practices",
+      "Nutrition and Health in Aging",
+      "Obesity, Physical Activity, Diet"
+    ],
+    "abstract": "For millions of U.S. adults aged 60 years and older, obesity is a major barrier to aging well. Almost 43% of this population has obesity (body mass index [BMI] ≥30 kg/m2), compared to about 24% three decades ago (Figure 1).1 Obesity is a chronic disease linked to more than 200 serious health conditions2 and is the second-strongest predictor (after age) of COVID-19 related complications, hospitalizations, and death.3 For older adults, obesity also negatively impacts quality of life4; can increase risk of falls,5 mental health conditions,6, 7 and nursing home admission8; and results in higher health care spending.9 Source: Fryar CD, Carroll, MD, Afful, J. Prevalence of overweight, obesity, and...",
+    "openalex_id": "https://openalex.org/W4220891851"
+  }
+]

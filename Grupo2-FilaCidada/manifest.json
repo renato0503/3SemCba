@@ -1,0 +1,25 @@
+{
+  "name": "Fila Cidadã",
+  "short_name": "Fila Cidadã",
+  "description": "Diz quais documentos levar, como está a fila, quanto tempo esperar e onde ir.",
+  "lang": "pt-BR",
+  "start_url": "app.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b0f19",
+  "theme_color": "#111827",
+  "icons": [
+    {
+      "src": "../assets/logos/g2-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../assets/logos/g2-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

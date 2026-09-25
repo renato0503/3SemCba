@@ -1,0 +1,56 @@
+[
+  {
+    "titulo": "Not all supply chains are created equal: The linkages between soy local trade relations and development outcomes in Brazil",
+    "ano": 2023,
+    "autores": "Tiago N.P. dos Reis; Mairon G. Bastos Lima; Gabriela Russo Lopes; Patrick Meyfroidt",
+    "periodico": "World Development",
+    "tipo": "article",
+    "doi": "10.1016/j.worlddev.2023.106475",
+    "citacoes": 14,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1016/j.worlddev.2023.106475",
+    "areas": [
+      "Global trade, sustainability, and social impact",
+      "Organic Food and Agriculture",
+      "Agriculture, Land Use, Rural Development"
+    ],
+    "abstract": "Global agricultural trade is a key driver of socioenvironmental transformations in rural areas, including development dynamics. By creating revenue and wealth opportunities, it influences the economic and social relations in a landscape. However, not all landscapes shaped by a given agricultural sector are the same: one variable is how supply chain actors and their embedded networks (including commodity traders, farmers, and input suppliers) develop, maintain, or shift relationship patterns over time. To explore the connections between development and the nature of such trade relationships, particularly between farmers and commodity traders, we take soy as an emblematic example and compare f...",
+    "openalex_id": "https://openalex.org/W4389503205"
+  },
+  {
+    "titulo": "A Sustainability Index for Agrarian Expansion: A Case Study in Mato Grosso (Brazil)",
+    "ano": 2025,
+    "autores": "Angélica C. Graebin; C. Weise; Klaus Reichardt; Durval Dourado Neto",
+    "periodico": "Sustainability",
+    "tipo": "article",
+    "doi": "10.3390/su17115210",
+    "citacoes": 3,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/2071-1050/17/11/5210/pdf?version=1749127445",
+    "areas": [
+      "Sustainable Agricultural Systems Analysis",
+      "Sustainable Development and Environmental Policy",
+      "Agricultural Innovations and Practices"
+    ],
+    "abstract": "Since the early 2000s, sustainable development in agriculture has attracted substantial political attention, institutional support, and financial commitment, raising expectations for tangible outcomes. Yet, measurable progress remains uneven. As a leading food exporter, Brazil, in particular, has come under global scrutiny for practices deemed unsustainable—such as deforestation, excessive use of agrochemicals, and socio-environmental conflicts—despite its agricultural sector being a vital contributor to global food security. To provide policymakers with a robust monitoring tool, this study develops a nonlinear regression model that quantifies rural sustainability across economic, social, an...",
+    "openalex_id": "https://openalex.org/W4411060430"
+  },
+  {
+    "titulo": "A geografia das fronteiras no município de Porto Velho: União Bandeirantes e Rio Pardo e os reflexos da negligência da gestão territorial do Estado em Rondônia",
+    "ano": 2022,
+    "autores": "Amanda Michalski; Luciana Riça Mourão Borges",
+    "periodico": "AMBIENTES Revista de Geografia e Ecologia Política",
+    "tipo": "article",
+    "doi": "10.48075/amb.v4i2.29919",
+    "citacoes": 5,
+    "acesso_aberto": true,
+    "url": "https://e-revista.unioeste.br/index.php/ambientes/article/download/29919/21343",
+    "areas": [
+      "Rural Development and Agriculture",
+      "Agricultural and Food Sciences",
+      "Urban Development and Societal Issues"
+    ],
+    "abstract": "O município de Porto Velho, localizado ao norte do estado de Rondônia, situado na Amazônia meridional, apresenta modificações espaciais que nos permitem compreender a dinâmica do espaço agrário rondoniense por meio da expansão da fronteira agrícola que avança em busca de novas áreas para a ampliação da atividade da pecuária e, posteriormente, da monocultura da soja e demais grãos que fazem parte das commodities comercializadas pelo estado. Entre os anos de 1999 e 2018, União Bandeirantes e Rio Pardo expressam formas de ocupação, impactos ambientais, territoriais e sociais similares que fazem parte do processo de expansão da fronteira agrícola. Os reflexos desses impactos estão no aumento do ...",
+    "openalex_id": "https://openalex.org/W4313412047"
+  }
+]

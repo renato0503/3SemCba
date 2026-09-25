@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#3f6212">
+<title>AgroPrevisãoMT — Grupo 1 · AdmCBA</title>
+<meta name="description" content="AgroPrevisãoMT: antecipa como o crescimento do agro pressiona emprego, moradia, transporte e serviços nas cidades de Mato Grosso. Grupo 1 · AdmCBA · UNIFACC.">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g1.svg">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Landing do AgroPrevisãoMT · boletim de campo: palha, verde-soja e dourado de colheita; mapa em hexágonos */
+:root{--palha:#f5efe0;--palha2:#ebe2cc;--soja:#3f6212;--soja2:#365314;--terra:#92400e;--ouro:#ca8a04;--txt:#292524;--mudo:#78716c;--linha:#d6ccb4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Barlow,system-ui,sans-serif;background:var(--palha);color:var(--txt);line-height:1.6;font-size:17px}
+a{color:var(--terra)}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+.tira{background:var(--soja2);color:#d9f99d;font-size:12.5px;padding:7px 0;font-family:"Barlow Condensed";letter-spacing:.06em;text-transform:uppercase}
+.tira .w{display:flex;justify-content:space-between;gap:10px}
+.barra{background:var(--soja);color:#fff;padding:12px 0}
+.barra .w{display:flex;align-items:center;gap:12px}
+.barra img{width:42px;height:42px;border-radius:8px;background:#fff} .barra a{margin-left:auto;color:#d9f99d;font-weight:700;font-size:14px;text-decoration:none}
+.heroi{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:34px 0 26px}
+.heroi>*{min-width:0}
+.rot{font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ouro)}
+h1{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:clamp(40px,8vw,74px);line-height:.94;color:var(--soja2);margin:6px 0 12px}
+.lead{font-size:19px;max-width:560px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 20px;background:var(--soja);color:#fff;text-decoration:none;font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;font-size:17px;margin:0 8px 8px 0;border-radius:4px}
+.btn.sec{background:transparent;color:var(--soja2);border:2px solid var(--soja)}
+.fone{width:280px;height:580px;justify-self:center;border:10px solid var(--soja2);border-radius:34px;overflow:hidden;background:var(--palha);box-shadow:0 24px 50px -24px rgba(63,98,18,.7)}
+.fone iframe{width:375px;height:766px;border:0;transform:scale(.6933);transform-origin:0 0}
+h2{font-family:"Barlow Condensed";font-weight:800;text-transform:uppercase;font-size:30px;color:var(--soja2);margin:46px 0 12px}
+.hexes{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.hex{background:#fffdf6;border:1px solid var(--linha);border-top:4px solid var(--soja);padding:16px}
+.hex b{font-family:"Barlow Condensed";font-size:20px;text-transform:uppercase;color:var(--soja2)} .hex p{font-size:15.5px;color:var(--mudo)}
+.dados{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:8px}
+.dados div{background:var(--palha2);border-left:5px solid var(--ouro);padding:12px}
+.dados b{display:block;font-family:"Barlow Condensed";font-size:30px;color:var(--soja2)} .dados span{font-size:13px;color:var(--mudo)}
+.mats{background:#fffdf6;border:1px solid var(--linha);margin:14px 0 34px}
+.mats a{display:flex;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--linha);text-decoration:none;color:var(--txt);min-height:46px;align-items:center}
+.mats a:last-child{border:none}.mats a:hover{background:var(--palha2)}.mats a small{color:var(--mudo)}
+.mats a b::after{content:" →";color:var(--terra)}
+.equipe{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}.equipe span{background:var(--palha2);border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-weight:600}
+footer{background:var(--soja2);color:#d9f99d;padding:22px 0;margin-top:34px;font-size:14px}
+@media(max-width:760px){.heroi{grid-template-columns:1fr}.mats a small{display:none}}
+</style>
+</head>
+<body>
+<div class="tira"><div class="w"><span>Grupo 1 · Customer Discovery</span><span>Boletim nº 1 · Mato Grosso</span></div></div>
+<div class="barra"><div class="w"><img src="../assets/logos/g1.svg" alt=""><b>AgroPrevisãoMT</b><a href="../index.html">Todos os projetos →</a></div></div>
+<div class="w">
+  <section class="heroi">
+    <div><span class="rot">o agro cresce · a cidade sente</span>
+      <h1>Quando o agro cresce, a cidade sente antes.</h1>
+      <p class="lead">Um painel que liga o sinal do agronegócio à pressão sobre emprego, moradia, transporte e serviços públicos nas cidades de Mato Grosso — para planejar antes de o gargalo aparecer.</p>
+      <a class="btn" href="app.html">Abrir o painel</a><a class="btn sec" href="Slides-AgroPrevisaoMT.html">Slides de defesa</a></div>
+    <div class="fone"><iframe src="app.html" title="AgroPrevisãoMT em funcionamento" loading="lazy"></iframe></div>
+  </section>
+
+  <h2>O que o painel mostra</h2>
+  <div class="hexes">
+    <div class="hex"><b>Mapa de pressão</b><p>Cada região em um nível de pressão, por dimensão: emprego, moradia, transporte e serviços.</p></div>
+    <div class="hex"><b>Cenário “e se a safra crescer?”</b><p>Controles de safra e novas agroindústrias mostram como a pressão mudaria — modelo simples, para conversar.</p></div>
+    <div class="hex"><b>Alertas de curto prazo</b><p>As cidades e dimensões que passam do limite, com uma explicação em linguagem do dia a dia.</p></div>
+  </div>
+
+  <h2>O que já é dado real</h2>
+  <div class="dados">
+    <div><b>+73%</b><span>crescimento de Sinop 2010–2022 (IBGE)</span></div>
+    <div><b>+83,9%</b><span>Lucas do Rio Verde (IBGE)</span></div>
+    <div><b>+105%</b><span>Querência (IBGE)</span></div>
+    <div><b>56,2%</b><span>do PIB de MT é agro (Sedec)</span></div>
+  </div>
+  <p style="font-size:13.5px;color:var(--mudo);margin-top:8px">Os índices de pressão são ilustrativos, para o protótipo; o crescimento populacional é dado oficial do Censo 2022.</p>
+
+  <h2>Materiais do grupo</h2>
+  <nav class="mats">
+    <a href="../assets/md-viewer.html?src=../Grupo1-AgroPrevisaoMT/README.md&voltar=./"><b>README do grupo</b><small>integrantes, hipótese e pitch</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo1-AgroPrevisaoMT/formulario-app.md&voltar=./"><b>Formulário de campo</b><small>20 perguntas · G1-&lt;nnn&gt;</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo1-AgroPrevisaoMT/ContextoApp.md&voltar=./"><b>Contexto do produto</b><small>personas, jornada, KPIs</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo1-AgroPrevisaoMT/Pesquisa-Dados.md&voltar=./"><b>Pesquisa e dados</b><small>dados oficiais e artigos</small></a>
+    <a href="Slides-AgroPrevisaoMT.pdf"><b>Slides em PDF</b><small>para baixar</small></a>
+    <a href="questionario-google-forms-item5.pdf"><b>Questionário original</b><small>item 5 em PDF</small></a>
+    <a href="../index.html#materiais"><b>Materiais da turma</b><small>Partes 1, 2 e 3</small></a>
+  </nav>
+
+  <h2>Equipe</h2>
+  <div class="equipe"><span>Bruna</span><span>Keila</span><span>Yanni</span><span>Célia</span></div>
+  <p style="color:var(--mudo)">Orientação: Prof. Heitor</p>
+</div>
+<footer><div class="w">Grupo 1 · AgroPrevisãoMT · Cerrado Tech · UNIFACC · Administração e Gestão Pública (CBA), 2026</div></footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* Estilos compartilhados das apresentações de defesa por grupo (reveal.js).
+   Mesmo tema da Parte 1 (petrol/vermelho), com classes extras para dados e referências. */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', Arial, sans-serif; }
+
+.reveal .slides section { text-align: left; padding: 0 40px; }
+.reveal .slides { text-align: left; }
+
+.reveal .slides section.dark { color: #fff; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+.reveal .slides section.cover { background: #ffffff; }
+.reveal .slides section.cover,
+.reveal .slides section.dark {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.reveal h1 { font-size: 30px; color: #1a1a2e; margin-bottom: 10px; font-weight: 700; line-height: 1.2; text-transform: none; }
+.reveal h2 { font-size: 24px; color: #e94560; margin-bottom: 10px; text-transform: none; }
+.reveal h3 { font-size: 18px; color: #2d3748; margin-bottom: 8px; text-transform: none; }
+.reveal .dark h1, .reveal .dark h2 { color: #fff; }
+.reveal .dark h3 { color: #e94560; }
+
+.reveal .subtitle { font-size: 13px; color: #666; padding-top: 10px; border-top: 1px solid #E2E8F0; margin-top: 18px; }
+.reveal .dark .subtitle { color: #A0AEC0; border-top-color: rgba(255,255,255,0.2); }
+
+.reveal .content { display: flex; flex-direction: column; justify-content: flex-start; padding: 8px 0; }
+.reveal .content ul { list-style: none; font-size: 18px; line-height: 1.5; }
+.reveal .content ul li { padding: 4px 0; padding-left: 20px; position: relative; }
+.reveal .content ul li::before { content: ""; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; background: #e94560; border-radius: 50%; }
+
+.reveal .highlight-box { background: #FDF2F4; border-left: 4px solid #e94560; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+.reveal .dark .highlight-box { background: rgba(233,69,96,0.15); border-left-color: #e94560; }
+.reveal .success-box { background: #F0FDF4; border-left: 4px solid #38A169; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+.reveal .warning-box { background: #FFFBEB; border-left: 4px solid #DD6B20; padding: 12px 15px; margin: 10px 0; border-radius: 0 8px 8px 0; }
+
+.reveal table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+.reveal th { background: #1a1a2e; color: #fff; padding: 7px 8px; text-align: left; font-weight: 600; }
+.reveal td { padding: 6px 8px; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+.reveal tr:nth-child(even) { background: #F7FAFC; }
+
+.reveal .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+.reveal .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: start; }
+
+.reveal .card { background: #F7FAFC; border-radius: 8px; padding: 12px; border: 1px solid #E2E8F0; }
+.reveal .card h3 { color: #1a1a2e; font-size: 18px; margin-bottom: 6px; }
+.reveal .card p { font-size: 16px; color: #4A5568; line-height: 1.4; }
+
+.reveal .quote { font-size: 19px; font-style: italic; color: #2D3748; border-left: 4px solid #e94560; padding: 14px 20px; margin: 10px 0; background: #FDF2F4; border-radius: 0 8px 8px 0; line-height: 1.5; }
+.reveal .dark .quote { background: rgba(233,69,96,0.15); color: #F1F5F9; }
+
+.reveal .badge { display: inline-block; background: #e94560; color: #fff; padding: 5px 12px; border-radius: 15px; font-size: 14px; margin: 3px; }
+.reveal .badge.green { background: #38A169; }
+.reveal .badge.orange { background: #DD6B20; }
+.reveal .badge.blue { background: #3182CE; }
+.reveal .badge.purple { background: #805AD5; }
+
+.reveal .objective-list { counter-reset: objective; list-style: none; }
+.reveal .objective-list li { counter-increment: objective; padding: 6px 0; padding-left: 35px; position: relative; font-size: 18px; }
+.reveal .objective-list li::before { content: counter(objective); position: absolute; left: 0; top: 6px; width: 24px; height: 24px; background: #e94560; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px; }
+
+.reveal .step-list { counter-reset: step; list-style: none; }
+.reveal .step-list li { counter-increment: step; padding: 7px 0; padding-left: 40px; position: relative; font-size: 17px; }
+.reveal .step-list li::before { content: counter(step); position: absolute; left: 0; top: 5px; width: 28px; height: 28px; background: #e94560; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; }
+
+.reveal .group-chip { display: inline-block; background: #1a1a2e; color: #fff; padding: 6px 14px; border-radius: 8px; font-size: 14px; font-weight: 600; letter-spacing: .04em; margin-bottom: 10px; }
+
+.reveal .checklist { list-style: none; font-size: 18px; line-height: 1.8; }
+.reveal .checklist li { padding: 4px 0; padding-left: 34px; position: relative; }
+.reveal .checklist li::before { content: ""; position: absolute; left: 0; top: 8px; width: 20px; height: 20px; border: 2px solid #e94560; border-radius: 5px; }
+
+/* Classes extras para as apresentações de defesa */
+.reveal .stat-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin: 12px 0; }
+.reveal .stat { background: #FDF2F4; border: 1px solid #F5C6CF; border-radius: 10px; padding: 14px; text-align: center; }
+.reveal .stat .num { font-size: 27px; font-weight: 700; color: #e94560; line-height: 1.1; }
+.reveal .stat .lbl { font-size: 13px; color: #4A5568; margin-top: 5px; line-height: 1.3; }
+.reveal .source { font-size: 12px; color: #718096; margin-top: 4px; }
+.reveal .ref-card { background: #F7FAFC; border: 1px solid #E2E8F0; border-left: 4px solid #3182CE; border-radius: 0 8px 8px 0; padding: 6px 11px; margin: 4px 0; }
+.reveal .ref-card .t { font-size: 14px; color: #1a1a2e; font-weight: 600; }
+.reveal .ref-card .m { font-size: 12px; color: #4A5568; margin-top: 1px; }
+.reveal .ref-card .u { font-size: 12px; color: #2d3748; margin-top: 2px; }
+.reveal .pill-row { margin: 6px 0; }

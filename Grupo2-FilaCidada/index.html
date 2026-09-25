@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0f19">
+<title>Fila Cidadã — Grupo 2 · AdmCBA</title>
+<meta name="description" content="Fila Cidadã: diz quais documentos levar, como está a fila, quanto tempo esperar e onde ir. Grupo 2 · AdmCBA · UNIFACC.">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g2.svg">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* Landing da Fila Cidadã · painel de senhas: fundo escuro, dígitos de LED âmbar e um letreiro que corre */
+:root{--fundo:#0b0f19;--painel:#111827;--painel2:#1f2937;--led:#f59e0b;--led2:#fcd34d;--txt:#e5e7eb;--mudo:#9ca3af;--linha:#374151}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--fundo);color:var(--txt);line-height:1.6;font-size:17px}
+a{color:var(--led2)}
+.led{font-family:DotGothic16,monospace;color:var(--led);text-shadow:0 0 6px rgba(245,158,11,.55)}
+.w{max-width:1060px;margin:0 auto;padding:0 18px}
+.topo{display:flex;align-items:center;gap:10px;padding:16px 0}.topo img{width:38px;height:38px;border-radius:8px}
+.topo .led{font-size:22px}.topo a{margin-left:auto;text-decoration:none;font-size:14px}
+.letreiro{background:#000;overflow:hidden;white-space:nowrap;border-top:1px solid var(--linha);border-bottom:1px solid var(--linha);padding:5px 0}
+.letreiro span{display:inline-block;padding-left:100%;animation:corre 24s linear infinite;font-family:DotGothic16;color:var(--led);font-size:14px}
+@keyframes corre{to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.letreiro span{animation:none;padding-left:12px}}
+.heroi{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:34px 0}
+.heroi>*{min-width:0}
+h1{font-family:DotGothic16;font-weight:400;font-size:clamp(36px,7vw,64px);line-height:1.05;color:var(--led2);margin:6px 0 12px}
+.lead{font-size:19px;color:#cbd5e1;max-width:560px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;min-height:50px;padding:0 22px;background:var(--led);color:#111;text-decoration:none;font-weight:800;border-radius:10px;margin:0 8px 8px 0}
+.btn.sec{background:transparent;color:var(--txt);border:2px solid var(--linha)}
+.fone{width:280px;height:580px;justify-self:center;border-radius:34px;padding:10px;background:linear-gradient(160deg,var(--painel2),#000);border:1px solid var(--linha);box-shadow:0 30px 60px -24px rgba(245,158,11,.4)}
+.fone>div{width:260px;height:560px;border-radius:26px;overflow:hidden;background:var(--fundo)}
+.fone iframe{width:375px;height:808px;border:0;transform:scale(.6933);transform-origin:0 0}
+h2{font-family:DotGothic16;font-weight:400;font-size:26px;color:var(--led2);margin:46px 0 12px}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.passo{background:var(--painel);border:1px solid var(--linha);border-left:5px solid var(--led);padding:16px;border-radius:10px}
+.passo b{display:block;font-size:17px;color:#fff}.passo p{font-size:15.5px;color:var(--mudo)}
+.painel{background:#000;border:2px solid var(--linha);border-radius:12px;padding:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;text-align:center;margin-top:10px}
+.painel small{display:block;color:var(--mudo);font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+.painel .led{font-size:30px}
+.mats{background:var(--painel);border:1px solid var(--linha);border-radius:12px;margin:14px 0 34px;overflow:hidden}
+.mats a{display:flex;justify-content:space-between;gap:10px;padding:13px 16px;border-bottom:1px solid var(--linha);text-decoration:none;color:var(--txt);min-height:46px;align-items:center}
+.mats a:last-child{border:none}.mats a:hover{background:#0f172a}.mats a small{color:var(--mudo)}.mats a b::after{content:" →";color:var(--led)}
+.equipe{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}.equipe span{background:var(--painel2);border:1px solid var(--linha);border-radius:999px;padding:6px 14px;font-weight:600}
+footer{border-top:1px solid var(--linha);color:var(--mudo);padding:22px 0;margin-top:34px;font-size:14px}
+@media(max-width:760px){.heroi{grid-template-columns:1fr}.mats a small{display:none}}
+</style>
+</head>
+<body>
+<div class="topo w" style="padding-bottom:6px"><img src="../assets/logos/g2.svg" alt=""><span class="led">FILA CIDADÃ</span><a href="../index.html">← todos os projetos</a></div>
+<div class="letreiro" aria-hidden="true"><span>LEVE O DOCUMENTO CERTO · VÁ NO MELHOR HORÁRIO · FILAS E TEMPOS SIMULADOS NESTE PROTÓTIPO</span></div>
+<div class="w">
+  <section class="heroi">
+    <div><span class="led" style="font-size:15px">Grupo 2 · Customer Discovery</span>
+      <h1>Descubra o melhor horário antes de sair de casa.</h1>
+      <p class="lead">A Fila Cidadã reúne, num só lugar, o que o cidadão precisa para não perder o dia: a lista de documentos, a situação da fila, o tempo estimado de espera e onde ir.</p>
+      <a class="btn" href="app.html">Abrir o app</a><a class="btn sec" href="Slides-FilaCidada.html">Slides de defesa</a></div>
+    <div class="fone"><div><iframe src="app.html" title="Fila Cidadã em funcionamento" loading="lazy"></iframe></div></div>
+  </section>
+
+  <h2>O PAINEL DE HOJE</h2>
+  <div class="painel">
+    <div><small>agora</small><span class="led">12′</span></div>
+    <div><small>melhor horário</small><span class="led">14h</span></div>
+    <div><small>documentos</small><span class="led">4/4</span></div>
+  </div>
+  <p style="font-size:13.5px;color:var(--mudo);margin-top:8px">Filas e tempos são simulados a partir de um padrão por horário. Relatos de quem está no local ajustam a estimativa.</p>
+
+  <h2>Como funciona</h2>
+  <div class="passos">
+    <div class="passo"><b>1. Escolha o serviço</b><p>RG, CNH, CadÚnico, CPF, seguro-desemprego, cartão SUS e mais.</p></div>
+    <div class="passo"><b>2. Veja o checklist</b><p>A lista exata de documentos, sem ida perdida por falta de um papel.</p></div>
+    <div class="passo"><b>3. Chegue na hora certa</b><p>Tempo estimado por horário e o melhor momento para ir, com “como chegar”.</p></div>
+    <div class="passo"><b>4. Colabore</b><p>Quem está lá conta como está a fila — e a estimativa de todos melhora.</p></div>
+  </div>
+
+  <h2>Materiais do grupo</h2>
+  <nav class="mats">
+    <a href="../assets/md-viewer.html?src=../Grupo2-FilaCidada/README.md&voltar=./"><b>README do grupo</b><small>integrantes, hipótese e pitch</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo2-FilaCidada/formulario-app.md&voltar=./"><b>Formulário de campo</b><small>20 perguntas · G2-&lt;nnn&gt;</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo2-FilaCidada/ContextoApp.md&voltar=./"><b>Contexto do produto</b><small>personas, jornada, KPIs</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo2-FilaCidada/Pesquisa-Dados.md&voltar=./"><b>Pesquisa e dados</b><small>dados oficiais e artigos</small></a>
+    <a href="Slides-FilaCidada.pdf"><b>Slides em PDF</b><small>para baixar</small></a>
+    <a href="../index.html#materiais"><b>Materiais da turma</b><small>Partes 1, 2 e 3</small></a>
+  </nav>
+
+  <h2>Equipe</h2>
+  <div class="equipe"><span>Amanda</span><span>Stefanny Rosa</span><span>Stefany</span><span>Kemylly</span></div>
+  <p style="color:var(--mudo)">Orientação: Prof. Renato</p>
+</div>
+<footer><div class="w">Grupo 2 · Fila Cidadã · Cerrado Tech · UNIFACC · Administração e Gestão Pública (CBA), 2026</div></footer>
+</body>
+</html>

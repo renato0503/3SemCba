@@ -1,0 +1,341 @@
+[
+  {
+    "titulo": "The Digital Divide and Active Aging in China",
+    "ano": 2021,
+    "autores": "Lingchen Liu; Fan Wu; Huiying Tong; Cuihong Hao et al.",
+    "periodico": "International Journal of Environmental Research and Public Health",
+    "tipo": "article",
+    "doi": "10.3390/ijerph182312675",
+    "citacoes": 133,
+    "acesso_aberto": true,
+    "url": "https://www.mdpi.com/1660-4601/18/23/12675/pdf?version=1638352897",
+    "areas": [
+      "Technology Use by Older Adults",
+      "Retirement, Disability, and Employment",
+      "Intergenerational Family Dynamics and Caregiving"
+    ],
+    "abstract": "With the rapid development of society, especially the advent of intelligent technology of life services, the ability of the elderly to adapt to modern digital life is getting weaker and weaker, the dilemma of the \"digital divide\" for the elderly has aroused heated public debate. In the era of aging and information superposition, in-depth study of the multi-dimensional impact of the digital divide on the elderly has become an effective content of China's active aging strategy. Based on the micro-data of the Chinese General Social Survey in 2017, this paper uses the entropy right method to construct the digital divide index system for the elderly over 60 years of age from the perspective of es...",
+    "openalex_id": "https://openalex.org/W3217022716"
+  },
+  {
+    "titulo": "The Elderly Digital Divide: Digital Exclusion Versus the Right not To Use the Internet",
+    "ano": 2025,
+    "autores": "Elżbieta Kużelewska; Mariusz Tomaszuk; Damian Malinowski",
+    "periodico": "International Journal for the Semiotics of Law - Revue internationale de Sémiotique juridique",
+    "tipo": "article",
+    "doi": "10.1007/s11196-025-10334-4",
+    "citacoes": 24,
+    "acesso_aberto": true,
+    "url": "https://link.springer.com/content/pdf/10.1007/s11196-025-10334-4.pdf",
+    "areas": [
+      "Technology Use by Older Adults",
+      "Smart Cities and Technologies",
+      "Innovative Approaches in Technology and Social Development"
+    ],
+    "abstract": "Abstract According to Pew Research Center, one in four adults over 65 does not use the Internet, and more than 35% lack a home broadband connection. This can be seen as the era of aging; another form of the digital divide is actively emerging. Without meaningful access and inclusion for the elderly, on the one hand, and opportunities for them not to use the Internet, on the other hand, existing inequalities are likely to increase, and new ones may arise. Many services are being run online, so those without access to broadband and devices cannot benefit from those services or participate in community activities that require access. As the Internet has now permeated almost every facet of our l...",
+    "openalex_id": "https://openalex.org/W4413133520"
+  },
+  {
+    "titulo": "Recommendations for digital inclusion in the use of European digital public services",
+    "ano": 2025,
+    "autores": "Tamara Morte-Nadal; Miguel Ángel Esteban Navarro",
+    "periodico": "Humanities and Social Sciences Communications",
+    "tipo": "article",
+    "doi": "10.1057/s41599-025-04576-7",
+    "citacoes": 26,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1057/s41599-025-04576-7",
+    "areas": [
+      "E-Government and Public Services",
+      "Smart Cities and Technologies",
+      "Innovative Approaches in Technology and Social Development"
+    ],
+    "abstract": "This study examines digital public services within the European Union, focusing on digital inclusion and the barriers preventing widespread e-government adoption. A significant knowledge gap exists in understanding the interaction between citizens and digital public services, particularly for vulnerable groups, and in evaluating the impact of regional and sector-specific factors. The research employs a mixed-methods approach, including a systematic review based on PRISMA methodology, a document analysis of the digital and programs of the European Union and the Member States, 33 semi-structured expert interviews, and a survey targeting Spanish intermediate leaders, to explore digital divides ...",
+    "openalex_id": "https://openalex.org/W4408067630"
+  },
+  {
+    "titulo": "Understanding the costs and challenges of the digital divide through UK council services",
+    "ano": 2021,
+    "autores": "Morgan Harvey; David P Hastings; Gobinda Chowdhury",
+    "periodico": "Journal of Information Science",
+    "tipo": "article",
+    "doi": "10.1177/01655515211040664",
+    "citacoes": 36,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1177/01655515211040664",
+    "areas": [
+      "Technology Use by Older Adults",
+      "E-Government and Public Services",
+      "Smart Cities and Technologies"
+    ],
+    "abstract": "This study investigates the issue of digital exclusion resulting from the digitisation of government and council services within the United Kingdom. An initial analysis of customer support log data from a council in a large UK city helped identify the most commonly queried services and modes of support. The main findings are based on qualitative analysis of 10 interviews, structured around the results from the log analysis, conducted with front-line staff members at the central library of the same council. The study identifies a range of issues associated with the provision of e-government services and the subsequent under-utilisation by the public, including poor design, issues with effecti...",
+    "openalex_id": "https://openalex.org/W3196241547"
+  },
+  {
+    "titulo": "Mechanisms and heterogeneity in the construction of network infrastructure to help rural households bridge the “digital divide”",
+    "ano": 2023,
+    "autores": "Xiangtai Meng; Xinting Wang; Ubair Nisar; Shiying Sun et al.",
+    "periodico": "Scientific Reports",
+    "tipo": "article",
+    "doi": "10.1038/s41598-023-46650-7",
+    "citacoes": 29,
+    "acesso_aberto": true,
+    "url": "https://www.nature.com/articles/s41598-023-46650-7.pdf",
+    "areas": [
+      "ICT Impact and Policies",
+      "Digital Platforms and Economics",
+      "ICT in Developing Communities"
+    ],
+    "abstract": "Addressing the digital divide that plagues rural areas has become an important issue in narrowing the urban-rural gap and achieving common prosperity. This article examines the impact of network infrastructure on rural households' ability to cross the digital divide by using the \"broadband rural\" strategy as a proxy variable for network infrastructure and combining data from the China Family Panel Studies (CFPS) with a score propensity matched difference-in-differences model (PSM-DID). The results show that network infrastructure can help farmers cross the access and use divide, but does not contribute significantly to crossing the ability divide in the current period. A triple difference mo...",
+    "openalex_id": "https://openalex.org/W4388463388"
+  },
+  {
+    "titulo": "Digital divide and sustainable development of Ukrainian regions",
+    "ano": 2022,
+    "autores": "Liudmyla Deineko; Oleksandr Hrebelnyk; Любов Жарова; Olena Tsyplitska et al.",
+    "periodico": "Problems and Perspectives in Management",
+    "tipo": "article",
+    "doi": "10.21511/ppm.20(1).2022.29",
+    "citacoes": 16,
+    "acesso_aberto": true,
+    "url": "https://www.businessperspectives.org/images/pdf/applications/publishing/templates/article/assets/16239/PPM_2022_01_Deineko.pdf",
+    "areas": [
+      "ICT Impact and Policies",
+      "Regional Development and Policy",
+      "University-Industry-Government Innovation Models"
+    ],
+    "abstract": "Digital inequality of the regions is considered one of the topical issues of sustainable development provision in less developed countries. It can be defined as a gap between the geographical areas regarding the access opportunities to ICT and the Internet use for different activities. The goal of the study is to identify the link between the regional digital divide and the level of economic development in Ukraine and generalize international practices of digitalization promotion in lagging regions. Methodologically, various statistical methods (analytical grouping, variation, and correlation analysis) were used. The most appropriate and available data for assessing the digital divide referr...",
+    "openalex_id": "https://openalex.org/W4220828488"
+  },
+  {
+    "titulo": "Examining the determinants of eHealth usage among elderly people with disability: The moderating role of behavioural aspects",
+    "ano": 2021,
+    "autores": "Mohammad Afshar Ali; Khorshed Alam; Brad R. Taylor; Mahfuz Ashraf",
+    "periodico": "International Journal of Medical Informatics",
+    "tipo": "article",
+    "doi": "10.1016/j.ijmedinf.2021.104411",
+    "citacoes": 43,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1016/j.ijmedinf.2021.104411",
+    "areas": [
+      "Technology Use by Older Adults",
+      "Mobile Health and mHealth Applications",
+      "Health Literacy and Information Accessibility"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W3127090659"
+  },
+  {
+    "titulo": "The telehealth divide: health inequity during the COVID-19 pandemic",
+    "ano": 2021,
+    "autores": "Katie Fisher; Parker Magin",
+    "periodico": "Family Practice",
+    "tipo": "article",
+    "doi": "10.1093/fampra/cmab173",
+    "citacoes": 54,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/fampra/advance-article-pdf/doi/10.1093/fampra/cmab173/41971042/cmab173.pdf",
+    "areas": [
+      "Telemedicine and Telehealth Implementation",
+      "Primary Care and Health Outcomes",
+      "Health disparities and outcomes"
+    ],
+    "abstract": "On 2020 March 11, the World Health Organization (WHO) declared COVID-19 a global pandemic.1 Over the ensuing 20 months, primary care has had to transform rapidly, and one of the most significant changes was the expansion of telehealth. Telehealth is defined as the delivery of health services over a distance via the use of telecommunication technologies,2 with the most common form being videoconferencing and telephone consultations. Some countries, such as the United States of America, had already implemented telehealth in rural primary care settings prior to the pandemic, however, not to a substantive degree. In 2020 February, only 0.1% of Medicare fee-for-service primary care visits in the ...",
+    "openalex_id": "https://openalex.org/W4200020106"
+  },
+  {
+    "titulo": "Socially Distanced or Socially Connected? Well-being through ICT Usage among the Indian Elderly during COVID-19",
+    "ano": 2021,
+    "autores": "Trisha Bakshi; Asmita Bhattacharyya",
+    "periodico": "Millennial Asia",
+    "tipo": "article",
+    "doi": "10.1177/0976399621989910",
+    "citacoes": 41,
+    "acesso_aberto": true,
+    "url": "https://journals.sagepub.com/doi/pdf/10.1177/0976399621989910",
+    "areas": [
+      "Technology Use by Older Adults",
+      "Aging and Gerontology Research",
+      "Health disparities and outcomes"
+    ],
+    "abstract": "The ageing of the national population along with the rapid diffusion of technological innovations necessitate it to turn our attention to the significance of considering the adoption of technology by the Indian elderly. The impact of social distancing and the role of technology on the everyday lives of the older people during the pandemic remain under-researched. The public health crisis created by COVID-19 has deepened the roots of digital divide by digitally marginalizing older people especially in the developing nations who often lack awareness, access and training to use technology. This study captures the success stories, ordeals or challenges faced by the older people in coping with so...",
+    "openalex_id": "https://openalex.org/W3149013806"
+  },
+  {
+    "titulo": "Harnessing AI for public health: India's roadmap",
+    "ano": 2024,
+    "autores": "Manisha Gore; David B. Olawade",
+    "periodico": "Frontiers in Public Health",
+    "tipo": "article",
+    "doi": "10.3389/fpubh.2024.1417568",
+    "citacoes": 20,
+    "acesso_aberto": true,
+    "url": "https://public-pages-files-2025.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2024.1417568/pdf",
+    "areas": [
+      "COVID-19 diagnosis using AI",
+      "Artificial Intelligence in Healthcare",
+      "Artificial Intelligence in Healthcare and Education"
+    ],
+    "abstract": "communicable diseases (NCDs). Communicable diseases such as respiratory infections, Tuberculosis, Malaria, and HIV/AIDS remain significant public health concerns. At the same time, the prevalence of NCDs, including cardiovascular diseases and diabetes, is on a steep upswing. 9 Alarming indicators in maternal and child health, such as high rates of maternal and neonatal mortality and child malnutrition, further underscore the severity of the situation. 10 The rise of non-communicable diseases, particularly diabetes, is of special concern in India, which is known as the 'diabetes capital of the world'. The Indian Council of Medical Research reports a staggering 101 million diagnosed cases of d...",
+    "openalex_id": "https://openalex.org/W4402925144"
+  },
+  {
+    "titulo": "DIGITALIZATION OF THE WORLD ECONOMY: THEORETICAL AND POLITICAL ASPECTS",
+    "ano": 2021,
+    "autores": "Roman Moskalyk; Liana Moskalyk",
+    "periodico": "Green Blue and Digital Economy Journal",
+    "tipo": "article",
+    "doi": "10.30525/2661-5169/2021-3-4",
+    "citacoes": 6,
+    "acesso_aberto": true,
+    "url": "http://baltijapublishing.lv/index.php/gbdej/article/download/1518/1534",
+    "areas": [
+      "Economic and Technological Developments in Russia",
+      "Economic Development and Digital Transformation",
+      "Digital Economy and Transformation"
+    ],
+    "abstract": "The purpose of this article is to explore the theoretical background of the digitalization of the world economy, focusing on the channels of influence of digitalization on economic growth. There is also a discussion of policy priorities to enhance the positive effects and limit the negative effects of digitalization. Systematic and comparative analysis methods were used. The main conclusions are that early research on the impact of digital technology on economic growth has failed to fully explain the sustained correlation between digitalization and productivity, mainly because of the limitations of available statistics in the past. Recent studies largely suggest that digital technology can h...",
+    "openalex_id": "https://openalex.org/W4212867475"
+  },
+  {
+    "titulo": "Bridging the digital divide among advanced age skin cancer patients",
+    "ano": 2021,
+    "autores": "David X. Zheng; Laura Xiang; Kathleen Mulligan; Christopher R. Cullison et al.",
+    "periodico": "Journal of Plastic Reconstructive & Aesthetic Surgery",
+    "tipo": "article",
+    "doi": "10.1016/j.bjps.2021.08.009",
+    "citacoes": 3,
+    "acesso_aberto": true,
+    "url": "http://www.jprasurg.com/article/S1748681521003880/pdf",
+    "areas": [
+      "Mobile Health and mHealth Applications",
+      "Cutaneous Melanoma Detection and Management",
+      "Body Image and Dysmorphia Studies"
+    ],
+    "abstract": "",
+    "openalex_id": "https://openalex.org/W3198354896"
+  },
+  {
+    "titulo": "Proactive and Adaptive Elderly-centered Governance Framework through Synergistic Integration of the Internet of Things and Multi-agent Systems",
+    "ano": 2025,
+    "autores": "Yushi Chen; Linjing Liu; Qiong Wu; Cheng‐Fu Yang",
+    "periodico": "Sensors and Materials",
+    "tipo": "article",
+    "doi": "10.18494/sam5741",
+    "citacoes": 4,
+    "acesso_aberto": true,
+    "url": "https://sensors.myu-group.co.jp/sm_pdf/SM4065.pdf",
+    "areas": [
+      "Impact of AI and Big Data on Business and Society"
+    ],
+    "abstract": "The growing silver digital divide, resulting in the exclusion of elderly populations from electronic government (e-government) services, has become a pressing issue in aging societies worldwide.While many existing efforts focus on making individual technologies more agefriendly, they often overlook deeper challenges, such as how to dynamically adapt services, protect user privacy, and coordinate across different domains.To tackle these issues, in this study, we introduce an elderly-centered adaptive governance framework that integrates the Internet of Things (IoT) with multi-agent systems (MASs).The proposed framework is built on a four-layer architecture.The perception layer uses low-intrus...",
+    "openalex_id": "https://openalex.org/W4411443564"
+  },
+  {
+    "titulo": "Loneliness and Social Isolation among the Elderly: Are We Doing Enough?",
+    "ano": 2023,
+    "autores": "Hitesh Khurana; Nitin Gupta",
+    "periodico": "Indian Journal of Social Psychiatry",
+    "tipo": "article",
+    "doi": "10.4103/ijsp.ijsp_64_23",
+    "citacoes": 5,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.4103/ijsp.ijsp_64_23",
+    "areas": [
+      "Health disparities and outcomes",
+      "Aging and Gerontology Research",
+      "Intergenerational Family Dynamics and Caregiving"
+    ],
+    "abstract": "One of the most prominent policy actions taken by the United Nations in recent years was to declare and bring out a related document, namely, the Decade of Healthy Aging 2021–2030, which includes four interconnected action areas for safeguarding the health and well-being of older people, their families, and their communities: (i) change how we think, feel, and act toward age and aging; (ii) ensure that communities foster the abilities of older people; (iii) deliver integrated care and primary health services tailored to older people; and (iv) ensure access to long-term care for older people.[1] Before proceeding further, it is important to mention and discuss briefly the reasons for focusing...",
+    "openalex_id": "https://openalex.org/W4362727194"
+  },
+  {
+    "titulo": "Telemedicine in war zones: prospects, barriers, and meeting the needs of special populations",
+    "ano": 2024,
+    "autores": "Motti Haimi",
+    "periodico": "Frontiers in Medicine",
+    "tipo": "article",
+    "doi": "10.3389/fmed.2024.1417025",
+    "citacoes": 26,
+    "acesso_aberto": true,
+    "url": "https://www.frontiersin.org/journals/medicine/articles/10.3389/fmed.2024.1417025/pdf",
+    "areas": [
+      "Telemedicine and Telehealth Implementation",
+      "Artificial Intelligence in Healthcare and Education",
+      "Social Media in Health Education"
+    ],
+    "abstract": "Telemedicine is the application of electronic communications to transfer medical information across locations in order to enhance a patient's medical condition [1] .Since its development in the 1950s, the industry has expanded to become a diverse range of services utilized in private homes, medical offices, and hospitals worldwide. Beyond the conventional requirement for remote care, its application has grown to address the difficulty in accessing healthcare specialists [1].The use of telemedicine has numerous advantages. Access to specialized care could be made easier with the use of telemedicine. Not only does telemedicine facilitate easy access to medical professionals, but it also permit...",
+    "openalex_id": "https://openalex.org/W4403306321"
+  },
+  {
+    "titulo": "Needs of Digital Literacy in the Era of Artificial Intelligence: A Comprehensive Review",
+    "ano": 2025,
+    "autores": "Muhammad Hammad Haider; M. Umar Majeed; Muhammad Irfan",
+    "periodico": "Inverge Journal of Social Sciences",
+    "tipo": "article",
+    "doi": "10.63544/ijss.v4i4.214",
+    "citacoes": 3,
+    "acesso_aberto": true,
+    "url": "https://invergejournals.com/index.php/ijss/article/download/214/400",
+    "areas": [
+      "Educational Curriculum and Learning Methods",
+      "Education and Communication Studies",
+      "Educational Technology and E-Learning"
+    ],
+    "abstract": "This comprehensive review examines the evolving and critical need for digital literacy in the era of Artificial Intelligence (AI). It analyses how the proliferation of AI technologies across various sectors necessitates a fundamental redefinition of digital literacy, moving beyond mere technical proficiency to encompass a multifaceted skill set. The paper synthesizes existing literature to identify the core dimensions of AI-era digital literacy, including critical understanding and evaluation of AI-generated content, awareness of AI's societal and ethical implications, practical utilization of AI tools, ethical behaviour concerning data privacy and algorithmic fairness, and adaptability to c...",
+    "openalex_id": "https://openalex.org/W7119485482"
+  },
+  {
+    "titulo": "Addressing dermatologic concerns and teledermatology in undomiciled and sheltered populations",
+    "ano": 2024,
+    "autores": "Kennedy Gallagher; Sahithi Talasila; Anna Bistline; Rebecca L. Krain et al.",
+    "periodico": "Archives of Dermatological Research",
+    "tipo": "article",
+    "doi": "10.1007/s00403-024-03274-9",
+    "citacoes": 5,
+    "acesso_aberto": true,
+    "url": "https://doi.org/10.1007/s00403-024-03274-9",
+    "areas": [
+      "COVID-19 and healthcare impacts",
+      "Dermatological and COVID-19 studies",
+      "Homelessness and Social Issues"
+    ],
+    "abstract": "Homelessness in the United States is a significant public health issue, with dermatologic disease being the most prevalent health concern among the undomiciled and sheltered populations. Despite a growing need for dermatologic care, the supply of dermatologists remains insufficient, contributing to disparities in healthcare access for this vulnerable group. This review aims to detail the spectrum of dermatologic conditions experienced by homeless individuals, identify barriers to adequate care, and explore teledermatology as a potential solution to bridge these gaps. A comprehensive literature review was conducted, analyzing studies and reports on dermatologic issues prevalent among the home...",
+    "openalex_id": "https://openalex.org/W4401702011"
+  },
+  {
+    "titulo": "Global Health Informatics: the state of research and lessons learned",
+    "ano": 2023,
+    "autores": "Yuri Quintana; Theresa Cullen; John H. Holmes; Ashish Joshi et al.",
+    "periodico": "Journal of the American Medical Informatics Association",
+    "tipo": "article",
+    "doi": "10.1093/jamia/ocad027",
+    "citacoes": 7,
+    "acesso_aberto": true,
+    "url": "https://academic.oup.com/jamia/article-pdf/30/4/627/49524367/ocad027.pdf",
+    "areas": [
+      "Mobile Health and mHealth Applications",
+      "Electronic Health Records Systems",
+      "Telemedicine and Telehealth Implementation"
+    ],
+    "abstract": "The Journal of the American Medical Informatics Association (JAMIA) focus issue on Global Health Informatics (GHI) examines how health informatics can address global health issues. The selected papers discuss how informatics can improve health outcomes, especially in low- and middle-income countries (LMICs). The articles in this issue come from a broad range of researchers, practitioners, and policymakers, provide an overview of GHI initiatives and encourage researchers and practitioners to share ideas and best practices. GHI aims to harness digital health and informatics knowledge and tools to improve the care of individuals and populations in LMIC through achieving these 5 aims: effectiven...",
+    "openalex_id": "https://openalex.org/W4327541367"
+  },
+  {
+    "titulo": "Privacy, personal data protection, and freedom of expression under quarantine? The Peruvian experience",
+    "ano": 2021,
+    "autores": "Andrés Calderón; Susana Gonzáles; Alejandra Ruíz",
+    "periodico": "International Data Privacy Law",
+    "tipo": "article",
+    "doi": "10.1093/idpl/ipab003",
+    "citacoes": 4,
+    "acesso_aberto": false,
+    "url": "https://doi.org/10.1093/idpl/ipab003",
+    "areas": [
+      "COVID-19 Digital Contact Tracing",
+      "Legal and Policy Issues"
+    ],
+    "abstract": "In this article, the authors make a quantitative and qualitative study of all the Executive regulations issued during the State of Emergency in Peru, that may have impacted the fundamental rights of privacy, personal data protection, and freedom of expression. Peru represents an emblematic case study. It adopted one of the earliest, lengthiest and most severe lockdowns in the world, together with numerous regulations that restricted their citizens' civil liberties. Unlike other jurisdictions, the implemented measures in Peru did not focus solely on more controversial and technological activities such as mass surveillance, face recognition, and contact tracing mobile applications. Rather, mas...",
+    "openalex_id": "https://openalex.org/W3128337825"
+  }
+]

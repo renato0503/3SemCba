@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f766e">
+<title>CuideBem — Grupo 5 · AdmCBA</title>
+<meta name="description" content="CuideBem: app gratuito de apoio à saúde mental com triagem anônima, escuta humana e caminho até o CAPS. Grupo 5 · AdmCBA.">
+<link rel="icon" type="image/svg+xml" href="../assets/logos/g5.svg">
+<link rel="manifest" href="manifest.json">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Landing do CuideBem · acolhimento: verde-água, cantos macios, respiro; o 188 fica sempre visível */
+:root{--verde:#0f766e;--verde2:#115e59;--menta:#5eead4;--menta-clara:#ccfbf1;--txt:#14312e;--mudo:#5c7671;--linha:#d6ece7;--fundo:#f1fbf8;--sol:#fde68a;--urgente:#b45309}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Nunito Sans",system-ui,sans-serif;background:var(--fundo);color:var(--txt);line-height:1.65;font-size:17px}
+a{color:var(--verde2)}
+.w{max-width:1020px;margin:0 auto;padding:0 18px}
+.sos{background:var(--menta-clara);color:var(--verde2);padding:10px 0;font-size:14px;text-align:center}
+.sos a{color:var(--urgente);font-weight:800;border-bottom:2px solid var(--sol);text-decoration:none}
+.topo{display:flex;align-items:center;gap:10px;padding:16px 0;max-width:1020px;margin:0 auto}
+.topo img{width:40px;height:40px;border-radius:50%}.topo b{font-family:Fraunces;font-size:19px}.topo a{margin-left:auto;text-decoration:none;font-size:14px}
+.heroi{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;padding:30px 0}
+.heroi>*{min-width:0}
+h1{font-family:Fraunces;font-weight:600;font-size:clamp(32px,6vw,54px);line-height:1.1;margin:6px 0 14px}
+h1 i{font-style:normal;color:var(--verde)}
+.lead{font-size:19px;color:var(--mudo);max-width:560px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;min-height:52px;padding:0 24px;background:var(--verde);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;margin:0 8px 8px 0}
+.btn.sec{background:#fff;color:var(--verde2);border:2px solid var(--menta)}
+.fone{width:280px;height:580px;justify-self:center;border-radius:40px;padding:9px;background:#fff;border:1px solid var(--linha);box-shadow:0 30px 60px -30px rgba(15,118,110,.5)}
+.fone>div{width:262px;height:562px;border-radius:34px;overflow:hidden;background:var(--fundo)}
+.fone iframe{width:375px;height:805px;border:0;transform:scale(.6987);transform-origin:0 0}
+h2{font-family:Fraunces;font-weight:600;font-size:28px;margin:46px 0 12px}
+.pilares{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.pilar{background:#fff;border-radius:22px;padding:18px;box-shadow:0 4px 18px -12px rgba(15,118,110,.35)}
+.pilar span{font-size:30px}.pilar b{display:block;font-size:17px;margin:6px 0 2px}.pilar p{font-size:15.5px;color:var(--mudo)}
+.aviso{background:#fff;border-radius:22px;padding:18px;box-shadow:0 4px 18px -12px rgba(15,118,110,.35);margin-top:12px}
+.mats{background:#fff;border-radius:22px;margin:14px 0 34px;overflow:hidden;box-shadow:0 4px 18px -12px rgba(15,118,110,.35)}
+.mats a{display:flex;justify-content:space-between;gap:10px;padding:14px 18px;border-bottom:1px solid var(--linha);text-decoration:none;color:var(--txt);min-height:46px;align-items:center}
+.mats a:last-child{border:none}.mats a:hover{background:var(--menta-clara)}.mats a small{color:var(--mudo)}.mats a b::after{content:" →";color:var(--verde)}
+.equipe{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}.equipe span{background:var(--menta-clara);color:var(--verde2);border-radius:999px;padding:6px 14px;font-weight:600}
+footer{color:var(--mudo);padding:24px 0;margin-top:34px;font-size:14px;text-align:center}
+@media(max-width:760px){.heroi{grid-template-columns:1fr}.mats a small{display:none}}
+</style>
+</head>
+<body>
+<div class="sos">💚 Em crise agora? Ligue <a href="tel:188">CVV 188</a> — gratuito e sigiloso, 24 horas. Emergência: <a href="tel:192">192</a>.</div>
+<div class="topo w"><img src="../assets/logos/g5.svg" alt=""><b>CuideBem</b><a href="../index.html">← todos os projetos</a></div>
+<div class="w">
+  <section class="heroi">
+    <div><span style="color:var(--verde);font-weight:700">Grupo 5 · Customer Discovery</span>
+      <h1>Cuidado começa <i>sem exposição.</i></h1>
+      <p class="lead">Um app gratuito, vinculado ao gov.br, que encurta o caminho entre o silêncio e o cuidado: triagem anônima, escuta humana e acompanhamento real junto ao CAPS.</p>
+      <a class="btn" href="app.html">Entrar no CuideBem</a><a class="btn sec" href="Slides-CuideBem.html">Slides de defesa</a></div>
+    <div class="fone"><div><iframe src="app.html" title="CuideBem em funcionamento" loading="lazy"></iframe></div></div>
+  </section>
+
+  <h2>Anonimato como ponto de partida</h2>
+  <div class="pilares">
+    <div class="pilar"><span>🔒</span><b>Triagem sem cadastro</b><p>Não precisa contar o nome para começar. A pessoa só se identifica quando quiser dar o próximo passo.</p></div>
+    <div class="pilar"><span>🧭</span><b>Orientação, não diagnóstico</b><p>Um roteiro de acolhimento que indica o caminho — quem diagnostica é o profissional.</p></div>
+    <div class="pilar"><span>🤝</span><b>Escuta e encaminhamento</b><p>Conexão com escuta por voz ou vídeo e com o CAPS, com um código para levar.</p></div>
+    <div class="pilar"><span>💚</span><b>Ajuda sempre à mão</b><p>CVV 188, SAMU 192, CAPS e UBS visíveis em todo o app — e um fluxo de crise que vem primeiro.</p></div>
+  </div>
+  <div class="aviso">⚠️ <span class="sub">O CuideBem é apoio complementar e não substitui tratamento. Em qualquer conflito entre engajamento e segurança, <b>segurança vence</b>. Dados de saúde mental são sensíveis e tratados sob a LGPD.</span></div>
+
+  <h2>Materiais do grupo</h2>
+  <nav class="mats">
+    <a href="../assets/md-viewer.html?src=../Grupo5-CuideBem/README.md&voltar=./"><b>README do grupo</b><small>integrantes, hipótese e pitch</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo5-CuideBem/formulario-app.md&voltar=./"><b>Formulário de campo</b><small>20 perguntas · G5-&lt;nnn&gt;</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo5-CuideBem/ContextoApp.md&voltar=./"><b>Contexto do produto</b><small>personas, jornada, LGPD</small></a>
+    <a href="../assets/md-viewer.html?src=../Grupo5-CuideBem/Pesquisa-Dados.md&voltar=./"><b>Pesquisa e dados</b><small>dados oficiais e artigos</small></a>
+    <a href="Slides-CuideBem.pdf"><b>Slides em PDF</b><small>para baixar</small></a>
+    <a href="../index.html#materiais"><b>Materiais da turma</b><small>Partes 1, 2 e 3</small></a>
+  </nav>
+
+  <h2>Equipe</h2>
+  <div class="equipe"><span>Maria Clara</span><span>Kaua</span><span>Marilene</span><span>Cristiane</span></div>
+  <p style="color:var(--mudo)">Orientação: Prof. Pantalião</p>
+</div>
+<footer>Grupo 5 · CuideBem · Cerrado Tech · UNIFACC · Administração e Gestão Pública (CBA), 2026</footer>
+</body>
+</html>

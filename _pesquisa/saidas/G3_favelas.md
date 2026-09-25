@@ -1,0 +1,318 @@
+# Busca OpenAlex: favelas
+
+## 1. Data Journalism in favela : Made by, for, and about Forgotten and Marginalized Communities
+- Autores: Mathias‐Felipe de‐Lima‐Santos; Lucia Mesquita
+- Ano: 2021 | Periodico: Journalism Practice | Tipo: article
+- DOI: 10.1080/17512786.2021.1922301 | Citacoes: 47 | OA: True
+- Areas: Social Media and Politics, Radio, Podcasts, and Digital Media, E-Government and Public Services
+- Link: https://www.tandfonline.com/doi/pdf/10.1080/17512786.2021.1922301?needAccess=true
+- Resumo: In Brazil, inequalities are visually represented in its favelas. These neighborhoods are usually comprised of low-income informal settlements neglected by governments and often forgotten by mainstream media. The pervasive nature of information and communications technology (ICT) has brought new ways to produce news content in the media industry, giving voice to these communities. Thus, small, alternative, community, or non-mainstream media became a vital terrain of opposition activism. Drawing on user participation, collaboration, and data journalism theories, this article analyzes three alternative media organizations (Agência Mural, data_labe, and Favela em Pauta), which proposed producing...
+
+## 2. On urban studies in Brazil: The favela, uneven urbanisation and beyond
+- Autores: Mariana Fix; Pedro Fiori Arantes
+- Ano: 2021 | Periodico: Urban Studies | Tipo: article
+- DOI: 10.1177/0042098021993360 | Citacoes: 41 | OA: False
+- Areas: Urban Development and Societal Issues, Urban and Rural Development Challenges, Urban Planning and Governance
+- Link: https://doi.org/10.1177/0042098021993360
+- Resumo: This essay discusses some key ideas and debates about urban studies in Brazil, considered historiographically, from the mid-1900s to the present. It presents the main components and particularities of what emerges as the Brazilian matrix of urban studies, interrogating the most influential work in the field with the country’s own experiences of industrialisation and urbanisation. It discusses some key urban debates of the 21st century, namely new planning models associated with globalisation, global mega-events, public–private partnerships, inner-city gentrification, housing and city financialisation, rising forms of urban warfare and social control in slums (favelas), and new activisms and ...
+
+## 3. The favela effect: Spatial inequalities and firm strategies in disadvantaged urban communities
+- Autores: Leandro Pongeluppe
+- Ano: 2022 | Periodico: Strategic Management Journal | Tipo: article
+- DOI: 10.1002/smj.3414 | Citacoes: 38 | OA: False
+- Areas: Consumer Retail Behavior Studies, Taxation and Compliance Studies, Sharing Economy and Platforms
+- Link: https://doi.org/10.1002/smj.3414
+- Resumo: Abstract Research summary E‐commerce firms make fewer products available and charge higher delivery prices to customers inside Brazilian favelas than they do to customers immediately outside favelas, despite the absence of infrastructure impediments at the favela borders. This phenomenological study uses mixed methods to investigate firm heterogeneity in these practices. The analysis shows that some firms treat favela consumers more equitably than their competitors. These firms (i) invest in physical stores inside and outside favelas, which are complementary to their online marketplaces, and (ii) engage genuinely with employees and consumers, which reflects their stakeholder orientation. By ...
+
+## 4. Technology of the Oppressed: Inequity and the Digital Mundane in Favelas of Brazil
+- Autores: Matthew W. Wilson; James Ash; Patricia Basile; Eric Robsky Huntley et al.
+- Ano: 2023 | Periodico: The AAG Review of Books | Tipo: article
+- DOI: 10.1080/2325548x.2022.2145815 | Citacoes: 28 | OA: True
+- Areas: Smart Cities and Technologies
+- Link: https://www.tandfonline.com/doi/pdf/10.1080/2325548X.2022.2145815?needAccess=true
+- Resumo: Introduction by Matthew W. Wilson, Department of Geography, University of Kentucky, Lexington, KY, USA.How might we remain hopeful as the work of liberation remains incomplete? In adaptation of the...
+
+## 5. The Allegory of the Favela: The Multifaceted Effects of Socioeconomic Mobility
+- Autores: Leandro Pongeluppe
+- Ano: 2024 | Periodico: Administrative Science Quarterly | Tipo: article
+- DOI: 10.1177/00018392241240469 | Citacoes: 20 | OA: True
+- Areas: Urban, Neighborhood, and Segregation Studies, Migration and Labor Dynamics, Migration, Ethnicity, and Economy
+- Link: https://doi.org/10.1177/00018392241240469
+- Resumo: What are the consequences of upward socioeconomic mobility for disenfranchised individuals? This article examines this question in the context of a business training program offered to residents of Brazilian urban slums, known as “favelas.” The study employs a randomized controlled trial complemented by quantile regressions, field visits, and interviews. The results show that training improves favela dwellers’ economic outcomes, such as by increasing income and participation in entrepreneurship, and some socio-psychological outcomes, such as by improving self-efficacy and optimism. However, these income improvements were accompanied by participants’ enhanced experiences of favela stigma, an ...
+
+## 6. Ultrasound‐assisted extraction of favela (Cnidoscolus quercifolius) seed oil using ethanol as a solvent
+- Autores: Kátia Andressa Santos; Edson Antônio da Silva; Camila da Silva
+- Ano: 2021 | Periodico: Journal of Food Processing and Preservation | Tipo: article
+- DOI: 10.1111/jfpp.15497 | Citacoes: 34 | OA: False
+- Areas: Allelopathy and phytotoxic interactions, Botanical Research and Applications, Phytochemistry Medicinal Plant Applications
+- Link: https://doi.org/10.1111/jfpp.15497
+- Resumo: In this study, the oil extraction from favela (Cnidoscolus quercifolius) seeds was evaluated using a nonconventional ultrasound-assisted extraction (UAE) method with ethanol as a solvent. UAE was performed using a 33-Box–Behnken design to evaluate the effects of the temperature, solvent-to-solid ratio, and ultrasound intensity on the yield, concentrations of tocopherols and β-sitosterol, and the antioxidant activity of the oil. The variable with the greatest influence on yield was the solvent-to-solid ratio. The highest yield (46.9 wt%) was obtained after 5 min of extraction at 60°C, 15 ml/g, and 20 W/cm2. Significant variations (p < .05) were observed in the concentrations of total tocopher...
+
+## 7. Urban Mediatization and Planetary Gentrification: The Rise and Fall of a Favela across Media Platforms
+- Autores: Petter Törnberg; Justus Uitermark
+- Ano: 2022 | Periodico: City and Community | Tipo: article
+- DOI: 10.1177/15356841211068521 | Citacoes: 30 | OA: True
+- Areas: Urban Planning and Governance, Public Spaces through Art, Media Studies and Communication
+- Link: https://journals.sagepub.com/doi/pdf/10.1177/15356841211068521
+- Resumo: We are today increasingly experiencing the city through interfaces of platforms like Google Maps, Instagram, TripAdvisor, Airbnb, and Yelp. As our very sense of the city is shaped by these technological interfaces, the media are acquiring a constitutive role in reshaping contemporary urbanity. To conceptualize how media represent urban change, this paper draws on media studies and particularly the concept of “mediatization.” The paper studies the changing media representations of the gentrification of Rio de Janeiro’s favela Vidigal over fifteen years across different media. Using computational methods and interpretative analysis, we find that global media representations represented Vidigal...
+
+## 8. Representation, reputation and expectations towards bureaucracy: experimental findings from a favela in Brazil
+- Autores: André Dantas Cabral; Alketa Peci; Gregg G. Van Ryzin
+- Ano: 2021 | Periodico: Public Management Review | Tipo: article
+- DOI: 10.1080/14719037.2021.1906934 | Citacoes: 28 | OA: False
+- Areas: Policing Practices and Perceptions, Crime Patterns and Interventions, Law in Society and Culture
+- Link: https://doi.org/10.1080/14719037.2021.1906934
+- Resumo: Symbolic representation and bureaucratic reputation both refer to perceptions of government agencies, but few studies have examined how these concepts interact. We employed a survey experiment in a Brazilian favela, a unique audience of vulnerable citizens defined by the intersectionality race, class, and spatial segregation, to probe how citizens perceive agencies with differing reputations (police versus public schools) when the agency leader is more or less representative of the favelados. We find representation enhances procedural justice expectations of the less reputable local police. Our findings highlight the relevance of representation when detrimental citizen-state encounters produ...
+
+## 9. Measuring mobility inequalities of favela residents based on mobile phone data
+- Autores: André Leite Rodrigues; Mariana Giannotti; Matheus H.C. Barboza; Bianca Bianchi Alves
+- Ano: 2021 | Periodico: Habitat International | Tipo: article
+- DOI: 10.1016/j.habitatint.2021.102346 | Citacoes: 19 | OA: True
+- Areas: Human Mobility and Location-Based Analysis, Impact of Light on Environment and Health, Urban Transport and Accessibility
+- Link: https://www.sciencedirect.com/science/article/pii/S0197397521000357
+- Resumo: This study investigated the mobility patterns of favela residents based on an analysis of their daily movements derived from high-frequency mobile phone data.Daily movements were measured considering the distance traveled at different times of day over the course of more than two months.Potential trip purposes for the most frequently visited locations were inferred based on land use data from property taxes.The high volume of geocoded data from mobile phones enabled the analysis during multiple days, also covering weekends, usually not considered in traditional transport surveys.The mobile phone data indicated that, on average, favela residents go farther from home during business days and p...
+
+## 10. Venture distress and problemistic search among entrepreneurs in Brazilian favelas
+- Autores: Anna-Katharina Lenz; Christopher Sutter; Rafael Goldszmidt; César Zucco
+- Ano: 2021 | Periodico: Journal of Business Venturing | Tipo: article
+- DOI: 10.1016/j.jbusvent.2021.106162 | Citacoes: 20 | OA: False
+- Areas: Entrepreneurship Studies and Influences, Family Business Performance and Succession, Innovation and Socioeconomic Development
+- Link: https://doi.org/10.1016/j.jbusvent.2021.106162
+
+## 11. Vulnerability, neglect, and collectivity in Brazilian favelas: Surviving the threats of the COVID-19 pandemic and the state’s necropolitics
+- Autores: Patricia Basile
+- Ano: 2022 | Periodico: Urban Studies | Tipo: article
+- DOI: 10.1177/00420980221103342 | Citacoes: 25 | OA: True
+- Areas: Homelessness and Social Issues, COVID-19 Pandemic Impacts, COVID-19 and Mental Health
+- Link: https://pmc.ncbi.nlm.nih.gov/articles/PMC10311379/pdf/10.1177_00420980221103342.pdf
+- Resumo: The COVID-19 pandemic has deepened existing inequities and injustices in Brazil, seen in the disproportionately detrimental impacts on favelas. State policy responses to the pandemic have disregarded favela residents' experiences. Recommendations such as 'shelter-in-place' ignore the reality of over 11.4 million favela residents who cannot work from home or afford to stop working, nor practise physical distancing from others. This study investigates the discourse of community organisations in favelas as they respond to the threats of the COVID-19 pandemic and the state's necropolitics. Community organisations in favelas have taken action to protect their residents from the virus, unemploymen...
+
+## 12. The Dying Home: “Bad Deaths” and Spatial Inscriptions of Mourning in a Favela
+- Autores: Eugênia Motta
+- Ano: 2021 | Periodico: Cultural Anthropology | Tipo: article
+- DOI: 10.14506/ca36.4.03 | Citacoes: 19 | OA: True
+- Areas: Urban and sociocultural dynamics, Public Spaces through Art
+- Link: https://journal.culanth.org/index.php/ca/article/download/5226/671
+- Resumo: In Rio de Janeiro’s favelas, where residents have experienced economic precarity and racialized police violence, “good deaths,” wrought by natural causes and at old age, are distinguished from “bad deaths,” which may take victims’ entire families and houses. This essay chronicles the story of Maria who died at fifty-two, following the death of her youngest son at the hands of the police, and inquires into the generativity of mourning related to these two bad deaths. As graffiti and altars became spatial inscriptions of a new moralization of space, Maria’s house gradually transformed from a substrate of life into a marker of death. In the end, the home died too, as it was sold and its attenda...
+
+## 13. Overcoming urban frontiers: Ordering Favela tourism actor-networks
+- Autores: María Eugenia Altamirano
+- Ano: 2022 | Periodico: Tourist Studies | Tipo: article
+- DOI: 10.1177/14687976221090738 | Citacoes: 18 | OA: False
+- Areas: Urban and sociocultural dynamics, Public Spaces through Art, Diverse Aspects of Tourism Research
+- Link: https://doi.org/10.1177/14687976221090738
+- Resumo: This paper examines the multiple and heterogeneous, current and potential, relations between hybrid actors of tourism in Favela Santa Marta, Rio de Janeiro. It seeks to elucidate the legitimizing potential of tourists acting as “connectors” that reach beyond formal politics’ hindrances. This work applies assemblage theory epistemological framework, and Actor-Network Theory ethnomethodological tools, to explore the issues and roles questioned, altered, made visible, or transformed through favela tourists’ practices and performances. Hence, avoiding the ethical dilemmas and representational concerns from slum tourism researchers in the past. Our fieldwork engages with two favela tours. We foll...
+
+## 14. Experience of neighbourhood violence and mental distress in Brazilian favelas: a cross-sectional household survey
+- Autores: Marcelo Santos Cruz; Eliana Sousa Silva; Zivile Jakaite; Miriam Krenzinger et al.
+- Ano: 2021 | Periodico: The Lancet Regional Health - Americas | Tipo: article
+- DOI: 10.1016/j.lana.2021.100067 | Citacoes: 24 | OA: True
+- Areas: Intimate Partner and Family Violence, Health disparities and outcomes, Homelessness and Social Issues
+- Link: https://www.sciencedirect.com/science/article/pii/S2667193X21000636/pdf
+- Resumo: Background: Living in informal settlements with extensive neighbourhood violence has been shown to be linked with poorer mental health. However, there is little evidence as to whether different levels of personal experiences and fears of neighbourhood violence within such settlements affect mental health. This study assessed such personal experiences and fears of residents in favelas in Brazil. We tested whether variations predict mental health symptoms and quality of life, and whether this is independent of the influence of sociodemographic characteristics and poverty. Methods: In a population-based survey of adults living in a group of favelas in Rio de Janeiro, Brazil, we assessed: sociod...
+
+## 15. Racialized Popular Feminism: A Decolonial Analysis of Women’s Struggle with Police Violence in Rio de Janeiro’s Favelas
+- Autores: Anne‐Marie Veillette
+- Ano: 2021 | Periodico: Latin American Perspectives | Tipo: article
+- DOI: 10.1177/0094582x211015324 | Citacoes: 25 | OA: True
+- Areas: Race, Identity, and Education in Brazil, Caribbean history, culture, and politics, Sex work and related issues
+- Link: https://doi.org/10.1177/0094582x211015324
+- Resumo: The action of the women of Rio de Janeiro’s favelas to avoid, prevent, counter, and denounce police violence, both infrapolitically and in the public transcript, are associated with the rise of a political consciousness that is gendered and racialized in the context of the genocide of Brazil’s black population. Their resistance, rooted in “Amefricanidade” and the lingering coloniality of gender, is best described as characterized by an intersectional consciousness of injustice. A ação das mulheres das favelas do Rio de Janeiro para impedir, prevenir, combater e denunciar a violência policial, tanto na infrapolítica quanto na esfera pública, está relacionada ao surgimento de uma consciência p...
+
+## 16. Beyond the Favelas: An Analysis of Intraurban Poverty Patterns in Brazil
+- Autores: C. A. de Carvalho; Diogo de Carvalho Cabral
+- Ano: 2021 | Periodico: The Professional Geographer | Tipo: article
+- DOI: 10.1080/00330124.2020.1844571 | Citacoes: 13 | OA: False
+- Areas: Urban and Rural Development Challenges, Urban Planning and Governance, Income, Poverty, and Inequality
+- Link: https://doi.org/10.1080/00330124.2020.1844571
+- Resumo: Despite evidence to the contrary, favelas still loom large in Brazilian social imaginary as the quintessential poverty pockets. No study to date has systematically examined the place of favelas within the broader geographies of poverty in Brazilian cities. How prominent are these settlements in the context of urban poverty? How do they fare when compared with other kinds of poor settlements? We tackled these questions by examining the sociospatial patterns of the poor population living in five metropolitan areas across the Brazilian territory. Using tract-level data from the 2010 census, we compared favela and non-favela residents through exploratory, inferential, and spatial analyses. Our r...
+
+## 17. Legitimizing discourses within favela tourism
+- Autores: María Eugenia Altamirano
+- Ano: 2022 | Periodico: Tourism Geographies | Tipo: article
+- DOI: 10.1080/14616688.2022.2154380 | Citacoes: 11 | OA: False
+- Areas: Diverse Aspects of Tourism Research, Tourism, Volunteerism, and Development, Sex work and related issues
+- Link: https://doi.org/10.1080/14616688.2022.2154380
+- Resumo: Urban slums, especially in the Global South, have become popular attractions for tourists interested in sites off the beaten track and more authentic encounters with local culture. This practice has drawn attention from the media and extensive academic research, pointing out its controversial character due to the uneven power relations between hosts and guests and the commodification of poverty to turn it into a tourist attraction. Though acknowledging this pitfall, this work takes a different approach. We argue that tourism has agency in co-producing meanings and values in the process of making and consuming slums as tourist places. Within this process, the cultural capital of slums may fin...
+
+## 18. Resisting disaster chronopolitics: Favelas and forced displacement in Rio de Janeiro, Brazil
+- Autores: Luciana Mendes Barbosa; Robert Coates
+- Ano: 2021 | Periodico: International Journal of Disaster Risk Reduction | Tipo: article
+- DOI: 10.1016/j.ijdrr.2021.102447 | Citacoes: 16 | OA: True
+- Areas: Disaster Management and Resilience, Urban Planning and Governance, Water Governance and Infrastructure
+- Link: https://doi.org/10.1016/j.ijdrr.2021.102447
+- Resumo: This article employs the notion of chronopolitics (Klinke 2013 [1]) to explore the place of disaster events within urban politics. A chronopolitics of disaster focuses on both governmental manipulation of the post-disaster space and the use of memory in resisting longstanding patterns of urban spatial segregation and forced removal: the creation and embodiment of alternative narratives of time and space to those mobilized by hegemonic actors. We draw here on the aftermath of calamitous landslides in favelas in Rio de Janeiro in 2010, during which 67 people died. In the wake of this traumatic event, the state moved quickly to close down political openings produced by the tragedy (Edkins 2006 ...
+
+## 19. The Potential to Address Disease Vectors in Favelas in Brazil Using Sustainable Drainage Systems: Zika, Drainage and Greywater Management
+- Autores: Susanne M. Charlesworth; Débora Cynamon Kligerman; Matthew Blackett; Frank Warwick
+- Ano: 2022 | Periodico: International Journal of Environmental Research and Public Health | Tipo: article
+- DOI: 10.3390/ijerph19052860 | Citacoes: 23 | OA: True
+- Areas: Mosquito-borne diseases and control, Urban Agriculture and Sustainability, Child Nutrition and Water Access
+- Link: https://www.mdpi.com/1660-4601/19/5/2860/pdf?version=1646214255
+- Resumo: Residents of informal settlements, the world over, suffer consequences due to the lack of drainage and greywater management, impacting human and environmental health. In Brazil, the presence of the Aedes aegypti mosquito in urban areas promotes infections of the Zika virus as well as companion viruses, such as dengue, chikungunya and yellow fever. By using observation and interviews with the community, this paper shows how a simple sustainable drainage system approach could prevent the accumulation of on-street standing water, and thus reduce opportunities for the mosquito to breed and reduce infection rates. During the interview phase, it became apparent that underlying misinformation and m...
+
+## 20. Food retail in favelas of a Brazilian metropolis
+- Autores: Luana Lara Rocha; Amélia Augusta de Lima Friche; Gabriel Borges Vaz de Melo; Nayhanne Gomes Cordeiro et al.
+- Ano: 2024 | Periodico: Food Security | Tipo: article
+- DOI: 10.1007/s12571-023-01425-w | Citacoes: 8 | OA: False
+- Areas: Urban Agriculture and Sustainability, Food Security and Health in Diverse Populations, Rural Development and Agriculture
+- Link: https://doi.org/10.1007/s12571-023-01425-w
+
+## 21. Coexisting Normative Regimes, Conflict and Urban Inequalities in a Brazilian Favela
+- Autores: Ana Beraldo; Matthew A. Richmond; Gabriel Feltrán
+- Ano: 2022 | Periodico: Tijdschrift voor Economische en Sociale Geografie | Tipo: article
+- DOI: 10.1111/tesg.12533 | Citacoes: 11 | OA: True
+- Areas: Anthropological Studies and Insights, Urban and sociocultural dynamics, Development, Ethics, and Society
+- Link: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/tesg.12533
+- Resumo: ABSTRACT This article contributes to debates about the everyday negotiation of difference, inequality and conflict in cities by developing the notion of ‘coexisting normative regimes’. Normative regimes are plausible parameters of action that are sedimented in subjectivities and reproduced in everyday routines. We argue that in many Brazilian favelas and other marginalised urban spaces, distinct and unassimilable normative regimes coexist in space, each providing distinct frameworks and guidelines for dealing with everyday situations. Based on extensive ethnographic research conducted in a favela in the city of Belo Horizonte, the article identifies the everyday ways in which normative regim...
+
+## 22. The Favela as a Place for the Development of Smart Cities in Brazil: Local Needs and New Business Strategies
+- Autores: Pedro Henrique Ferreira Portugal; Jéssica Freire Moreira; Marcelo dos Santos Póvoas; Carlos Alberto Figueiredo da Silva et al.
+- Ano: 2021 | Periodico: Smart Cities | Tipo: article
+- DOI: 10.3390/smartcities4040067 | Citacoes: 14 | OA: True
+- Areas: Smart Cities and Technologies
+- Link: https://www.mdpi.com/2624-6511/4/4/67/pdf?version=1632903232
+- Resumo: Smart cities are a natural evolution of the concept of sustainable cities. These cities can be analyzed by social, economic, environmental, and technological biases. For this work, we chose the social and economic vision, with a special focus on the poorest and most vulnerable territories of Brazilian cities. These territories in Brazil are called slums, places of poverty but with opportunities for the development of the creative economy with its own brand. Seen by many in a simplistic way, summed up to be geographic spaces of drug circulation dominated by trafficking, Brazilian favelas have been consolidating themselves as a storehouse of innovative minds, a creative territory with multiple...
+
+## 23. A favela brasileira sexagenária
+- Autores: Clóvis Ultramari; Marcelo Caetano Andreoli
+- Ano: 2021 | Periodico: Revista Produção e Desenvolvimento | Tipo: article
+- DOI: 10.32358/rpd.2021.v7.553 | Citacoes: 6 | OA: True
+- Areas: Urban Development and Societal Issues, Urban and sociocultural dynamics, Cultural, Media, and Literary Studies
+- Link: https://revistas.cefet-rj.br/index.php/producaoedesenvolvimento/article/download/553/391
+- Resumo: Objetivo: O presente artigo destaca a importância do livro O Quarto de Despejo, de Carolina Maria de Jesus, para a compreensão profunda sobre a informalidade e os assentamentos populares de nossa cidade brasileira contemporânea. Metodologia: Esta obra é tomada como uma narrativa de testemunho e constituinte de um contexto ampliado e rico para pesquisas interdisciplinares. Embora escrito na década de 60, a escrita biográfica é atual, pois expõe a intensidade dos acontecimentos de uma vida marcada pela marginalidade e informalidade que pouco se alteraram ao longo da história nas cidades brasileiras. Resultados: Construir um olhar sobre a vulnerabilidade a partir do Quarto de Despejo é, sobretu...
+
+## 24. Concessão privatista do saneamento e a incidência da Covid-19 em favelas do Rio de Janeiro
+- Autores: Adriana Sotero-Martins; Maria José Salles; Elvira Carvajal; Priscila Gonçalves Moura et al.
+- Ano: 2021 | Periodico: Saúde em Debate | Tipo: article
+- DOI: 10.1590/0103-11042021e206 | Citacoes: 18 | OA: True
+- Areas: Child Nutrition and Water Access, Food Security and Health in Diverse Populations, Urban and Rural Development Challenges
+- Link: https://www.scielo.br/j/sdeb/a/3Nrskw9fNs8PJgvPpLfCGcF/?lang=pt&format=pdf
+- Resumo: RESUMO O objetivo foi avaliar a relação espacial dos indicadores de saneamento (acesso à água e ao esgoto), considerando a modelagem da concessão da Companhia Estadual de Águas e Esgotos do Rio de Janeiro (Cedae), e a sua possível relação com a incidência da Covid-19, nos bairros com e sem áreas de favelas. Os dados de casos confirmados da Covid-19 analisados foram obtidos no Painel Saúde do Rio de Janeiro. Foi considerado o fracionamento do município em quatro blocos regionais. Nos 163 bairros da cidade, a taxa de incidência média foi de 9,78 casos/1.000 hab. Os bairros com as menores taxa de incidência foram aqueles com predominância de aglomerados subnormais (favelas), baixa renda per cap...
+
+## 25. Favelas 4D: Scalable methods for morphology analysis of informal settlements using terrestrial laser scanning data
+- Autores: Arianna Salazar Miranda; Guangyu Du; Claire Gorman; Fábio Duarte et al.
+- Ano: 2022 | Periodico: Environment and Planning B Urban Analytics and City Science | Tipo: article
+- DOI: 10.1177/23998083221080174 | Citacoes: 15 | OA: True
+- Areas: Remote Sensing and LiDAR Applications, Land Use and Ecosystem Services, Impact of Light on Environment and Health
+- Link: https://hdl.handle.net/11311/1279407
+- Resumo: One billion people live in informal settlements worldwide. The complex and multilayered spaces that characterize this unplanned form of urbanization pose a challenge to traditional approaches to mapping and morphological analysis. This study proposes a methodology to study the morphological properties of informal settlements based on terrestrial LiDAR (Light Detection and Ranging) data collected in Rocinha, the largest favela in Rio de Janeiro, Brazil. To measure the morphology of the informal settlement, we propose a series of five metrics related to the geometric characteristics of streets: street width, street elevation, facade heterogeneity, facade density, and street canyon. Our analysi...
+
+## 26. Monitoramento da Covid-19 nas favelas cariocas: vigilância de base territorial e produção compartilhada de conhecimento
+- Autores: Jussara Rafael Angelo; Bianca Borges da Silva Leandro; André Reynaldo Santos Périssé
+- Ano: 2021 | Periodico: Saúde em Debate | Tipo: article
+- DOI: 10.1590/0103-11042021e209 | Citacoes: 18 | OA: True
+- Areas: Education during COVID-19 pandemic, Health, Nursing, Elderly Care, Indigenous Health and Education
+- Link: https://doi.org/10.1590/0103-11042021e209
+- Resumo: RESUMO Apresenta-se um ensaio crítico-reflexivo sobre a ocorrência da Covid-19 em espaços periféricos do município do Rio de Janeiro, tendo como metodologia principal a análise documental dos três boletins socioepidemiológicos Covid-19 nas favelas, publicados no âmbito do Observatório Covid-19 da Fiocruz. Os resultados dos referidos boletins foram apresentados e problematizados a partir do referencial teórico da epidemiologia crítica e da determinação social do processo saúde-doença, discutindo a magnitude da doença nas favelas. Ademais, compreendeu-se que este debate visibiliza e fortalece a reflexão sobre os impactos sanitários e sociais da Covid-19 nas áreas de periferia de todo o País. F...
+
+## 27. The power that comes from within: female leaders of Rio de Janeiro’s favelas in times of pandemic
+- Autores: Nilza Rogéria de Andrade Nunes
+- Ano: 2021 | Periodico: Global Health Promotion | Tipo: article
+- DOI: 10.1177/1757975921994690 | Citacoes: 12 | OA: True
+- Areas: Youth, Drugs, and Violence, Race, Identity, and Education in Brazil, Homelessness and Social Issues
+- Link: https://doi.org/10.1177/1757975921994690
+- Resumo: This paper aims to present how the female leaders of the favelas of Rio de Janeiro/Brazil have been protagonists in coping with the demands arising from COVID-19. The city has approximately 2 million residents living in 763 favelas. There is no strategic planning on the part of the government with coordinated actions related to the specificities of these territories — producing an escalation of demands due to the living and health conditions of the residents. It is in this multifaceted reality, with urgencies and emergencies, that we highlight the role of community by strengthening the local support networks that are built like webs inside the favela and beyond. Our statement is based on a q...
+
+## 28. Jovens brasileiros em situação de pobreza: O cotidiano na favela
+- Autores: Monica Villaça Gonçalves; Ana Paula Serrata Malfitano
+- Ano: 2021 | Periodico: Journal of Occupational Science | Tipo: article
+- DOI: 10.1080/14427591.2020.1854040 | Citacoes: 10 | OA: False
+- Areas: Health, Nursing, Elderly Care, Youth, Drugs, and Violence, Urban and sociocultural dynamics
+- Link: https://doi.org/10.1080/14427591.2020.1854040
+- Resumo: RESUMOCom base em uma perspectiva compreensiva da realidade, este estudo teve como objetivo analisar as representações que jovens moradores de uma favela brasileira têm sobre aquele local, com foco nos impactos na sua mobilidade urbana e no seu cotidiano. A produção de dados foi realizada através de oficinas com jovens frequentadores de uma organização não governamental localizada em uma favela, na cidade do Rio de Janeiro, Brasil. Os participantes foram sete jovens com idade entre 15 e 21 anos. Durante as oficinas, os jovens construíram uma “Cidade da Juventude”, com o propósito de representar o que os jovens desejavam para uma cidade. Debateram sobre a existência ou não de uma favela na ci...
+
+## 29. Painéis comunitários: a disputa pela verdade da pandemia nas favelas cariocas
+- Autores: Palloma Menezes; Alexandre Magalhães; Caíque Azael Ferreira da Silva
+- Ano: 2021 | Periodico: Horizontes Antropológicos | Tipo: article
+- DOI: 10.1590/s0104-71832021000100006 | Citacoes: 10 | OA: True
+- Areas: Urban and sociocultural dynamics, Urban Development and Societal Issues
+- Link: https://www.scielo.br/j/ha/a/zpLQVdHd8GgLrS5Dyym4DgL/?lang=pt&format=pdf
+- Resumo: Resumo O presente artigo descreve e analisa a experiência dos painéis comunitários de mapeamento da Covid-19 organizados por moradores de favelas da cidade do Rio de Janeiro. Tais painéis são dispositivos que quantificam a extensão e intensidade da pandemia nesses territórios, apresentando arranjos diversos que envolvem dados produzidos por moradores, serviços de saúde ou órgãos públicos. Mobilizados a partir da inconsistência ou falta de informações sistematizadas sobre a pandemia em seus territórios, os painéis operam uma disputa pela verdade da pandemia nas favelas, num contexto de desvalorização das políticas de combate ao vírus e negacionismo. A tensão produzida com os painéis chama a a...
+
+## 30. Rethinking peace and violence from the favelas
+- Autores: Ingri Bøe Buer
+- Ano: 2024 | Periodico: Peacebuilding | Tipo: article
+- DOI: 10.1080/21647259.2024.2354083 | Citacoes: 5 | OA: True
+- Areas: Political Conflict and Governance, South Asian Studies and Conflicts
+- Link: https://www.tandfonline.com/doi/pdf/10.1080/21647259.2024.2354083?download=true
+- Resumo: This article reconsiders peace and security from the perspectives of community leaders, educators and activists in favelas in Rio de Janeiro, Brazil, in 2019-2020.Through a critical lens, it argues that the urban violence in Rio de Janeiro resembles a form of new wars where the state is a major producer of insecurity.It questions the meaning of peace and top-down pacification processes in a city where the favelas, since their origin, have been considered dangerous areas needing to be pacified and controlled.The article introduces favela peace formation as a concept to describe alternative processes working to reduce the intersectional forms of violence in these communities: non-violent, loca...
+
+## 31. Mulheres de favelas e o (outro) feminismo popular
+- Autores: Nilza Rogéria de Andrade Nunes; Anne‐Marie Veillette
+- Ano: 2022 | Periodico: Revista Estudos Feministas | Tipo: article
+- DOI: 10.1590/1806-9584-2022v30n175556 | Citacoes: 7 | OA: True
+- Areas: Race, Identity, and Education in Brazil, Gender, Sexuality, and Education, Politics and Society in Latin America
+- Link: https://www.scielo.br/j/ref/a/3bYdp8tnKKy6D7FXbY8PCpm/?lang=pt&format=pdf
+- Resumo: Resumo: Neste artigo, temos como objetivo apresentar e ampliar o conceito de feminismo popular na América Latina a partir do caso das mulheres de favelas que são reconhecidas pelo seu ativismo social e político. Para tal, partiremos das epistemologias feministas e decoloniais que nos permitem perceber as resistências geralmente invisibilizadas pela colonialidade do gênero e muitas vezes ignoradas pelo feminismo hegemônico. Metodologicamente, este estudo se alicerça em uma pesquisa qualitativa na qual foram realizadas entrevistas com 110 mulheres em 105 favelas do Rio de Janeiro. Apoiamo-nos, principalmente, nas respostas à questão sobre se considerarem feministas ou não e o motivo. Assim, pr...
+
+## 32. The Impact of the Pandemic on Poor Urban Neighborhoods: A Participatory Action Research Study of a “Favela” in Rio de Janeiro
+- Autores: Anjuli Fahlberg; Cristiane Martins; Mirian de Andrade; Sophia Costa et al.
+- Ano: 2023 | Periodico: Socius Sociological Research for a Dynamic World | Tipo: article
+- DOI: 10.1177/23780231221137139 | Citacoes: 12 | OA: True
+- Areas: Homelessness and Social Issues, COVID-19 and Mental Health, Community Health and Development
+- Link: https://journals.sagepub.com/doi/pdf/10.1177/23780231221137139
+- Resumo: The pandemic provoked by the coronavirus disease 2019 (COVID-19) devastated poor urban neighborhoods across the world, particularly in the Global South, although empirical data on this remain limited. In this article, the authors present data collected through a mixed-methods, participatory action research approach on the impacts of the pandemic in Cidade de Deus, a "favela," or poor informal settlement, in Rio de Janeiro. The authors find that the indirect consequences of COVID-19, in particular economic and mental health problems, were experienced as more severe than the direct effects of the virus itself, despite high rates of infection and mortality. The study also revealed that resident...
+
+## 33. Morro de medo: regimes de mobilidades após uma década de Unidades de Polícia Pacificadora em favelas do Rio de Janeiro1
+- Autores: Apoena Mano
+- Ano: 2021 | Periodico: Ponto Urbe | Tipo: article
+- DOI: 10.4000/pontourbe.10148 | Citacoes: 18 | OA: True
+- Areas: Urban and sociocultural dynamics, Youth, Drugs, and Violence, Urban Development and Societal Issues
+- Link: https://journals.openedition.org/pontourbe/pdf/10148
+- Resumo: regimes de mobilidades após uma década de Unidades de Polícia Pacificadora em favelas do Rio de Janeiro Morro de medo: a decade of Pacifying Police Units and its mobility regimes in Rio de Janeiro's favelas
+
+## 34. Transidiomatic favela: language resources and embodied resistance in Brazilian and South African peripheries
+- Autores: Daniel Silva
+- Ano: 2022 | Periodico: Applied Linguistics Review | Tipo: article
+- DOI: 10.1515/applirev-2022-0066 | Citacoes: 9 | OA: False
+- Areas: Multilingual Education and Policy, Second Language Learning and Teaching, Discourse Analysis in Language Studies
+- Link: https://doi.org/10.1515/applirev-2022-0066
+- Resumo: Abstract This article draws on a transidiomatic interaction between South Africa and Brazil activists to investigate the emergence of “hybrids” (Latour 1993. We have never been modern. Cambridge, Mass: Harvard University Press) of body, language, and politics, while simultaneously looking to the contextual objectification of communicative resources. The interaction took place during the 2013 Circulando, an annual event promoted by the NGO Raízes em Movimento in the Complexo do Alemão favelas in Rio de Janeiro. As both Brazil and South Africa were on the route of mega sporting events and the neoliberal transformation of the city into business, activists from both peripheries produced comparab...
+
+## 35. The Arts and Individual and Collective Agency: A Brazilian Favela Case Study
+- Autores: Neda Moayerian; Desirée Poets; Max Stephenson; G Cathy
+- Ano: 2023 | Periodico: Journal of Ethnic and Cultural Studies | Tipo: article
+- DOI: 10.29333/ejecs/1407 | Citacoes: 6 | OA: True
+- Areas: Cultural Industries and Urban Development, Social and Cultural Dynamics, Sport and Mega-Event Impacts
+- Link: https://www.ejecs.org/index.php/JECS/article/download/1407/521
+- Resumo: Brazil’s favela residents have long challenged the dominant media and social narrative that has, for decades, described them via discourses of criminality. This article examines the work of Redes da Maré, a civil society organization that offers cultural spaces and services for community-based creation and diffusion of the arts in its namesake favela. We employ the concepts of the social imaginary as well as individual and collective agency to investigate whether and in what ways a service-providing civil society organization that has adopted a cultural development approach encourages participants’ democratic attitudes and behaviors at the organizational and community level to challenge exis...
+
+## 36. Researching Protest Literacies: Literacy as Protest in the Favelas of Rio de Janeiro
+- Autores: Catherine Compton‐Lilly
+- Ano: 2021 | Periodico: Community Literacy Journal | Tipo: article
+- DOI: 10.25148/clj.15.2.009626 | Citacoes: 8 | OA: True
+- Areas: Education Pedagogy and Practices, Rural and Ethnic Education, Gender, Sexuality, and Education
+- Link: https://digitalcommons.fiu.edu/cgi/viewcontent.cgi?article=1407&context=communityliteracy
+
+## 37. Biosocial borders: Affective debilitation and resilience among women living in a violently bordered favela
+- Autores: Julian Brigstocke; Maira Monteiro Fróes; Cristina Cabral; Lidiane Malanquini et al.
+- Ano: 2023 | Periodico: Transactions of the Institute of British Geographers | Tipo: article
+- DOI: 10.1111/tran.12601 | Citacoes: 8 | OA: True
+- Areas: Public Spaces through Art, Geographies of human-animal interactions, Children's Rights and Participation
+- Link: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/tran.12601
+- Resumo: Abstract Within emerging fields of research focusing on neuro‐urbanism, neuro‐geographies, and biosociality, which experiment with using emerging mobile biosensor methods, few if any have used them to research socio‐spatial life in communities that suffer high levels of violence and other socio‐spatial injustices. Extending non‐representational accounts of the body, emotions, and affect, this paper discusses an experimental geography–neuroscience collaboration, working in a favela of Rio de Janeiro to explore the embodied urban emotions and affects of violently bordered urban communities. Emphasising non‐representational, corporeal spatial practices in a study of women living in Brazil's fav...
+
+## 38. The Social Dynamics of Violence and Respect: State, Crime and Church in a Brazilian Favela
+- Autores: Ana Beraldo
+- Ano: 2022 | Periodico: Journal of Latin American Studies | Tipo: article
+- DOI: 10.1017/s0022216x22000682 | Citacoes: 6 | OA: False
+- Areas: Religion and Society in Latin America, Anthropological Studies and Insights, Religion and Society Interactions
+- Link: https://doi.org/10.1017/s0022216x22000682
+- Resumo: Abstract Drawing on extensive ethnographic fieldwork carried out in a large favela of Belo Horizonte, this study argues that there are three logics at play when it comes to regulating violence in poor Brazilian urban areas: that of crime, that of the state, and that of religion. These three logics act as normative regimes which, connected by the shared notion of ‘respect’, form symbolical relationships among themselves alternating between dissonance and coordination. This everyday interaction produces a normative triangle that determines which lives are more and which are less valuable and, therefore, the likeliest target of violence.
+
+## 39. Bridging the gap: challenges of urban planning and policies for favelas in Salvador, Brazil
+- Autores: Yixuan Zhang
+- Ano: 2024 | Periodico: International Journal of Anthropology and Ethnology | Tipo: article
+- DOI: 10.1186/s41257-024-00120-8 | Citacoes: 6 | OA: True
+- Areas: Urban and Rural Development Challenges, Urban Planning and Governance, Urban Development and Societal Issues
+- Link: https://ijae.springeropen.com/counter/pdf/10.1186/s41257-024-00120-8
+- Resumo: Abstract Salvador, the capital of Bahia State in Brazil, has long struggled with pronounced economic and social inequality. This stratification has resulted in spatial segregation, leading to the expansion of favelas, typically near the city center, where segregation in various dimensions of social engagement intensifies tensions of inequities. The municipal government has made several attempts to address favela-related issues through urban planning policies. Notwithstanding the progress made in lowering violent crime and extreme poverty, these issues still exist. This paper explores the interaction between government-led practices and corresponding self-organized actions toward planning str...
+
+## 40. Deslocando enquadramentos: coletivos de favelas em ação na pandemia
+- Autores: Sônia Fleury; Palloma Menezes; Alexandre Magalhães
+- Ano: 2021 | Periodico: Revista Brasileira de Sociologia - RBS | Tipo: article
+- DOI: 10.20336/rbs.839 | Citacoes: 6 | OA: True
+- Areas: Urban and sociocultural dynamics, Urban Development and Societal Issues, Youth, Politics, and Society
+- Link: https://rbs.sbsociologia.com.br/index.php/rbs/article/download/839/406
+- Resumo: Este artigo descreve e analisar as múltiplas ações que moradores de favelas do Rio de Janeiro, através de suas organizações e coletivos, estão realizando no sentido de enfrentar os efeitos do novo coronavírus nesses territórios. Propomos pensar esse processo de articulação e mobilização no contexto pandêmico como produzindo deslocamentos dos sentidos historicamente atribuídos aos habitantes dessas localidades. Com isso, buscamos compreender como ações voltadas para doação de alimentos, comunicação comunitária, produção local de painéis informativos e outras iniciativas compõem um conjunto multifacetado de experiências que, de alguma forma, reivindicam e expressam as variadas potências de vid...
