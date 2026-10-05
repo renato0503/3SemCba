@@ -95,6 +95,12 @@ Para consolidar as respostas de várias duplas em um só lugar, use (na ordem de
 
 ## Backup automático — Google Apps Script + Google Sheets (opcional, grátis)
 
+> **Passo a passo rápido:** 1) criar planilha → 2) Extensões → Apps Script → colar o código →
+> 3) Implantar como **App da Web** ("Qualquer pessoa") → 4) copiar a URL `/exec` →
+> 5) no app: **Exportar dados → cole a URL → Salvar URL de sincronização**. Pronto: cada
+> resposta salva sobe sozinha. (O app já trata o CORS do Apps Script: o `POST` sai como
+> requisição simples e é marcado como enviado — sem reenviar/duplicar.)
+
 Isso faz cada resposta salva tentar um `POST` automático para uma planilha Google. Exige
 internet no momento do salvamento; sem internet, a resposta fica marcada como **pendente** e
 sincroniza sozinha assim que o celular reconectar (ou ao tocar em **"Sincronizar pendentes agora"**).

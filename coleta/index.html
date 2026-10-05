@@ -858,19 +858,21 @@ async function tentarSincronizar(reg){
   const url = getSheetUrl();
   if(!url) return;
   try{
-    const res = await fetch(url, {
+    // mode:"no-cors": o Google Apps Script não devolve cabeçalhos CORS, então ler a
+    // resposta é bloqueado pelo navegador. Mesmo assim o POST é enviado. Mandamos sem
+    // ler a resposta (fica "opaca") e marcamos como sincronizado — evita reenviar/duplicar.
+    await fetch(url, {
       method:"POST",
-      headers:{"Content-Type":"text/plain;charset=utf-8"}, // evita preflight CORS no Apps Script
+      mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"}, // tipo "simples": não dispara preflight
       body: JSON.stringify({
         codigo:reg.codigo, grupo:reg.grupo, grupoNome:(GRUPOS[reg.grupo]||{}).nome||"",
         criadoEm:reg.criadoEm, perfil:reg.perfil, respostas:reg.respostas,
         email:reg.email||"",
       }),
     });
-    if(res.ok){
-      reg.sincronizado = true;
-      lsSet(LS.respostas, respostas);
-    }
+    reg.sincronizado = true;
+    lsSet(LS.respostas, respostas);
   }catch(e){ /* offline ou URL errada — fica pendente, tenta de novo depois */ }
   atualizarSyncStatus();
 }
