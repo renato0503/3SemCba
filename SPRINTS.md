@@ -202,3 +202,52 @@ Status:      ⏳ / 🔄 / ✅ / ⛔
 - **Bloqueios:** os PDFs de **G4 (13 pág), G5 (saiu em branco, 1 pág) e G6 (15 pág)** não fecharam em 12 páginas. Causa: slides com conteúdo além da altura de 720 px no `?print-pdf`. Ação: enxugar slides pesados (tabelas, `stat-grid`, ref-cards) e/ou ajustar CSS, repetindo até 12 páginas.
 - **Próxima:** corrigir G4/G5/G6 e revisar o visual no navegador.
 - **Status:** 🔄 em andamento
+
+---
+
+## Registro — MVPs (Track C)
+
+### Sprint C1 — MVPs, landings, hub e publicação
+- **Data:** 25/09/2026
+- **Objetivo:** transformar a especificação de cada grupo em um app funcional e publicar a turma.
+- **Entregue:**
+  - 6 `Grupo<N>/app.html` com arquitetura própria (store pub/sub, estimador de fila, mini-planilha, máquina de passos, triagem anônima, motor de tradução).
+  - 6 landings `Grupo<N>/index.html` no estilo do próprio app, com o app ao vivo.
+  - Hub raiz + PWA (`manifest.json`, `sw.js` rede-primeiro, `.nojekyll`) e marca neutra (`assets/logos/projeto.svg`).
+  - Logos dos grupos (SVG + PNG), `assets/md-viewer.html` e `_gerador/site.py` (identidade + manifests + sw).
+- **Verificação:** `py _ferramentas/smoke.py` OK nos 6 apps; `landing_shots.py` OK em 1280/375; `py build.py` (kit CONFACC) → OK: 17 trabalhos validados.
+- **Publicação:** https://github.com/renato0503/3SemCba — commit `ffed147`.
+- **Bloqueios:** —
+- **Próxima:** app de coleta do AdmCBA (opcional), e-mails/imagens do CONFACC e revisão dos textos.
+- **Status:** ✅ concluída
+
+---
+
+## Registro — App de Coleta (Track C2)
+
+### Sprint C2.1 — Identificação do aluno + Likert com 5 rótulos + confirmação
+- **Data:** 05/10/2026
+- **Objetivo:** identificar quem está coletando antes de cada resposta; mostrar label em todas as 5 opções da escala Likert; confirmar cada resposta.
+- **Entregue:**
+  - Tela **"Quem está coletando?"** após iniciar coleta — card com nome e iniciais do aluno, extraído dos 4 membros de cada grupo (nomes completos da chamada, seção 11.2 do context).
+  - Função `interpolar(n, a, b)` — preenche labels das opções 2, 3 e 4 com base no tipo semântico dos polos (frequência, conhecimento, concordância, utilidade, magnitude, genérico).
+  - Modal customizado `confirmCustom()` (estilo app, tema verde escuro, blur backdrop) substitui `window.confirm()` em dois pontos: antes de começar as 20 perguntas (confirma perfil) e antes de registrar cada resposta Likert.
+  - Campo `aluno` gravado em cada registro (localStorage, CSV, JSON e Sheets).
+  - Termo de Consentimento em PDF (`Termo_Consentimento_AdmCBA.pdf`) — uma página, formato folder, para imprimir e entregar ao participante antes da entrevista. Inclui: identificação da pesquisa, 6 temas dos grupos, procedimentos, riscos/benefícios, direitos, ciência e dados do professor.
+- **Verificação:** Playwright test passou — 4 botões de aluno, nomes corretos, sem erros JS; modal visível com texto e botões corretos; commit `b56c023` e `7c70209` no ar.
+- **Bloqueios:** —
+- **Próxima:** Sprint C2.2 (Sheets com aluno)
+- **Status:** ✅ concluída
+
+### Sprint C2.2 — Sheets com campo aluno + nova implantação
+- **Data:** 05/10/2026
+- **Objetivo:** fazer o Apps Script gravar o nome do aluno na planilha junto com cada resposta.
+- **Entregue:**
+  - Código `doPost` com `aluno` na mesma posição no `cab` (cabeçalho) e no `linha` (dados).
+  - **Problema:** as duas primeiras versões criaram a aba `Respostas` com 31 colunas (faltava `orgao` no `cab`) — todas as colunas ficavam deslocadas a partir de `aluno`. **Solução:** terceira implantação (versão 2, URL nova) com `cab` completo de 32 colunas: `recebidoEm, codigo, aluno, grupo, grupoNome, criadoEm, faixaEtaria, sexo, classe, raca, orgao, Q1–Q20, email_contato`.
+  - App atualizado com nova URL do Apps Script: `https://script.google.com/macros/s/AKfycbyqKWcLJnc7XJKUbmvNDdEmWER5eHwCm-uffi6m5ZNTGeQWgfNlopRpYgLNE3yfJaWNew/exec` (commit `7f1d347`).
+- **Planilha:** `1hdR-swgduz5jqhra3OqUNp109xQbrMP42CC_evDXupM` (aba **Respostas**).
+- **Verificação:** POST de teste `G5-NOVA / Marilene da Luz e Silva` — todas as 32 colunas na ordem correta, Q20 e email com valor.
+- **Bloqueios:** dados antigos das versões 1 e 2 ficaram com coluna `aluno` vazia e `orgao` ausente — se necessário, apagar a aba e deixar a versão 3 recriar o cabeçalho.
+- **Próxima:** uso real em campo.
+- **Status:** ✅ concluída
