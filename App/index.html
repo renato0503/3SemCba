@@ -522,6 +522,9 @@ const LS = {
   grupo:"cdadmcba_grupo",
   sheetUrl:"cdadmcba_sheet_url",
 };
+// URL do Apps Script da planilha "Coleta AdmCBA" — já vem configurada para a turma.
+// (Deixe o campo vazio em Exportar dados → Salvar para desligar em um aparelho.)
+const DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbyDDmNOrIsE9YiNfSK_ChuRrBQrdv9T78XqZ-nxi7LUGKO3TbxnSlirCopYxzWaiHs2uQ/exec";
 let storageOK = true;
 function lsGet(k, def){
   try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }
@@ -675,6 +678,32 @@ $("#btn-perfil-ok").onclick = ()=>{
 /* ============================================================
    COLETA — PERGUNTAS
    ============================================================ */
+function interpolar(n, a, b){
+  const ua = a.toLowerCase(), ub = b.toLowerCase();
+  const freq = /(nunca|raramente|sempre|frequente|vezes|ocasiões)/;
+  const concord = /(discordo|concordo|discordo|concordo|neutro|parcialmente)/;
+  const sei = /(conhecimento|sei|conheç|sei muit|não sei|não tenho)/;
+  const util = /(útil|utilidade|prefiro)/;
+  const magn = /(nada|muito|pouco|grande|importân|confiança|nenhum)/;
+
+  if (freq.test(ua) || freq.test(ub)) {
+    return ["Raramente","Às vezes","Frequentemente"][n-2];
+  }
+  if (sei.test(ua) && sei.test(ub)) {
+    return ["Pouco","Moderadamente","Bastante"][n-2];
+  }
+  if (concord.test(ua) && concord.test(ub)) {
+    return ["Discordo parcialmente","Neutro","Concordo parcialmente"][n-2];
+  }
+  if (util.test(ua) && util.test(ub)) {
+    return ["Indiferente","Tenho preferência moderada","Prefiro"][n-2];
+  }
+  if (magn.test(ua) || magn.test(ub)) {
+    return ["Pouco","Moderadamente","Muito"][n-2];
+  }
+  return ["Um pouco","Mais ou menos","Bastante"][n-2];
+}
+
 function renderPergunta(){
   const p = fila[idx];
   $("#perg-cont").textContent = `Pergunta ${idx+1} de ${totalPerguntas()}`;
@@ -686,7 +715,7 @@ function renderPergunta(){
   for(let n=1;n<=5;n++){
     const o = document.createElement("div");
     o.className = "opt" + (coleta.respostas[idx]===n ? " sel" : "");
-    o.innerHTML = `<span class="num">${n}</span><span>${n===1?p.a:(n===5?p.b:"")}</span>`;
+    o.innerHTML = `<span class="num">${n}</span><span>${n===1?p.a:(n===5?p.b:interpolar(n,p.a,p.b))}</span>`;
     o.onclick = ()=> responder(idx, n);
     esc.appendChild(o);
   }
@@ -844,7 +873,7 @@ $("#btn-copiar-dados").onclick = async ()=>{
    Cada resposta tenta ir sozinha para uma planilha Google.
    Sem URL configurada, isso é um no-op silencioso.
    ============================================================ */
-function getSheetUrl(){ return (lsGet(LS.sheetUrl, "") || "").trim(); }
+function getSheetUrl(){ return (lsGet(LS.sheetUrl, DEFAULT_SHEET_URL) || "").trim(); }
 function atualizarSyncStatus(){
   const pendentes = respostas.filter(r=>!r.sincronizado).length;
   const el = $("#sync-status");
