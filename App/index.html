@@ -61,6 +61,16 @@ main{flex:1;padding:16px;display:flex;flex-direction:column;gap:14px}
 .row>*{flex:1}
 
 .grupo-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.aluno-grid{display:grid;grid-template-columns:1fr;gap:8px}
+.aluno-btn{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:14px 16px;
+  text-align:left;cursor:pointer;display:flex;align-items:center;gap:12px;font-size:15px}
+.aluno-btn:active{opacity:.8}
+.aluno-btn .avatar{width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0}
+.aluno-btn .info{display:flex;flex-direction:column}
+.aluno-btn .nome{font-weight:600;color:var(--ink)}
+.aluno-btn .grupo-tag{font-size:12px;color:var(--muted)}
+.aluno-grid:not(:empty){margin-bottom:4px}
 .grupo-btn{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 12px;
   text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:4px;position:relative}
 .grupo-btn.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(var(--accent-rgb),.18)}
@@ -171,6 +181,19 @@ input[type=email],input[type=text]{font-family:inherit}
       </div>
       <div id="aviso-storage" class="callout warn hidden">
         Atenção: este navegador não está guardando dados localmente. Exporte as respostas com frequência.
+      </div>
+    </section>
+
+    <!-- ALUNO -->
+    <section class="screen" id="scr-aluno">
+      <div>
+        <span class="tag-live">QUEM ESTÁ COLETANDO</span>
+        <h2 style="font-size:20px;margin-top:8px" id="aluno-titulo">Aluno</h2>
+        <p class="small muted">Toque no seu nome para continuar.</p>
+      </div>
+      <div class="aluno-grid" id="aluno-grid" style="margin-top:12px"></div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn ghost" data-nav="home">Voltar</button>
       </div>
     </section>
 
@@ -331,6 +354,7 @@ const PERFIL = [
 const GRUPOS = {
   1: {
     nome:"AgroPrevisãoMT", prof:"Prof. Heitor", cor:"#4d7c0f", corDark:"#3f6212", rgb:"77,124,15",
+    alunos:["Bruna da Cunha e Silva","Keila da Costa Campos","Yanni Gabrielli Stabilito do Espírito Santo","Célia Regina Dias de Almeida"],
     blocos:[
       { titulo:"Chegada do agro e informação", perguntas:[
         {q:"Com que frequência acompanha notícias sobre novas empresas do agro na região", a:"Nunca", b:"Sempre"},
@@ -364,6 +388,7 @@ const GRUPOS = {
   },
   2: {
     nome:"Fila Cidadã", prof:"Prof. Renato", cor:"#b45309", corDark:"#92400e", rgb:"180,83,9",
+    alunos:["Amanda Bento Brandão","Stefany Rosa Araujo Correia","Steffany Natilin Campos Mendes","Kemylly Monique da Silva Prado"],
     triagem:{ id:"orgao", label:"Órgão público que mais usa (triagem)", opcoes:["Detran","Prefeitura","INSS","Receita Federal","Cartório","UBS","Outro"] },
     blocos:[
       { titulo:"Acesso e fila", perguntas:[
@@ -398,6 +423,7 @@ const GRUPOS = {
   },
   3: {
     nome:"Ocupações Irregulares", prof:"Prof. Heitor", cor:"#9a3412", corDark:"#7c2d12", rgb:"154,52,18",
+    alunos:["Robson Lucas de Arruda Dias","Izabela Cristina da Cruz Corrêa","Reinaldo da Silva Barreto","Emanoeli Regina de Arruda Leite"],
     sensivel:true, aviso:"Tema sensível: aborde com respeito e neutralidade; nunca sugira a resposta.",
     blocos:[
       { titulo:"Conhecimento — o que são e por que acontecem", perguntas:[
@@ -432,6 +458,7 @@ const GRUPOS = {
   },
   4: {
     nome:"CRAS Online", prof:"Prof. Renato", cor:"#1d4ed8", corDark:"#1e40af", rgb:"29,78,216",
+    alunos:["Anna Júlia Ferreira de Paula","Maria Eduarda Figueiredo Campos","Marcelly Regina de Figueiredo","Kaique Junior dos Santos"],
     blocos:[
       { titulo:"Conhecimento e uso", perguntas:[
         {q:"O quanto você conhece o CRAS", a:"Nunca ouvi falar", b:"Conheço muito bem"},
@@ -465,6 +492,7 @@ const GRUPOS = {
   },
   5: {
     nome:"CuideBem", prof:"Prof. Pantalião", cor:"#0f766e", corDark:"#115e59", rgb:"15,118,110",
+    alunos:["Maria Clara de Oliveira Gallio","Kauã Felipe Brandão de Araújo","Marilene da Luz e Silva","Cristiane Agnes Bastos Silva"],
     sensivel:true, aviso:"Tema sensível: saúde mental é íntimo. Reforce o anonimato e não insista se houver desconforto.",
     blocos:[
       { titulo:"Necessidade e barreiras", perguntas:[
@@ -499,6 +527,7 @@ const GRUPOS = {
   },
   6: {
     nome:"Dados Públicos", prof:"Prof. Pantalião", cor:"#4338ca", corDark:"#3730a3", rgb:"67,56,202",
+    alunos:["Erilin Sabrina Navarro Carvalho","Emilly Gabrielly Navarro Carvalho","Juarez França Ventura da Rocha","Flávia Arruda Dias"],
     aviso:"Tema político: nunca pergunte em quem vota nem cite partidos — o foco são os dados.",
     blocos:[
       { titulo:"Conhecimento e acesso", perguntas:[
@@ -687,8 +716,28 @@ function iniciarColeta(g){
   coleta = { grupo:g, criadoEm:new Date().toISOString(), perfil:{}, respostas:{} };
   flattenGrupo(g);
   idx = 0;
-  renderPerfil();
-  mostrar("#scr-perfil");
+  renderAluno();
+  mostrar("#scr-aluno");
+}
+function renderAluno(){
+  const g = grupoAtual, gr = GRUPOS[g];
+  $("#aluno-titulo").textContent = "Quem está coletando?";
+  const grid = document.getElementById("aluno-grid");
+  grid.innerHTML = "";
+  gr.alunos.forEach((nome, i) => {
+    const btn = document.createElement("button");
+    btn.className = "aluno-btn";
+    const iniciais = nome.split(" ").slice(0,2).map(p=>p[0]).join("").toUpperCase();
+    btn.innerHTML = `<span class="avatar">${iniciais}</span>
+      <span class="info"><span class="nome">${nome}</span>
+      <span class="grupo-tag">${gr.nome} · G${g}</span></span>`;
+    btn.onclick = () => {
+      coleta.aluno = nome;
+      renderPerfil();
+      mostrar("#scr-perfil");
+    };
+    grid.appendChild(btn);
+  });
 }
 function renderPerfil(){
   const g = coleta.grupo, gr = GRUPOS[g];
@@ -799,7 +848,7 @@ function finalizarColeta(emailContato){
   const codigo = proxCodigo(g);
   const reg = {
     id: "r" + Date.now() + "-" + Math.random().toString(36).slice(2,7),
-    grupo: g, codigo, criadoEm: new Date().toISOString(),
+    grupo: g, codigo, aluno: coleta.aluno || "", criadoEm: new Date().toISOString(),
     perfil: coleta.perfil, respostas: coleta.respostas,
     email: emailContato || null,
   };
@@ -810,7 +859,7 @@ function finalizarColeta(emailContato){
 
   const preenchidas = Object.keys(reg.respostas).length;
   $("#fim-cod").textContent = codigo;
-  $("#fim-resumo").textContent = `${GRUPOS[g].nome} · ${preenchidas}/${totalPerguntas()} respondidas · ${new Date().toLocaleString("pt-BR")}`;
+  $("#fim-resumo").textContent = `${coleta.aluno || "—"} · ${GRUPOS[g].nome} · ${preenchidas}/${totalPerguntas()} respondidas · ${new Date().toLocaleString("pt-BR")}`;
   const modelo = `Código ${codigo}. Principais pontos: [2–3 ideias]. Frase marcante: “[...]”.`;
   const audio = document.createElement("div");
   audio.innerHTML = `<b>Modelo de áudio (WhatsApp):</b><br>${modelo}`;
@@ -884,14 +933,14 @@ function triagemIds(){
 function gerarCSV(){
   const maxPerg = 20;
   const tIds = triagemIds();
-  const cab = ["codigo","grupo","grupo_nome","data",
+  const cab = ["codigo","aluno","grupo","grupo_nome","data",
     ...PERFIL.map(p=>p.id),
     ...tIds,
     ...Array.from({length:maxPerg},(_,i)=>"Q"+(i+1)),
     "email_contato"];
   const linhas = [cab.map(csvEscape).join(";")];
   [...respostas].sort((a,b)=>a.codigo.localeCompare(b.codigo)).forEach(r=>{
-    const cols = [r.codigo, r.grupo, (GRUPOS[r.grupo]||{}).nome||"", new Date(r.criadoEm).toLocaleString("pt-BR")];
+    const cols = [r.codigo, r.aluno||"", r.grupo, (GRUPOS[r.grupo]||{}).nome||"", new Date(r.criadoEm).toLocaleString("pt-BR")];
     PERFIL.forEach(p=> cols.push(r.perfil[p.id]||""));
     tIds.forEach(id=> cols.push((r.perfil||{})[id]||""));
     for(let i=0;i<maxPerg;i++) cols.push(r.respostas[i]!=null ? r.respostas[i] : "");
@@ -943,7 +992,7 @@ async function tentarSincronizar(reg){
       mode:"no-cors",
       headers:{"Content-Type":"text/plain;charset=utf-8"}, // tipo "simples": não dispara preflight
       body: JSON.stringify({
-        codigo:reg.codigo, grupo:reg.grupo, grupoNome:(GRUPOS[reg.grupo]||{}).nome||"",
+        codigo:reg.codigo, aluno:reg.aluno||"", grupo:reg.grupo, grupoNome:(GRUPOS[reg.grupo]||{}).nome||"",
         criadoEm:reg.criadoEm, perfil:reg.perfil, respostas:reg.respostas,
         email:reg.email||"",
       }),
