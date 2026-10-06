@@ -672,6 +672,7 @@ $("#btn-perfil-ok").onclick = ()=>{
     if(!s.value) faltou.push(s.dataset.perfil);
   });
   if(faltou.length){ toast("Complete o Bloco 0 (perfil) por observação."); return; }
+  if(!confirm("As respostas do perfil estão corretas?\nO código será gerado após as 20 perguntas.")) return;
   idx = 0; renderPergunta(); mostrar("#scr-pergunta");
 };
 
@@ -722,6 +723,7 @@ function renderPergunta(){
   atualizarBarra();
 }
 function responder(i, n){
+  if(!confirm(`Confirma a resposta ${n}?`)) return;
   coleta.respostas[i] = n;
   const opts = document.querySelectorAll("#escala .opt");
   opts.forEach((o,k)=> o.classList.toggle("sel", (k+1)===n));
