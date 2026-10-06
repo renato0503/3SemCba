@@ -121,6 +121,17 @@ footer{padding:14px 16px calc(22px + env(safe-area-inset-bottom));text-align:cen
   opacity:0;transition:.25s;z-index:60;pointer-events:none;max-width:90vw;text-align:center}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 input[type=email],input[type=text]{font-family:inherit}
+.modal-overlay{position:fixed;inset:0;background:rgba(11,18,32,.72);z-index:200;
+  display:flex;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px)}
+.modal-card{background:#fff;border-radius:18px;padding:28px 24px 22px;max-width:340px;width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);text-align:center}
+.modal-msg{font-size:15.5px;color:var(--ink);line-height:1.5;margin-bottom:24px}
+.modal-btns{display:flex;gap:10px}
+.btn-modal{flex:1;border:none;border-radius:11px;padding:13px 8px;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-modal.sim{background:var(--accent);color:#fff}
+.btn-modal.sim:active{opacity:.85}
+.btn-modal.nao{background:var(--bg);color:var(--muted);border:1.5px solid var(--line)}
+.btn-modal.nao:active{opacity:.7}
 </style>
 </head>
 <body>
@@ -289,6 +300,17 @@ input[type=email],input[type=text]{font-family:inherit}
   </footer>
 </div>
 <div class="toast" id="toast"></div>
+
+<!-- Modal de confirmação customizado -->
+<div id="mdl" class="modal-overlay" style="display:none">
+  <div class="modal-card">
+    <p class="modal-msg" id="mdl-msg"></p>
+    <div class="modal-btns">
+      <button class="btn-modal nao" id="mdl-nao">Cancelar</button>
+      <button class="btn-modal sim" id="mdl-sim">Confirmar</button>
+    </div>
+  </div>
+</div>
 
 <script>
 "use strict";
@@ -525,6 +547,30 @@ const LS = {
 // URL do Apps Script da planilha "Coleta AdmCBA" — já vem configurada para a turma.
 // (Deixe o campo vazio em Exportar dados → Salvar para desligar em um aparelho.)
 const DEFAULT_SHEET_URL = "https://script.google.com/macros/s/AKfycbyDDmNOrIsE9YiNfSK_ChuRrBQrdv9T78XqZ-nxi7LUGKO3TbxnSlirCopYxzWaiHs2uQ/exec";
+
+/* ============================================================
+   MODAL DE CONFIRMAÇÃO CUSTOMIZADO
+   ============================================================ */
+function confirmCustom(msg) {
+  return new Promise(resolve => {
+    const overlay = document.getElementById("mdl");
+    const msgEl   = document.getElementById("mdl-msg");
+    const btnSim  = document.getElementById("mdl-sim");
+    const btnNao  = document.getElementById("mdl-nao");
+    msgEl.textContent = msg;
+    overlay.style.display = "flex";
+    const cleanup = () => {
+      overlay.style.display = "none";
+      btnSim.removeEventListener("click", onSim);
+      btnNao.removeEventListener("click", onNao);
+    };
+    const onSim = () => { cleanup(); resolve(true); };
+    const onNao = () => { cleanup(); resolve(false); };
+    btnSim.addEventListener("click", onSim);
+    btnNao.addEventListener("click", onNao);
+  });
+}
+
 let storageOK = true;
 function lsGet(k, def){
   try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : def; }
@@ -665,14 +711,14 @@ function renderPerfil(){
     box.appendChild(av);
   }
 }
-$("#btn-perfil-ok").onclick = ()=>{
+$("#btn-perfil-ok").onclick = async ()=>{
   const faltou = [];
   document.querySelectorAll("#perfil-campos select").forEach(s=>{
     coleta.perfil[s.dataset.perfil] = s.value || "";
     if(!s.value) faltou.push(s.dataset.perfil);
   });
   if(faltou.length){ toast("Complete o Bloco 0 (perfil) por observação."); return; }
-  if(!confirm("As respostas do perfil estão corretas?\nO código será gerado após as 20 perguntas.")) return;
+  if(!await confirmCustom("As respostas do perfil estão corretas?\nO código será gerado após as 20 perguntas.")) return;
   idx = 0; renderPergunta(); mostrar("#scr-pergunta");
 };
 
@@ -722,8 +768,8 @@ function renderPergunta(){
   }
   atualizarBarra();
 }
-function responder(i, n){
-  if(!confirm(`Confirma a resposta ${n}?`)) return;
+async function responder(i, n){
+  if(!await confirmCustom(`Confirma a resposta ${n}?`)) return;
   coleta.respostas[i] = n;
   const opts = document.querySelectorAll("#escala .opt");
   opts.forEach((o,k)=> o.classList.toggle("sel", (k+1)===n));
