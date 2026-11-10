@@ -69,12 +69,34 @@ h3{font-size:17px;margin-bottom:8px}
 .faq{border-bottom:1px solid var(--linha);padding:4px 0}
 .faq summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-weight:600;font-size:15px;gap:8px}
 .faq p{padding:0 0 12px 22px;color:var(--mudo);font-size:14.5px}
-.faixa-final{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--linha);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+.faixa-final{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1.5px solid var(--linha);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
 .faixa-final a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:700;color:var(--mudo);text-decoration:none;padding:8px 0;min-height:60px}
 .faixa-final a span{font-size:21px}
 .faixa-final a[aria-current=page]{color:var(--azul);box-shadow:inset 0 3px 0 var(--azul)}
 #brinde{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:var(--azul2);color:#fff;padding:11px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw;text-align:center;font-size:14.5px}
 #brinde.on{opacity:1}
+/* ===== planejamento estratégico e inovação ===== */
+.dupla,.swot,.duas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mv{background:#fff;border:1.5px solid var(--linha);border-left:5px solid var(--azul);border-radius:12px;padding:12px 14px}
+.mv b{font-size:14px;color:var(--azul2);text-transform:uppercase;letter-spacing:.04em}
+.mv p{font-size:14px;margin-top:4px}
+.valores{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.valores span{background:var(--azul3);color:var(--azul2);border-radius:999px;padding:5px 12px;font-weight:700;font-size:12.5px}
+.swot section{background:#fff;border:1.5px solid var(--linha);border-top:4px solid var(--azul);border-radius:12px;padding:10px 12px}
+.swot section.f{border-top-color:var(--verde)}.swot section.w{border-top-color:var(--amarelo)}.swot section.o{border-top-color:var(--azul)}.swot section.t{border-top-color:var(--verm)}
+.swot h4{font-size:13.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--azul2)}
+.swot ul,.duas ul{list-style:none;font-size:13px;margin-top:4px}
+.swot li,.duas li{padding:3px 0 3px 13px;position:relative}
+.swot li::before{content:"▸";position:absolute;left:0;color:var(--mudo)}
+.duas li::before{content:"•";position:absolute;left:0;color:var(--azul)}
+.inov .def{background:var(--azul2);color:#e8f0fc;border-radius:10px;padding:12px 14px;font-size:14px;margin-bottom:8px}
+.inov .def b{color:var(--amarelo)}
+.duas div{background:#fff;border:1.5px solid var(--linha);border-radius:12px;padding:10px 12px}
+.duas b{font-size:13.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--azul2)}
+.espectro{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.espectro span{background:#fff;border:1.5px solid var(--linha);border-radius:10px;padding:8px;text-align:center;font-weight:700;font-size:12px;color:var(--azul2)}
+.espectro small{display:block;font-weight:400;color:var(--mudo);font-size:11px}
+@media(max-width:430px){.dupla,.swot,.duas{grid-template-columns:1fr}}
 :focus-visible{outline:3px solid var(--amarelo);outline-offset:2px}
 [hidden]{display:none!important}
 </style>
@@ -119,12 +141,52 @@ h3{font-size:17px;margin-bottom:8px}
       <div class="fila" style="margin-top:0"><button class="btn sec peq" id="exportar">Exportar</button><button class="btn sec peq" id="importar" data-teste="pular">Importar</button><button class="btn perigo peq" id="zerar">Apagar tudo</button></div>
       <p class="sub" style="margin:10px 0 0;font-size:12.5px">CRAS Online · Grupo 4 · AdmCBA · UNIFACC-MT</p></div>
   </section>
+
+  <section class="tela" id="t-estrategia">
+    <h2>Plano estratégico</h2>
+    <p class="sub">Quem somos, para onde vamos e como a inovação entra no atendimento.</p>
+    <div class="dupla">
+      <div class="mv"><b>Missão</b><p>Levar o CRAS para o celular do cidadão: começar o pedido, enviar documentos e acompanhar o protocolo sem sair de casa — indo ao CRAS só quando for realmente necessário.</p></div>
+      <div class="mv"><b>Visão</b><p>Ser o canal digital de referência da assistência social em Mato Grosso até 2028, com atendimento oficial, humano e sem barreiras digitais.</p></div>
+    </div>
+    <div class="cartao"><h3>Valores</h3>
+      <div class="valores"><span>Confiança</span><span>Acolhimento</span><span>Simplicidade</span><span>Humanidade</span><span>Privacidade</span><span>Transparência</span></div>
+      <p class="sub" style="margin:10px 0 0;font-size:13px">Canal oficial nunca pede senha nem pagamento. Quando o digital não basta, uma pessoa de verdade atende no WhatsApp ou no 0800.</p>
+    </div>
+
+    <h2 style="margin-top:16px">Análise SWOT</h2>
+    <p class="sub">Forças e fraquezas são internas; oportunidades e ameaças vêm do ambiente.</p>
+    <div class="swot">
+      <section class="f"><h4>Forças</h4><ul><li>Assistente de 5 passos que valida só o passo atual</li><li>Envio de documentos com selo de legibilidade</li><li>Protocolo com linha do tempo de status</li><li>WhatsApp oficial e 0800</li><li>Leitura em voz alta e linguagem simples</li><li>Funciona offline (PWA)</li></ul></section>
+      <section class="w"><h4>Fraquezas</h4><ul><li>Protótipo, sem integração real com CadÚnico e SIBEC</li><li>Nenhum arquivo sai do aparelho no MVP</li><li>Depende de conectividade e letramento digital</li><li>Validação com amostra pequena (n=18)</li></ul></section>
+      <section class="o"><h4>Oportunidades</h4><ul><li>40 milhões de atendimentos nos CRAS em 2024</li><li>40,6 milhões de famílias no CadÚnico</li><li>gov.br com 166 milhões de contas</li><li>155,7 mil atendimentos só na recepção do DF</li><li>WhatsApp como canal mais promissor na pesquisa</li></ul></section>
+      <section class="t"><h4>Ameaças</h4><ul><li>Golpes e falsos canais oficiais</li><li>Vazamento de dados sensíveis (LGPD)</li><li>Exclusão digital de quem mais precisa</li><li>Mudança de gestão e descontinuidade</li><li>Integração com sistemas legados do SUAS</li></ul></section>
+    </div>
+
+    <h2 style="margin-top:16px">Inovação: criar e melhorar</h2>
+    <div class="inov">
+      <p class="def"><b>Inovação é criar coisas novas ou melhorar algo que já existe</b> — e só vira inovação quando chega a alguém e resolve um problema.</p>
+      <div class="duas">
+        <div><b>O que criamos</b><ul><li>O pedido que começa no celular e vira protocolo oficial</li><li>O checklist de documentos que só pede o que o serviço exige</li><li>A linha do tempo que mostra em que etapa o pedido está</li></ul></div>
+        <div><b>O que melhoramos</b><ul><li>A fila do CRAS vira atendimento agendado</li><li>O folder de documentos vira assistente de 5 passos</li><li>A ligação para saber o status vira consulta por protocolo</li></ul></div>
+      </div>
+      <div class="espectro">
+        <span>Incremental<small>formulário e linguagem</small></span>
+        <span>Adjacente<small>CadÚnico e SIBEC</small></span>
+        <span>Radical<small>resolver sem sair de casa</small></span>
+      </div>
+    </div>
+    <div class="cartao"><h3>Gestão da inovação e tecnologia</h3>
+      <p class="sub" style="margin:0">Digitalizar o repetitivo e agendar o que precisa de escuta, sem tirar o CRAS da vida do cidadão. A inovação incremental melhora o formulário; a adjacente integra CadÚnico e SIBEC; a radical resolve no celular o que hoje exige uma visita — sem excluir quem não tem acesso digital.</p>
+    </div>
+  </section>
 </main>
 <nav class="faixa-final" aria-label="Seções">
   <a href="#/servicos"><span>🗂️</span>Serviços</a>
   <a href="#/pedido"><span>📝</span>Novo pedido</a>
   <a href="#/protocolo"><span>🔎</span>Protocolo</a>
   <a href="#/duvidas"><span>❓</span>Dúvidas</a>
+  <a href="#/estrategia"><span>🧭</span>Plano</a>
 </nav>
 <div id="brinde" role="status" aria-live="polite"></div>
 
@@ -299,8 +361,8 @@ function ouvir() {
 }
 
 /* ---------- rotas ---------- */
-window.__rotas = ['#/servicos', '#/pedido', '#/protocolo', '#/duvidas'];
-const TELAS = { servicos: telaServicos, pedido: telaPedido, protocolo: telaProtocolo, duvidas: telaDuvidas };
+window.__rotas = ['#/servicos', '#/pedido', '#/protocolo', '#/duvidas', '#/estrategia'];
+const TELAS = { servicos: telaServicos, pedido: telaPedido, protocolo: telaProtocolo, duvidas: telaDuvidas, estrategia: () => {} };
 function rota() {
   const n = (location.hash.match(/^#\/(\w+)/) || [])[1], nome = TELAS[n] ? n : 'servicos';
   if (nome === 'pedido' && !S.rascunho.servico && passo === 0) passo = 0;

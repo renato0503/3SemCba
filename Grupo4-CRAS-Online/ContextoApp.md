@@ -201,3 +201,47 @@ Meta de coleta: **15–20 respostas**, com áudios correlacionados por código.
 ## 14. Pitch de 30 segundos
 
 "Hoje, resolver algo no CRAS custa um dia inteiro: transporte, fila e, muitas vezes, uma segunda ida porque faltou um documento. Nosso projeto permite enviar documentos, agendar atendimento e acompanhar o pedido pelo celular, com login gov.br, selo verificado e atendimento humano quando o cidadão quiser. Nossa hipótese é que poucos conhecem o CRAS e que há desconfiança em mandar documento por app, mesmo com a dor do presencial. Por isso estamos testando em campo, com 20 perguntas e áudios no WhatsApp, para construir a solução com quem realmente vai usar."
+---
+
+## 15. Planejamento estratégico e gestão da inovação
+
+### 15.1 Missão, visão e valores
+
+| Item | Definição |
+| --- | --- |
+| **Missão** | Levar o CRAS para o celular do cidadão: começar o pedido, enviar documentos e acompanhar o protocolo sem sair de casa — indo ao CRAS só quando for realmente necessário. |
+| **Visão** | Ser o canal digital de referência da assistência social em Mato Grosso até 2028, com atendimento oficial, humano e sem barreiras digitais. |
+| **Valores** | Confiança (canal oficial nunca pede senha nem pagamento), acolhimento, simplicidade, humanidade (pessoa de verdade no WhatsApp e no 0800), privacidade e transparência do protocolo. |
+
+### 15.2 Análise SWOT
+
+| Forças (internas) | Fraquezas (internas) |
+| --- | --- |
+| Assistente de 5 passos que valida só o passo atual | Protótipo, sem integração real com CadÚnico e SIBEC |
+| Envio de documentos com selo de legibilidade | Nenhum arquivo sai do aparelho no MVP |
+| Protocolo com linha do tempo de status | Depende de conectividade e letramento digital |
+| WhatsApp oficial e 0800 | Validação com amostra pequena (n=18) |
+| Leitura em voz alta e linguagem simples | |
+| Funciona offline (PWA) | |
+
+| Oportunidades (externas) | Ameaças (externas) |
+| --- | --- |
+| 40 milhões de atendimentos nos CRAS em 2024 | Golpes e falsos canais oficiais |
+| 40,6 milhões de famílias no CadÚnico | Vazamento de dados sensíveis (LGPD) |
+| gov.br com 166 milhões de contas | Exclusão digital de quem mais precisa |
+| 155,7 mil atendimentos só na recepção do DF | Mudança de gestão e descontinuidade |
+| WhatsApp como canal mais promissor na pesquisa | Integração com sistemas legados do SUAS |
+
+### 15.3 Gestão da inovação e tecnologia
+
+**Inovação é criar coisas novas ou melhorar algo que já existe** — e só se torna inovação quando chega a alguém e resolve um problema. No CRAS Online, as duas frentes caminham juntas:
+
+| O que criamos (novo) | O que melhoramos (existente) |
+| --- | --- |
+| O pedido que começa no celular e vira protocolo oficial | A fila do CRAS vira atendimento agendado |
+| O checklist de documentos que só pede o que o serviço exige | O folder de documentos vira assistente de 5 passos |
+| A linha do tempo que mostra em que etapa o pedido está | A ligação para saber o status vira consulta por protocolo |
+
+- **Do incremental ao radical:** incremental é melhorar o formulário e a linguagem; adjacente é integrar CadÚnico e SIBEC; radical é resolver no celular o que hoje exige uma visita — sem excluir quem não tem acesso digital.
+- **Como gerir a inovação:** digitalizar o repetitivo e agendar o que precisa de escuta; manter o atendimento humano como saída; revisar segurança e LGPD a cada recurso novo.
+- **Onde isso aparece no app:** aba **Plano** (`#/estrategia`), com missão, visão, valores, SWOT e a leitura de inovação.

@@ -51,12 +51,34 @@ svg.horas{width:100%;display:block}
 .relatar{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .relatar button{min-height:46px;border-radius:10px;border:2px solid var(--linha);background:var(--painel2);font-weight:800;cursor:pointer}
 .aviso{font-size:12.5px;color:var(--mudo);margin:8px 0}
-nav.baixo{position:fixed;left:0;right:0;bottom:0;background:#000;border-top:2px solid var(--linha);display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:#000;border-top:2px solid var(--linha);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
 nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--mudo);text-decoration:none;padding:8px 0;min-height:58px}
 nav.baixo a span{font-size:20px}
 nav.baixo a[aria-current=page]{color:var(--led)}
 #brinde{position:fixed;left:50%;top:12px;transform:translateX(-50%);background:#000;border:2px solid var(--led);color:var(--led);font-family:DotGothic16;padding:10px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw}
 #brinde.on{opacity:1}
+/* ===== planejamento estratégico e inovação ===== */
+.dupla,.swot,.duas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mv{background:var(--painel);border:1px solid var(--linha);border-left:4px solid var(--led);border-radius:12px;padding:12px 14px}
+.mv b{font-family:DotGothic16;font-size:16px;color:var(--led2);letter-spacing:.04em}
+.mv p{font-size:14px;margin-top:4px}
+.valores{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.valores span{background:var(--painel2);border:1px solid var(--linha);border-radius:999px;padding:5px 12px;font-weight:700;font-size:12.5px}
+.swot section{background:var(--painel);border:1px solid var(--linha);border-top:4px solid var(--media);border-radius:12px;padding:10px 12px}
+.swot section.f{border-top-color:var(--baixa)}.swot section.w{border-top-color:var(--media)}.swot section.o{border-top-color:var(--led2)}.swot section.t{border-top-color:var(--alta)}
+.swot h4{font-family:DotGothic16;font-weight:400;font-size:14px;color:var(--led2);letter-spacing:.04em}
+.swot ul,.duas ul{list-style:none;font-size:12.8px;margin-top:4px}
+.swot li,.duas li{padding:3px 0 3px 13px;position:relative}
+.swot li::before{content:"›";position:absolute;left:0;color:var(--led)}
+.duas li::before{content:"•";position:absolute;left:0;color:var(--led)}
+.inov .def{background:#000;border:2px solid var(--led);border-radius:12px;padding:12px 14px;font-family:DotGothic16;color:var(--led2);font-size:14px;margin-bottom:8px}
+.inov .def b{color:var(--led)}
+.duas div{background:var(--painel);border:1px solid var(--linha);border-radius:12px;padding:10px 12px}
+.duas b{font-family:DotGothic16;font-weight:400;font-size:13.5px;color:var(--led2)}
+.espectro{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.espectro span{background:var(--painel2);border:1px solid var(--linha);border-radius:10px;padding:8px;text-align:center;font-weight:800;font-size:12px}
+.espectro small{display:block;font-weight:400;color:var(--mudo);font-size:11px}
+@media(max-width:430px){.dupla,.swot,.duas{grid-template-columns:1fr}}
 :focus-visible{outline:3px solid var(--led2);outline-offset:2px}
 </style>
 </head>
@@ -77,8 +99,47 @@ nav.baixo a[aria-current=page]{color:var(--led)}
     <div class="card"><h3>Dados</h3><div class="fila" style="margin-top:0"><button class="btn sec peq" id="exportar">Exportar</button><button class="btn sec peq" id="zerar">Apagar tudo</button></div>
       <p class="aviso">Fila Cidadã · Grupo 2 · AdmCBA · UNIFACC</p></div>
   </section>
+
+  <section class="tela" id="t-estrategia">
+    <h2>PLANO ESTRATÉGICO</h2>
+    <p class="aviso">Quem somos, para onde vamos e como a inovação entra no serviço.</p>
+    <div class="dupla">
+      <div class="mv"><b>MISSÃO</b><p>Devolver tempo ao cidadão: dizer o que levar, onde ir e quanto esperar antes de sair de casa, reduzindo viagens perdidas e o ônus de lidar com a burocracia.</p></div>
+      <div class="mv"><b>VISÃO</b><p>Ser a camada de informação prévia do atendimento público em Mato Grosso até 2027, alimentada pelos órgãos e por quem está na fila.</p></div>
+    </div>
+    <div class="card"><h3>Valores</h3>
+      <div class="valores"><span>Simplicidade</span><span>Confiança</span><span>Empatia</span><span>Colaboração</span><span>Privacidade</span></div>
+      <p class="aviso" style="margin-bottom:0">Sem instalar aplicativo, sem cadastro e com a fonte de cada dado visível: o cidadão precisa saber em quem está confiando.</p>
+    </div>
+
+    <h2>ANÁLISE SWOT</h2>
+    <p class="aviso">Forças e fraquezas são internas; oportunidades e ameaças vêm do ambiente.</p>
+    <div class="swot">
+      <section class="f"><h4>FORÇAS</h4><ul><li>Checklist de documentos por serviço</li><li>Espera estimada por curva de chegada</li><li>Relatos de quem está na fila ajustam o tempo</li><li>WhatsApp e web, sem instalar aplicativo</li><li>Funciona offline</li></ul></section>
+      <section class="w"><h4>FRAQUEZAS</h4><ul><li>Filas simuladas, ainda sem integração oficial</li><li>Cobertura pequena de serviços e órgãos</li><li>Depende de relatos para se manter atual</li><li>Validação com amostra pequena (n=12)</li></ul></section>
+      <section class="o"><h4>OPORTUNIDADES</h4><ul><li>gov.br usado por mais de 130 milhões de brasileiros</li><li>Ganha Tempo e centrais de atendimento integrado</li><li>Ônus administrativo como pauta de gestão pública</li><li>WhatsApp como canal universal</li></ul></section>
+      <section class="t"><h4>AMEAÇAS</h4><ul><li>Órgãos não publicam dados de fila</li><li>Mudança de gestão interrompe integrações</li><li>Portais oficiais assumirem a função</li><li>Descrença em estimativas e LGPD</li></ul></section>
+    </div>
+
+    <h2>INOVAÇÃO: CRIAR E MELHORAR</h2>
+    <div class="inov">
+      <p class="def"><b>Inovação é criar coisas novas ou melhorar algo que já existe</b> — e só vira inovação quando chega a alguém e resolve um problema.</p>
+      <div class="duas">
+        <div><b>O QUE CRIAMOS</b><ul><li>A espera estimada antes do deslocamento, ajustada por relato</li><li>O checklist que viaja no WhatsApp</li><li>O “guichê” que cabe na tela do celular</li></ul></div>
+        <div><b>O QUE MELHORAMOS</b><ul><li>Informação espalhada vira uma resposta só</li><li>O folder do posto vira checklist interativo</li><li>A ligação para o órgão vira consulta rápida</li></ul></div>
+      </div>
+      <div class="espectro">
+        <span>Incremental<small>checklist mais completo</small></span>
+        <span>Adjacente<small>novos órgãos e serviços</small></span>
+        <span>Radical<small>nunca perder a viagem</small></span>
+      </div>
+    </div>
+    <div class="card" style="border-color:var(--led)"><h3>Gestão da inovação e tecnologia</h3>
+      <p style="font-size:14px">Medir viagens evitadas, começar por poucos serviços de alta demanda em Cuiabá e integrar dados oficiais. A inovação incremental melhora o checklist; a radical é o cidadão nunca mais descobrir no balcão que faltava um documento.</p>
+    </div>
+  </section>
 </main>
-<nav class="baixo" aria-label="Seções"><a href="#/servicos"><span>🎫</span>Serviços</a><a href="#/servico/rg"><span>📋</span>Checklist</a><a href="#/salvos"><span>⭐</span>Minhas listas</a></nav>
+<nav class="baixo" aria-label="Seções"><a href="#/servicos"><span>🎫</span>Serviços</a><a href="#/servico/rg"><span>📋</span>Checklist</a><a href="#/salvos"><span>⭐</span>Minhas listas</a><a href="#/estrategia"><span>🧭</span>Plano</a></nav>
 <div id="brinde" role="status" aria-live="polite"></div>
 
 <script>
@@ -180,12 +241,12 @@ $('#busca').addEventListener('input', telaServicos);
 const tic = () => { const d = new Date(); $('#relogio').textContent = d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); }; tic(); setInterval(tic, 15000);
 
 /* ---------- rotas ---------- */
-window.__rotas = ['#/servicos', '#/servico/rg', '#/servico/cadunico', '#/salvos'];
+window.__rotas = ['#/servicos', '#/servico/rg', '#/servico/cadunico', '#/salvos', '#/estrategia'];
 function rota(manter) {
-  const m = location.hash.match(/^#\/(\w+)(?:\/(\w+))?/) || [, 'servicos'], n = ['servicos', 'servico', 'salvos'].includes(m[1]) ? m[1] : 'servicos';
+  const m = location.hash.match(/^#\/(\w+)(?:\/(\w+))?/) || [, 'servicos'], n = ['servicos', 'servico', 'salvos', 'estrategia'].includes(m[1]) ? m[1] : 'servicos';
   $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + n));
   $$('nav.baixo a').forEach(a => a.getAttribute('href').split('/')[1] === n ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
-  ({ servicos: telaServicos, servico: () => telaServico(m[2]), salvos: telaSalvos })[n]();
+  ({ servicos: telaServicos, servico: () => telaServico(m[2]), salvos: telaSalvos, estrategia: () => {} })[n]();
   if (manter !== true) scrollTo(0, 0);
 }
 addEventListener('hashchange', () => rota()); rota();

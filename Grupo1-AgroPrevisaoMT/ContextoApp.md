@@ -205,6 +205,49 @@ O agro cresce antes da cidade se preparar. Quando a lavoura se expande, chegam c
 
 ---
 
+## 15. Planejamento estratégico e gestão da inovação
+
+### 15.1 Missão, visão e valores
+
+| Item | Definição |
+| --- | --- |
+| **Missão** | Antecipar o efeito do crescimento do agro sobre as cidades de Mato Grosso, para que gestores e moradores planejem emprego, moradia, transporte e serviços antes de o gargalo aparecer. |
+| **Visão** | Ser a leitura de referência do impacto do agro na vida urbana mato-grossense até 2030, com dados abertos e linguagem que qualquer morador entende. |
+| **Valores** | Transparência (todo número diz se é dado real ou simulação), antecipação, proximidade, rigor metodológico e colaboração com quem vive a cidade. |
+
+### 15.2 Análise SWOT
+
+| Forças (internas) | Fraquezas (internas) |
+| --- | --- |
+| Mapa único por dimensão: emprego, moradia, transporte e serviços | Índices de pressão ainda ilustrativos |
+| Base em dados oficiais do Censo 2022 | Depende de dados que nem todo município publica |
+| Simulador “e se a safra crescer?” | Validação com amostra pequena |
+| Alertas para as cidades que o usuário acompanha | Equipe acadêmica, sem operação permanente |
+| Funciona offline (PWA) | |
+
+| Oportunidades (externas) | Ameaças (externas) |
+| --- | --- |
+| Agro responde por 56,2% do PIB de Mato Grosso | Ciclo de commodities e queda de safra |
+| Cidades crescendo mais de 70% em uma década | Atraso ou baixa qualidade dos dados |
+| Parcerias com Sedec, Imea, IBGE e prefeituras | Descrença em previsões |
+| Demanda por planejamento urbano e dados abertos | Consultorias e portais já estabelecidos |
+
+### 15.3 Gestão da inovação e tecnologia
+
+**Inovação é criar coisas novas ou melhorar algo que já existe** — e só se torna inovação quando chega a alguém e resolve um problema. No AgroPrevisãoMT, as duas frentes caminham juntas:
+
+| O que criamos (novo) | O que melhoramos (existente) |
+| --- | --- |
+| A leitura que liga o sinal do agro à pressão urbana por dimensão | Boletins de conjuntura viram painel vivo e legível |
+| O cenário “e se a safra crescer?” para conversar com o gestor | Dados dispersos do IBGE e da Sedec viram um mapa só |
+| Alertas por cidade que o morador acompanha | Relatório técnico vira linguagem do dia a dia |
+
+- **Do incremental ao radical:** incremental é tornar o índice mais preciso com dados reais; adjacente é cobrir novas cidades e dimensões; radical é prever o gargalo antes de ele acontecer e mudar a decisão do gestor.
+- **Como gerir a inovação:** validar com Caged, Imea, Censo e dados municipais; medir se o alerta muda a decisão; abrir a API para prefeituras; manter o rótulo de confiança do dado em cada tela.
+- **Onde isso aparece no app:** aba **Plano** (`#/estrategia`), com missão, visão, valores, SWOT e a leitura de inovação.
+
+---
+
 ## Entregáveis do grupo
 
 - [ ] Questionário validado (20 perguntas) e `formulario-app.md` final

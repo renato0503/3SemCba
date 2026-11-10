@@ -178,3 +178,46 @@ O modelo precisa ser **de interesse público**, com dados abertos e sem monetiza
 ## 14. Pitch de 30 segundos
 
 "Você já perdeu uma manhã de trabalho numa fila do INSS por causa de um papel que faltava? O Fila Cidadã resolve isso. Antes de sair de casa, o cidadão descobre quais documentos levar, em qual órgão ou posto ir e quanto tempo provavelmente vai esperar na fila — tudo pelo WhatsApp, sem instalar nada. Menos viagem perdida, menos fila desnecessária e mais tempo de volta para o cidadão. Simples, público e feito para quem mais precisa."
+
+---
+
+## 15. Planejamento estratégico e gestão da inovação
+
+### 15.1 Missão, visão e valores
+
+| Item | Definição |
+| --- | --- |
+| **Missão** | Devolver tempo ao cidadão: dizer o que levar, onde ir e quanto esperar antes de sair de casa, reduzindo viagens perdidas e o ônus de lidar com a burocracia. |
+| **Visão** | Ser a camada de informação prévia do atendimento público em Mato Grosso até 2027, alimentada pelos órgãos e por quem está na fila. |
+| **Valores** | Simplicidade (sem instalar aplicativo), confiança (fonte de cada dado visível), empatia pelo tempo do cidadão, colaboração (relatos de quem está na fila) e privacidade (sem cadastro). |
+
+### 15.2 Análise SWOT
+
+| Forças (internas) | Fraquezas (internas) |
+| --- | --- |
+| Checklist de documentos por serviço | Filas simuladas, ainda sem integração oficial |
+| Espera estimada por curva de chegada | Cobertura pequena de serviços e órgãos |
+| Relatos de quem está na fila ajustam o tempo | Depende de relatos para se manter atual |
+| WhatsApp e web, sem instalar aplicativo | Validação com amostra pequena (n=12) |
+| Funciona offline | |
+
+| Oportunidades (externas) | Ameaças (externas) |
+| --- | --- |
+| gov.br usado por mais de 130 milhões de brasileiros | Órgãos não publicam dados de fila |
+| Ganha Tempo e centrais de atendimento integrado | Mudança de gestão interrompe integrações |
+| Ônus administrativo como pauta de gestão pública | Portais oficiais assumirem a função |
+| WhatsApp como canal universal | Descrença em estimativas e LGPD |
+
+### 15.3 Gestão da inovação e tecnologia
+
+**Inovação é criar coisas novas ou melhorar algo que já existe** — e só se torna inovação quando chega a alguém e resolve um problema. No Fila Cidadã, as duas frentes caminham juntas:
+
+| O que criamos (novo) | O que melhoramos (existente) |
+| --- | --- |
+| A espera estimada antes do deslocamento, ajustada por relato | Informação espalhada vira uma resposta só |
+| O checklist que viaja no WhatsApp | O folder do posto vira checklist interativo |
+| O “guichê” que cabe na tela do celular | A ligação para o órgão vira consulta rápida |
+
+- **Do incremental ao radical:** incremental é completar o checklist; adjacente é cobrir novos órgãos e serviços; radical é o cidadão nunca mais descobrir no balcão que faltava um documento.
+- **Como gerir a inovação:** medir viagens evitadas, começar por poucos serviços de alta demanda em Cuiabá, integrar dados oficiais e manter a fonte de cada estimativa visível.
+- **Onde isso aparece no app:** aba **Plano** (`#/estrategia`), com missão, visão, valores, SWOT e a leitura de inovação.

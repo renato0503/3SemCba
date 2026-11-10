@@ -52,12 +52,34 @@ input[type=range]{width:100%;accent-color:var(--soja);height:30px}
 .voto button[aria-pressed=true]{background:var(--terra);border-color:var(--terra);color:#fff}
 .fonte{padding:10px 0;border-bottom:1px dashed var(--linha);font-size:14.5px}
 .tag{font-size:11px;font-weight:700;padding:2px 6px;border-radius:3px;background:var(--palha2)}
-nav.baixo{position:fixed;left:0;right:0;bottom:0;background:var(--soja2);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
+nav.baixo{position:fixed;left:0;right:0;bottom:0;background:var(--soja2);display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:env(safe-area-inset-bottom);z-index:10}
 nav.baixo a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#d9f99d;text-decoration:none;font-family:"Barlow Condensed";font-weight:700;font-size:14px;text-transform:uppercase;padding:8px 0;min-height:58px;opacity:.75}
 nav.baixo a span{font-size:19px}
 nav.baixo a[aria-current=page]{opacity:1;color:#fff;box-shadow:inset 0 3px 0 var(--ouro)}
 #brinde{position:fixed;left:50%;top:14px;transform:translateX(-50%);background:var(--soja2);color:#fff;padding:10px 16px;border-radius:4px;font-weight:700;opacity:0;transition:.25s;pointer-events:none;z-index:30;max-width:90vw}
 #brinde.on{opacity:1}
+/* ===== planejamento estratégico e inovação ===== */
+.dupla,.swot,.duas{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mv{background:#fffdf6;border:1px solid var(--linha);border-left:5px solid var(--soja);padding:12px 14px}
+.mv b{font-family:"Barlow Condensed";font-size:19px;text-transform:uppercase;letter-spacing:.04em;color:var(--soja2)}
+.mv p{font-size:14.5px;margin-top:4px}
+.valores{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.valores span{background:var(--palha2);border:1px solid var(--linha);border-radius:3px;padding:5px 10px;font-weight:700;font-size:13.5px}
+.swot section{background:#fffdf6;border:1px solid var(--linha);border-top:4px solid var(--soja);padding:10px 12px}
+.swot section.f{border-top-color:var(--baixo)}.swot section.w{border-top-color:var(--terra)}.swot section.o{border-top-color:var(--ouro)}.swot section.t{border-top-color:var(--critico)}
+.swot h4{font-family:"Barlow Condensed";font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--soja2)}
+.swot ul,.duas ul{list-style:none;font-size:13.3px;margin-top:4px}
+.swot li,.duas li{padding:3px 0 3px 13px;position:relative}
+.swot li::before{content:"▸";position:absolute;left:0;color:var(--mudo)}
+.duas li::before{content:"•";position:absolute;left:0;color:var(--ouro)}
+.inov .def{background:var(--soja2);color:#f5efe0;padding:12px 14px;border-radius:3px;font-size:14.5px;margin-bottom:8px}
+.inov .def b{color:#d9f99d}
+.duas div{background:#fffdf6;border:1px solid var(--linha);padding:10px 12px}
+.duas b{font-family:"Barlow Condensed";font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--soja2)}
+.espectro{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.espectro span{background:var(--palha2);border:1px solid var(--linha);padding:8px;text-align:center;font-family:"Barlow Condensed";font-weight:700;text-transform:uppercase;font-size:14px}
+.espectro small{display:block;font-family:Barlow;text-transform:none;font-weight:400;font-size:11.5px;color:var(--mudo)}
+@media(max-width:430px){.dupla,.swot,.duas{grid-template-columns:1fr}}
 :focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
 </style>
 </head>
@@ -94,8 +116,47 @@ nav.baixo a[aria-current=page]{opacity:1;color:#fff;box-shadow:inset 0 3px 0 var
     <div class="fila"><button class="btn sec peq" id="exportar">Exportar minhas avaliações</button><button class="btn sec peq" id="zerar">Apagar dados</button></div>
     <p style="font-size:12px;color:var(--mudo);margin-top:10px">AgroPrevisãoMT · Grupo 1 · AdmCBA · UNIFACC</p>
   </section>
+
+  <section class="tela" id="t-estrategia">
+    <h2>Plano estratégico</h2>
+    <p style="font-size:14.5px;color:var(--mudo)">Quem somos, para onde vamos e como a inovação entra no produto.</p>
+    <div class="dupla" style="margin-top:10px">
+      <div class="mv"><b>Missão</b><p>Antecipar o efeito do crescimento do agro sobre as cidades de Mato Grosso, para que gestores e moradores planejem emprego, moradia, transporte e serviços antes de o gargalo aparecer.</p></div>
+      <div class="mv"><b>Visão</b><p>Ser a leitura de referência do impacto do agro na vida urbana mato-grossense até 2030, com dados abertos e linguagem que qualquer morador entende.</p></div>
+    </div>
+    <div class="bloco"><b class="cond">Valores</b>
+      <div class="valores"><span>Transparência</span><span>Antecipação</span><span>Proximidade</span><span>Rigor</span><span>Colaboração</span></div>
+      <p style="font-size:13.5px;color:var(--mudo);margin-top:8px">Cada número diz se é <b>dado real</b> ou <b>simulação</b> — quem planeja precisa saber o que está olhando.</p>
+    </div>
+
+    <h2 style="margin-top:18px">Análise SWOT</h2>
+    <p style="font-size:14px;color:var(--mudo);margin-bottom:8px">Forças e fraquezas são internas; oportunidades e ameaças vêm do ambiente.</p>
+    <div class="swot">
+      <section class="f"><h4>Forças</h4><ul><li>Mapa único por dimensão: emprego, moradia, transporte e serviços</li><li>Base em dados oficiais do Censo 2022</li><li>Simulador “e se a safra crescer?”</li><li>Alertas para as cidades que o usuário acompanha</li><li>Funciona offline (PWA)</li></ul></section>
+      <section class="w"><h4>Fraquezas</h4><ul><li>Índices de pressão ainda ilustrativos</li><li>Depende de dados que nem todo município publica</li><li>Validação com amostra pequena</li><li>Equipe acadêmica, sem operação permanente</li></ul></section>
+      <section class="o"><h4>Oportunidades</h4><ul><li>Agro responde por 56,2% do PIB de Mato Grosso</li><li>Cidades crescendo mais de 70% em uma década</li><li>Parcerias com Sedec, Imea, IBGE e prefeituras</li><li>Demanda por planejamento urbano e dados abertos</li></ul></section>
+      <section class="t"><h4>Ameaças</h4><ul><li>Ciclo de commodities e queda de safra</li><li>Atraso ou baixa qualidade dos dados</li><li>Descrença em previsões</li><li>Consultorias e portais já estabelecidos</li></ul></section>
+    </div>
+
+    <h2 style="margin-top:18px">Inovação: criar e melhorar</h2>
+    <div class="inov">
+      <p class="def"><b>Inovação é criar coisas novas ou melhorar algo que já existe</b> — e só vira inovação quando chega a alguém e resolve um problema.</p>
+      <div class="duas">
+        <div><b>O que criamos</b><ul><li>A leitura que liga o sinal do agro à pressão urbana por dimensão</li><li>O cenário “e se a safra crescer?” para conversar com o gestor</li><li>Alertas por cidade que o morador acompanha</li></ul></div>
+        <div><b>O que melhoramos</b><ul><li>Boletins de conjuntura viram painel vivo e legível</li><li>Dados dispersos do IBGE e da Sedec viram um mapa só</li><li>Relatório técnico vira linguagem do dia a dia</li></ul></div>
+      </div>
+      <div class="espectro">
+        <span>Incremental<small>índice mais preciso</small></span>
+        <span>Adjacente<small>novas cidades e dimensões</small></span>
+        <span>Radical<small>prever antes do gargalo</small></span>
+      </div>
+    </div>
+    <div class="bloco" style="border-left-color:var(--ouro)"><b class="cond">Gestão da inovação e tecnologia</b>
+      <p style="font-size:14.5px">Do protótipo ao produto: validar com dados reais (Caged, Imea, Censo), medir se o alerta muda a decisão do gestor e abrir a API para prefeituras. A inovação incremental melhora o índice; a radical é prever o gargalo antes de ele acontecer.</p>
+    </div>
+  </section>
 </main>
-<nav class="baixo" aria-label="Seções"><a href="#/mapa"><span>⬢</span>Mapa</a><a href="#/regiao/sinop"><span>📍</span>Região</a><a href="#/cenario"><span>🎚️</span>Cenário</a><a href="#/alertas"><span>🔔</span>Alertas</a></nav>
+<nav class="baixo" aria-label="Seções"><a href="#/mapa"><span>⬢</span>Mapa</a><a href="#/regiao/sinop"><span>📍</span>Região</a><a href="#/cenario"><span>🎚️</span>Cenário</a><a href="#/alertas"><span>🔔</span>Alertas</a><a href="#/estrategia"><span>🧭</span>Plano</a></nav>
 <div id="brinde" role="status" aria-live="polite"></div>
 
 <script>
@@ -193,7 +254,7 @@ function telaAlertas(s) {
     ['ILUSTRATIVO', 'Índices de pressão 0–100 e sensibilidade à safra', 'Protótipo do grupo — a calibrar com Caged, Imea, Censo e dados municipais']]
     .map(([t, d, f]) => `<div class="fonte"><span class="selo ${t === 'DADO REAL' ? 'real' : 'ilustr'}">${t}</span><p>${d}</p><small style="color:var(--mudo)">Fonte: ${f}</small></div>`).join('');
 }
-function desenhar(s) { const n = atual(); ({ mapa: telaMapa, regiao: telaRegiao, cenario: telaCenario, alertas: telaAlertas })[n](s); }
+function desenhar(s) { const n = atual(); ({ mapa: telaMapa, regiao: telaRegiao, cenario: telaCenario, alertas: telaAlertas, estrategia: () => {} })[n](s); }
 store.assinar(desenhar);
 
 /* ---------- eventos ---------- */
@@ -213,8 +274,8 @@ document.addEventListener('change', e => { if (e.target.id === 'c-br') store.set
 const rede = () => { $('#rede').textContent = navigator.onLine ? '● online' : '○ offline · dados salvos'; }; addEventListener('online', rede); addEventListener('offline', rede); rede();
 
 /* ---------- rotas ---------- */
-window.__rotas = ['#/mapa', '#/regiao/sinop', '#/cenario', '#/alertas'];
-const atual = () => { const n = (location.hash.match(/^#\/(\w+)/) || [])[1]; return ['mapa', 'regiao', 'cenario', 'alertas'].includes(n) ? n : 'mapa'; };
+window.__rotas = ['#/mapa', '#/regiao/sinop', '#/cenario', '#/alertas', '#/estrategia'];
+const atual = () => { const n = (location.hash.match(/^#\/(\w+)/) || [])[1]; return ['mapa', 'regiao', 'cenario', 'alertas', 'estrategia'].includes(n) ? n : 'mapa'; };
 function rota() {
   const n = atual(), m = location.hash.match(/^#\/regiao\/(\w+)/);
   $$('.tela').forEach(t => t.classList.toggle('on', t.id === 't-' + n));
